@@ -1,0 +1,6 @@
+framework module Pods_GSDA {
+  umbrella header "Pods-GSDA-umbrella.h"
+
+  export *
+  module * { export * }
+}
