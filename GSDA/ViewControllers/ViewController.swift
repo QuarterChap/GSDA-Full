@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor.white
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 5
-        view.layer.masksToBounds  = true
+        view.layer.masksToBounds = true
         return view
     }()
     
