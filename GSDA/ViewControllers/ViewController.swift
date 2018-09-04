@@ -99,8 +99,6 @@ class ViewController: UIViewController {
         setupLoginRegisterButton()
         setupLogoImageView()
         setupLoginRegisterSegmentedControl()
-        
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
