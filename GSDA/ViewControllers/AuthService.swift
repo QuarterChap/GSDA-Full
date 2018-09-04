@@ -61,6 +61,21 @@ class AuthService {
         })
     }
     
+    func logout() {
+        if Auth.auth().currentUser != nil {
+            let user = Auth.auth().currentUser?.email
+            do {
+                debugPrint("Logging Out User:\(String(describing: user))")
+                try Auth.auth().signOut()
+                debugPrint("Logged Out User:\(String(describing: user))")
+            } catch {
+                
+            }
+        } else {
+            debugPrint("There Is No Logged In User")
+        }
+    }
+    
     func FireBaseErrorHandler(error: NSError, onComplete: Completion?) {
         if  let errorCode = AuthErrorCode(rawValue: error.code) {
             switch errorCode {
