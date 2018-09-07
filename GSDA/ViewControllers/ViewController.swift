@@ -11,6 +11,54 @@ import Firebase
 
 class ViewController: UIViewController {
     
+    let RoswellLocationLabel: UILabel = {
+        let label = UILabel()
+        
+        label.text = "Roswell"
+        label.font = UIFont(name: "SavoyeLetPlain", size: 28)
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
+    let KennesawLocationLabel: UILabel = {
+        let label = UILabel()
+        
+        label.text = "Kennesaw"
+        label.font = UIFont(name: "SavoyeLetPlain", size: 28)
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
+    let WoodstockLocationLabel: UILabel = {
+        let label = UILabel()
+        
+        label.text = "Woodstock"
+        label.font = UIFont(name: "SavoyeLetPlain", size: 28)
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
+    let mottoLabel: UILabel = {
+        let label = UILabel()
+        
+        label.text = "Just twelve weeks to a new career!"
+        label.font = UIFont(name: "SavoyeLetPlain", size: 28)
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
     let inputsContainerView: UIView =  {
         let view = UIView()
         view.backgroundColor = UIColor.white
@@ -22,28 +70,16 @@ class ViewController: UIViewController {
     
     lazy var loginRegisterButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
-        button.setTitle("Register", for: .normal)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+        button.setTitle("Login", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.layer.cornerRadius = 5
+        button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(handleLoginRegistration), for: .touchUpInside)
         
         return button
-    }()
-    
-    let nameTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Username"
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
-    }()
-    
-    let nameSepartorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(r: 220 , g: 220, b: 220)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
     }()
     
     let emailTextField: UITextField = {
@@ -80,7 +116,7 @@ class ViewController: UIViewController {
         let sc = UISegmentedControl(items: [ "Login", "Register"])
         sc.translatesAutoresizingMaskIntoConstraints = false
         sc.tintColor = UIColor.white
-        sc.selectedSegmentIndex = 1
+        sc.selectedSegmentIndex = 0
         sc.addTarget(self, action: #selector(loginRegisterChange) , for: .valueChanged)
         return sc
     }()
@@ -88,17 +124,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-        view.backgroundColor = UIColor(r: 61, g: 91, b: 151)
+        view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
         
         view.addSubview(inputsContainerView)
         view.addSubview(loginRegisterButton)
         view.addSubview(logoImageView)
         view.addSubview(loginRegisterSegmentedControl)
+        view.addSubview(mottoLabel)
+        view.addSubview(RoswellLocationLabel)
+        view.addSubview(WoodstockLocationLabel)
+        view.addSubview(KennesawLocationLabel)
         
         setupInputsContainerView()
         setupLoginRegisterButton()
         setupLogoImageView()
         setupLoginRegisterSegmentedControl()
+        setupMottoLabel()
+        setupLocationLabels()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -106,7 +148,6 @@ class ViewController: UIViewController {
     }
     
     var inputsContainerViewHeightAnchor: NSLayoutConstraint?
-    var nameTextFieldHeightAnchor: NSLayoutConstraint?
     var emailTextFieldHeightAnchor: NSLayoutConstraint?
     var passwordTextFieldHeightAnchor: NSLayoutConstraint?
     
@@ -115,19 +156,15 @@ class ViewController: UIViewController {
         loginRegisterButton.setTitle(title, for: .normal)
         
         //change height of inputContainerView
-        inputsContainerViewHeightAnchor?.constant = loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 100 : 150
+        inputsContainerViewHeightAnchor?.constant = loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 100 : 100
         
         // change height of nameTextField
-        nameTextFieldHeightAnchor?.isActive = false
-        nameTextFieldHeightAnchor = nameTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 0 : 1/3)
-        nameTextFieldHeightAnchor?.isActive = true
-        
         emailTextFieldHeightAnchor?.isActive = false
-        emailTextFieldHeightAnchor = emailTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/3)
+        emailTextFieldHeightAnchor = emailTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/2)
         emailTextFieldHeightAnchor?.isActive = true
         
         passwordTextFieldHeightAnchor?.isActive = false
-        passwordTextFieldHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/3)
+        passwordTextFieldHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/2)
         passwordTextFieldHeightAnchor?.isActive = true
     }
     
@@ -178,64 +215,74 @@ class ViewController: UIViewController {
         loginRegisterSegmentedControl.heightAnchor.constraint(equalToConstant: 36).isActive = true
     }
     
+    func setupLocationLabels() {
+        WoodstockLocationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        WoodstockLocationLabel.topAnchor.constraint(equalTo: loginRegisterButton.bottomAnchor, constant: (view.frame.height / 35)).isActive = true
+        WoodstockLocationLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        WoodstockLocationLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        WoodstockLocationLabel.font = UIFont(name: "AmericanTypewriter-Bold", size: view.frame.width / 11)
+        
+        KennesawLocationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        KennesawLocationLabel.topAnchor.constraint(equalTo: WoodstockLocationLabel.bottomAnchor, constant: (view.frame.height / 18)).isActive = true
+        KennesawLocationLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        KennesawLocationLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        KennesawLocationLabel.font = UIFont(name: "AmericanTypewriter-Bold", size: view.frame.width / 11)
+        
+        RoswellLocationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        RoswellLocationLabel.topAnchor.constraint(equalTo: KennesawLocationLabel.bottomAnchor, constant: (view.frame.height / 18)).isActive = true
+        RoswellLocationLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        RoswellLocationLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        RoswellLocationLabel.font = UIFont(name: "AmericanTypewriter-Bold", size: view.frame.width / 11)
+    }
+    
     func setupLogoImageView() {
-        logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        logoImageView.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: -5).isActive = true
-        logoImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        logoImageView.heightAnchor.constraint(equalToConstant:  150).isActive = true
+        logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        logoImageView.bottomAnchor.constraint(equalTo: mottoLabel.topAnchor, constant: 15).isActive = true
+        logoImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4).isActive = true
+        logoImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4).isActive = true
+    }
+    
+    func setupMottoLabel() {
+        mottoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        mottoLabel.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: -1).isActive = true
+        mottoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        mottoLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        mottoLabel.font = UIFont(name: "SavoyeLetPlain", size: view.frame.width / 11)
     }
     
     func setupInputsContainerView() {
-        // Constraints need x,y,width,height
-        inputsContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        inputsContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        inputsContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-        inputsContainerViewHeightAnchor = inputsContainerView.heightAnchor.constraint(equalToConstant: 150)
-        inputsContainerViewHeightAnchor?.isActive  = true
-        
-        inputsContainerView.addSubview(nameTextField)
-        inputsContainerView.addSubview(nameSepartorView)
-        inputsContainerView.addSubview(emailTextField)
-        inputsContainerView.addSubview(emailSepartorView)
-        inputsContainerView.addSubview(passwordTextField)
-        
-        // Constraints need x,y,width,height
-        nameTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
-        nameTextField.topAnchor.constraint(equalTo:  inputsContainerView.topAnchor).isActive = true
-        nameTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
-        nameTextFieldHeightAnchor = nameTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3)
-        nameTextFieldHeightAnchor?.isActive = true
-        
-        // Constraints need x,y,width,height
-        nameSepartorView.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor).isActive = true
-        nameSepartorView.topAnchor.constraint(equalTo: nameTextField.bottomAnchor).isActive = true
-        nameSepartorView.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
-        nameSepartorView.heightAnchor.constraint(equalToConstant: 1 ).isActive = true
-        
-        // Constraints need x,y,width,height
-        emailTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
-        emailTextField.topAnchor.constraint(equalTo:  nameTextField.bottomAnchor).isActive = true
-        emailTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
-        emailTextFieldHeightAnchor = emailTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3)
-        emailTextFieldHeightAnchor?.isActive = true
-        
-        // Constraints need x,y,width,height
-        emailSepartorView.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor).isActive = true
-        emailSepartorView.topAnchor.constraint(equalTo: emailTextField.bottomAnchor).isActive = true
-        emailSepartorView.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
-        emailSepartorView.heightAnchor.constraint(equalToConstant: 1 ).isActive = true
-        
-        // Constraints need x,y,width,height
-        passwordTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
-        passwordTextField.topAnchor.constraint(equalTo:  emailTextField.bottomAnchor).isActive = true
-        passwordTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
-        passwordTextFieldHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3)
-        passwordTextFieldHeightAnchor?.isActive = true
-        
+            inputsContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            inputsContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+            inputsContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+            inputsContainerViewHeightAnchor = inputsContainerView.heightAnchor.constraint(equalToConstant: 100)
+            inputsContainerViewHeightAnchor?.isActive  = true
+            
+            inputsContainerView.addSubview(emailTextField)
+            inputsContainerView.addSubview(emailSepartorView)
+            inputsContainerView.addSubview(passwordTextField)
+            
+            // Constraints need x,y,width,height
+            emailTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
+            emailTextField.topAnchor.constraint(equalTo:  inputsContainerView.topAnchor).isActive = true
+            emailTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
+            emailTextFieldHeightAnchor = emailTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/2)
+            emailTextFieldHeightAnchor?.isActive = true
+            
+            // Constraints need x,y,width,height
+            emailSepartorView.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor).isActive = true
+            emailSepartorView.topAnchor.constraint(equalTo: emailTextField.bottomAnchor).isActive = true
+            emailSepartorView.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
+            emailSepartorView.heightAnchor.constraint(equalToConstant: 1 ).isActive = true
+            
+            // Constraints need x,y,width,height
+            passwordTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
+            passwordTextField.topAnchor.constraint(equalTo:  emailTextField.bottomAnchor).isActive = true
+            passwordTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
+            passwordTextFieldHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/2)
+            passwordTextFieldHeightAnchor?.isActive = true
     }
     
     func setupLoginRegisterButton() {
-        // Constraints need x,y,width,height
         loginRegisterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor,  constant: 12).isActive = true
         loginRegisterButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor ).isActive = true

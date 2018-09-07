@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import UIKit
+import KeychainSwift
 
 //Costants Should Be Moved To Seperate File
 let FIREBASEAUTHERROR_INVALID_EMAIL_ADDRESS = "Invalid Email Address"
@@ -56,6 +57,8 @@ class AuthService {
                 }
             } else {
                 print("Logged In...")
+                let kc = KeychainSwift()
+                kc.set((user?.uid)!, forKey: "uid")
                 onComplete(nil, user)
             }
         })
