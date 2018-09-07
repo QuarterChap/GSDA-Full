@@ -10,5 +10,5 @@ target 'GSDA' do
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
-
+pod ‘KeychainSwift’, ‘~> 11.0’
 end

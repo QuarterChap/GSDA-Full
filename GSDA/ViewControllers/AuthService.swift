@@ -58,7 +58,7 @@ class AuthService {
             } else {
                 print("Logged In...")
                 let kc = KeychainSwift()
-                kc.set((user?.uid)!, forKey: "uid")
+                kc.set((user?.user.uid)!, forKey: "uid")
                 onComplete(nil, user)
             }
         })

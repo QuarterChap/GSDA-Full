@@ -24,16 +24,18 @@ PODS:
   - FirebaseStorage (3.0.1):
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleUtilities/Environment (5.2.2)
-  - GoogleUtilities/Logger (5.2.2):
+  - GoogleUtilities/Environment (5.2.3)
+  - GoogleUtilities/Logger (5.2.3):
     - GoogleUtilities/Environment
   - GTMSessionFetcher/Core (1.2.0)
+  - KeychainSwift (11.0.0)
   - leveldb-library (1.20)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
+  - KeychainSwift (~> 11.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -45,6 +47,7 @@ SPEC REPOS:
     - FirebaseStorage
     - GoogleUtilities
     - GTMSessionFetcher
+    - KeychainSwift
     - leveldb-library
 
 SPEC CHECKSUMS:
@@ -54,10 +57,11 @@ SPEC CHECKSUMS:
   FirebaseCore: 3a97432acb324b439fbed338e642f9cbb516a63d
   FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
   FirebaseStorage: 43f823b96b72a08539eba21a7de043348a69d4c6
-  GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
+  GoogleUtilities: 6f681e27050c5e130325e89fa0316dfca826f954
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  KeychainSwift: bea6bd9f98af7b8d7ca4aa79fe105c00fab532db
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
 
-PODFILE CHECKSUM: e98684a6b389dbd8d3dd7c05b31b1ac4fedab670
+PODFILE CHECKSUM: 2f55181c477f4f240b863c5a545f1dc23902d77c
 
 COCOAPODS: 1.5.3
