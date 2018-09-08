@@ -23,6 +23,8 @@ class AuthService {
     
     typealias Completion = (_ errMsg: String?, _ data: AnyObject?) -> Void
     
+    var signedIn = UserDefaults.standard.bool(forKey: "signedIn")
+    
     static var instance: AuthService {
         return _instance
     }
@@ -59,6 +61,9 @@ class AuthService {
                 print("Logged In...")
                 let kc = KeychainSwift()
                 kc.set((user?.user.uid)!, forKey: "uid")
+                self.signedIn = true
+                UserDefaults.standard.set(true, forKey: "signedIn")
+                UserDefaults.standard.synchronize()
                 onComplete(nil, user)
             }
         })
