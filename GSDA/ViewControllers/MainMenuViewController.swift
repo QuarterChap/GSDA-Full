@@ -74,7 +74,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var assignmentsButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Assignments", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -88,7 +88,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var contactButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Contact", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -102,7 +102,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var downloadButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("fifth", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -116,7 +116,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var sixthButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("sixth", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
