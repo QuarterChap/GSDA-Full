@@ -17,7 +17,10 @@ class MainMenuViewController: UIViewController {
         let scrollView = UIScrollView()
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = .black
+        scrollView.backgroundColor = .white
+        scrollView.alpha = 0.85
+        scrollView.layer.cornerRadius = 15
+        scrollView.layer.masksToBounds  = true
         scrollView.bounces = true
         scrollView.alwaysBounceVertical = true
         
@@ -44,7 +47,7 @@ class MainMenuViewController: UIViewController {
         return label
     }()
     
-    lazy var scheduleButton: UIButton = {
+    lazy var button3: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Schedule", for: .normal)
@@ -58,13 +61,13 @@ class MainMenuViewController: UIViewController {
         return button
     }()
     
-    lazy var courseMaterialButton: UIButton = {
+    lazy var button4: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Course Material", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 8)
         button.addTarget(self, action: #selector(courseMaterialButtonAction), for: .touchUpInside)
         button.layer.cornerRadius = 15
         button.layer.masksToBounds  = true
@@ -72,7 +75,7 @@ class MainMenuViewController: UIViewController {
         return button
     }()
     
-    lazy var assignmentsButton: UIButton = {
+    lazy var button1: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Assignments", for: .normal)
@@ -86,7 +89,7 @@ class MainMenuViewController: UIViewController {
         return button
     }()
     
-    lazy var contactButton: UIButton = {
+    lazy var button6: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Contact", for: .normal)
@@ -100,7 +103,7 @@ class MainMenuViewController: UIViewController {
         return button
     }()
     
-    lazy var downloadButton: UIButton = {
+    lazy var button2: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("fifth", for: .normal)
@@ -114,7 +117,7 @@ class MainMenuViewController: UIViewController {
         return button
     }()
     
-    lazy var sixthButton: UIButton = {
+    lazy var button5: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("sixth", for: .normal)
@@ -130,7 +133,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var logoutButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.backgroundColor =  UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Log Out", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -181,35 +184,54 @@ class MainMenuViewController: UIViewController {
         CategoriesScrollView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
         CategoriesScrollView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.55).isActive = true
         
-        CategoriesScrollView.addSubview(scheduleButton)
-        scheduleButton.leftAnchor.constraint(equalTo: CategoriesScrollView.leftAnchor, constant: 10).isActive = true
-        scheduleButton.topAnchor.constraint(equalTo: CategoriesScrollView.topAnchor, constant: 10).isActive = true
-        scheduleButton.widthAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.3).isActive = true
-        scheduleButton.heightAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.3).isActive = true
+        CategoriesScrollView.addSubview(button3)
+        button3.centerXAnchor.constraint(equalTo: CategoriesScrollView.centerXAnchor, constant: -75).isActive  = true
+        button3.centerYAnchor.constraint(equalTo: CategoriesScrollView.centerYAnchor, constant: 0).isActive = true
+        button3.widthAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.25).isActive = true
+        button3.heightAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.25).isActive = true
         
-        CategoriesScrollView.addSubview(courseMaterialButton)
-        courseMaterialButton.leftAnchor.constraint(equalTo: CategoriesScrollView.leftAnchor, constant: 10).isActive = true
-        courseMaterialButton.centerYAnchor.constraint(equalTo: CategoriesScrollView.centerYAnchor, constant: 0).isActive = true
-        courseMaterialButton.widthAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.3).isActive = true
-        courseMaterialButton.heightAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.3).isActive = true
+        CategoriesScrollView.addSubview(button4)
+        button4.centerXAnchor.constraint(equalTo: CategoriesScrollView.centerXAnchor, constant: 75).isActive = true
+        button4.centerYAnchor.constraint(equalTo: CategoriesScrollView.centerYAnchor, constant: 0).isActive = true
+        button4.widthAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.25).isActive = true
+        button4.heightAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.25).isActive = true
         
-        CategoriesScrollView.addSubview(assignmentsButton)
-        assignmentsButton.leftAnchor.constraint(equalTo: CategoriesScrollView.leftAnchor, constant: 10).isActive = true
-        assignmentsButton.bottomAnchor.constraint(equalTo: CategoriesScrollView.bottomAnchor, constant: 10).isActive = true
-        assignmentsButton.widthAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.3).isActive = true
-        assignmentsButton.heightAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.3).isActive = true
+        CategoriesScrollView.addSubview(button1)
+        button1.centerXAnchor.constraint(equalTo: button3.centerXAnchor).isActive = true
+        button1.centerYAnchor.constraint(equalTo: CategoriesScrollView.centerYAnchor, constant: -115).isActive = true
+        button1.widthAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.25).isActive = true
+        button1.heightAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.25).isActive = true
+        
+        CategoriesScrollView.addSubview(button2)
+        button2.centerXAnchor.constraint(equalTo: button4.centerXAnchor).isActive = true
+        button2.centerYAnchor.constraint(equalTo: CategoriesScrollView.centerYAnchor, constant: -115).isActive = true
+        button2.widthAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.25).isActive = true
+        button2.heightAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.25).isActive = true
+        
+        CategoriesScrollView.addSubview(button5)
+        button5.centerXAnchor.constraint(equalTo: button3.centerXAnchor).isActive = true
+        button5.centerYAnchor.constraint(equalTo: CategoriesScrollView.centerYAnchor, constant: 115).isActive = true
+        button5.widthAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.25).isActive = true
+        button5.heightAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.25).isActive = true
+        
+        CategoriesScrollView.addSubview(button6)
+        button6.centerXAnchor.constraint(equalTo: button4.centerXAnchor).isActive = true
+        button6.centerYAnchor.constraint(equalTo: CategoriesScrollView.centerYAnchor, constant: 115).isActive = true
+        button6.widthAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.25).isActive = true
+        button6.heightAnchor.constraint(equalTo: CategoriesScrollView.widthAnchor, multiplier: 0.25).isActive = true
         
     }
     
     func setupLogOutButton() {
-        logoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15).isActive = true
+        logoutButton.topAnchor.constraint(equalTo: CategoriesScrollView.bottomAnchor, constant: 15).isActive = true
         logoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         logoutButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
         logoutButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1)
     }
     
     @objc func scheduleButtonAction() {
-        
+        let mmvc = ScheduleViewController() as UIViewController
+        self.navigationController?.pushViewController(mmvc, animated: true)
     }
     
     @objc func courseMaterialButtonAction() {

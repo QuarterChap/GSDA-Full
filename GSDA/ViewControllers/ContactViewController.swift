@@ -13,7 +13,7 @@ class ContactViewController: UIViewController {
 
     lazy var websiteButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Website", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -27,7 +27,7 @@ class ContactViewController: UIViewController {
     
     lazy var callButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Call", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -41,7 +41,7 @@ class ContactViewController: UIViewController {
     
     lazy var addressButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Adress", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -55,8 +55,8 @@ class ContactViewController: UIViewController {
     
     lazy var emailButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
-        button.setTitle("juliancearley@gmail.com", for: .normal)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+        button.setTitle("Email", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -67,9 +67,23 @@ class ContactViewController: UIViewController {
         return button
     }()
     
+    lazy var facebookButton: UIButton = {
+        let button = UIButton(type:  .system)
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+        button.setTitle("Facebook", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.addTarget(self, action: #selector(facbookButtonTapped), for: .touchUpInside)
+        button.layer.cornerRadius = 15
+        button.layer.masksToBounds  = true
+        
+        return button
+    }()
+    
     lazy var backButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.backgroundColor =  UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Back", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -103,7 +117,7 @@ class ContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(r: 61, g: 91, b: 151)
+        view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
         navigationItem.title = "ContactViewController"
         
         view.addSubview(websiteButton)
@@ -113,6 +127,7 @@ class ContactViewController: UIViewController {
         view.addSubview(addressButton)
         view.addSubview(emailButton)
         view.addSubview(backButton)
+        view.addSubview(facebookButton)
         
         setupWebsiteButton()
         setupLogoImageView()
@@ -121,94 +136,28 @@ class ContactViewController: UIViewController {
         setupAddressButton()
         setupEmailButton()
         setupBackButton()
+        setupFacebookButton()
     }
     
     func setupLogoImageView() {
-        if view?.frame.width == 320 && view?.frame.height == 568 {
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-            logoImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-            logoImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-            //5
-        } else if view?.frame.width == 375 && view?.frame.height == 667 {
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-            logoImageView.widthAnchor.constraint(equalToConstant: 175).isActive = true
-            logoImageView.heightAnchor.constraint(equalToConstant: 175).isActive = true
-            //normal
-        } else if view?.frame.width == 414 && view?.frame.height ==  736 {
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-            logoImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-            logoImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-            //plus
-        } else if view?.frame.width == 375 && view?.frame.height == 812 {
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-            logoImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-            logoImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-            //X
-        }
+        logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        logoImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        logoImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
     }
     
     func setupMottoLabel() {
-        if view?.frame.width == 320 && view?.frame.height == 568 {
-            mottoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            mottoLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 2.5).isActive = true
-            mottoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-            mottoLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            mottoLabel.font = UIFont(name: "SavoyeLetPlain", size: 28)
-            //5
-        } else if view?.frame.width == 375 && view?.frame.height == 667 {
-            mottoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            mottoLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 2.5).isActive = true
-            mottoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-            mottoLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            mottoLabel.font = UIFont(name: "SavoyeLetPlain", size: 34)
-            //normal
-        } else if view?.frame.width == 414 && view?.frame.height ==  736 {
-            mottoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            mottoLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 2.5).isActive = true
-            mottoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-            mottoLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            mottoLabel.font = UIFont(name: "SavoyeLetPlain", size: 34)
-            //plus
-        } else if view?.frame.width == 375 && view?.frame.height == 812 {
-            mottoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            mottoLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 2.5).isActive = true
-            mottoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-            mottoLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            mottoLabel.font = UIFont(name: "SavoyeLetPlain", size: 34)
-            //X
-        }
+        mottoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        mottoLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 2.5).isActive = true
+        mottoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        mottoLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     func setupWebsiteButton() {
-        if view?.frame.width == 320 && view?.frame.height == 568 {
-            websiteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            websiteButton.topAnchor.constraint(equalTo: mottoLabel.bottomAnchor, constant: 15).isActive = true
-            websiteButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-            websiteButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-            //5
-        } else if view?.frame.width == 375 && view?.frame.height == 667 {
-            websiteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            websiteButton.topAnchor.constraint(equalTo: mottoLabel.bottomAnchor, constant: 15).isActive = true
-            websiteButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-            websiteButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-            //normal
-        } else if view?.frame.width == 414 && view?.frame.height ==  736 {
-            websiteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            websiteButton.topAnchor.constraint(equalTo: mottoLabel.bottomAnchor, constant: 15).isActive = true
-            websiteButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-            websiteButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
-            //plus
-        } else if view?.frame.width == 375 && view?.frame.height == 812 {
-            websiteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            websiteButton.topAnchor.constraint(equalTo: mottoLabel.bottomAnchor, constant: 15).isActive = true
-            websiteButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-            websiteButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
-            //X
-        }
+        websiteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        websiteButton.topAnchor.constraint(equalTo: mottoLabel.bottomAnchor, constant: 15).isActive = true
+        websiteButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        websiteButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
     
     func setupCallButton() {
@@ -232,6 +181,13 @@ class ContactViewController: UIViewController {
         emailButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
     
+    func setupFacebookButton() {
+        facebookButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        facebookButton.topAnchor.constraint(equalTo: emailButton.bottomAnchor, constant: 25).isActive = true
+        facebookButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        facebookButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+    }
+    
     func setupBackButton() {
         backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         backButton.topAnchor.constraint(equalTo: emailButton.bottomAnchor, constant: 75).isActive = true
@@ -240,9 +196,13 @@ class ContactViewController: UIViewController {
     }
     
     @objc func linkClicked(sender: AnyObject) {
-        openUrl(urlStr: "https://google.com")
+        openUrl(urlStr: "https://gadentalassisting.com")
     }
     
+    @objc func facbookButtonTapped() {
+        openUrl(urlStr: "https://www.facebook.com/GSDAroswellkennesaw/")
+    }
+ 
     func openUrl(urlStr:String!) {
         if let url = NSURL(string:urlStr) {
             UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
@@ -251,13 +211,13 @@ class ContactViewController: UIViewController {
     }
     
     @objc func makeAPhoneCall()  {
-        let url: NSURL = URL(string: "TEL://6785204065")! as NSURL
+        let url: NSURL = URL(string: "TEL://6786895905")! as NSURL
         UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
     }
     
     @objc func adressButtonAction() {
-        let latitude: CLLocationDegrees = 34.294488
-        let longitude: CLLocationDegrees = -84.454630
+        let latitude: CLLocationDegrees = 34.065075
+        let longitude: CLLocationDegrees = -84.319659
         
         let regionDistance: CLLocationDistance = 1000;
         let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
