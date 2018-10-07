@@ -46,11 +46,10 @@ class MainMenuViewController: UIViewController {
         
         return label
     }()
-    
+    //falta button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
     lazy var button3: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
-        button.setTitle("Instructional Videos", for: .normal)
+
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -63,8 +62,13 @@ class MainMenuViewController: UIViewController {
     
     lazy var button4: UIButton = {
         let button = UIButton(type:  .system)
+<<<<<<< HEAD
+
+        button.setTitle("Course Material", for: .normal)
+=======
         button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Photos", for: .normal)
+>>>>>>> 000609306b93cdd8bb0a20043357a180674694ae
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 8)
@@ -77,7 +81,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var button1: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+
         button.setTitle("Assignments", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -91,7 +95,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var button6: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+
         button.setTitle("Contact", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -105,8 +109,13 @@ class MainMenuViewController: UIViewController {
     
     lazy var button2: UIButton = {
         let button = UIButton(type:  .system)
+<<<<<<< HEAD
+
+        button.setTitle("fifth", for: .normal)
+=======
         button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Course Material", for: .normal)
+>>>>>>> 000609306b93cdd8bb0a20043357a180674694ae
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -119,8 +128,13 @@ class MainMenuViewController: UIViewController {
     
     lazy var button5: UIButton = {
         let button = UIButton(type:  .system)
+<<<<<<< HEAD
+
+        button.setTitle("sixth", for: .normal)
+=======
         button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Schedule", for: .normal)
+>>>>>>> 000609306b93cdd8bb0a20043357a180674694ae
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -133,7 +147,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var logoutButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor =  UIColor(r: 0, g: 100, b: 157)
+
         button.setTitle("Log Out", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -148,7 +162,7 @@ class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-        view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
+
         navigationItem.title = "MainMenuViewController"
         
         view.addSubview(logoImageView)
