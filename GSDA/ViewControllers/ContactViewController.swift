@@ -13,7 +13,7 @@ class ContactViewController: UIViewController {
 
     lazy var websiteButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Website", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -27,7 +27,7 @@ class ContactViewController: UIViewController {
     
     lazy var callButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Call", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -41,7 +41,7 @@ class ContactViewController: UIViewController {
     
     lazy var addressButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Adress", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -55,7 +55,7 @@ class ContactViewController: UIViewController {
     
     lazy var emailButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Email", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -69,7 +69,7 @@ class ContactViewController: UIViewController {
     
     lazy var facebookButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Facebook", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -83,7 +83,7 @@ class ContactViewController: UIViewController {
     
     lazy var backButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor =  UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor =  UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Back", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -117,7 +117,7 @@ class ContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
+//        view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
         navigationItem.title = "ContactViewController"
         
         view.addSubview(websiteButton)
@@ -205,14 +205,14 @@ class ContactViewController: UIViewController {
  
     func openUrl(urlStr:String!) {
         if let url = NSURL(string:urlStr) {
-            UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+            UIApplication.shared.open(url as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         }
         
     }
     
     @objc func makeAPhoneCall()  {
         let url: NSURL = URL(string: "TEL://6786895905")! as NSURL
-        UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(url as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
     
     @objc func adressButtonAction() {
@@ -222,7 +222,7 @@ class ContactViewController: UIViewController {
         let regionDistance: CLLocationDistance = 1000;
         let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
-        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        let regionSpan = MKCoordinateRegion.init(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         
         let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
         
@@ -239,7 +239,12 @@ class ContactViewController: UIViewController {
     }
     
     @objc func emailButtonAction(_sender: Any) {
-        UIApplication.shared.open(URL(string: "mailto:juliancearley@gmail.com") as! URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string: "mailto:juliancearley@gmail.com") as! URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

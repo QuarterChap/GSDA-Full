@@ -12,7 +12,7 @@ class ScheduleViewController: UIViewController {
     
     lazy var backButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor =  UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor =  UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Back", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -87,7 +87,7 @@ class ScheduleViewController: UIViewController {
         
         label.text = "Week 1"
         label.attributedText = NSAttributedString(string: "Week 1", attributes:
-            [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -209,7 +209,7 @@ class ScheduleViewController: UIViewController {
         
         label.text = "Week 2"
         label.attributedText = NSAttributedString(string: "Week 2", attributes:
-            [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -307,7 +307,7 @@ class ScheduleViewController: UIViewController {
         
         label.text = "Week 3"
         label.attributedText = NSAttributedString(string: "Week 3", attributes:
-            [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -429,7 +429,7 @@ class ScheduleViewController: UIViewController {
         
         label.text = "Week 4"
         label.attributedText = NSAttributedString(string: "Week 4", attributes:
-            [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -527,7 +527,7 @@ class ScheduleViewController: UIViewController {
         
         label.text = "Week 5"
         label.attributedText = NSAttributedString(string: "Week 5", attributes:
-            [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -637,7 +637,7 @@ class ScheduleViewController: UIViewController {
         
         label.text = "Week 6"
         label.attributedText = NSAttributedString(string: "Week 6", attributes:
-            [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -735,7 +735,7 @@ class ScheduleViewController: UIViewController {
         
         label.text = "Week 7"
         label.attributedText = NSAttributedString(string: "Week 7", attributes:
-            [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -857,7 +857,7 @@ class ScheduleViewController: UIViewController {
         
         label.text = "Week 8"
         label.attributedText = NSAttributedString(string: "Week 8", attributes:
-            [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -1015,7 +1015,7 @@ class ScheduleViewController: UIViewController {
         
         label.text = "Week 9"
         label.attributedText = NSAttributedString(string: "Week 9", attributes:
-            [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -1149,7 +1149,7 @@ class ScheduleViewController: UIViewController {
         
         label.text = "Week 10"
         label.attributedText = NSAttributedString(string: "Week 10", attributes:
-            [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -1295,7 +1295,7 @@ class ScheduleViewController: UIViewController {
         
         label.text = "Week 11"
         label.attributedText = NSAttributedString(string: "Week 11", attributes:
-            [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -1405,7 +1405,7 @@ class ScheduleViewController: UIViewController {
         
         label.text = "Week 12"
         label.attributedText = NSAttributedString(string: "Week 12", attributes:
-            [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -1464,7 +1464,7 @@ class ScheduleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
+//        view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
         navigationItem.title = "ScheduleViewController"
         
         print(view.frame)

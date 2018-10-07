@@ -1,31 +1,32 @@
 PODS:
-  - Firebase/Auth (5.7.0):
+  - Firebase/Auth (5.9.0):
     - Firebase/CoreOnly
-    - FirebaseAuth (= 5.0.3)
-  - Firebase/CoreOnly (5.7.0):
-    - FirebaseCore (= 5.1.2)
-  - Firebase/Database (5.7.0):
+    - FirebaseAuth (= 5.0.4)
+  - Firebase/CoreOnly (5.9.0):
+    - FirebaseCore (= 5.1.4)
+  - Firebase/Database (5.9.0):
     - Firebase/CoreOnly
-    - FirebaseDatabase (= 5.0.2)
-  - Firebase/Storage (5.7.0):
+    - FirebaseDatabase (= 5.0.3)
+  - Firebase/Storage (5.9.0):
     - Firebase/CoreOnly
-    - FirebaseStorage (= 3.0.1)
-  - FirebaseAuth (5.0.3):
+    - FirebaseStorage (= 3.0.2)
+  - FirebaseAuth (5.0.4):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.0)
     - GoogleUtilities/Environment (~> 5.2)
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseAuthInterop (1.0.0)
-  - FirebaseCore (5.1.2):
+  - FirebaseCore (5.1.4):
     - GoogleUtilities/Logger (~> 5.2)
-  - FirebaseDatabase (5.0.2):
+  - FirebaseDatabase (5.0.3):
     - FirebaseCore (~> 5.0)
     - leveldb-library (~> 1.18)
-  - FirebaseStorage (3.0.1):
+  - FirebaseStorage (3.0.2):
+    - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleUtilities/Environment (5.2.3)
-  - GoogleUtilities/Logger (5.2.3):
+  - GoogleUtilities/Environment (5.3.0)
+  - GoogleUtilities/Logger (5.3.0):
     - GoogleUtilities/Environment
   - GTMSessionFetcher/Core (1.2.0)
   - KeychainSwift (11.0.0)
@@ -51,13 +52,13 @@ SPEC REPOS:
     - leveldb-library
 
 SPEC CHECKSUMS:
-  Firebase: 734a4f92957aa6c40e7ae3fda3d9359e1890aa87
-  FirebaseAuth: 657a25e4be044d2d333663ebf515a861c5a59cd7
+  Firebase: 383fa29aca93e371cab776b48a5c66544d3c2003
+  FirebaseAuth: 504b198ceb3472dca5c65bb95544ea44cfc9439e
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
-  FirebaseCore: 3a97432acb324b439fbed338e642f9cbb516a63d
-  FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
-  FirebaseStorage: 43f823b96b72a08539eba21a7de043348a69d4c6
-  GoogleUtilities: 6f681e27050c5e130325e89fa0316dfca826f954
+  FirebaseCore: 2a84b6b325792a4319ef71ee18819dcba08d2fd7
+  FirebaseDatabase: e2bcbc106adc4b11a2da3ec2eb63c0c4a44f2f54
+  FirebaseStorage: fd82e5e5c474897e19972b34b22ac0f589dce04e
+  GoogleUtilities: 760ccb53b7c7f40f9c02d8c241f76f841a7a6162
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   KeychainSwift: bea6bd9f98af7b8d7ca4aa79fe105c00fab532db
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5

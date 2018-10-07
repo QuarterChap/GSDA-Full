@@ -46,10 +46,10 @@ class MainMenuViewController: UIViewController {
         
         return label
     }()
-    
+    //falta button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
     lazy var button3: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+
         button.setTitle("Schedule", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -63,7 +63,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var button4: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Course Material", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -77,7 +77,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var button1: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Assignments", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -91,7 +91,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var button6: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Contact", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -105,7 +105,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var button2: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("fifth", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -119,7 +119,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var button5: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
         button.setTitle("sixth", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -133,7 +133,7 @@ class MainMenuViewController: UIViewController {
     
     lazy var logoutButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor =  UIColor(r: 0, g: 100, b: 157)
+//        button.backgroundColor =  UIColor(r: 0, g: 100, b: 157)
         button.setTitle("Log Out", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
@@ -148,7 +148,7 @@ class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-        view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
+//        view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
         navigationItem.title = "MainMenuViewController"
         
         view.addSubview(logoImageView)
