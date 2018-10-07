@@ -117,7 +117,7 @@ class ContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
+
         navigationItem.title = "ContactViewController"
         
         view.addSubview(websiteButton)
