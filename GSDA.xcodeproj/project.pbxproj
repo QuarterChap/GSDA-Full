@@ -16,7 +16,6 @@
 		94BE76B32138E3180086B560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BE76B12138E3180086B560 /* LaunchScreen.storyboard */; };
 		94C19D2E213B292F00350658 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C19D2D213B292F00350658 /* AuthService.swift */; };
 		94C19D30213B2A9000350658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94C19D2F213B2A9000350658 /* GoogleService-Info.plist */; };
-		94C19D32213B335D00350658 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C19D31213B335D00350658 /* MainMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		94BE76B42138E3180086B560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94C19D2D213B292F00350658 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		94C19D2F213B2A9000350658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		94C19D31213B335D00350658 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		BE7FFF6B313660638E5B462F /* Pods-GSDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GSDA/Pods-GSDA.release.xcconfig"; sourceTree = "<group>"; };
 		E5A9EF733DFDD56B3EF81357 /* Pods-GSDA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GSDA/Pods-GSDA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,7 +58,6 @@
 		942256272139F6AB0031F7E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				94C19D31213B335D00350658 /* MainMenuViewController.swift */,
 				94BE76A72138E3170086B560 /* ViewController.swift */,
 				94C19D2D213B292F00350658 /* AuthService.swift */,
 			);
@@ -228,7 +225,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94BE76A82138E3170086B560 /* ViewController.swift in Sources */,
-				94C19D32213B335D00350658 /* MainMenuViewController.swift in Sources */,
 				94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */,
 				94BE76AE2138E3170086B560 /* GSDA.xcdatamodeld in Sources */,
 				94C19D2E213B292F00350658 /* AuthService.swift in Sources */,
