@@ -50,11 +50,10 @@ class MainMenuViewController: UIViewController {
     lazy var button3: UIButton = {
         let button = UIButton(type:  .system)
 
-        button.setTitle("Schedule", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.addTarget(self, action: #selector(scheduleButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(instructionalVideosButtonAction), for: .touchUpInside)
         button.layer.cornerRadius = 15
         button.layer.masksToBounds  = true
         
@@ -63,12 +62,17 @@ class MainMenuViewController: UIViewController {
     
     lazy var button4: UIButton = {
         let button = UIButton(type:  .system)
+<<<<<<< HEAD
 
         button.setTitle("Course Material", for: .normal)
+=======
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+        button.setTitle("Photos", for: .normal)
+>>>>>>> 000609306b93cdd8bb0a20043357a180674694ae
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 8)
-        button.addTarget(self, action: #selector(courseMaterialButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(photosButtonAction), for: .touchUpInside)
         button.layer.cornerRadius = 15
         button.layer.masksToBounds  = true
         
@@ -105,12 +109,17 @@ class MainMenuViewController: UIViewController {
     
     lazy var button2: UIButton = {
         let button = UIButton(type:  .system)
+<<<<<<< HEAD
 
         button.setTitle("fifth", for: .normal)
+=======
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+        button.setTitle("Course Material", for: .normal)
+>>>>>>> 000609306b93cdd8bb0a20043357a180674694ae
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.addTarget(self, action: #selector(contactButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(courseMaterialButtonAction), for: .touchUpInside)
         button.layer.cornerRadius = 15
         button.layer.masksToBounds  = true
         
@@ -119,12 +128,17 @@ class MainMenuViewController: UIViewController {
     
     lazy var button5: UIButton = {
         let button = UIButton(type:  .system)
+<<<<<<< HEAD
 
         button.setTitle("sixth", for: .normal)
+=======
+        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+        button.setTitle("Schedule", for: .normal)
+>>>>>>> 000609306b93cdd8bb0a20043357a180674694ae
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.addTarget(self, action: #selector(contactButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(scheduleButtonAction), for: .touchUpInside)
         button.layer.cornerRadius = 15
         button.layer.masksToBounds  = true
         
@@ -229,22 +243,29 @@ class MainMenuViewController: UIViewController {
         logoutButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1)
     }
     
-    @objc func scheduleButtonAction() {
-        let mmvc = ScheduleViewController() as UIViewController
-        self.navigationController?.pushViewController(mmvc, animated: true)
-    }
+    @objc func assignmentsButtonAction() {
     
+    }
+
     @objc func courseMaterialButtonAction() {
         
     }
     
-    @objc func assignmentsButtonAction() {
+    @objc func instructionalVideosButtonAction() {
+    
+    }
+    
+    @objc func photosButtonAction() {
+        
+    }
+
+    @objc func scheduleButtonAction() {
         
     }
     
     @objc func contactButtonAction() {
-        let mmvc = ContactViewController() as UIViewController
-        self.navigationController?.pushViewController(mmvc, animated: true)
+        /*let mmvc = ContactViewController() as UIViewController
+        self.navigationController?.pushViewController(mmvc, animated: true)*/
     }
     
     @objc func logOutButtonAction() {

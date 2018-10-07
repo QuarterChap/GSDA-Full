@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9405138121472D710026BD7A /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405138021472D710026BD7A /* ScheduleViewController.swift */; };
-		9480A0CD213DC4BB00195458 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9480A0CC213DC4BB00195458 /* ContactViewController.swift */; };
 		948F3294C164BC332457C1F2 /* Pods_GSDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42ECD5614709DAB330D2E295 /* Pods_GSDA.framework */; };
 		94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE76A52138E3170086B560 /* AppDelegate.swift */; };
 		94BE76A82138E3170086B560 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE76A72138E3170086B560 /* ViewController.swift */; };
@@ -23,8 +21,6 @@
 
 /* Begin PBXFileReference section */
 		42ECD5614709DAB330D2E295 /* Pods_GSDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GSDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9405138021472D710026BD7A /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
-		9480A0CC213DC4BB00195458 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		94BE76A22138E3170086B560 /* GSDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BE76A52138E3170086B560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94BE76A72138E3170086B560 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,8 +63,6 @@
 				94C19D31213B335D00350658 /* MainMenuViewController.swift */,
 				94BE76A72138E3170086B560 /* ViewController.swift */,
 				94C19D2D213B292F00350658 /* AuthService.swift */,
-				9480A0CC213DC4BB00195458 /* ContactViewController.swift */,
-				9405138021472D710026BD7A /* ScheduleViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -239,8 +233,6 @@
 				94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */,
 				94BE76AE2138E3170086B560 /* GSDA.xcdatamodeld in Sources */,
 				94C19D2E213B292F00350658 /* AuthService.swift in Sources */,
-				9405138121472D710026BD7A /* ScheduleViewController.swift in Sources */,
-				9480A0CD213DC4BB00195458 /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
