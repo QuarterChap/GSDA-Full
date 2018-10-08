@@ -38,9 +38,9 @@ class MainMenuViewController: UIViewController {
         view.addSubview(logoImageView)
         
         setupLogoImageView()
-        
+        setupLogoIV()
     }
-    //julian
+   //julian
     func setupLogoImageView() {
         logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
@@ -53,9 +53,9 @@ class MainMenuViewController: UIViewController {
     func setupLogoIV() {
         
         logoIV.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        logoIV.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        logoImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-        logoImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        logoIV.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 25).isActive = true
+        logoIV.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        logoIV.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
     }
     
 }
