@@ -57,11 +57,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1E86005D216B0540000D4CD8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				94C19D2D213B292F00350658 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		942256272139F6AB0031F7E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				94BE76A72138E3170086B560 /* ViewController.swift */,
-				94C19D2D213B292F00350658 /* AuthService.swift */,
 				A54EE97E216AEF5C009644CD /* MainMenuViewController.swift */,
 			);
 			path = ViewControllers;
@@ -88,6 +95,7 @@
 		94BE76A42138E3170086B560 /* GSDA */ = {
 			isa = PBXGroup;
 			children = (
+				1E86005D216B0540000D4CD8 /* Services */,
 				942256272139F6AB0031F7E8 /* ViewControllers */,
 				94BE76A52138E3170086B560 /* AppDelegate.swift */,
 				94BE76A92138E3170086B560 /* Main.storyboard */,

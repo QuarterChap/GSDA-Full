@@ -35,9 +35,10 @@ class MainMenuViewController: UIViewController {
         view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
         navigationItem.title = "MainMenuViewController"
         
-        view.addSubview(logoImageView)
+        //view.addSubview(logoImageView)
+        view.addSubview(logoIV)
         
-        setupLogoImageView()
+        //setupLogoImageView()
         setupLogoIV()
     }
    //julian
@@ -53,7 +54,7 @@ class MainMenuViewController: UIViewController {
     func setupLogoIV() {
         
         logoIV.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        logoIV.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 25).isActive = true
+        logoIV.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 25).isActive = true
         logoIV.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
         logoIV.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
     }
