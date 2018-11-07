@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class MainMenuViewController: UIViewController {
+    
+    var firstName: String = String()
+    var lastName: String = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +20,12 @@ class MainMenuViewController: UIViewController {
         view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
         navigationItem.title = "MainMenuViewController"
         
+        
+        
+    }
+    
+    func checkFirstLastName() {
+       
     }
     
 }
