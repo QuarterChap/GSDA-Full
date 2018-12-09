@@ -11,21 +11,31 @@ import Firebase
 
 class MainMenuViewController: UIViewController {
     
-    var firstName: String = String()
-    var lastName: String = String()
+    // buttons - Home, Contact, Locations, Schedule, Course Material, Assignments, Instructional Videos, photos
+    // make a home button and the VC should look like the website home page with pictues/about and such
+    
+    let logo: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "GSDALogo")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-        view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
+        view.backgroundColor = UIColor(r: 24, g: 108, b: 179)
         navigationItem.title = "MainMenuViewController"
         
-        
-        
+        setupView()
     }
     
-    func checkFirstLastName() {
-       
+    func setupView() {
+        
+        self.view.addSubview(logo)
+        //logo.
+        
     }
     
 }

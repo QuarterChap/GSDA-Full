@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase  
 
 class ViewController: UIViewController {
     
@@ -19,6 +20,8 @@ class ViewController: UIViewController {
         label.textColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
         
         return label
     }()
@@ -34,10 +37,10 @@ class ViewController: UIViewController {
     
     lazy var loginRegisterButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 0, g: 100, b: 157)
+        button.backgroundColor = UIColor.white
         button.setTitle("Login", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
@@ -55,7 +58,7 @@ class ViewController: UIViewController {
     
     let emailSepartorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(r: 220 , g: 220, b: 220)
+        view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -101,14 +104,14 @@ class ViewController: UIViewController {
     
     let passwordSepartorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(r: 220 , g: 220, b: 220)
+        view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let firstNameSepartorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(r: 220 , g: 220, b: 220)
+        view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -116,7 +119,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-        view.backgroundColor = UIColor(r: 145, g: 183, b: 219)
+        view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        // UIColor(r: 24, g: 108, b: 179)
         
         view.addSubview(inputsContainerView)
         view.addSubview(loginRegisterButton)
@@ -227,6 +231,10 @@ class ViewController: UIViewController {
                     } else {
                         debugPrint("Success")
                         
+                        // need to add in the first and last name some how
+                        
+                        
+                        
                         AuthService.instance.login(email: email, password: password) { (error, data) in
                             guard error == nil else {
                                 let alert = UIAlertController(title: "Error Authentication", message: error, preferredStyle: .alert)
@@ -260,18 +268,18 @@ class ViewController: UIViewController {
     }
     
     func setupLogoImageView() {
-        logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        logoImageView.bottomAnchor.constraint(equalTo: mottoLabel.topAnchor, constant: 15).isActive = true
-        logoImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4).isActive = true
-        logoImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4).isActive = true
+        logoImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: view.frame.width / 32).isActive = true
+        logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.width / 8).isActive = true
+        logoImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25).isActive = true
+        logoImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25).isActive = true
     }
     
     func setupMottoLabel() {
-        mottoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        mottoLabel.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: -1).isActive = true
-        mottoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        mottoLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: (view.frame.width * 0.3)).isActive = true
+        mottoLabel.centerYAnchor.constraint(equalTo: logoImageView.centerYAnchor).isActive = true
+        mottoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3).isActive = true
         mottoLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        mottoLabel.font = UIFont(name: "SavoyeLetPlain", size: view.frame.width / 11)
+        mottoLabel.font = UIFont(name: "SavoyeLetPlain", size: view.frame.width / 12)
     }
     
     func setupInputsContainerView() {
