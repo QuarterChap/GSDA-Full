@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 class ViewController: UIViewController {
     
+    var db:Firestore!
     let bannerImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "LoginBannerImg")
@@ -176,6 +177,10 @@ class ViewController: UIViewController {
         setupResetButton()
         setupImage()
         
+        db = Firestore.firestore()
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -268,12 +273,22 @@ class ViewController: UIViewController {
             if let email = emailTextField.text, let password = passwordTextField.text, let firstName = firstNameTextField.text, let lastName = lastNameTextField.text, (email.count > 0 && password.count > 0) {
                 AuthService.instance.SignUpUser(email: email, password: password, firstname: firstName, lastname: lastName, username: firstName + " " + lastName) { (error, data) in
                     if error != nil {
-                        debugPrint(error)
+                        debugPrint(error!)
                     } else {
                         debugPrint("Success")
                         
                         // need to add in the first and last name some how
-                        
+                        var ref: DocumentReference? = nil
+                        ref = self.db.collection("Users").addDocument(data:[
+                            "firstName":firstName,
+                            "lastName":lastName,
+                            "email":email]){err in
+                                if let err = err{
+                                    print("Error saving user details to database: \(err)")
+                                }else{
+                                    print("User details saved with ID: \(ref!.documentID)")
+                                }
+                        }
                         
                         
                         AuthService.instance.login(email: email, password: password) { (error, data) in

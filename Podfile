@@ -13,5 +13,6 @@ pod 'Firebase/Storage'
 pod ‘KeychainSwift’, ‘~> 11.0’
 pod 'Firebase'
 pod 'Firebase/Core'
+pod 'Firebase/Firestore'
 
 end
