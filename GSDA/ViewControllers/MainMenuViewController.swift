@@ -70,7 +70,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tuitionAndFeesAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -84,7 +84,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(admissionRequirmentsAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -98,7 +98,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(scheduleAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -112,7 +112,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(enrollAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -126,7 +126,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(financialAidAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -140,7 +140,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(locationsAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -154,7 +154,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(photosAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -168,7 +168,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(instructionalVideosAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -182,7 +182,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(courseMaterialAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -196,7 +196,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(assignmentsAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -210,7 +210,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(accountSettingsAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -224,7 +224,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(aboutAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -238,7 +238,7 @@ class MainMenuViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.backgroundColor = UIColor.clear
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(contactAction), for: .touchUpInside)
         button.layer.zPosition = 1
         
         return button
@@ -374,7 +374,55 @@ class MainMenuViewController: UIViewController {
         self.present(HomeViewController(), animated: true) {}
     }
     
-    @objc func tuitionFeesButtonAction() {
+    @objc func accountSettingsAction() {
+        
+    }
+    
+    @objc func enrollAction() {
+        
+    }
+    
+    @objc func scheduleAction() {
+        
+    }
+    
+    @objc func tuitionAndFeesAction() {
+        
+    }
+    
+    @objc func admissionRequirmentsAction() {
+        
+    }
+    
+    @objc func financialAidAction() {
+        
+    }
+    
+    @objc func assignmentsAction() {
+        
+    }
+    
+    @objc func courseMaterialAction() {
+        
+    }
+    
+    @objc func locationsAction() {
+        
+    }
+    
+    @objc func instructionalVideosAction() {
+        
+    }
+    
+    @objc func photosAction() {
+        
+    }
+    
+    @objc func contactAction() {
+        
+    }
+    
+    @objc func aboutAction() {
         
     }
     

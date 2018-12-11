@@ -18,6 +18,7 @@
 		94C19D30213B2A9000350658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94C19D2F213B2A9000350658 /* GoogleService-Info.plist */; };
 		A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */; };
 		A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012521BE922200DEECF8 /* HomeViewController.swift */; };
+		A510012821C0119C00DEECF8 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012721C0119C00DEECF8 /* AboutUsViewController.swift */; };
 		A54EE97F216AEF5C009644CD /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EE97E216AEF5C009644CD /* MainMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,8 @@
 		94C19D2F213B2A9000350658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		A510012521BE922200DEECF8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A510012721C0119C00DEECF8 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		A510012A21C06BE300DEECF8 /* Video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Video1.mp4; sourceTree = "<group>"; };
 		A54EE97E216AEF5C009644CD /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		BE7FFF6B313660638E5B462F /* Pods-GSDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GSDA/Pods-GSDA.release.xcconfig"; sourceTree = "<group>"; };
 		E5A9EF733DFDD56B3EF81357 /* Pods-GSDA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GSDA/Pods-GSDA.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 				A54EE97E216AEF5C009644CD /* MainMenuViewController.swift */,
 				A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */,
 				A510012521BE922200DEECF8 /* HomeViewController.swift */,
+				A510012721C0119C00DEECF8 /* AboutUsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -101,6 +105,7 @@
 		94BE76A42138E3170086B560 /* GSDA */ = {
 			isa = PBXGroup;
 			children = (
+				A510012921C06BD500DEECF8 /* Videos */,
 				1E86005D216B0540000D4CD8 /* Services */,
 				942256272139F6AB0031F7E8 /* ViewControllers */,
 				94BE76A52138E3170086B560 /* AppDelegate.swift */,
@@ -120,6 +125,14 @@
 				42ECD5614709DAB330D2E295 /* Pods_GSDA.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A510012921C06BD500DEECF8 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				A510012A21C06BE300DEECF8 /* Video1.mp4 */,
+			);
+			path = Videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A510012821C0119C00DEECF8 /* AboutUsViewController.swift in Sources */,
 				94BE76A82138E3170086B560 /* ViewController.swift in Sources */,
 				A54EE97F216AEF5C009644CD /* MainMenuViewController.swift in Sources */,
 				94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */,
