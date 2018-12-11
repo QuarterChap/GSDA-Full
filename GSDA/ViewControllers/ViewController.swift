@@ -12,6 +12,25 @@ import FirebaseDatabase
 
 class ViewController: UIViewController {
     
+    let bannerImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "LoginBannerImg")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 5
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
+    
+    let bannerImgBG: UIView = {
+       let view = UIView()
+        view.backgroundColor = UIColor.white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 5
+        view.layer.masksToBounds = true
+        return view
+    }()
+    
     let mottoLabel: UILabel = {
         let label = UILabel()
         
@@ -45,6 +64,20 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(handleLoginRegistration), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    lazy var resetPasswordButton: UIButton = {
+        let button = UIButton(type:  .system)
+        button.backgroundColor = UIColor.white
+        button.setTitle("Reset Password", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.layer.cornerRadius = 5
+        button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(handleResetPassword), for: .touchUpInside)
         
         return button
     }()
@@ -131,12 +164,17 @@ class ViewController: UIViewController {
         view.addSubview(lastNameTextField)
         view.addSubview(passwordSepartorView)
         view.addSubview(firstNameSepartorView)
+        view.addSubview(resetPasswordButton)
+        view.addSubview(bannerImgBG)
+        view.addSubview(bannerImageView)
         
         setupInputsContainerView()
         setupLoginRegisterButton()
         setupLogoImageView()
         setupLoginRegisterSegmentedControl()
         setupMottoLabel()
+        setupResetButton()
+        setupImage()
         
     }
     
@@ -196,6 +234,10 @@ class ViewController: UIViewController {
         
     }
     
+    @objc func handleResetPassword() {
+        self.present(ResetPasswordViewController(), animated: true) {}
+    }
+    
     @objc func handleLoginRegistration() {
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
             if let email = emailTextField.text, let password = passwordTextField.text, ((emailTextField.text?.count)! > 0 && (passwordTextField.text?.count)! > 0) {
@@ -209,8 +251,7 @@ class ViewController: UIViewController {
                     }
                     if error == nil {
                         print("Login Successful")
-                        let mmvc = MainMenuViewController() as UIViewController
-                        self.navigationController?.pushViewController(mmvc, animated: true)
+                        self.present(MainMenuViewController(), animated: true) {}
                     } else {
                         let alert = UIAlertController(title: "Username and Password Required", message: "You Must Enter a Username and Password", preferredStyle: .alert)
                         
@@ -269,22 +310,36 @@ class ViewController: UIViewController {
     
     func setupLogoImageView() {
         logoImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: view.frame.width / 32).isActive = true
-        logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.width / 8).isActive = true
+        logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.width / 5).isActive = true
         logoImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25).isActive = true
         logoImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25).isActive = true
     }
     
     func setupMottoLabel() {
-        mottoLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: (view.frame.width * 0.3)).isActive = true
-        mottoLabel.centerYAnchor.constraint(equalTo: logoImageView.centerYAnchor).isActive = true
-        mottoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3).isActive = true
-        mottoLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        mottoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        mottoLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10).isActive = true
+        mottoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+        mottoLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.055).isActive = true
         mottoLabel.font = UIFont(name: "SavoyeLetPlain", size: view.frame.width / 12)
     }
     
+    func setupImage() {
+        
+        bannerImgBG.leftAnchor.constraint(equalTo: logoImageView.rightAnchor, constant: 10).isActive = true
+        bannerImgBG.centerYAnchor.constraint(equalTo: logoImageView.centerYAnchor, constant: 0).isActive = true
+        bannerImgBG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.65).isActive = true
+        bannerImgBG.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.145).isActive = true
+        
+        bannerImageView.centerXAnchor.constraint(equalTo: bannerImgBG.centerXAnchor).isActive = true
+        bannerImageView.centerYAnchor.constraint(equalTo: bannerImgBG.centerYAnchor).isActive = true
+        bannerImageView.widthAnchor.constraint(equalTo: bannerImgBG.widthAnchor, multiplier: 0.98).isActive = true
+        bannerImageView.heightAnchor.constraint(equalTo: bannerImgBG.heightAnchor, multiplier: 0.95).isActive = true
+        
+    }
+    
     func setupInputsContainerView() {
-            inputsContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            inputsContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 30).isActive = true
+        inputsContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+            inputsContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 65).isActive = true
             inputsContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
             inputsContainerViewHeightAnchor = inputsContainerView.heightAnchor.constraint(equalToConstant: 100)
             inputsContainerViewHeightAnchor?.isActive  = true
@@ -344,7 +399,14 @@ class ViewController: UIViewController {
         loginRegisterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor,  constant: 12).isActive = true
         loginRegisterButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor ).isActive = true
-        loginRegisterButton.heightAnchor.constraint(equalToConstant:  50).isActive = true
+        loginRegisterButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
+    }
+    
+    func setupResetButton() {
+        resetPasswordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        resetPasswordButton.topAnchor.constraint(equalTo: loginRegisterButton.bottomAnchor,  constant: 12).isActive = true
+        resetPasswordButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor ).isActive = true
+        resetPasswordButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
