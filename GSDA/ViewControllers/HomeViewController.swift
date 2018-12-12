@@ -498,7 +498,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func handleMainMenu() {
-        
+        self.present(MainMenuViewController(), animated: true) {}
     }
 
 }
