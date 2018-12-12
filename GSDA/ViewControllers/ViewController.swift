@@ -300,7 +300,8 @@ class ViewController: UIViewController {
                             }
                             if error == nil {
                                 print("Login Successful")
-                                let mmvc = MainMenuViewController() as UIViewController
+                                let mmvc = MainMenuViewController() as MainMenuViewController
+                                mmvc.stringPassed = firstName + lastName
                                 self.navigationController?.pushViewController(mmvc, animated: true)
                             } else {
                                 let alert = UIAlertController(title: "Username and Password Required", message: "You Must Enter a Username and Password", preferredStyle: .alert)
