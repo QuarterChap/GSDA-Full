@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AVKit
 
 class HomeViewController: UIViewController {
 
@@ -168,10 +169,6 @@ class HomeViewController: UIViewController {
         return view
     }()
     
-    var player: AVPlayer!
-    var playerLayer: AVPlayerLayer!
-    let videoString: String? = Bundle.main.path(forResource: "Video1", ofType: "mp4")
-    
     let seeProgramInfoButton: UIButton = {
         let button = UIButton()
         
@@ -187,6 +184,158 @@ class HomeViewController: UIViewController {
         return button
     }()
     
+    let label5: UILabel = {
+        let label = UILabel()
+        
+        label.text = "WOULD YOU LIKE A CAREER WITH JOB SECURITY, GOOD PAY AND PROFESSIONAL WORK ENVIRONMENT? IF YOU SAID, “YES” THEN A CAREER, AS A DENTAL ASSISTANT MAY BE RIGHT FOR YOU."
+        label.font = UIFont(name: "AmericanTypewriter", size: 28)
+        label.textColor = UIColor(r: 158, g: 170, b: 50)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        label.layer.zPosition = 1
+        label.layer.cornerRadius = 15
+        label.layer.masksToBounds  = true
+        
+        return label
+    }()
+    
+    let image1: UIImageView = {
+       let imageView = UIImageView()
+       
+        imageView.image = UIImage(named: "Img1")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 5
+        imageView.layer.masksToBounds = true
+        
+        return imageView
+    }()
+    
+    let label6: UILabel = {
+        let label = UILabel()
+        
+        label.text = "According to the Bureau for Labor Statistics, employment in this field is expected to grow much faster than the average for all occupations through 2024. Currently there are more openings available than there are Dental Assistants to go around! The demand is there–why not take advantage of this opportunity?"
+        label.font = UIFont(name: "AmericanTypewriter", size: 28)
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        label.layer.zPosition = 1
+        label.layer.cornerRadius = 15
+        label.layer.masksToBounds  = true
+        
+        return label
+    }()
+    
+    let label7: UILabel = {
+        let label = UILabel()
+        
+        label.text = "✔︎ Your job as a Dental Assistant is recession-proof"
+        label.font = UIFont(name: "AmericanTypewriter", size: 28)
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        label.layer.zPosition = 1
+        label.layer.cornerRadius = 15
+        label.layer.masksToBounds  = true
+        
+        return label
+    }()
+    
+    let label8: UILabel = {
+        let label = UILabel()
+        
+        label.text = "✔︎ You’ll work in a professional environment assisting with dental procedures, lab work and office duties."
+        label.font = UIFont(name: "AmericanTypewriter", size: 28)
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        label.layer.zPosition = 1
+        label.layer.cornerRadius = 15
+        label.layer.masksToBounds  = true
+        
+        return label
+    }()
+    
+    let label9: UILabel = {
+        let label = UILabel()
+        
+        label.text = "✔︎ You can earn $12 to $20 per hour"
+        label.font = UIFont(name: "AmericanTypewriter", size: 28)
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        label.layer.zPosition = 1
+        label.layer.cornerRadius = 15
+        label.layer.masksToBounds  = true
+        
+        return label
+    }()
+    
+    let label10: UILabel = {
+        let label = UILabel()
+        
+        label.text = "✔︎ Your job as a Dental Assistant is recession-proof"
+        label.font = UIFont(name: "AmericanTypewriter", size: 28)
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        label.layer.zPosition = 1
+        label.layer.cornerRadius = 15
+        label.layer.masksToBounds  = true
+        
+        return label
+    }()
+    
+    let label11: UILabel = {
+        let label = UILabel()
+        
+        label.text = "✔︎ Your job as a Dental Assistant is recession-proof"
+        label.font = UIFont(name: "AmericanTypewriter", size: 28)
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        label.layer.zPosition = 1
+        label.layer.cornerRadius = 15
+        label.layer.masksToBounds  = true
+        
+        return label
+    }()
+    
+    lazy var mainMenuButton: UIButton = {
+        let button = UIButton(type:  .system)
+        button.backgroundColor = UIColor.white
+        button.setTitle("Main Menu", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.layer.cornerRadius = 5
+        button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(handleMainMenu), for: .touchUpInside)
+        
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
@@ -194,8 +343,6 @@ class HomeViewController: UIViewController {
         navigationItem.title = "HomeViewController"
         
         scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 4305)
-        
-        getVideo()
         
         setupView()
         setupScrollView()
@@ -205,11 +352,17 @@ class HomeViewController: UIViewController {
     func setupView() {
         
         self.view.addSubview(scrollView)
+        self.view.addSubview(mainMenuButton)
         
         scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
         scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         scrollView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.9).isActive = true
+        
+        mainMenuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        mainMenuButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        mainMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75).isActive = true
+        mainMenuButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
         
     }
     
@@ -225,6 +378,12 @@ class HomeViewController: UIViewController {
         scrollView.addSubview(label4)
         scrollView.addSubview(videoView)
         scrollView.addSubview(seeProgramInfoButton)
+        scrollView.addSubview(label5)
+        scrollView.addSubview(image1)
+        scrollView.addSubview(label6)
+        scrollView.addSubview(label7)
+        scrollView.addSubview(label8)
+        scrollView.addSubview(label9)
         
         label1.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         label1.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 15).isActive = true
@@ -269,8 +428,7 @@ class HomeViewController: UIViewController {
         label4.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
         label4.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.28).isActive = true
         label4.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 16)
-     
-        // https://youtu.be/yWo_076lOhg
+        
         videoView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         videoView.topAnchor.constraint(equalTo: label4.bottomAnchor, constant: 15).isActive = true
         videoView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.85).isActive = true
@@ -282,22 +440,41 @@ class HomeViewController: UIViewController {
         seeProgramInfoButton.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.095).isActive
          = true
         
-    }
-    
-    func getVideo() {
-        if let localURL = videoString {
-            let localVideoURL = URL(fileURLWithPath: localURL)
-            
-            player = AVPlayer(url: localVideoURL as URL)
-            playerLayer = AVPlayerLayer(player: player)
-            playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            playerLayer.frame = videoView.bounds
-            player.actionAtItemEnd = AVPlayerActionAtItemEnd.none
-            videoView.layer.addSublayer(playerLayer)
-            videoView.transform = CGAffineTransform(scaleX: 1, y: 1)
-            player.play()
-            
-        }
+        label5.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        label5.topAnchor.constraint(equalTo: seeProgramInfoButton.bottomAnchor, constant: 25).isActive = true
+        label5.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+        label5.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.45).isActive = true
+        label5.font = UIFont(name: "AmericanTypewriter-Bold", size: view.frame.width / 16)
+        
+        image1.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        image1.topAnchor.constraint(equalTo: label5.bottomAnchor, constant: 15).isActive = true
+        image1.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.85).isActive = true
+        image1.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.32).isActive = true
+        
+        label6.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        label6.topAnchor.constraint(equalTo: image1.bottomAnchor, constant: 15).isActive = true
+        label6.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+        label6.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35).isActive = true
+        label6.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 18)
+        
+        label7.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        label7.topAnchor.constraint(equalTo: label6.bottomAnchor, constant: 25).isActive = true
+        label7.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+        label7.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.085).isActive = true
+        label7.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 18)
+        
+        label8.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        label8.topAnchor.constraint(equalTo: label7.bottomAnchor, constant: 15).isActive = true
+        label8.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+        label8.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15).isActive = true
+        label8.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 18)
+        
+        label9.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        label9.topAnchor.constraint(equalTo: label8.bottomAnchor, constant: 15).isActive = true
+        label9.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+        label9.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.08).isActive = true
+        label9.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 18)
+        
     }
     
     @objc func handleEnroll() {
@@ -317,6 +494,10 @@ class HomeViewController: UIViewController {
     }
     
     @objc func handleSeeProgramInfo() {
+        
+    }
+    
+    @objc func handleMainMenu() {
         
     }
 
