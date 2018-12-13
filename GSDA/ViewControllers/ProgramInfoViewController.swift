@@ -10,6 +10,22 @@ import UIKit
 
 class ProgramInfoViewController: UIViewController {
 
+    let scrollView: UIScrollView = {
+        let sv = UIScrollView()
+        
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        sv.backgroundColor = UIColor.clear
+        sv.alpha = 1
+        sv.layer.cornerRadius = 15
+        sv.layer.masksToBounds  = true
+        sv.bounces = true
+        sv.alwaysBounceVertical = true
+        sv.alwaysBounceHorizontal = false
+        sv.layer.zPosition = 0
+        
+        return sv
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true

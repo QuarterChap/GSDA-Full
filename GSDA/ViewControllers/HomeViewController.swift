@@ -363,15 +363,14 @@ class HomeViewController: UIViewController {
             scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 2935)
             //normal 6,7,8
         } else if view?.frame.width == 414 && view?.frame.height ==  736 {
-            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 3225)
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 3210)
             //plus 6,7,8
         } else if view?.frame.width == 375 && view?.frame.height == 812 {
-            // Ive left off here prior to pushing
-            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 4715)
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 3335)
             //X and XS
         } else if view?.frame.width == 414 && view?.frame.height == 896 {
             // XR / XS Max
-            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 5180)
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 3650)
         }
         
         setupView()
