@@ -28,6 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         FirebaseApp.configure()
+        
+        let defaults = UserDefaults.standard
+        let defaultValue = ["username":"admin"]
+        defaults.register(defaults: defaultValue)
+        
         return true
     }
     

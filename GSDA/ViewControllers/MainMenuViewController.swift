@@ -11,8 +11,6 @@ import Firebase
 
 class MainMenuViewController: UIViewController {
     
-    var stringPassed=""
-    
     let scrollView: UIScrollView = {
        let sv = UIScrollView()
         
@@ -39,7 +37,6 @@ class MainMenuViewController: UIViewController {
     let welcomeLbl: UILabel = {
        let label = UILabel()
         
-//        label.text = "Welcome,\(stringPassed) "
         label.font = UIFont(name: "SavoyeLetPlain", size: 28)
         label.textColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -258,9 +255,13 @@ class MainMenuViewController: UIViewController {
         view.addSubview(welcomeLbl)
         view.addSubview(scrollView)
         
+        
         setupView()
         setupScrollView()
-        welcomeLbl.text = "Welcome \(stringPassed)"
+        
+        let data = UserDefaults.standard
+        let username = data.string(forKey: "Username")
+        welcomeLbl.text = "Welcome, \(username!)"
     }
     
     func setupView() {

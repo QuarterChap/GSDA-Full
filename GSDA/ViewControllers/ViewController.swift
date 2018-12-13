@@ -13,6 +13,9 @@ import FirebaseDatabase
 class ViewController: UIViewController {
     
     var db:Firestore!
+    let defaults = UserDefaults.standard
+    var userKey = ""
+    
     let bannerImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "LoginBannerImg")
@@ -287,7 +290,9 @@ class ViewController: UIViewController {
                                     print("Error saving user details to database: \(err)")
                                 }else{
                                     print("User details saved with ID: \(ref!.documentID)")
+                                    self.defaults.set(firstName+lastName, forKey: "Username")
                                 }
+                                self.userKey = (ref?.documentID)!
                         }
                         
                         
@@ -300,8 +305,7 @@ class ViewController: UIViewController {
                             }
                             if error == nil {
                                 print("Login Successful")
-                                let mmvc = MainMenuViewController() as MainMenuViewController
-                                mmvc.stringPassed = firstName + lastName
+                                let mmvc = MainMenuViewController() as UIViewController
                                 self.navigationController?.pushViewController(mmvc, animated: true)
                             } else {
                                 let alert = UIAlertController(title: "Username and Password Required", message: "You Must Enter a Username and Password", preferredStyle: .alert)
