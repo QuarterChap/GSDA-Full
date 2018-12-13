@@ -94,6 +94,8 @@ class HomeViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(handleEnroll), for: .touchUpInside)
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
         
         return button
     }()
@@ -108,6 +110,8 @@ class HomeViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(handleProgramInfo), for: .touchUpInside)
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
         
         return button
     }()
@@ -122,6 +126,8 @@ class HomeViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(handleLocations), for: .touchUpInside)
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
         
         return button
     }()
@@ -136,6 +142,8 @@ class HomeViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(handleClassSchedule), for: .touchUpInside)
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
         
         return button
     }()
@@ -165,6 +173,8 @@ class HomeViewController: UIViewController {
         view.backgroundColor = UIColor.white
         view.layer.cornerRadius = 15
         view.layer.masksToBounds  = true
+        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderWidth = 1
         
         return view
     }()
@@ -179,7 +189,9 @@ class HomeViewController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(handleSeeProgramInfo), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleProgramInfo), for: .touchUpInside)
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
         
         return button
     }()
@@ -210,6 +222,8 @@ class HomeViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 5
         imageView.layer.masksToBounds = true
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
+        imageView.layer.borderWidth = 1
         
         return imageView
     }()
@@ -289,7 +303,7 @@ class HomeViewController: UIViewController {
     let label10: UILabel = {
         let label = UILabel()
         
-        label.text = "✔︎ Your job as a Dental Assistant is recession-proof"
+        label.text = "✔︎ Your job may come with benefits such as paid vacation, and sick leave, medical and hospitalization, reimbursement for continuing education course fees, pension plans (401k) and profit sharing or bonus plan."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
         label.textColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -307,7 +321,7 @@ class HomeViewController: UIViewController {
     let label11: UILabel = {
         let label = UILabel()
         
-        label.text = "✔︎ Your job as a Dental Assistant is recession-proof"
+        label.text = "✔︎ You can find employment anywhere in the United States"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
         label.textColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -328,10 +342,10 @@ class HomeViewController: UIViewController {
         button.setTitle("Main Menu", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.layer.cornerRadius = 5
-        button.layer.masksToBounds = true
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         button.addTarget(self, action: #selector(handleMainMenu), for: .touchUpInside)
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
         
         return button
     }()
@@ -342,11 +356,26 @@ class HomeViewController: UIViewController {
         view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
         navigationItem.title = "HomeViewController"
         
-        scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 4305)
+        if view?.frame.width == 320 && view?.frame.height == 568 {
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 2550)
+            //5
+        } else if view?.frame.width == 375 && view?.frame.height == 667 {
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 2935)
+            //normal 6,7,8
+        } else if view?.frame.width == 414 && view?.frame.height ==  736 {
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 3225)
+            //plus 6,7,8
+        } else if view?.frame.width == 375 && view?.frame.height == 812 {
+            // Ive left off here prior to pushing
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 4715)
+            //X and XS
+        } else if view?.frame.width == 414 && view?.frame.height == 896 {
+            // XR / XS Max
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 5180)
+        }
         
         setupView()
         setupScrollView()
-        
     }
     
     func setupView() {
@@ -361,7 +390,7 @@ class HomeViewController: UIViewController {
         
         mainMenuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         mainMenuButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mainMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75).isActive = true
+        mainMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         mainMenuButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
         
     }
@@ -384,6 +413,8 @@ class HomeViewController: UIViewController {
         scrollView.addSubview(label7)
         scrollView.addSubview(label8)
         scrollView.addSubview(label9)
+        scrollView.addSubview(label10)
+        scrollView.addSubview(label11)
         
         label1.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         label1.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 15).isActive = true
@@ -475,6 +506,18 @@ class HomeViewController: UIViewController {
         label9.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.08).isActive = true
         label9.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 18)
         
+        label10.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        label10.topAnchor.constraint(equalTo: label9.bottomAnchor, constant: 15).isActive = true
+        label10.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+        label10.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.265).isActive = true
+        label10.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 18)
+        
+        label11.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        label11.topAnchor.constraint(equalTo: label10.bottomAnchor, constant: 25).isActive = true
+        label11.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+        label11.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.085).isActive = true
+        label11.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 18)
+        
     }
     
     @objc func handleEnroll() {
@@ -482,7 +525,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func handleProgramInfo() {
-        
+        self.present(ProgramInfoViewController(), animated: true) {}
     }
     
     @objc func handleLocations() {
@@ -502,3 +545,4 @@ class HomeViewController: UIViewController {
     }
 
 }
+
