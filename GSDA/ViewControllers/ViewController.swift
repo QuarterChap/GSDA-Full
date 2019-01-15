@@ -122,16 +122,16 @@ class ViewController: UIViewController {
         return sc
     }()
     
-    let firstNameTextField: UITextField = {
+    let retypePasswordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "First Name"
+        textField.placeholder = "Retype Password"
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
-    let lastNameTextField: UITextField = {
+    let usernameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Last Name"
+        textField.placeholder = "Username"
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -161,8 +161,8 @@ class ViewController: UIViewController {
         view.addSubview(logoImageView)
         view.addSubview(loginRegisterSegmentedControl)
         view.addSubview(mottoLabel)
-        view.addSubview(firstNameTextField)
-        view.addSubview(lastNameTextField)
+        view.addSubview(retypePasswordTextField)
+        view.addSubview(usernameTextField)
         view.addSubview(passwordSepartorView)
         view.addSubview(firstNameSepartorView)
         view.addSubview(resetPasswordButton)
@@ -205,27 +205,27 @@ class ViewController: UIViewController {
         passwordTextFieldHeightAnchor?.isActive = true
         
         firstNameTextFieldHeightAnchor?.isActive = false
-        firstNameTextFieldHeightAnchor = firstNameTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/4)
+        firstNameTextFieldHeightAnchor = retypePasswordTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/4)
         firstNameTextFieldHeightAnchor?.isActive = true
         
         lastNameTextFieldHeightAnchor?.isActive = false
-        lastNameTextFieldHeightAnchor = lastNameTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/4)
+        lastNameTextFieldHeightAnchor = usernameTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/4)
         lastNameTextFieldHeightAnchor?.isActive = true
         
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
             passwordSepartorView.alpha = 0
-            firstNameTextField.alpha = 0
+            retypePasswordTextField.alpha = 0
             firstNameSepartorView.alpha = 0
-            lastNameTextField.alpha = 0
+            usernameTextField.alpha = 0
             
             inputsContainerViewHeightAnchor?.isActive  = false
             inputsContainerViewHeightAnchor = inputsContainerView.heightAnchor.constraint(equalToConstant: 100)
             inputsContainerViewHeightAnchor?.isActive  = true
         } else if loginRegisterSegmentedControl.selectedSegmentIndex == 1 {
             passwordSepartorView.alpha = 1
-            firstNameTextField.alpha = 1
+            retypePasswordTextField.alpha = 1
             firstNameSepartorView.alpha = 1
-            lastNameTextField.alpha = 1
+            usernameTextField.alpha = 1
             
             inputsContainerViewHeightAnchor?.isActive  = false
             inputsContainerViewHeightAnchor = inputsContainerView.heightAnchor.constraint(equalToConstant: 200)
@@ -241,29 +241,15 @@ class ViewController: UIViewController {
     @objc func handleLoginRegistration() {
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
             // Login
-            if let email = emailTextField.text, let password = passwordTextField.text, ((emailTextField.text?.count)! > 0 && (passwordTextField.text?.count)! > 0) {
-                
-                AuthService.instance.login(email: email, password: password) { (error, data) in
-                    guard error == nil else {
-                        let alert = UIAlertController(title: "Error Authentication", message: error, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                        return;
-                    }
-                    if error == nil {
-                        print("Login Successful")
-                        self.present(MainMenuViewController(), animated: true) {}
-                    } else {
-                        let alert = UIAlertController(title: "Username and Password Required", message: "You Must Enter a Username and Password", preferredStyle: .alert)
-                        
-                        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                    }
-                }
-            }
+            // make the login process happen if it doesnt work send a notification to the user about why it didnt work i.e. username and password dont match ect.
         } else if loginRegisterSegmentedControl.selectedSegmentIndex == 1 {
             // register
-            
+            // need to make the email password confirm password and username
+            if passwordTextField.text == retypePasswordTextField.text {
+                // if the email is already connected to an account send a notification
+            } else if passwordTextField.text != retypePasswordTextField.text {
+                // send a notification that they don't match
+            }
         }
     }
     
@@ -340,25 +326,25 @@ class ViewController: UIViewController {
             passwordSepartorView.heightAnchor.constraint(equalToConstant: 1 ).isActive = true
             passwordSepartorView.alpha = 0
         
-            firstNameTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
-            firstNameTextField.topAnchor.constraint(equalTo:  passwordTextField.bottomAnchor).isActive = true
-            firstNameTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
+            retypePasswordTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
+            retypePasswordTextField.topAnchor.constraint(equalTo:  passwordTextField.bottomAnchor).isActive = true
+            retypePasswordTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
             firstNameTextFieldHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/2)
             firstNameTextFieldHeightAnchor?.isActive = true
-            firstNameTextField.alpha = 0
+            retypePasswordTextField.alpha = 0
         
             firstNameSepartorView.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor).isActive = true
-            firstNameSepartorView.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor).isActive = true
+            firstNameSepartorView.topAnchor.constraint(equalTo: retypePasswordTextField.bottomAnchor).isActive = true
             firstNameSepartorView.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
             firstNameSepartorView.heightAnchor.constraint(equalToConstant: 1 ).isActive = true
             firstNameSepartorView.alpha = 0
         
-            lastNameTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
-            lastNameTextField.topAnchor.constraint(equalTo:  firstNameTextField.bottomAnchor).isActive = true
-            lastNameTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
+            usernameTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant: 12).isActive = true
+            usernameTextField.topAnchor.constraint(equalTo:  retypePasswordTextField.bottomAnchor).isActive = true
+            usernameTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
             lastNameTextFieldHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/2)
             lastNameTextFieldHeightAnchor?.isActive = true
-            lastNameTextField.alpha = 0
+            usernameTextField.alpha = 0
     }
     
     func setupLoginRegisterButton() {
