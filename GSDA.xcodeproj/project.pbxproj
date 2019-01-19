@@ -18,6 +18,7 @@
 		968FF1B221F24516004E5D33 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FF1B121F24516004E5D33 /* UserModel.swift */; };
 		968FF1B621F24955004E5D33 /* UserObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FF1B521F24955004E5D33 /* UserObserver.swift */; };
 		968FF1B921F24A1E004E5D33 /* DatabaseReferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FF1B821F24A1E004E5D33 /* DatabaseReferences.swift */; };
+		96BE089F21F318DB004D9486 /* ModelsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BE089E21F318DB004D9486 /* ModelsOverview.swift */; };
 		A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */; };
 		A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012521BE922200DEECF8 /* HomeViewController.swift */; };
 		A510012821C0119C00DEECF8 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012721C0119C00DEECF8 /* AboutUsViewController.swift */; };
@@ -53,6 +54,7 @@
 		968FF1B121F24516004E5D33 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		968FF1B521F24955004E5D33 /* UserObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserObserver.swift; path = ../../../../UserObserver.swift; sourceTree = "<group>"; };
 		968FF1B821F24A1E004E5D33 /* DatabaseReferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseReferences.swift; path = ../../../../DatabaseReferences.swift; sourceTree = "<group>"; };
+		96BE089E21F318DB004D9486 /* ModelsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsOverview.swift; sourceTree = "<group>"; };
 		A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		A510012521BE922200DEECF8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A510012721C0119C00DEECF8 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				A574C81621E54E5300A6D493 /* PhotoModel.swift */,
 				A581BA0921E827EE0054AB41 /* PhotosCollectionViewCell.swift */,
 				968FF1B121F24516004E5D33 /* UserModel.swift */,
+				96BE089E21F318DB004D9486 /* ModelsOverview.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				94BE76AE2138E3170086B560 /* GSDA.xcdatamodeld in Sources */,
 				968FF1B921F24A1E004E5D33 /* DatabaseReferences.swift in Sources */,
 				A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */,
+				96BE089F21F318DB004D9486 /* ModelsOverview.swift in Sources */,
 				A5CFF57121E7C0AD00E99338 /* WoodstockLocationViewController.swift in Sources */,
 				94C19D2E213B292F00350658 /* AuthService.swift in Sources */,
 			);
