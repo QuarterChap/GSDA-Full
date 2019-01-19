@@ -11,6 +11,7 @@ import Firebase
 
 class MainMenuViewController: UIViewController {
     
+    var user: UserModel!
     var previousVC = UserDefaults.standard.string(forKey: "previousVC")
     
     let scrollView: UIScrollView = {
@@ -390,6 +391,15 @@ class MainMenuViewController: UIViewController {
         let data = UserDefaults.standard
         let username = data.string(forKey: "Username")
         //welcomeLbl.text = "Welcome, \(username!)"
+    }
+    
+    //fetch user from database and retrieve the username
+    func fetchCurrentUser() {
+        UserObserver().observeCurrentUser {[weak self] (user) in
+            self!.user = user
+            self?.welcomeLbl.text = "Welcome, \(user.username)"
+            
+        }
     }
     
     func setupView() {
