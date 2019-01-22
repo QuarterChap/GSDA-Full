@@ -237,7 +237,7 @@ class ViewController: UIViewController {
     @objc func handleResetPassword() {
         self.present(ResetPasswordViewController(), animated: true) {}
     }
-    
+    // this is my change
     @objc func handleLoginRegistration() {
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
             // Login
