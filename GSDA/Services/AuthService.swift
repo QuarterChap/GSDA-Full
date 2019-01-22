@@ -46,8 +46,22 @@ class AuthService {
                 }
             }
         })
-    }///Users/juliancearley/Desktop/FirebaseAuthService-master/AuthService.swift
-    func login(email: String, password: String, onComplete: @escaping Completion) {
+    }
+    
+    static func checkIfuserAlrdyExistInDatabase(with uid: String, completion: @escaping (_ userExist: Bool, _ user: UserModel?) -> Void) {
+        Database.database().reference().child(uid).observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                //User exist
+                completion(true, UserModel())
+            } else {
+                completion(false, nil)
+                
+            }
+        }
+    }
+    
+    ///Users/juliancearley/Desktop/FirebaseAuthService-master/AuthService.swift
+   /* func login(email: String, password: String, onComplete: @escaping Completion) {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
                 if let errorCode = AuthErrorCode(rawValue: (error?._code)!) {
@@ -67,6 +81,17 @@ class AuthService {
                 onComplete(nil, user)
             }
         })
+    }*/
+    
+    static func signIn(email: String, password: String, onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (_, error) in
+            if error != nil {
+                onError(error!.localizedDescription)
+                return
+            }
+            onSuccess()
+        })
+        
     }
     
     func logout() {

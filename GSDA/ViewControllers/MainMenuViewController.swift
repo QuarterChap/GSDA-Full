@@ -394,13 +394,13 @@ class MainMenuViewController: UIViewController {
     }
     
     //fetch user from database and retrieve the username
-    func fetchCurrentUser() {
+    /*func fetchCurrentUser() {
         UserObserver().observeCurrentUser {[weak self] (user) in
             self!.user = user
             self?.welcomeLbl.text = "Welcome, \(user.username)"
             
         }
-    }
+    }*/
     
     func setupView() {
         view.addSubview(logoImageView)

@@ -242,9 +242,19 @@ class ViewController: UIViewController {
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
             // Login
             // make the login process happen if it doesnt work send a notification to the user about why it didnt work i.e. username and password dont match ect.
+            view.endEditing(true)
+            AuthService.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
+                /* Present the Page you want to show after login tapped
+                // if log in is succesful please present MainMenuVC
+                 present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+                 
+                 */
+            }, onError: { error in
+                
+            })
         } else if loginRegisterSegmentedControl.selectedSegmentIndex == 1 {
             // register
-            // need to make the email password confirm password and username
+            // need to make the email, password, confirm password and username
             if passwordTextField.text == retypePasswordTextField.text {
                 // if the email is already connected to an account send a notification
             } else if passwordTextField.text != retypePasswordTextField.text {
@@ -361,9 +371,17 @@ class ViewController: UIViewController {
         resetPasswordButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
+        
+        if ModelsOverview.User.CURRENT_USER != nil {
+            /* Present the page you want to show if the user its stored in app
+             
+            present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+            */
+        }
     }
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
