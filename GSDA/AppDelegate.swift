@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         if signedIn == true {
-            window?.rootViewController = UINavigationController(rootViewController: ViewController())
+            window?.rootViewController = UINavigationController(rootViewController: MainMenuViewController())
         } else {
-            window?.rootViewController = UINavigationController(rootViewController: ViewController())
+            window?.rootViewController = UINavigationController(rootViewController: MainMenuViewController())
         }
         
         FirebaseApp.configure()

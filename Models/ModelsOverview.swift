@@ -9,5 +9,5 @@
 import Foundation
 
 struct ModelsOverview {
-    static var User = UserObserver()
+    
 }

@@ -376,12 +376,12 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
         
-        if ModelsOverview.User.CURRENT_USER != nil {
+//        if ModelsOverview.User.CURRENT_USER != nil {
             /* Present the page you want to show if the user its stored in app
              
             present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
             */
-        }
+//        }
     }
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent

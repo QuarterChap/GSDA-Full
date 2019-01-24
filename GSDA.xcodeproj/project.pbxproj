@@ -16,8 +16,6 @@
 		94C19D2E213B292F00350658 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C19D2D213B292F00350658 /* AuthService.swift */; };
 		94C19D30213B2A9000350658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94C19D2F213B2A9000350658 /* GoogleService-Info.plist */; };
 		968FF1B221F24516004E5D33 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FF1B121F24516004E5D33 /* UserModel.swift */; };
-		968FF1B621F24955004E5D33 /* UserObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FF1B521F24955004E5D33 /* UserObserver.swift */; };
-		968FF1B921F24A1E004E5D33 /* DatabaseReferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FF1B821F24A1E004E5D33 /* DatabaseReferences.swift */; };
 		96BE089F21F318DB004D9486 /* ModelsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BE089E21F318DB004D9486 /* ModelsOverview.swift */; };
 		A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */; };
 		A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012521BE922200DEECF8 /* HomeViewController.swift */; };
@@ -52,8 +50,6 @@
 		94C19D2D213B292F00350658 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		94C19D2F213B2A9000350658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		968FF1B121F24516004E5D33 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		968FF1B521F24955004E5D33 /* UserObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserObserver.swift; path = ../../../../UserObserver.swift; sourceTree = "<group>"; };
-		968FF1B821F24A1E004E5D33 /* DatabaseReferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseReferences.swift; path = ../../../../DatabaseReferences.swift; sourceTree = "<group>"; };
 		96BE089E21F318DB004D9486 /* ModelsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsOverview.swift; sourceTree = "<group>"; };
 		A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		A510012521BE922200DEECF8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -169,28 +165,10 @@
 		968FF1B321F24911004E5D33 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				968FF1B721F24A0C004E5D33 /* Utilities */,
-				968FF1B421F2493E004E5D33 /* Observers */,
 				A574C81521E54E2700A6D493 /* Models */,
 			);
 			name = Database;
 			path = ..;
-			sourceTree = "<group>";
-		};
-		968FF1B421F2493E004E5D33 /* Observers */ = {
-			isa = PBXGroup;
-			children = (
-				968FF1B521F24955004E5D33 /* UserObserver.swift */,
-			);
-			path = Observers;
-			sourceTree = "<group>";
-		};
-		968FF1B721F24A0C004E5D33 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				968FF1B821F24A1E004E5D33 /* DatabaseReferences.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		9BB0C25D4EA3E07FEA5F9468 /* Frameworks */ = {
@@ -382,10 +360,8 @@
 				A5349E3521C3327400393020 /* AdmissionRequirementsViewController.swift in Sources */,
 				94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */,
 				A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */,
-				968FF1B621F24955004E5D33 /* UserObserver.swift in Sources */,
 				A57B549621D54AF10037CC83 /* FacultyAndStaffViewController.swift in Sources */,
 				94BE76AE2138E3170086B560 /* GSDA.xcdatamodeld in Sources */,
-				968FF1B921F24A1E004E5D33 /* DatabaseReferences.swift in Sources */,
 				A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */,
 				96BE089F21F318DB004D9486 /* ModelsOverview.swift in Sources */,
 				A5CFF57121E7C0AD00E99338 /* WoodstockLocationViewController.swift in Sources */,
@@ -527,7 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BMHTCPUWH7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GSDA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -548,7 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BMHTCPUWH7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GSDA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
