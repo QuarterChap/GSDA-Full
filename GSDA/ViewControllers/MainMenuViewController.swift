@@ -596,7 +596,7 @@ class MainMenuViewController: UIViewController {
     }
     
     @objc func instructionalVideosAction() {
-        //self.present(InstructionalVideosViewController(), animated: true) {}
+        present(VideosViewController(), animated: true, completion: nil)
     }
     
     @objc func photosAction() {

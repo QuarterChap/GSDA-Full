@@ -53,7 +53,7 @@ class FeedViewController: UIViewController {
         tableView.dataSource = self
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
-        tableView.separatorColor = .clear 
+        tableView.separatorColor = .clear
         return tableView
     }()
     

@@ -48,7 +48,7 @@ class FeedCell: UITableViewCell {
     }
     
     func setupSubViews() {
-        
+        selectionStyle = .none
         addSubview(titleLabel)
         addSubview(photoImageView)
         addSubview(descriptionLabel)
