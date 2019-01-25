@@ -18,8 +18,13 @@
 		94BE76B32138E3180086B560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BE76B12138E3180086B560 /* LaunchScreen.storyboard */; };
 		94C19D2E213B292F00350658 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C19D2D213B292F00350658 /* AuthService.swift */; };
 		94C19D30213B2A9000350658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94C19D2F213B2A9000350658 /* GoogleService-Info.plist */; };
+		9676465421FBA2AE00F8F660 /* UploadImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676465321FBA2AE00F8F660 /* UploadImageViewController.swift */; };
+		967D81C921FBAF310007BA68 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81C821FBAF310007BA68 /* Api.swift */; };
+		967D81CB21FBAFC90007BA68 /* PostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81CA21FBAFC90007BA68 /* PostApi.swift */; };
+		967D81CD21FBB0B50007BA68 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81CC21FBB0B50007BA68 /* UserApi.swift */; };
+		967D81CF21FBB1600007BA68 /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81CE21FBB1600007BA68 /* HelperService.swift */; };
+		967D81D121FBB1970007BA68 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81D021FBB1970007BA68 /* Config.swift */; };
 		968FF1B221F24516004E5D33 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FF1B121F24516004E5D33 /* UserModel.swift */; };
-		96BE089F21F318DB004D9486 /* ModelsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BE089E21F318DB004D9486 /* ModelsOverview.swift */; };
 		A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */; };
 		A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012521BE922200DEECF8 /* HomeViewController.swift */; };
 		A510012821C0119C00DEECF8 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012721C0119C00DEECF8 /* AboutUsViewController.swift */; };
@@ -54,8 +59,13 @@
 		94BE76B42138E3180086B560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94C19D2D213B292F00350658 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		94C19D2F213B2A9000350658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9676465321FBA2AE00F8F660 /* UploadImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageViewController.swift; sourceTree = "<group>"; };
+		967D81C821FBAF310007BA68 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		967D81CA21FBAFC90007BA68 /* PostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApi.swift; sourceTree = "<group>"; };
+		967D81CC21FBB0B50007BA68 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		967D81CE21FBB1600007BA68 /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
+		967D81D021FBB1970007BA68 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		968FF1B121F24516004E5D33 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		96BE089E21F318DB004D9486 /* ModelsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsOverview.swift; sourceTree = "<group>"; };
 		A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		A510012521BE922200DEECF8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A510012721C0119C00DEECF8 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +129,11 @@
 			isa = PBXGroup;
 			children = (
 				94C19D2D213B292F00350658 /* AuthService.swift */,
+				967D81C821FBAF310007BA68 /* Api.swift */,
+				967D81CA21FBAFC90007BA68 /* PostApi.swift */,
+				967D81CC21FBB0B50007BA68 /* UserApi.swift */,
+				967D81CE21FBB1600007BA68 /* HelperService.swift */,
+				967D81D021FBB1970007BA68 /* Config.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -146,6 +161,7 @@
 				A52CD82F21DE1B38000C83B1 /* TuitionAndFeesViewController.swift */,
 				A574C81A21E7B00400A6D493 /* PhotosViewController.swift */,
 				0979E19E21FB8FBD002C421D /* VideosViewController.swift */,
+				9676465321FBA2AE00F8F660 /* UploadImageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -207,7 +223,6 @@
 			children = (
 				A574C81621E54E5300A6D493 /* PhotoModel.swift */,
 				968FF1B121F24516004E5D33 /* UserModel.swift */,
-				96BE089E21F318DB004D9486 /* ModelsOverview.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -368,10 +383,12 @@
 				A510012821C0119C00DEECF8 /* AboutUsViewController.swift in Sources */,
 				A52CD82C21DE1904000C83B1 /* EnrollViewController.swift in Sources */,
 				94BE76A82138E3170086B560 /* ViewController.swift in Sources */,
+				967D81C921FBAF310007BA68 /* Api.swift in Sources */,
 				A5349E3321C20B8C00393020 /* ProgramInfoViewController.swift in Sources */,
 				0979E19921FB76EB002C421D /* FeedCell.swift in Sources */,
 				A5349E3921C5C3F700393020 /* CurriculumViewController.swift in Sources */,
 				A574C81721E54E5300A6D493 /* PhotoModel.swift in Sources */,
+				967D81CB21FBAFC90007BA68 /* PostApi.swift in Sources */,
 				A52CD83021DE1B38000C83B1 /* TuitionAndFeesViewController.swift in Sources */,
 				968FF1B221F24516004E5D33 /* UserModel.swift in Sources */,
 				A57B549E21D54B5E0037CC83 /* TestimonialsViewController.swift in Sources */,
@@ -380,14 +397,17 @@
 				A54EE97F216AEF5C009644CD /* MainMenuViewController.swift in Sources */,
 				A5349E3721C4047B00393020 /* LocationsViewController.swift in Sources */,
 				A5349E3521C3327400393020 /* AdmissionRequirementsViewController.swift in Sources */,
+				967D81CD21FBB0B50007BA68 /* UserApi.swift in Sources */,
 				94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */,
 				0979E19F21FB8FBD002C421D /* VideosViewController.swift in Sources */,
 				A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */,
 				A57B549621D54AF10037CC83 /* FacultyAndStaffViewController.swift in Sources */,
+				9676465421FBA2AE00F8F660 /* UploadImageViewController.swift in Sources */,
+				967D81CF21FBB1600007BA68 /* HelperService.swift in Sources */,
 				94BE76AE2138E3170086B560 /* GSDA.xcdatamodeld in Sources */,
 				A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */,
-				96BE089F21F318DB004D9486 /* ModelsOverview.swift in Sources */,
 				A5CFF57121E7C0AD00E99338 /* WoodstockLocationViewController.swift in Sources */,
+				967D81D121FBB1970007BA68 /* Config.swift in Sources */,
 				0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */,
 				94C19D2E213B292F00350658 /* AuthService.swift in Sources */,
 			);
