@@ -57,6 +57,28 @@ class HelperService {
             })
         }
     }
-
+    
+    static func sendDataToDatabase(photoUrl: String, videoUrl: String? = nil, ratio: CGFloat, caption: String, onSuccess: @escaping () -> Void) {
+        let newPostId = Api.Post.REF_POSTS.childByAutoId().key
+        let newPostReference = Api.Post.REF_POSTS.child(newPostId!)
+        
+        guard let currentUser = Api.User.CURRENT_USER else {
+            return
+        }
+        
+        let currentUserId = currentUser.uid
+        let timestamp = Int(Date().timeIntervalSince1970)
+        
+        var dict = ["uid": currentUserId ,"photoUrl": photoUrl, "caption": caption, "ratio": ratio, "timestamp": timestamp] as [String : Any]
+        if let videoUrl = videoUrl {
+            dict["videoUrl"] = videoUrl
+        }
+        
+        newPostReference.setValue(dict, withCompletionBlock: {
+            (error, ref) in
+            if error != nil {
+                return
+            }
+        })
+    }
 }
-
