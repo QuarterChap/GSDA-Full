@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0979E19921FB76EB002C421D /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19821FB76EB002C421D /* FeedCell.swift */; };
+		0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19B21FB8F00002C421D /* FeedViewController.swift */; };
+		0979E19F21FB8FBD002C421D /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19E21FB8FBD002C421D /* VideosViewController.swift */; };
 		948F3294C164BC332457C1F2 /* Pods_GSDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42ECD5614709DAB330D2E295 /* Pods_GSDA.framework */; };
 		94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE76A52138E3170086B560 /* AppDelegate.swift */; };
 		94BE76A82138E3170086B560 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE76A72138E3170086B560 /* ViewController.swift */; };
@@ -34,11 +37,13 @@
 		A57B549221D1994D0037CC83 /* KennesawLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B549121D1994D0037CC83 /* KennesawLocationViewController.swift */; };
 		A57B549621D54AF10037CC83 /* FacultyAndStaffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B549521D54AF10037CC83 /* FacultyAndStaffViewController.swift */; };
 		A57B549E21D54B5E0037CC83 /* TestimonialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B549D21D54B5E0037CC83 /* TestimonialsViewController.swift */; };
-		A581BA0A21E827EE0054AB41 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A581BA0921E827EE0054AB41 /* PhotosCollectionViewCell.swift */; };
 		A5CFF57121E7C0AD00E99338 /* WoodstockLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CFF57021E7C0AD00E99338 /* WoodstockLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0979E19821FB76EB002C421D /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		0979E19B21FB8F00002C421D /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		0979E19E21FB8FBD002C421D /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		42ECD5614709DAB330D2E295 /* Pods_GSDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GSDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BE76A22138E3170086B560 /* GSDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BE76A52138E3170086B560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +73,6 @@
 		A57B549121D1994D0037CC83 /* KennesawLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KennesawLocationViewController.swift; sourceTree = "<group>"; };
 		A57B549521D54AF10037CC83 /* FacultyAndStaffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyAndStaffViewController.swift; sourceTree = "<group>"; };
 		A57B549D21D54B5E0037CC83 /* TestimonialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonialsViewController.swift; sourceTree = "<group>"; };
-		A581BA0921E827EE0054AB41 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5CFF57021E7C0AD00E99338 /* WoodstockLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WoodstockLocationViewController.swift; sourceTree = "<group>"; };
 		BE7FFF6B313660638E5B462F /* Pods-GSDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GSDA/Pods-GSDA.release.xcconfig"; sourceTree = "<group>"; };
 		E5A9EF733DFDD56B3EF81357 /* Pods-GSDA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GSDA/Pods-GSDA.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0979E19721FB76C3002C421D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0979E19821FB76EB002C421D /* FeedCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0979E19A21FB8EEB002C421D /* Parents */ = {
+			isa = PBXGroup;
+			children = (
+				0979E19B21FB8F00002C421D /* FeedViewController.swift */,
+			);
+			path = Parents;
+			sourceTree = "<group>";
+		};
 		0D66E46205F546CFF71F1E96 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +126,7 @@
 		942256272139F6AB0031F7E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0979E19A21FB8EEB002C421D /* Parents */,
 				94BE76A72138E3170086B560 /* ViewController.swift */,
 				A54EE97E216AEF5C009644CD /* MainMenuViewController.swift */,
 				A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */,
@@ -124,6 +145,7 @@
 				A52CD82D21DE196F000C83B1 /* ClassScheduleViewController.swift */,
 				A52CD82F21DE1B38000C83B1 /* TuitionAndFeesViewController.swift */,
 				A574C81A21E7B00400A6D493 /* PhotosViewController.swift */,
+				0979E19E21FB8FBD002C421D /* VideosViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -151,6 +173,7 @@
 			children = (
 				968FF1B321F24911004E5D33 /* Database */,
 				1E86005D216B0540000D4CD8 /* Services */,
+				0979E19721FB76C3002C421D /* Views */,
 				942256272139F6AB0031F7E8 /* ViewControllers */,
 				94BE76A52138E3170086B560 /* AppDelegate.swift */,
 				94BE76AF2138E3180086B560 /* Assets.xcassets */,
@@ -183,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				A574C81621E54E5300A6D493 /* PhotoModel.swift */,
-				A581BA0921E827EE0054AB41 /* PhotosCollectionViewCell.swift */,
 				968FF1B121F24516004E5D33 /* UserModel.swift */,
 				96BE089E21F318DB004D9486 /* ModelsOverview.swift */,
 			);
@@ -347,9 +369,9 @@
 				A52CD82C21DE1904000C83B1 /* EnrollViewController.swift in Sources */,
 				94BE76A82138E3170086B560 /* ViewController.swift in Sources */,
 				A5349E3321C20B8C00393020 /* ProgramInfoViewController.swift in Sources */,
+				0979E19921FB76EB002C421D /* FeedCell.swift in Sources */,
 				A5349E3921C5C3F700393020 /* CurriculumViewController.swift in Sources */,
 				A574C81721E54E5300A6D493 /* PhotoModel.swift in Sources */,
-				A581BA0A21E827EE0054AB41 /* PhotosCollectionViewCell.swift in Sources */,
 				A52CD83021DE1B38000C83B1 /* TuitionAndFeesViewController.swift in Sources */,
 				968FF1B221F24516004E5D33 /* UserModel.swift in Sources */,
 				A57B549E21D54B5E0037CC83 /* TestimonialsViewController.swift in Sources */,
@@ -359,12 +381,14 @@
 				A5349E3721C4047B00393020 /* LocationsViewController.swift in Sources */,
 				A5349E3521C3327400393020 /* AdmissionRequirementsViewController.swift in Sources */,
 				94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */,
+				0979E19F21FB8FBD002C421D /* VideosViewController.swift in Sources */,
 				A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */,
 				A57B549621D54AF10037CC83 /* FacultyAndStaffViewController.swift in Sources */,
 				94BE76AE2138E3170086B560 /* GSDA.xcdatamodeld in Sources */,
 				A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */,
 				96BE089F21F318DB004D9486 /* ModelsOverview.swift in Sources */,
 				A5CFF57121E7C0AD00E99338 /* WoodstockLocationViewController.swift in Sources */,
+				0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */,
 				94C19D2E213B292F00350658 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

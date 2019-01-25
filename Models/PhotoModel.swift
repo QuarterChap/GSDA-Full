@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseAuth
 
-class PostModel {
+class PhotoModel {
     
     // DEVSCORCH: Private Variables
     
@@ -74,9 +74,9 @@ class PostModel {
     
 }
 
-extension PostModel {
-    static func transformPostVideo(dict: [String: Any], key: String) -> PostModel {
-        let post = PostModel()
+extension PhotoModel {
+    static func transformPostVideo(dict: [String: Any], key: String) -> PhotoModel {
+        let post = PhotoModel()
         post._id = key
         post._caption = dict["caption"] as? String
         post._timeStamp = dict["time_stamp"] as? Int

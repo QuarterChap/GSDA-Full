@@ -600,8 +600,8 @@ class MainMenuViewController: UIViewController {
     }
     
     @objc func photosAction() {
-        let photosVC = PhotosViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        self.present(photosVC, animated: true) {}
+        let photosVC = PhotosViewController()
+        present(photosVC, animated: true) {}
     }
     
     @objc func contactAction() {
