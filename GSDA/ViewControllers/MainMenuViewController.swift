@@ -596,12 +596,12 @@ class MainMenuViewController: UIViewController {
     }
     
     @objc func instructionalVideosAction() {
-        //self.present(InstructionalVideosViewController(), animated: true) {}
+        present(VideosViewController(), animated: true, completion: nil)
     }
     
     @objc func photosAction() {
-        let photosVC = PhotosViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        self.present(photosVC, animated: true) {}
+        let photosVC = PhotosViewController()
+        present(photosVC, animated: true) {}
     }
     
     @objc func contactAction() {
