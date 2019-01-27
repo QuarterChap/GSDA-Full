@@ -13,6 +13,8 @@ import FirebaseFirestore
 
 class ViewController: UIViewController {
     
+    let mainMenuController = MainMenuViewController()
+    
     let bannerImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "LoginBannerImg")
@@ -244,17 +246,18 @@ class ViewController: UIViewController {
             // make the login process happen if it doesnt work send a notification to the user about why it didnt work i.e. username and password dont match ect.
             view.endEditing(true)
             AuthService.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
-                /* Present the Page you want to show after login tapped
-                // if log in is succesful please present MainMenuVC
-                 present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-                 
-                 */
+                self.navigationController?.pushViewController(self.mainMenuController, animated: true)
             }, onError: { error in
                 
             })
         } else if loginRegisterSegmentedControl.selectedSegmentIndex == 1 {
             // register
             // need to make the email, password, confirm password and username
+            AuthServ.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
+                 self.navigationController?.pushViewController(self.mainMenuController, animated: true)
+            }) { (errorString) in
+                print(errorString!)
+            }
             if passwordTextField.text == retypePasswordTextField.text {
                 // if the email is already connected to an account send a notification
             } else if passwordTextField.text != retypePasswordTextField.text {
@@ -375,13 +378,12 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
-        
-//        if ModelsOverview.User.CURRENT_USER != nil {
-            /* Present the page you want to show if the user its stored in app
-             
-            present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-            */
-//        }
+      
+        if Api.User.CURRENT_USER != nil {
+            self.navigationController?.pushViewController(self.mainMenuController, animated: true)
+        } else {
+            //show message to login or register maybe?
+        }
     }
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent

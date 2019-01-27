@@ -25,6 +25,7 @@
 		967D81CF21FBB1600007BA68 /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81CE21FBB1600007BA68 /* HelperService.swift */; };
 		967D81D121FBB1970007BA68 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81D021FBB1970007BA68 /* Config.swift */; };
 		968FF1B221F24516004E5D33 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FF1B121F24516004E5D33 /* UserModel.swift */; };
+		969CB9D221FDEE7400428C16 /* AuthServ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CB9D121FDEE7400428C16 /* AuthServ.swift */; };
 		A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */; };
 		A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012521BE922200DEECF8 /* HomeViewController.swift */; };
 		A510012821C0119C00DEECF8 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012721C0119C00DEECF8 /* AboutUsViewController.swift */; };
@@ -66,6 +67,7 @@
 		967D81CE21FBB1600007BA68 /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
 		967D81D021FBB1970007BA68 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		968FF1B121F24516004E5D33 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		969CB9D121FDEE7400428C16 /* AuthServ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServ.swift; sourceTree = "<group>"; };
 		A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		A510012521BE922200DEECF8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A510012721C0119C00DEECF8 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				967D81CC21FBB0B50007BA68 /* UserApi.swift */,
 				967D81CE21FBB1600007BA68 /* HelperService.swift */,
 				967D81D021FBB1970007BA68 /* Config.swift */,
+				969CB9D121FDEE7400428C16 /* AuthServ.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				A57B549221D1994D0037CC83 /* KennesawLocationViewController.swift in Sources */,
 				A52CD82E21DE196F000C83B1 /* ClassScheduleViewController.swift in Sources */,
 				A54EE97F216AEF5C009644CD /* MainMenuViewController.swift in Sources */,
+				969CB9D221FDEE7400428C16 /* AuthServ.swift in Sources */,
 				A5349E3721C4047B00393020 /* LocationsViewController.swift in Sources */,
 				A5349E3521C3327400393020 /* AdmissionRequirementsViewController.swift in Sources */,
 				967D81CD21FBB0B50007BA68 /* UserApi.swift in Sources */,

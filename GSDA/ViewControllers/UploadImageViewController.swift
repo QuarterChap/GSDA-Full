@@ -58,6 +58,7 @@ class UploadImageViewController: UIViewController {
 
 }
 
+/*
 extension UploadImageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print("did Finish Picking Media")
@@ -95,3 +96,4 @@ extension UploadImageViewController: UIImagePickerControllerDelegate, UINavigati
     }
 }
  
+*/
