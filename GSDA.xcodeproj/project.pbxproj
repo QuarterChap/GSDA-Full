@@ -18,7 +18,7 @@
 		94BE76B32138E3180086B560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BE76B12138E3180086B560 /* LaunchScreen.storyboard */; };
 		94C19D2E213B292F00350658 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C19D2D213B292F00350658 /* AuthService.swift */; };
 		94C19D30213B2A9000350658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94C19D2F213B2A9000350658 /* GoogleService-Info.plist */; };
-		9676465421FBA2AE00F8F660 /* UploadImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676465321FBA2AE00F8F660 /* UploadImageViewController.swift */; };
+		9676465421FBA2AE00F8F660 /* UploadContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */; };
 		967D81C921FBAF310007BA68 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81C821FBAF310007BA68 /* Api.swift */; };
 		967D81CB21FBAFC90007BA68 /* PostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81CA21FBAFC90007BA68 /* PostApi.swift */; };
 		967D81CD21FBB0B50007BA68 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81CC21FBB0B50007BA68 /* UserApi.swift */; };
@@ -60,7 +60,7 @@
 		94BE76B42138E3180086B560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94C19D2D213B292F00350658 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		94C19D2F213B2A9000350658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9676465321FBA2AE00F8F660 /* UploadImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageViewController.swift; sourceTree = "<group>"; };
+		9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadContentViewController.swift; sourceTree = "<group>"; };
 		967D81C821FBAF310007BA68 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		967D81CA21FBAFC90007BA68 /* PostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApi.swift; sourceTree = "<group>"; };
 		967D81CC21FBB0B50007BA68 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
@@ -114,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				0979E19B21FB8F00002C421D /* FeedViewController.swift */,
+				9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */,
 			);
 			path = Parents;
 			sourceTree = "<group>";
@@ -164,7 +165,6 @@
 				A52CD82F21DE1B38000C83B1 /* TuitionAndFeesViewController.swift */,
 				A574C81A21E7B00400A6D493 /* PhotosViewController.swift */,
 				0979E19E21FB8FBD002C421D /* VideosViewController.swift */,
-				9676465321FBA2AE00F8F660 /* UploadImageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -406,7 +406,7 @@
 				0979E19F21FB8FBD002C421D /* VideosViewController.swift in Sources */,
 				A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */,
 				A57B549621D54AF10037CC83 /* FacultyAndStaffViewController.swift in Sources */,
-				9676465421FBA2AE00F8F660 /* UploadImageViewController.swift in Sources */,
+				9676465421FBA2AE00F8F660 /* UploadContentViewController.swift in Sources */,
 				967D81CF21FBB1600007BA68 /* HelperService.swift in Sources */,
 				94BE76AE2138E3170086B560 /* GSDA.xcdatamodeld in Sources */,
 				A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */,
@@ -554,7 +554,7 @@
 				DEVELOPMENT_TEAM = 4BH5KRFJ6A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GSDA/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -575,7 +575,7 @@
 				DEVELOPMENT_TEAM = 4BH5KRFJ6A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GSDA/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

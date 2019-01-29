@@ -18,5 +18,8 @@ final class PhotosViewController: FeedViewController, FeedTableViewDelegate {
     func didTap(cell: FeedCell) {
         // DO nothing as of now
     }
-
+    
+    func upload() {
+        present(UploadContentViewController(), animated: true, completion: nil)
+    }
 }

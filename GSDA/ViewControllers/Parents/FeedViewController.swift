@@ -122,6 +122,7 @@ class FeedViewController: UIViewController {
     @objc func handleUpload() {
         //call Present Upload ViewController delegate of some sort.
         //Leave for Jaaster
+        tableViewDelegate?.upload()
     }
 }
 
@@ -148,6 +149,8 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 protocol FeedTableViewDelegate {
+    
+    func upload()
     
     func didTap(cell: FeedCell)
 }
