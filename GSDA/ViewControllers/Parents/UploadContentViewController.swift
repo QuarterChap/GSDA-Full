@@ -110,7 +110,7 @@ class UploadContentViewController: UIViewController {
           let ratio = uploadImage.size.width / uploadImage.size.height
             
             if selectedImageView == uploadImage {
-                HelperService.uploadVideoToFirebaseStorage(videoUrl: videoUrl!, ratio: ratio, title: titleTextField.text!, description: descriptionTextField.text!) { (error) in
+                HelperService.uploadVideoToFirebaseStorage(videoUrl: videoUrl!, title: titleTextField.text!, ratio: ratio, description: descriptionTextField.text!) { (error) in
                     if error != nil {
                         print(error)
                     } else {

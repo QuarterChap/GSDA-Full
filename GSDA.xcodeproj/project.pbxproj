@@ -18,6 +18,8 @@
 		94BE76B32138E3180086B560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BE76B12138E3180086B560 /* LaunchScreen.storyboard */; };
 		94C19D2E213B292F00350658 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C19D2D213B292F00350658 /* AuthService.swift */; };
 		94C19D30213B2A9000350658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94C19D2F213B2A9000350658 /* GoogleService-Info.plist */; };
+		964D623322039F2A00C2ED12 /* MyPostsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D623222039F2A00C2ED12 /* MyPostsApi.swift */; };
+		964D623522039F8C00C2ED12 /* FeedApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D623422039F8C00C2ED12 /* FeedApi.swift */; };
 		9676465421FBA2AE00F8F660 /* UploadContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */; };
 		967D81C921FBAF310007BA68 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81C821FBAF310007BA68 /* Api.swift */; };
 		967D81CB21FBAFC90007BA68 /* PostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81CA21FBAFC90007BA68 /* PostApi.swift */; };
@@ -60,6 +62,8 @@
 		94BE76B42138E3180086B560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94C19D2D213B292F00350658 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		94C19D2F213B2A9000350658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		964D623222039F2A00C2ED12 /* MyPostsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsApi.swift; sourceTree = "<group>"; };
+		964D623422039F8C00C2ED12 /* FeedApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedApi.swift; sourceTree = "<group>"; };
 		9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadContentViewController.swift; sourceTree = "<group>"; };
 		967D81C821FBAF310007BA68 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		967D81CA21FBAFC90007BA68 /* PostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApi.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				967D81CE21FBB1600007BA68 /* HelperService.swift */,
 				967D81D021FBB1970007BA68 /* Config.swift */,
 				969CB9D121FDEE7400428C16 /* AuthServ.swift */,
+				964D623222039F2A00C2ED12 /* MyPostsApi.swift */,
+				964D623422039F8C00C2ED12 /* FeedApi.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				A52CD82E21DE196F000C83B1 /* ClassScheduleViewController.swift in Sources */,
 				A54EE97F216AEF5C009644CD /* MainMenuViewController.swift in Sources */,
 				969CB9D221FDEE7400428C16 /* AuthServ.swift in Sources */,
+				964D623322039F2A00C2ED12 /* MyPostsApi.swift in Sources */,
 				A5349E3721C4047B00393020 /* LocationsViewController.swift in Sources */,
 				A5349E3521C3327400393020 /* AdmissionRequirementsViewController.swift in Sources */,
 				967D81CD21FBB0B50007BA68 /* UserApi.swift in Sources */,
@@ -413,6 +420,7 @@
 				A5CFF57121E7C0AD00E99338 /* WoodstockLocationViewController.swift in Sources */,
 				967D81D121FBB1970007BA68 /* Config.swift in Sources */,
 				0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */,
+				964D623522039F8C00C2ED12 /* FeedApi.swift in Sources */,
 				94C19D2E213B292F00350658 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

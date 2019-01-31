@@ -24,12 +24,24 @@ class HelperService {
         }
     }*/
     
-    static func uploadVideoToFirebaseStorage(videoUrl: URL, ratio: CGFloat, title: String, description: String, onSuccess: @escaping (_ videoUrl: String) -> Void) {
+    static func uploadVideoToFirebaseStorage(videoUrl: URL?, title: String, ratio: CGFloat, description: String, onSuccess: @escaping (_ videoUrl: String) -> Void) {
         let videoIdString = NSUUID().uuidString
         let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedVideo").child(videoIdString)
+        let newPostId = Api.Post.REF_POSTS.childByAutoId().key
+        let newPostReference = Api.Post.REF_POSTS.child(newPostId!)
         
+        guard let currentUser = Api.User.CURRENT_USER else {
+            return
+        }
+         let currentUserId = currentUser.uid
         
-        storageRef.putFile(from: videoUrl, metadata: nil) { (_, error) in
+        let timestamp = Int(Date().timeIntervalSince1970)
+        
+        var dict = ["uid": currentUserId , "description": description, "title": title, "ratio": ratio, "timestamp": timestamp] as [String : Any]
+        if let videoUrl = videoUrl {
+            dict["videoUrl"] = videoUrl
+        }
+        storageRef.putFile(from: (videoUrl as? URL)!, metadata: nil) { (_, error) in
             if error != nil {
                 return
             }
@@ -40,12 +52,37 @@ class HelperService {
             })
             
         }
+        newPostReference.setValue(dict, withCompletionBlock: {
+            (error, ref) in
+            if error != nil {
+                return
+            }
+            
+            let myPostRef = Api.MyPosts.REF_MYPOSTS.child(currentUserId).child(newPostId!)
+            myPostRef.setValue(["timestamp": timestamp], withCompletionBlock: { (error, ref) in
+                if error != nil {
+                    return
+                }
+            })
+            onSuccess(videoIdString)
+        })
     }
     
     static func uploadImageToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping (_ imageUrl: String) -> Void) {
         
         let photoIdString = NSUUID().uuidString
         let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedImage").child(photoIdString)
+        let newPostId = Api.Post.REF_POSTS.childByAutoId().key
+        let newPostReference = Api.Post.REF_POSTS.child(newPostId!)
+        
+        guard let currentUser = Api.User.CURRENT_USER else {
+            return
+        }
+         let currentUserId = currentUser.uid
+        
+        let timestamp = Int(Date().timeIntervalSince1970)
+        
+        var dict = ["uid": currentUserId ,"title":title, "caption": description, "timestamp": timestamp] as [String : Any]
         storageRef.putData(data, metadata: nil) { (metadata, error) in
             if error != nil {
                 return
@@ -57,6 +94,19 @@ class HelperService {
                 
             })
         }
+        newPostReference.setValue(dict, withCompletionBlock: {
+            (error, ref) in
+            if error != nil {
+                return
+            }
+            let myPostRef = Api.MyPosts.REF_MYPOSTS.child(currentUserId).child(newPostId!)
+        myPostRef.setValue(["timestamp": timestamp], withCompletionBlock: { (error, ref) in
+            if error != nil {
+                return
+            }
+        })
+            onSuccess(photoIdString)
+    })
     }
     
     static func sendDataToDatabase(photoUrl: String, videoUrl: String? = nil, ratio: CGFloat, title: String, description: String, onSuccess: @escaping () -> Void) {
