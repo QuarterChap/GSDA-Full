@@ -106,18 +106,24 @@ class UploadContentViewController: UIViewController {
     @objc func doneButtonPressed() {
         //TODO: FOR NICK (Upload content)
         
-//        if let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) {
-//            let ratio = uploadImage.size.width / profileImg.size.height
-//            HelperService.uploadDataToServer(data: imageData, videoUrl: self.videoUrl, ratio: ratio, caption: captionText.text!, onSuccess: {
-//                //Dismiss VC after upload has been completed succesfully
-//            })
-//
-//        } else {
-//            //Show message to user that upload could not be made
-//        }
-        
-        dismiss(animated: true, completion: nil)
+        if let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) {
+          let ratio = uploadImage.size.width / uploadImage.size.height
+                HelperService.uploadDataToServer(data: imageData, videoUrl: videoUrl, ratio: ratio, title: titleTextField.text!, description: descriptionTextField.text!, onSuccess: {
+                    self.clean()
+                    self.present(PhotosViewController(), animated: true, completion: nil)
+                })
 
+      } else {
+            //Show message to user that upload could not be made
+            
+       }
+        
+    }
+    
+    func clean() {
+        self.titleTextField.text = ""
+        self.descriptionTextField.text = ""
+        self.selectedImageView.image = UIImage(named: "placeholder")
     }
     
     @objc func openGallery() {
