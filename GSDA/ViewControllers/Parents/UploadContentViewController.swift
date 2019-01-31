@@ -108,16 +108,42 @@ class UploadContentViewController: UIViewController {
         
         if let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) {
           let ratio = uploadImage.size.width / uploadImage.size.height
-                HelperService.uploadDataToServer(data: imageData, videoUrl: videoUrl, ratio: ratio, title: titleTextField.text!, description: descriptionTextField.text!, onSuccess: {
-                    self.clean()
-                    self.present(PhotosViewController(), animated: true, completion: nil)
+            
+            if selectedImageView == uploadImage {
+                HelperService.uploadVideoToFirebaseStorage(videoUrl: videoUrl!, ratio: ratio, title: titleTextField.text!, description: descriptionTextField.text!) { (error) in
+                    if error != nil {
+                        print(error)
+                    } else {
+                        self.clean()
+                        self.present(VideosViewController(), animated: true, completion: nil)
+                    }
+                }
+            } else {
+                HelperService.uploadImageToFirebaseStorage(data: imageData, title: titleTextField.text!, description: descriptionTextField.text!) { (error) in
+                    if error != nil {
+                        print(error)
+                    }else {
+                        self.clean()
+                        self.present(PhotosViewController(), animated: true, completion: nil)
+                    }
+                }
+            }
+               /* HelperService.uploadDataToServer(data: imageData, videoUrl: videoUrl, ratio: ratio, title: titleTextField.text!, description: descriptionTextField.text!, onSuccess: {
+                    
+                    if selectedImageView = image {
+                        
+                        self.clean()
+                        self.present(PhotosViewController(), animated: true, completion: nil)
+                    }
+                   
                 })
 
       } else {
             //Show message to user that upload could not be made
             
-       }
+       }*/
         
+    }
     }
     
     func clean() {

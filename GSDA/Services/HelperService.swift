@@ -10,23 +10,23 @@ import Foundation
 import FirebaseStorage
 import FirebaseDatabase
 class HelperService {
-    static func uploadDataToServer(data: Data, videoUrl: URL? = nil, ratio: CGFloat, title: String, description: String, onSuccess: @escaping () -> Void) {
+ /*   static func uploadDataToServer(data: Data, videoUrl: URL? = nil, ratio: CGFloat, title: String, description: String, onSuccess: @escaping () -> Void) {
         if let videoUrl = videoUrl {
-            self.uploadVideoToFirebaseStorage(videoUrl: videoUrl, onSuccess: { (videoUrl) in
-                uploadImageToFirebaseStorage(data: data, onSuccess: { (thumbnailImageUrl) in
+            self.uploadVideoToFirebaseStorage(videoUrl: videoUrl, title: String, description: String, onSuccess: { (videoUrl) in
+                uploadImageToFirebaseStorage(data: data, title: title, onSuccess: { (thumbnailImageUrl) in
                     sendDataToDatabase(photoUrl: thumbnailImageUrl, videoUrl: videoUrl, ratio: ratio, title: title, description: description, onSuccess: onSuccess)
                 })
             })
         } else {
-            uploadImageToFirebaseStorage(data: data) { (photoUrl) in
+            uploadImageToFirebaseStorage(data: data, title: title, description: description) { (photoUrl) in
                 self.sendDataToDatabase(photoUrl: photoUrl, ratio: ratio, title: title, description: description, onSuccess: onSuccess)
             }
         }
-    }
+    }*/
     
-    static func uploadVideoToFirebaseStorage(videoUrl: URL, onSuccess: @escaping (_ videoUrl: String) -> Void) {
+    static func uploadVideoToFirebaseStorage(videoUrl: URL, ratio: CGFloat, title: String, description: String, onSuccess: @escaping (_ videoUrl: String) -> Void) {
         let videoIdString = NSUUID().uuidString
-        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child(videoIdString)
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedVideo").child(videoIdString)
         
         
         storageRef.putFile(from: videoUrl, metadata: nil) { (_, error) in
@@ -42,9 +42,10 @@ class HelperService {
         }
     }
     
-    static func uploadImageToFirebaseStorage(data: Data, onSuccess: @escaping (_ imageUrl: String) -> Void) {
+    static func uploadImageToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping (_ imageUrl: String) -> Void) {
+        
         let photoIdString = NSUUID().uuidString
-        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child(photoIdString)
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedImage").child(photoIdString)
         storageRef.putData(data, metadata: nil) { (metadata, error) in
             if error != nil {
                 return
