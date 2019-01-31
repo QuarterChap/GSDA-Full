@@ -18,6 +18,8 @@
 		94BE76B32138E3180086B560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BE76B12138E3180086B560 /* LaunchScreen.storyboard */; };
 		94C19D2E213B292F00350658 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C19D2D213B292F00350658 /* AuthService.swift */; };
 		94C19D30213B2A9000350658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94C19D2F213B2A9000350658 /* GoogleService-Info.plist */; };
+		964D622C22035DC800C2ED12 /* ImageUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D622B22035DC800C2ED12 /* ImageUploadViewController.swift */; };
+		964D623122036CFF00C2ED12 /* VideoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D623022036CFF00C2ED12 /* VideoUploadViewController.swift */; };
 		9676465421FBA2AE00F8F660 /* UploadContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */; };
 		967D81C921FBAF310007BA68 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81C821FBAF310007BA68 /* Api.swift */; };
 		967D81CB21FBAFC90007BA68 /* PostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81CA21FBAFC90007BA68 /* PostApi.swift */; };
@@ -60,6 +62,8 @@
 		94BE76B42138E3180086B560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94C19D2D213B292F00350658 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		94C19D2F213B2A9000350658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		964D622B22035DC800C2ED12 /* ImageUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadViewController.swift; sourceTree = "<group>"; };
+		964D623022036CFF00C2ED12 /* VideoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUploadViewController.swift; sourceTree = "<group>"; };
 		9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadContentViewController.swift; sourceTree = "<group>"; };
 		967D81C821FBAF310007BA68 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		967D81CA21FBAFC90007BA68 /* PostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApi.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 			children = (
 				0979E19B21FB8F00002C421D /* FeedViewController.swift */,
 				9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */,
+				964D622B22035DC800C2ED12 /* ImageUploadViewController.swift */,
+				964D623022036CFF00C2ED12 /* VideoUploadViewController.swift */,
 			);
 			path = Parents;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A57B549021D0091C0037CC83 /* RoswellLocationViewController.swift in Sources */,
+				964D623122036CFF00C2ED12 /* VideoUploadViewController.swift in Sources */,
 				A574C81B21E7B00400A6D493 /* PhotosViewController.swift in Sources */,
 				A510012821C0119C00DEECF8 /* AboutUsViewController.swift in Sources */,
 				A52CD82C21DE1904000C83B1 /* EnrollViewController.swift in Sources */,
@@ -414,6 +421,7 @@
 				967D81D121FBB1970007BA68 /* Config.swift in Sources */,
 				0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */,
 				94C19D2E213B292F00350658 /* AuthService.swift in Sources */,
+				964D622C22035DC800C2ED12 /* ImageUploadViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

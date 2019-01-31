@@ -20,6 +20,6 @@ final class PhotosViewController: FeedViewController, FeedTableViewDelegate {
     }
     
     func upload() {
-        present(UploadContentViewController(), animated: true, completion: nil)
+        present(ImageUploadViewController(), animated: true, completion: nil)
     }
 }
