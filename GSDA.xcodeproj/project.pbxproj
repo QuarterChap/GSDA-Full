@@ -26,14 +26,9 @@
 		967D81D121FBB1970007BA68 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81D021FBB1970007BA68 /* Config.swift */; };
 		968FF1B221F24516004E5D33 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FF1B121F24516004E5D33 /* UserModel.swift */; };
 		969CB9D221FDEE7400428C16 /* AuthServ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CB9D121FDEE7400428C16 /* AuthServ.swift */; };
-		A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */; };
 		A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012521BE922200DEECF8 /* HomeViewController.swift */; };
-		A510012821C0119C00DEECF8 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012721C0119C00DEECF8 /* AboutUsViewController.swift */; };
-		A52CD82C21DE1904000C83B1 /* EnrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52CD82B21DE1904000C83B1 /* EnrollViewController.swift */; };
 		A52CD82E21DE196F000C83B1 /* ClassScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52CD82D21DE196F000C83B1 /* ClassScheduleViewController.swift */; };
-		A52CD83021DE1B38000C83B1 /* TuitionAndFeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52CD82F21DE1B38000C83B1 /* TuitionAndFeesViewController.swift */; };
 		A5349E3321C20B8C00393020 /* ProgramInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349E3221C20B8C00393020 /* ProgramInfoViewController.swift */; };
-		A5349E3521C3327400393020 /* AdmissionRequirementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349E3421C3327400393020 /* AdmissionRequirementsViewController.swift */; };
 		A5349E3721C4047B00393020 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349E3621C4047B00393020 /* LocationsViewController.swift */; };
 		A5349E3921C5C3F700393020 /* CurriculumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349E3821C5C3F700393020 /* CurriculumViewController.swift */; };
 		A54EE97F216AEF5C009644CD /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EE97E216AEF5C009644CD /* MainMenuViewController.swift */; };
@@ -43,6 +38,31 @@
 		A57B549221D1994D0037CC83 /* KennesawLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B549121D1994D0037CC83 /* KennesawLocationViewController.swift */; };
 		A57B549621D54AF10037CC83 /* FacultyAndStaffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B549521D54AF10037CC83 /* FacultyAndStaffViewController.swift */; };
 		A57B549E21D54B5E0037CC83 /* TestimonialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B549D21D54B5E0037CC83 /* TestimonialsViewController.swift */; };
+		A59ED60F21FFA1D2002E1F19 /* CourseMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED60E21FFA1D2002E1F19 /* CourseMaterialViewController.swift */; };
+		A59ED61121FFA31D002E1F19 /* ExpandedDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED61021FFA31D002E1F19 /* ExpandedDutyViewController.swift */; };
+		A59ED61321FFB1CA002E1F19 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED61221FFB1CA002E1F19 /* ResetPasswordViewController.swift */; };
+		A59ED61521FFDE50002E1F19 /* GSDACatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED61421FFDE50002E1F19 /* GSDACatalogViewController.swift */; };
+		A59ED61821FFEA72002E1F19 /* PPLE1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED61721FFEA72002E1F19 /* PPLE1ViewController.swift */; };
+		A59ED61A21FFEB33002E1F19 /* PPLE2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED61921FFEB33002E1F19 /* PPLE2ViewController.swift */; };
+		A59ED61C21FFEB41002E1F19 /* PPLE3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED61B21FFEB41002E1F19 /* PPLE3ViewController.swift */; };
+		A59ED61E21FFEB4D002E1F19 /* PPLE4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED61D21FFEB4D002E1F19 /* PPLE4ViewController.swift */; };
+		A59ED62021FFEB76002E1F19 /* PPLE5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED61F21FFEB76002E1F19 /* PPLE5ViewController.swift */; };
+		A59ED62221FFEB80002E1F19 /* PPLE6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED62121FFEB80002E1F19 /* PPLE6ViewController.swift */; };
+		A59ED62421FFEB8F002E1F19 /* PPLE7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED62321FFEB8F002E1F19 /* PPLE7ViewController.swift */; };
+		A59ED62621FFEB98002E1F19 /* PPLE8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED62521FFEB98002E1F19 /* PPLE8ViewController.swift */; };
+		A59ED62821FFEBA1002E1F19 /* PPLE9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED62721FFEBA1002E1F19 /* PPLE9ViewController.swift */; };
+		A59ED62A21FFEBB2002E1F19 /* PPLE10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED62921FFEBB2002E1F19 /* PPLE10ViewController.swift */; };
+		A59ED62C21FFEBBB002E1F19 /* PPLE11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED62B21FFEBBB002E1F19 /* PPLE11ViewController.swift */; };
+		A59ED62E21FFEBC3002E1F19 /* PPLE12ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED62D21FFEBC3002E1F19 /* PPLE12ViewController.swift */; };
+		A59ED63021FFEBD1002E1F19 /* PPLE13ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED62F21FFEBD1002E1F19 /* PPLE13ViewController.swift */; };
+		A59ED63221FFEBEC002E1F19 /* PPLE14ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED63121FFEBEC002E1F19 /* PPLE14ViewController.swift */; };
+		A59ED63421FFEBF4002E1F19 /* PPLE15ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED63321FFEBF4002E1F19 /* PPLE15ViewController.swift */; };
+		A59ED63621FFEBFD002E1F19 /* PPLE16ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED63521FFEBFD002E1F19 /* PPLE16ViewController.swift */; };
+		A59ED63821FFEC08002E1F19 /* PPLE17ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED63721FFEC08002E1F19 /* PPLE17ViewController.swift */; };
+		A59ED63A21FFEC52002E1F19 /* PPLE18ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED63921FFEC52002E1F19 /* PPLE18ViewController.swift */; };
+		A59ED63C21FFEC5B002E1F19 /* PPLE19ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED63B21FFEC5B002E1F19 /* PPLE19ViewController.swift */; };
+		A59ED63E21FFEC66002E1F19 /* PPLE20ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED63D21FFEC66002E1F19 /* PPLE20ViewController.swift */; };
+		A59ED64221FFEC7A002E1F19 /* PPLE22ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59ED64121FFEC7A002E1F19 /* PPLE22ViewController.swift */; };
 		A5CFF57121E7C0AD00E99338 /* WoodstockLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CFF57021E7C0AD00E99338 /* WoodstockLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,14 +88,9 @@
 		967D81D021FBB1970007BA68 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		968FF1B121F24516004E5D33 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		969CB9D121FDEE7400428C16 /* AuthServ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServ.swift; sourceTree = "<group>"; };
-		A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		A510012521BE922200DEECF8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		A510012721C0119C00DEECF8 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
-		A52CD82B21DE1904000C83B1 /* EnrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollViewController.swift; sourceTree = "<group>"; };
 		A52CD82D21DE196F000C83B1 /* ClassScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassScheduleViewController.swift; sourceTree = "<group>"; };
-		A52CD82F21DE1B38000C83B1 /* TuitionAndFeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuitionAndFeesViewController.swift; sourceTree = "<group>"; };
 		A5349E3221C20B8C00393020 /* ProgramInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramInfoViewController.swift; sourceTree = "<group>"; };
-		A5349E3421C3327400393020 /* AdmissionRequirementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmissionRequirementsViewController.swift; sourceTree = "<group>"; };
 		A5349E3621C4047B00393020 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		A5349E3821C5C3F700393020 /* CurriculumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumViewController.swift; sourceTree = "<group>"; };
 		A54EE97E216AEF5C009644CD /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +100,31 @@
 		A57B549121D1994D0037CC83 /* KennesawLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KennesawLocationViewController.swift; sourceTree = "<group>"; };
 		A57B549521D54AF10037CC83 /* FacultyAndStaffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyAndStaffViewController.swift; sourceTree = "<group>"; };
 		A57B549D21D54B5E0037CC83 /* TestimonialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonialsViewController.swift; sourceTree = "<group>"; };
+		A59ED60E21FFA1D2002E1F19 /* CourseMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMaterialViewController.swift; sourceTree = "<group>"; };
+		A59ED61021FFA31D002E1F19 /* ExpandedDutyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedDutyViewController.swift; sourceTree = "<group>"; };
+		A59ED61221FFB1CA002E1F19 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		A59ED61421FFDE50002E1F19 /* GSDACatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSDACatalogViewController.swift; sourceTree = "<group>"; };
+		A59ED61721FFEA72002E1F19 /* PPLE1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE1ViewController.swift; sourceTree = "<group>"; };
+		A59ED61921FFEB33002E1F19 /* PPLE2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE2ViewController.swift; sourceTree = "<group>"; };
+		A59ED61B21FFEB41002E1F19 /* PPLE3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE3ViewController.swift; sourceTree = "<group>"; };
+		A59ED61D21FFEB4D002E1F19 /* PPLE4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE4ViewController.swift; sourceTree = "<group>"; };
+		A59ED61F21FFEB76002E1F19 /* PPLE5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE5ViewController.swift; sourceTree = "<group>"; };
+		A59ED62121FFEB80002E1F19 /* PPLE6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE6ViewController.swift; sourceTree = "<group>"; };
+		A59ED62321FFEB8F002E1F19 /* PPLE7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE7ViewController.swift; sourceTree = "<group>"; };
+		A59ED62521FFEB98002E1F19 /* PPLE8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE8ViewController.swift; sourceTree = "<group>"; };
+		A59ED62721FFEBA1002E1F19 /* PPLE9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE9ViewController.swift; sourceTree = "<group>"; };
+		A59ED62921FFEBB2002E1F19 /* PPLE10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE10ViewController.swift; sourceTree = "<group>"; };
+		A59ED62B21FFEBBB002E1F19 /* PPLE11ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE11ViewController.swift; sourceTree = "<group>"; };
+		A59ED62D21FFEBC3002E1F19 /* PPLE12ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE12ViewController.swift; sourceTree = "<group>"; };
+		A59ED62F21FFEBD1002E1F19 /* PPLE13ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE13ViewController.swift; sourceTree = "<group>"; };
+		A59ED63121FFEBEC002E1F19 /* PPLE14ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE14ViewController.swift; sourceTree = "<group>"; };
+		A59ED63321FFEBF4002E1F19 /* PPLE15ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE15ViewController.swift; sourceTree = "<group>"; };
+		A59ED63521FFEBFD002E1F19 /* PPLE16ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE16ViewController.swift; sourceTree = "<group>"; };
+		A59ED63721FFEC08002E1F19 /* PPLE17ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE17ViewController.swift; sourceTree = "<group>"; };
+		A59ED63921FFEC52002E1F19 /* PPLE18ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE18ViewController.swift; sourceTree = "<group>"; };
+		A59ED63B21FFEC5B002E1F19 /* PPLE19ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE19ViewController.swift; sourceTree = "<group>"; };
+		A59ED63D21FFEC66002E1F19 /* PPLE20ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE20ViewController.swift; sourceTree = "<group>"; };
+		A59ED64121FFEC7A002E1F19 /* PPLE22ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLE22ViewController.swift; sourceTree = "<group>"; };
 		A5CFF57021E7C0AD00E99338 /* WoodstockLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WoodstockLocationViewController.swift; sourceTree = "<group>"; };
 		BE7FFF6B313660638E5B462F /* Pods-GSDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GSDA/Pods-GSDA.release.xcconfig"; sourceTree = "<group>"; };
 		E5A9EF733DFDD56B3EF81357 /* Pods-GSDA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GSDA/Pods-GSDA.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,11 +187,8 @@
 				0979E19A21FB8EEB002C421D /* Parents */,
 				94BE76A72138E3170086B560 /* ViewController.swift */,
 				A54EE97E216AEF5C009644CD /* MainMenuViewController.swift */,
-				A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */,
 				A510012521BE922200DEECF8 /* HomeViewController.swift */,
-				A510012721C0119C00DEECF8 /* AboutUsViewController.swift */,
 				A5349E3221C20B8C00393020 /* ProgramInfoViewController.swift */,
-				A5349E3421C3327400393020 /* AdmissionRequirementsViewController.swift */,
 				A5349E3621C4047B00393020 /* LocationsViewController.swift */,
 				A5349E3821C5C3F700393020 /* CurriculumViewController.swift */,
 				A57B548F21D0091C0037CC83 /* RoswellLocationViewController.swift */,
@@ -159,12 +196,13 @@
 				A5CFF57021E7C0AD00E99338 /* WoodstockLocationViewController.swift */,
 				A57B549521D54AF10037CC83 /* FacultyAndStaffViewController.swift */,
 				A57B549D21D54B5E0037CC83 /* TestimonialsViewController.swift */,
-				A52CD82B21DE1904000C83B1 /* EnrollViewController.swift */,
 				A52CD82D21DE196F000C83B1 /* ClassScheduleViewController.swift */,
-				A52CD82F21DE1B38000C83B1 /* TuitionAndFeesViewController.swift */,
 				A574C81A21E7B00400A6D493 /* PhotosViewController.swift */,
 				0979E19E21FB8FBD002C421D /* VideosViewController.swift */,
 				9676465321FBA2AE00F8F660 /* UploadImageViewController.swift */,
+				A59ED60E21FFA1D2002E1F19 /* CourseMaterialViewController.swift */,
+				A59ED61021FFA31D002E1F19 /* ExpandedDutyViewController.swift */,
+				A59ED61221FFB1CA002E1F19 /* ResetPasswordViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -194,6 +232,7 @@
 				1E86005D216B0540000D4CD8 /* Services */,
 				0979E19721FB76C3002C421D /* Views */,
 				942256272139F6AB0031F7E8 /* ViewControllers */,
+				A59ED61621FFDEC2002E1F19 /* Course Material VC's */,
 				94BE76A52138E3170086B560 /* AppDelegate.swift */,
 				94BE76AF2138E3180086B560 /* Assets.xcassets */,
 				94BE76B12138E3180086B560 /* LaunchScreen.storyboard */,
@@ -228,6 +267,35 @@
 				968FF1B121F24516004E5D33 /* UserModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A59ED61621FFDEC2002E1F19 /* Course Material VC's */ = {
+			isa = PBXGroup;
+			children = (
+				A59ED61421FFDE50002E1F19 /* GSDACatalogViewController.swift */,
+				A59ED61721FFEA72002E1F19 /* PPLE1ViewController.swift */,
+				A59ED61921FFEB33002E1F19 /* PPLE2ViewController.swift */,
+				A59ED61B21FFEB41002E1F19 /* PPLE3ViewController.swift */,
+				A59ED61D21FFEB4D002E1F19 /* PPLE4ViewController.swift */,
+				A59ED61F21FFEB76002E1F19 /* PPLE5ViewController.swift */,
+				A59ED62121FFEB80002E1F19 /* PPLE6ViewController.swift */,
+				A59ED62321FFEB8F002E1F19 /* PPLE7ViewController.swift */,
+				A59ED62521FFEB98002E1F19 /* PPLE8ViewController.swift */,
+				A59ED62721FFEBA1002E1F19 /* PPLE9ViewController.swift */,
+				A59ED62921FFEBB2002E1F19 /* PPLE10ViewController.swift */,
+				A59ED62B21FFEBBB002E1F19 /* PPLE11ViewController.swift */,
+				A59ED62D21FFEBC3002E1F19 /* PPLE12ViewController.swift */,
+				A59ED62F21FFEBD1002E1F19 /* PPLE13ViewController.swift */,
+				A59ED63121FFEBEC002E1F19 /* PPLE14ViewController.swift */,
+				A59ED63321FFEBF4002E1F19 /* PPLE15ViewController.swift */,
+				A59ED63521FFEBFD002E1F19 /* PPLE16ViewController.swift */,
+				A59ED63721FFEC08002E1F19 /* PPLE17ViewController.swift */,
+				A59ED63921FFEC52002E1F19 /* PPLE18ViewController.swift */,
+				A59ED63B21FFEC5B002E1F19 /* PPLE19ViewController.swift */,
+				A59ED63D21FFEC66002E1F19 /* PPLE20ViewController.swift */,
+				A59ED64121FFEC7A002E1F19 /* PPLE22ViewController.swift */,
+			);
+			path = "Course Material VC's";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,34 +451,54 @@
 			files = (
 				A57B549021D0091C0037CC83 /* RoswellLocationViewController.swift in Sources */,
 				A574C81B21E7B00400A6D493 /* PhotosViewController.swift in Sources */,
-				A510012821C0119C00DEECF8 /* AboutUsViewController.swift in Sources */,
-				A52CD82C21DE1904000C83B1 /* EnrollViewController.swift in Sources */,
 				94BE76A82138E3170086B560 /* ViewController.swift in Sources */,
 				967D81C921FBAF310007BA68 /* Api.swift in Sources */,
 				A5349E3321C20B8C00393020 /* ProgramInfoViewController.swift in Sources */,
 				0979E19921FB76EB002C421D /* FeedCell.swift in Sources */,
+				A59ED61321FFB1CA002E1F19 /* ResetPasswordViewController.swift in Sources */,
+				A59ED62C21FFEBBB002E1F19 /* PPLE11ViewController.swift in Sources */,
+				A59ED60F21FFA1D2002E1F19 /* CourseMaterialViewController.swift in Sources */,
+				A59ED61E21FFEB4D002E1F19 /* PPLE4ViewController.swift in Sources */,
+				A59ED64221FFEC7A002E1F19 /* PPLE22ViewController.swift in Sources */,
 				A5349E3921C5C3F700393020 /* CurriculumViewController.swift in Sources */,
 				A574C81721E54E5300A6D493 /* PhotoModel.swift in Sources */,
+				A59ED63621FFEBFD002E1F19 /* PPLE16ViewController.swift in Sources */,
 				967D81CB21FBAFC90007BA68 /* PostApi.swift in Sources */,
-				A52CD83021DE1B38000C83B1 /* TuitionAndFeesViewController.swift in Sources */,
+				A59ED63C21FFEC5B002E1F19 /* PPLE19ViewController.swift in Sources */,
+				A59ED61121FFA31D002E1F19 /* ExpandedDutyViewController.swift in Sources */,
 				968FF1B221F24516004E5D33 /* UserModel.swift in Sources */,
 				A57B549E21D54B5E0037CC83 /* TestimonialsViewController.swift in Sources */,
+				A59ED61C21FFEB41002E1F19 /* PPLE3ViewController.swift in Sources */,
 				A57B549221D1994D0037CC83 /* KennesawLocationViewController.swift in Sources */,
 				A52CD82E21DE196F000C83B1 /* ClassScheduleViewController.swift in Sources */,
+				A59ED61821FFEA72002E1F19 /* PPLE1ViewController.swift in Sources */,
+				A59ED63221FFEBEC002E1F19 /* PPLE14ViewController.swift in Sources */,
+				A59ED63421FFEBF4002E1F19 /* PPLE15ViewController.swift in Sources */,
 				A54EE97F216AEF5C009644CD /* MainMenuViewController.swift in Sources */,
 				969CB9D221FDEE7400428C16 /* AuthServ.swift in Sources */,
 				A5349E3721C4047B00393020 /* LocationsViewController.swift in Sources */,
-				A5349E3521C3327400393020 /* AdmissionRequirementsViewController.swift in Sources */,
+				A59ED63E21FFEC66002E1F19 /* PPLE20ViewController.swift in Sources */,
+				A59ED62821FFEBA1002E1F19 /* PPLE9ViewController.swift in Sources */,
+				A59ED62421FFEB8F002E1F19 /* PPLE7ViewController.swift in Sources */,
+				A59ED62A21FFEBB2002E1F19 /* PPLE10ViewController.swift in Sources */,
+				A59ED61A21FFEB33002E1F19 /* PPLE2ViewController.swift in Sources */,
+				A59ED61521FFDE50002E1F19 /* GSDACatalogViewController.swift in Sources */,
+				A59ED62E21FFEBC3002E1F19 /* PPLE12ViewController.swift in Sources */,
+				A59ED63821FFEC08002E1F19 /* PPLE17ViewController.swift in Sources */,
 				967D81CD21FBB0B50007BA68 /* UserApi.swift in Sources */,
 				94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */,
 				0979E19F21FB8FBD002C421D /* VideosViewController.swift in Sources */,
-				A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */,
+				A59ED63A21FFEC52002E1F19 /* PPLE18ViewController.swift in Sources */,
 				A57B549621D54AF10037CC83 /* FacultyAndStaffViewController.swift in Sources */,
 				9676465421FBA2AE00F8F660 /* UploadImageViewController.swift in Sources */,
 				967D81CF21FBB1600007BA68 /* HelperService.swift in Sources */,
 				94BE76AE2138E3170086B560 /* GSDA.xcdatamodeld in Sources */,
 				A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */,
+				A59ED63021FFEBD1002E1F19 /* PPLE13ViewController.swift in Sources */,
+				A59ED62021FFEB76002E1F19 /* PPLE5ViewController.swift in Sources */,
 				A5CFF57121E7C0AD00E99338 /* WoodstockLocationViewController.swift in Sources */,
+				A59ED62221FFEB80002E1F19 /* PPLE6ViewController.swift in Sources */,
+				A59ED62621FFEB98002E1F19 /* PPLE8ViewController.swift in Sources */,
 				967D81D121FBB1970007BA68 /* Config.swift in Sources */,
 				0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */,
 				94C19D2E213B292F00350658 /* AuthService.swift in Sources */,

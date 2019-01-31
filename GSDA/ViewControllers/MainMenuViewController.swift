@@ -11,6 +11,12 @@ import Firebase
 
 class MainMenuViewController: UIViewController {
     
+    let strokeTextAttributes: [NSAttributedString.Key : Any] = [
+        .strokeColor : UIColor.black,
+        .foregroundColor : UIColor.black,
+        .strokeWidth : -2.0,
+        ]
+    
     var user: UserModel!
     var previousVC = UserDefaults.standard.string(forKey: "previousVC")
     
@@ -61,40 +67,12 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.layer.zPosition = 1
         button.layer.cornerRadius = 15
-        
-        return button
-    }()
-    
-    lazy var tuitionFeesButton: UIButton = {
-        let button = UIButton(type:  .system)
-        
-        button.backgroundColor = UIColor.white
-        button.setTitle("📈   Tuition and Fees", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(tuitionAndFeesAction), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
-        button.layer.cornerRadius = 15
-        
-        return button
-    }()
-    
-    lazy var admissionRequirementsButton: UIButton = {
-        let button = UIButton(type:  .system)
-        
-        button.backgroundColor = UIColor.white
-        button.setTitle("📋   Admission Requirements", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(admissionRequirmentsAction), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
-        button.layer.cornerRadius = 15
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.75
+        /*button.titleLabel?.layer.shadowColor = UIColor.black.cgColor
+        button.titleLabel?.layer.shadowRadius = 2.0
+        button.titleLabel?.layer.shadowOpacity = 1.0
+        button.titleLabel?.layer.masksToBounds = false*/
         
         return button
     }()
@@ -112,15 +90,17 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.layer.zPosition = 1
         button.layer.cornerRadius = 15
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.75
         
         return button
     }()
     
-    lazy var enrollButton: UIButton = {
+    lazy var expandedDutyButton: UIButton = {
         let button = UIButton(type:  .system)
         
         button.backgroundColor = UIColor.white
-        button.setTitle("🎓   Enroll", for: .normal)
+        button.setTitle("🎓   Expanded Duty", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
@@ -129,23 +109,8 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.layer.zPosition = 1
         button.layer.cornerRadius = 15
-        
-        return button
-    }()
-    
-    lazy var financialAidButton: UIButton = {
-        let button = UIButton(type:  .system)
-        
-        button.backgroundColor = UIColor.white
-        button.setTitle("💵   Financial Aid", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(financialAidAction), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
-        button.layer.cornerRadius = 15
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.75
         
         return button
     }()
@@ -163,6 +128,8 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.layer.zPosition = 1
         button.layer.cornerRadius = 15
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.75
         
         return button
     }()
@@ -180,6 +147,8 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.layer.zPosition = 1
         button.layer.cornerRadius = 15
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.75
         
         return button
     }()
@@ -197,6 +166,8 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.layer.zPosition = 1
         button.layer.cornerRadius = 15
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.75
         
         return button
     }()
@@ -214,6 +185,8 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.layer.zPosition = 1
         button.layer.cornerRadius = 15
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.75
         
         return button
     }()
@@ -231,6 +204,8 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.layer.zPosition = 1
         button.layer.cornerRadius = 15
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.75
         
         return button
     }()
@@ -248,40 +223,8 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.layer.zPosition = 1
         button.layer.cornerRadius = 15
-        
-        return button
-    }()
-    
-    lazy var aboutButton: UIButton = {
-        let button = UIButton(type:  .system)
-        
-        button.backgroundColor = UIColor.white
-        button.setTitle("📰   About GSDA", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(aboutAction), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
-        button.layer.cornerRadius = 15
-        
-        return button
-    }()
-    
-    lazy var contactButton: UIButton = {
-        let button = UIButton(type:  .system)
-        
-        button.backgroundColor = UIColor.white
-        button.setTitle("📞   Contact", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(contactAction), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
-        button.layer.cornerRadius = 15
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.75
         
         return button
     }()
@@ -428,18 +371,13 @@ class MainMenuViewController: UIViewController {
     func setupScrollView() {
         scrollView.addSubview(homeButton)
         scrollView.addSubview(accountSettingsButton)
-        scrollView.addSubview(enrollButton)
+        scrollView.addSubview(expandedDutyButton)
         scrollView.addSubview(scheduleButton)
-        scrollView.addSubview(tuitionFeesButton)
-        scrollView.addSubview(admissionRequirementsButton)
-        scrollView.addSubview(financialAidButton)
         scrollView.addSubview(assignmentsButton)
         scrollView.addSubview(courseMaterialButton)
         scrollView.addSubview(locationsButton)
         scrollView.addSubview(instructionalVideosButton)
         scrollView.addSubview(photosButton)
-        scrollView.addSubview(contactButton)
-        scrollView.addSubview(aboutButton)
         scrollView.addSubview(label1)
         scrollView.addSubview(label2)
          scrollView.addSubview(label3)
@@ -451,62 +389,26 @@ class MainMenuViewController: UIViewController {
         homeButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 15).isActive = true
         homeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
         
-        accountSettingsButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        accountSettingsButton.topAnchor.constraint(equalTo: homeButton.bottomAnchor, constant: 15).isActive = true
-        accountSettingsButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
-        accountSettingsButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        accountSettingsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
-        
-        enrollButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        enrollButton.topAnchor.constraint(equalTo: accountSettingsButton.bottomAnchor, constant: 15).isActive = true
-        enrollButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
-        enrollButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        enrollButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
-        
         scheduleButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        scheduleButton.topAnchor.constraint(equalTo: enrollButton.bottomAnchor, constant: 15).isActive = true
+        scheduleButton.topAnchor.constraint(equalTo: homeButton.bottomAnchor, constant: 15).isActive = true
         scheduleButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         scheduleButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
         scheduleButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
         
-        tuitionFeesButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        tuitionFeesButton.topAnchor.constraint(equalTo: scheduleButton.bottomAnchor, constant: 15).isActive = true
-        tuitionFeesButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
-        tuitionFeesButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        tuitionFeesButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
-        
-        admissionRequirementsButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        admissionRequirementsButton.topAnchor.constraint(equalTo: tuitionFeesButton.bottomAnchor, constant: 15).isActive = true
-        admissionRequirementsButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
-        admissionRequirementsButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        admissionRequirementsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
-        
-        financialAidButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        financialAidButton.topAnchor.constraint(equalTo: admissionRequirementsButton.bottomAnchor, constant: 15).isActive = true
-        financialAidButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
-        financialAidButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        financialAidButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
-        
-        assignmentsButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        assignmentsButton.topAnchor.constraint(equalTo: financialAidButton.bottomAnchor, constant: 15).isActive = true
-        assignmentsButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
-        assignmentsButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        assignmentsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
-        
         courseMaterialButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        courseMaterialButton.topAnchor.constraint(equalTo: assignmentsButton.bottomAnchor, constant: 15).isActive = true
+        courseMaterialButton.topAnchor.constraint(equalTo: scheduleButton.bottomAnchor, constant: 15).isActive = true
         courseMaterialButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         courseMaterialButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
         courseMaterialButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
         
-        locationsButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        locationsButton.topAnchor.constraint(equalTo: courseMaterialButton.bottomAnchor, constant: 15).isActive = true
-        locationsButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
-        locationsButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        locationsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        assignmentsButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        assignmentsButton.topAnchor.constraint(equalTo: courseMaterialButton.bottomAnchor, constant: 15).isActive = true
+        assignmentsButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
+        assignmentsButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
+        assignmentsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
         
         instructionalVideosButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        instructionalVideosButton.topAnchor.constraint(equalTo: locationsButton.bottomAnchor, constant: 15).isActive = true
+        instructionalVideosButton.topAnchor.constraint(equalTo: assignmentsButton.bottomAnchor, constant: 15).isActive = true
         instructionalVideosButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         instructionalVideosButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
         instructionalVideosButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
@@ -517,20 +419,26 @@ class MainMenuViewController: UIViewController {
         photosButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
         photosButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
         
-        contactButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        contactButton.topAnchor.constraint(equalTo: photosButton.bottomAnchor, constant: 15).isActive = true
-        contactButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
-        contactButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        contactButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        expandedDutyButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        expandedDutyButton.topAnchor.constraint(equalTo: photosButton.bottomAnchor, constant: 15).isActive = true
+        expandedDutyButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
+        expandedDutyButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
+        expandedDutyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
         
-        aboutButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        aboutButton.topAnchor.constraint(equalTo: contactButton.bottomAnchor, constant: 15).isActive = true
-        aboutButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
-        aboutButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        aboutButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        locationsButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        locationsButton.topAnchor.constraint(equalTo: expandedDutyButton.bottomAnchor, constant: 15).isActive = true
+        locationsButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
+        locationsButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
+        locationsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        
+        accountSettingsButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        accountSettingsButton.topAnchor.constraint(equalTo: locationsButton.bottomAnchor, constant: 15).isActive = true
+        accountSettingsButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
+        accountSettingsButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
+        accountSettingsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
         
         label1.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 0).isActive = true
-         label1.topAnchor.constraint(equalTo: aboutButton.bottomAnchor, constant: 25).isActive = true
+         label1.topAnchor.constraint(equalTo: accountSettingsButton.bottomAnchor, constant: 25).isActive = true
          label1.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
          label1.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
          label1.font = UIFont(name: "AmericanTypewriter-Bold", size: view.frame.width / 14)
@@ -564,23 +472,11 @@ class MainMenuViewController: UIViewController {
     }
     
     @objc func enrollButtonAction() {
-        self.present(EnrollViewController(), animated: true) {}
+        self.present(ExpandedDutyViewController(), animated: true) {}
     }
     
     @objc func scheduleAction() {
-        
-    }
-    
-    @objc func tuitionAndFeesAction() {
-        self.present(TuitionAndFeesViewController(), animated: true) {}
-    }
-    
-    @objc func admissionRequirmentsAction() {
-        self.present(AdmissionRequirementsViewController(), animated: true) {}
-    }
-    
-    @objc func financialAidAction() {
-        
+        self.present(ClassScheduleViewController(), animated: true) {}
     }
     
     @objc func assignmentsAction() {
@@ -588,7 +484,7 @@ class MainMenuViewController: UIViewController {
     }
     
     @objc func courseMaterialAction() {
-        
+        self.present(CourseMaterialViewController(), animated: true) {}
     }
     
     @objc func locationsAction() {
@@ -602,14 +498,6 @@ class MainMenuViewController: UIViewController {
     @objc func photosAction() {
         let photosVC = PhotosViewController()
         present(photosVC, animated: true) {}
-    }
-    
-    @objc func contactAction() {
-        
-    }
-    
-    @objc func aboutAction() {
-     self.present(AboutUsViewController(), animated: true) {}
     }
     
 }

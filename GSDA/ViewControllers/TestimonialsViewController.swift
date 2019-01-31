@@ -509,7 +509,7 @@ class TestimonialsViewController: UIViewController {
     }
     
     @objc func handleBack() {
-        self.present(AboutUsViewController(), animated: true)
+        
     }
     
 }

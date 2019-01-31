@@ -317,54 +317,6 @@ class ProgramInfoViewController: UIViewController {
         return button
     }()
     
-    let tuitionAndFeesButton: UIButton = {
-        let button = UIButton()
-        
-        button.setImage(UIImage(named: "tuitionFeesPicImg"), for: UIControlState.normal)
-        button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.layer.cornerRadius = 5
-        button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(handleTuitionAndFees), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        
-        return button
-    }()
-    
-    let admissionRequirmentsButton: UIButton = {
-        let button = UIButton()
-        
-        button.setImage(UIImage(named: "admissionRequirmentsPicImg"), for: UIControlState.normal)
-        button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.layer.cornerRadius = 5
-        button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(handleAdmissionRequirments), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        
-        return button
-    }()
-    
-    let financialAidButton: UIButton = {
-        let button = UIButton()
-        
-        button.setImage(UIImage(named: "financialAidPicImg"), for: UIControlState.normal)
-        button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.layer.cornerRadius = 5
-        button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(handleFinancialAid), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        
-        return button
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
@@ -418,7 +370,6 @@ class ProgramInfoViewController: UIViewController {
     }
     
     func setupScrollView() {
-        
         self.scrollView.addSubview(label1)
         self.scrollView.addSubview(image1)
         self.scrollView.addSubview(image2)
@@ -434,9 +385,6 @@ class ProgramInfoViewController: UIViewController {
         self.scrollView.addSubview(label9)
         self.scrollView.addSubview(label10)
         self.scrollView.addSubview(viewCurriculumButton)
-        self.scrollView.addSubview(tuitionAndFeesButton)
-        self.scrollView.addSubview(admissionRequirmentsButton)
-        self.scrollView.addSubview(financialAidButton)
         
         label1.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         label1.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 15).isActive = true
@@ -522,22 +470,6 @@ class ProgramInfoViewController: UIViewController {
         viewCurriculumButton.topAnchor.constraint(equalTo: label10.bottomAnchor, constant: 15).isActive = true
         viewCurriculumButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.65).isActive = true
         viewCurriculumButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        
-        tuitionAndFeesButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        tuitionAndFeesButton.topAnchor.constraint(equalTo: viewCurriculumButton.bottomAnchor, constant: 25).isActive = true
-        tuitionAndFeesButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.65).isActive = true
-        tuitionAndFeesButton.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.65).isActive = true
-        
-        admissionRequirmentsButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        admissionRequirmentsButton.topAnchor.constraint(equalTo: tuitionAndFeesButton.bottomAnchor, constant: 25).isActive = true
-        admissionRequirmentsButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.65).isActive = true
-        admissionRequirmentsButton.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.65).isActive = true
-        
-        financialAidButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        financialAidButton.topAnchor.constraint(equalTo: admissionRequirmentsButton.bottomAnchor, constant: 25).isActive = true
-        financialAidButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.65).isActive = true
-        financialAidButton.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.65).isActive = true
-        
     }
     
     @objc func handleMainMenu() {
@@ -553,21 +485,7 @@ class ProgramInfoViewController: UIViewController {
         UserDefaults.standard.synchronize()
         self.present(CurriculumViewController(), animated: true)
     }
-    @objc func handleTuitionAndFees() {
-        previousVC = "ProgramInfoVC"
-        UserDefaults.standard.set("ProgramInfoVC", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
-        self.present(TuitionAndFeesViewController(), animated: true)
-    }
-    @objc func handleAdmissionRequirments() {
-        previousVC = "ProgramInfoVC"
-        UserDefaults.standard.set("ProgramInfoVC", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
-        self.present(AdmissionRequirementsViewController(), animated: true)
-    }
-    @objc func handleFinancialAid() {
-        
-    }
+
     @objc func handleBack() {
         self.present(HomeViewController(), animated: true)
     }

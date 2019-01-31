@@ -672,7 +672,7 @@ class FacultyAndStaffViewController: UIViewController {
     }
     
     @objc func handleBack() {
-        self.present(AboutUsViewController(), animated: true)
+        
     }
     
 }

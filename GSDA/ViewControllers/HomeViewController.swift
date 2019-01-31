@@ -523,7 +523,7 @@ class HomeViewController: UIViewController {
         previousVC = "HomeVC"
         UserDefaults.standard.set("HomeVC", forKey: "previousVC")
         UserDefaults.standard.synchronize()
-        self.present(EnrollViewController(), animated: true) {}
+        self.present(ExpandedDutyViewController(), animated: true) {}
     }
     
     @objc func handleProgramInfo() {
