@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     let mottoLabel: UILabel = {
         let label = UILabel()
         
-        label.text = "Just twelve weeks to a new career!"
+        label.text = "Georgia School of Dental Assisting" // Change this to the school name per Justin him self
         label.font = UIFont(name: "SavoyeLetPlain", size: 28)
         label.textColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -85,10 +85,14 @@ class ViewController: UIViewController {
         return button
     }()
     
-    let emailTextField: UITextField = {
+    lazy var emailTextField: UITextField = {
         let textField = UITextField()
+        
         textField.placeholder = "Email"
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.returnKeyType = .done
+        textField.delegate = self
+        
         return textField
     }()
     
@@ -99,11 +103,13 @@ class ViewController: UIViewController {
         return view
     }()
     
-    let passwordTextField: UITextField = {
+    lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Password"
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isSecureTextEntry = true
+        textField.returnKeyType = .done
+        textField.delegate = self
         return textField
     }()
     
@@ -124,18 +130,22 @@ class ViewController: UIViewController {
         return sc
     }()
     
-    let retypePasswordTextField: UITextField = {
+    lazy var retypePasswordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Retype Password"
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isSecureTextEntry = true
+        textField.returnKeyType = .done
+        textField.delegate = self
         return textField
     }()
     
-    let usernameTextField: UITextField = {
+    lazy var usernameTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Username"
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.returnKeyType = .done
+        textField.delegate = self
         return textField
     }()
     
@@ -249,13 +259,29 @@ class ViewController: UIViewController {
             AuthService.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
                 self.navigationController?.pushViewController(MainMenuViewController(), animated: true)
             }, onError: { error in
-                
+                if self.emailTextField.text != "" && self.passwordTextField.text != "" {
+                    let alert = UIAlertController(title: "Incorrect Username or Password", message: "Try Again!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                        switch action.style{
+                        case .default:
+                            print("default")
+                            
+                        case .cancel:
+                            print("cancel")
+                            
+                        case .destructive:
+                            print("destructive")
+                            
+                            
+                        }}))
+                    self.present(alert, animated: true, completion: nil)
+                }
             })
         } else if loginRegisterSegmentedControl.selectedSegmentIndex == 1 {
-            // register
-            // need to make the email, password, confirm password and username
-            if passwordTextField.text == retypePasswordTextField.text {
+            
+            if passwordTextField.text == retypePasswordTextField.text && passwordTextField.text!.count >= 6 {
                 // if the email is already connected to an account send a notification
+                
                 AuthServ.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
                     
                     self.signedIn = true
@@ -271,6 +297,42 @@ class ViewController: UIViewController {
             } else if passwordTextField.text != retypePasswordTextField.text {
                 // send a notification that they don't match
                 print("Passwords dont match!!!")
+                
+                let alert = UIAlertController(title: "Passwords Don't Match", message: "Try Again!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    switch action.style{
+                    case .default:
+                        print("default")
+                        
+                    case .cancel:
+                        print("cancel")
+                        
+                    case .destructive:
+                        print("destructive")
+                        
+                        
+                    }}))
+                self.present(alert, animated: true, completion: nil)
+                
+            } else if passwordTextField.text!.count <= 5 {
+                print("Passwords must contain six or more characters!!!")
+                
+                let alert = UIAlertController(title: "The Password Must Be At Least 6 Characters", message: "Try Again!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    switch action.style{
+                    case .default:
+                        print("default")
+                        
+                    case .cancel:
+                        print("cancel")
+                        
+                    case .destructive:
+                        print("destructive")
+                        
+                        
+                    }}))
+                self.present(alert, animated: true, completion: nil)
+                
             }
         }
     }
@@ -291,10 +353,10 @@ class ViewController: UIViewController {
     
     func setupMottoLabel() {
         mottoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        mottoLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10).isActive = true
+        mottoLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: view.frame.height * 0.0375).isActive = true
         mottoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
         mottoLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.055).isActive = true
-        mottoLabel.font = UIFont(name: "SavoyeLetPlain", size: view.frame.width / 12)
+        mottoLabel.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.05)
     }
     
     func setupImage() {
@@ -406,5 +468,12 @@ extension UIColor {
         self.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
     }
     
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 

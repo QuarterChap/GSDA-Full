@@ -15,23 +15,26 @@ class AuthServ{
     
     static func signIn(email: String, password: String, onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-            if error != nil {
-                onError(error!.localizedDescription)
+            if let error = error {
+                onError(error.localizedDescription)
                 return
+            } else {
+                onSuccess()
             }
-            onSuccess()
         })
         
     }
     
     static func signUp(username: String, email: String, password: String, onSuccess: @escaping () -> Void, onError:  @escaping (_ errorMessage: String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (authData: AuthDataResult?, error: Error?) in
-            if error != nil {
-                onError(error!.localizedDescription)
+            if let error = error {
+                onError(error.localizedDescription)
                 return
+            } else {
+                onSuccess()
             }
         }
-        }
+    }
     
     static func setUserInfomation(username: String, email: String, uid: String, onSuccess: @escaping () -> Void) {
         let ref = Database.database().reference()
