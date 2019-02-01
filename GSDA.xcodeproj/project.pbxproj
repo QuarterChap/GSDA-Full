@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		097213692204F93300778B51 /* ScheduleViewCOntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097213682204F93300778B51 /* ScheduleViewCOntroller.swift */; };
+		0972136B2204F95F00778B51 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0972136A2204F95F00778B51 /* DayCell.swift */; };
 		0979E19921FB76EB002C421D /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19821FB76EB002C421D /* FeedCell.swift */; };
 		0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19B21FB8F00002C421D /* FeedViewController.swift */; };
 		0979E19F21FB8FBD002C421D /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19E21FB8FBD002C421D /* VideosViewController.swift */; };
@@ -68,6 +70,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		097213682204F93300778B51 /* ScheduleViewCOntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewCOntroller.swift; sourceTree = "<group>"; };
+		0972136A2204F95F00778B51 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		0979E19821FB76EB002C421D /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		0979E19B21FB8F00002C421D /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0979E19E21FB8FBD002C421D /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				0979E19821FB76EB002C421D /* FeedCell.swift */,
+				0972136A2204F95F00778B51 /* DayCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */,
 				A52967AD2203B95300F317AA /* CourseMaterialViewController.swift */,
 				A566025C2203C635002C96DB /* AccountSettingsViewController.swift */,
+				097213682204F93300778B51 /* ScheduleViewCOntroller.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -434,6 +441,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
@@ -472,6 +480,7 @@
 				967D81CB21FBAFC90007BA68 /* PostApi.swift in Sources */,
 				A52967C92203C05500F317AA /* PPLE15ViewController.swift in Sources */,
 				968FF1B221F24516004E5D33 /* UserModel.swift in Sources */,
+				097213692204F93300778B51 /* ScheduleViewCOntroller.swift in Sources */,
 				A57B549221D1994D0037CC83 /* KennesawLocationViewController.swift in Sources */,
 				A52967D72203C05500F317AA /* GSDACatalogViewController.swift in Sources */,
 				A52967CE2203C05500F317AA /* PPLE18ViewController.swift in Sources */,
@@ -490,6 +499,7 @@
 				967D81CD21FBB0B50007BA68 /* UserApi.swift in Sources */,
 				A52967D42203C05500F317AA /* PPLE6ViewController.swift in Sources */,
 				94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */,
+				0972136B2204F95F00778B51 /* DayCell.swift in Sources */,
 				0979E19F21FB8FBD002C421D /* VideosViewController.swift in Sources */,
 				A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */,
 				A52967CB2203C05500F317AA /* PPLE10ViewController.swift in Sources */,

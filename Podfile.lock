@@ -109,6 +109,7 @@ PODS:
     - nanopb (~> 0.3)
   - gRPC-Core/Interface (1.14.0)
   - GTMSessionFetcher/Core (1.2.1)
+  - JTAppleCalendar (7.1.6)
   - KeychainSwift (11.0.0)
   - leveldb-library (1.20)
   - nanopb (0.3.901):
@@ -125,10 +126,11 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Firestore
   - Firebase/Storage
+  - JTAppleCalendar
   - KeychainSwift (~> 11.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - BoringSSL
     - Firebase
     - FirebaseAnalytics
@@ -144,6 +146,7 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - JTAppleCalendar
     - KeychainSwift
     - leveldb-library
     - nanopb
@@ -165,11 +168,12 @@ SPEC CHECKSUMS:
   "gRPC-C++": 19eec1ffd34de29453f5fab5b4697ad0f240ad51
   gRPC-Core: f4836515817c0eb479aeeb9cc27c91c4ba62a9f6
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  JTAppleCalendar: abb30678f42a4ef8a340a932b1dcb8c85a33dac2
   KeychainSwift: bea6bd9f98af7b8d7ca4aa79fe105c00fab532db
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
 
-PODFILE CHECKSUM: c73e60a9a459d22ec2bc426660e023be1b56f9a2
+PODFILE CHECKSUM: 3eacfb32d4705a986fa5021cfa1e1793793b2df9
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0
