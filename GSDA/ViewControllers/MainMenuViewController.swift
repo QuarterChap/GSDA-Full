@@ -21,7 +21,7 @@ class MainMenuViewController: UIViewController {
     var previousVC = UserDefaults.standard.string(forKey: "previousVC")
     
     let scrollView: UIScrollView = {
-       let sv = UIScrollView()
+        let sv = UIScrollView()
         
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.backgroundColor = UIColor(displayP3Red: 166/255, green: 210/255, blue: 253/255, alpha: 0.5)
@@ -42,7 +42,7 @@ class MainMenuViewController: UIViewController {
     }()
     
     let welcomeLbl: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         
         label.font = UIFont(name: "SavoyeLetPlain", size: 28)
         label.textColor = UIColor.white
@@ -53,7 +53,7 @@ class MainMenuViewController: UIViewController {
         
         return label
     }()
-
+    
     lazy var homeButton: UIButton = {
         let button = UIButton(type:  .system)
         
@@ -70,9 +70,9 @@ class MainMenuViewController: UIViewController {
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.75
         /*button.titleLabel?.layer.shadowColor = UIColor.black.cgColor
-        button.titleLabel?.layer.shadowRadius = 2.0
-        button.titleLabel?.layer.shadowOpacity = 1.0
-        button.titleLabel?.layer.masksToBounds = false*/
+         button.titleLabel?.layer.shadowRadius = 2.0
+         button.titleLabel?.layer.shadowOpacity = 1.0
+         button.titleLabel?.layer.masksToBounds = false*/
         
         return button
     }()
@@ -230,7 +230,7 @@ class MainMenuViewController: UIViewController {
     }()
     
     let label1: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         
         label.text = "Upcoming Classes"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
@@ -338,12 +338,12 @@ class MainMenuViewController: UIViewController {
     
     //fetch user from database and retrieve the username
     /*func fetchCurrentUser() {
-        UserObserver().observeCurrentUser {[weak self] (user) in
-            self!.user = user
-            self?.welcomeLbl.text = "Welcome, \(user.username)"
-            
-        }
-    }*/
+     UserObserver().observeCurrentUser {[weak self] (user) in
+     self!.user = user
+     self?.welcomeLbl.text = "Welcome, \(user.username)"
+     
+     }
+     }*/
     
     func setupView() {
         view.addSubview(logoImageView)
@@ -380,86 +380,86 @@ class MainMenuViewController: UIViewController {
         scrollView.addSubview(photosButton)
         scrollView.addSubview(label1)
         scrollView.addSubview(label2)
-         scrollView.addSubview(label3)
-         scrollView.addSubview(label4)
+        scrollView.addSubview(label3)
+        scrollView.addSubview(label4)
         
         homeButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         homeButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
         homeButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         homeButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 15).isActive = true
-        homeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        homeButton.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.06)
         
         scheduleButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         scheduleButton.topAnchor.constraint(equalTo: homeButton.bottomAnchor, constant: 15).isActive = true
         scheduleButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         scheduleButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        scheduleButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        scheduleButton.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.06)
         
         courseMaterialButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         courseMaterialButton.topAnchor.constraint(equalTo: scheduleButton.bottomAnchor, constant: 15).isActive = true
         courseMaterialButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         courseMaterialButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        courseMaterialButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        courseMaterialButton.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.06)
         
         assignmentsButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         assignmentsButton.topAnchor.constraint(equalTo: courseMaterialButton.bottomAnchor, constant: 15).isActive = true
         assignmentsButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         assignmentsButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        assignmentsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        assignmentsButton.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.06)
         
         instructionalVideosButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         instructionalVideosButton.topAnchor.constraint(equalTo: assignmentsButton.bottomAnchor, constant: 15).isActive = true
         instructionalVideosButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         instructionalVideosButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        instructionalVideosButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        instructionalVideosButton.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.06)
         
         photosButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         photosButton.topAnchor.constraint(equalTo: instructionalVideosButton.bottomAnchor, constant: 15).isActive = true
         photosButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         photosButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        photosButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        photosButton.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.06)
         
         expandedDutyButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         expandedDutyButton.topAnchor.constraint(equalTo: photosButton.bottomAnchor, constant: 15).isActive = true
         expandedDutyButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         expandedDutyButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        expandedDutyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        expandedDutyButton.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.06)
         
         locationsButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         locationsButton.topAnchor.constraint(equalTo: expandedDutyButton.bottomAnchor, constant: 15).isActive = true
         locationsButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         locationsButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        locationsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        locationsButton.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.06)
         
         accountSettingsButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         accountSettingsButton.topAnchor.constraint(equalTo: locationsButton.bottomAnchor, constant: 15).isActive = true
         accountSettingsButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         accountSettingsButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
-        accountSettingsButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.06)
+        accountSettingsButton.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.06)
         
         label1.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 0).isActive = true
-         label1.topAnchor.constraint(equalTo: accountSettingsButton.bottomAnchor, constant: 25).isActive = true
-         label1.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
-         label1.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-         label1.font = UIFont(name: "AmericanTypewriter-Bold", size: view.frame.width / 14)
-         
-         label2.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 0).isActive = true
-         label2.topAnchor.constraint(equalTo: label1.bottomAnchor, constant: 15).isActive = true
-         label2.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-         label2.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15).isActive = true
-         label2.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 14)
-         
-         label3.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 0).isActive = true
-         label3.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 15).isActive = true
-         label3.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-         label3.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15).isActive = true
-         label3.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 14)
-         
-         label4.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 0).isActive = true
-         label4.topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 15).isActive = true
-         label4.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-         label4.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-         label4.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 14)
+        label1.topAnchor.constraint(equalTo: accountSettingsButton.bottomAnchor, constant: 25).isActive = true
+        label1.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+        label1.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
+        label1.font = UIFont(name: "AmericanTypewriter-Bold", size: view.frame.width / 14)
+        
+        label2.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 0).isActive = true
+        label2.topAnchor.constraint(equalTo: label1.bottomAnchor, constant: 15).isActive = true
+        label2.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        label2.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15).isActive = true
+        label2.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 14)
+        
+        label3.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 0).isActive = true
+        label3.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 15).isActive = true
+        label3.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        label3.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15).isActive = true
+        label3.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 14)
+        
+        label4.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 0).isActive = true
+        label4.topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 15).isActive = true
+        label4.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        label4.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
+        label4.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 14)
         
     }
     
@@ -468,7 +468,7 @@ class MainMenuViewController: UIViewController {
     }
     
     @objc func accountSettingsAction() {
-        
+        self.present(AccountSettingsViewController(), animated: true) {}
     }
     
     @objc func enrollButtonAction() {

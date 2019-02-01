@@ -2,15 +2,15 @@
 //  ResetPasswordViewController.swift
 //  GSDA
 //
-//  Created by Julian Cearley on 1/28/19.
-//  Copyright © 2019 Cearley-Programs. All rights reserved.
+//  Created by Julian Cearley on 12/9/18.
+//  Copyright © 2018 Cearley-Programs. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
 class ResetPasswordViewController: UIViewController {
-    
+
     let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "GSDALogo")

@@ -13,7 +13,7 @@ import FirebaseFirestore
 
 class ViewController: UIViewController {
     
-    let mainMenuController = MainMenuViewController()
+    var signedIn = UserDefaults.standard.bool(forKey: "signedIn")
     
     let bannerImageView: UIImageView = {
         let imageView = UIImageView()
@@ -128,6 +128,7 @@ class ViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "Retype Password"
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -246,22 +247,30 @@ class ViewController: UIViewController {
             // make the login process happen if it doesnt work send a notification to the user about why it didnt work i.e. username and password dont match ect.
             view.endEditing(true)
             AuthService.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
-                self.navigationController?.pushViewController(self.mainMenuController, animated: true)
+                self.navigationController?.pushViewController(MainMenuViewController(), animated: true)
             }, onError: { error in
                 
             })
         } else if loginRegisterSegmentedControl.selectedSegmentIndex == 1 {
             // register
             // need to make the email, password, confirm password and username
-            AuthServ.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
-                 self.navigationController?.pushViewController(self.mainMenuController, animated: true)
-            }) { (errorString) in
-                print(errorString!)
-            }
             if passwordTextField.text == retypePasswordTextField.text {
                 // if the email is already connected to an account send a notification
+                AuthServ.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
+                    
+                    self.signedIn = true
+                    UserDefaults.standard.set(true, forKey: "signedIn")
+                    UserDefaults.standard.synchronize()
+                    
+                    self.navigationController?.pushViewController(MainMenuViewController(), animated: true)
+                    
+                    
+                }) { (errorString) in
+                    print(errorString!)
+                }
             } else if passwordTextField.text != retypePasswordTextField.text {
                 // send a notification that they don't match
+                print("Passwords dont match!!!")
             }
         }
     }
@@ -380,7 +389,7 @@ class ViewController: UIViewController {
         UIApplication.shared.statusBarStyle = .lightContent
       
         if Api.User.CURRENT_USER != nil {
-            self.navigationController?.pushViewController(self.mainMenuController, animated: true)
+            self.navigationController?.pushViewController(MainMenuViewController(), animated: true)
         } else {
             //show message to login or register maybe?
         }

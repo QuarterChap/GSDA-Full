@@ -16,6 +16,10 @@ final class VideosViewController: FeedViewController, FeedTableViewDelegate {
         tableViewDelegate = self
     }
     
+    func upload() {
+        present(UploadContentViewController(), animated: true, completion: nil)
+    }
+    
     func didTap(cell: FeedCell) {
         let videoViewController = AVPlayerViewController()
 

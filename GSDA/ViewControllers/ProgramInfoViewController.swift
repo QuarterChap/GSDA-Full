@@ -370,6 +370,7 @@ class ProgramInfoViewController: UIViewController {
     }
     
     func setupScrollView() {
+        
         self.scrollView.addSubview(label1)
         self.scrollView.addSubview(image1)
         self.scrollView.addSubview(image2)
@@ -470,6 +471,7 @@ class ProgramInfoViewController: UIViewController {
         viewCurriculumButton.topAnchor.constraint(equalTo: label10.bottomAnchor, constant: 15).isActive = true
         viewCurriculumButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.65).isActive = true
         viewCurriculumButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
+        
     }
     
     @objc func handleMainMenu() {

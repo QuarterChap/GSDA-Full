@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if signedIn == true {
             window?.rootViewController = UINavigationController(rootViewController: MainMenuViewController())
         } else {
-            window?.rootViewController = UINavigationController(rootViewController: MainMenuViewController())
+            window?.rootViewController = UINavigationController(rootViewController: ViewController())
         }
         
         FirebaseApp.configure()

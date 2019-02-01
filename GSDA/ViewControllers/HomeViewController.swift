@@ -83,23 +83,6 @@ class HomeViewController: UIViewController {
         return label
     }()
     
-    let enrollButton: UIButton = {
-       let button = UIButton()
-        
-        button.backgroundColor = UIColor(r: 124, g: 128, b: 49)
-        button.setTitle("Enroll Today", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.layer.cornerRadius = 5
-        button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(handleEnroll), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        
-        return button
-    }()
-    
     let programInfoButton: UIButton = {
         let button = UIButton()
         
@@ -190,7 +173,7 @@ class HomeViewController: UIViewController {
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(handleProgramInfo), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderColor = UIColor.black.cgColor
         button.layer.borderWidth = 1
         
         return button
@@ -398,7 +381,6 @@ class HomeViewController: UIViewController {
         scrollView.addSubview(label1)
         scrollView.addSubview(label2)
         scrollView.addSubview(label3)
-        scrollView.addSubview(enrollButton)
         scrollView.addSubview(programInfoButton)
         scrollView.addSubview(locationsButton)
         scrollView.addSubview(classScheduleButton)
@@ -432,13 +414,8 @@ class HomeViewController: UIViewController {
         label3.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.085).isActive = true
         label3.font = UIFont(name: "AmericanTypewriter-Bold", size: view.frame.width / 18)
         
-        enrollButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        enrollButton.topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 15).isActive = true
-        enrollButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.45).isActive = true
-        enrollButton.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.085).isActive = true
-        
         programInfoButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        programInfoButton.topAnchor.constraint(equalTo: enrollButton.bottomAnchor, constant: 25).isActive = true
+        programInfoButton.topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 25).isActive = true
         programInfoButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.65).isActive = true
         programInfoButton.heightAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.6).isActive = true
         
@@ -517,13 +494,6 @@ class HomeViewController: UIViewController {
         label11.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.085).isActive = true
         label11.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 18)
         
-    }
-    
-    @objc func handleEnroll() {
-        previousVC = "HomeVC"
-        UserDefaults.standard.set("HomeVC", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
-        self.present(ExpandedDutyViewController(), animated: true) {}
     }
     
     @objc func handleProgramInfo() {

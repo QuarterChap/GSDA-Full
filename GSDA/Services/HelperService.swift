@@ -10,26 +10,38 @@ import Foundation
 import FirebaseStorage
 import FirebaseDatabase
 class HelperService {
-    static func uploadDataToServer(data: Data, videoUrl: URL? = nil, ratio: CGFloat, caption: String, onSuccess: @escaping () -> Void) {
+ /*   static func uploadDataToServer(data: Data, videoUrl: URL? = nil, ratio: CGFloat, title: String, description: String, onSuccess: @escaping () -> Void) {
         if let videoUrl = videoUrl {
-            self.uploadVideoToFirebaseStorage(videoUrl: videoUrl, onSuccess: { (videoUrl) in
-                uploadImageToFirebaseStorage(data: data, onSuccess: { (thumbnailImageUrl) in
-                    sendDataToDatabase(photoUrl: thumbnailImageUrl, videoUrl: videoUrl, ratio: ratio, caption: caption, onSuccess: onSuccess)
+            self.uploadVideoToFirebaseStorage(videoUrl: videoUrl, title: String, description: String, onSuccess: { (videoUrl) in
+                uploadImageToFirebaseStorage(data: data, title: title, onSuccess: { (thumbnailImageUrl) in
+                    sendDataToDatabase(photoUrl: thumbnailImageUrl, videoUrl: videoUrl, ratio: ratio, title: title, description: description, onSuccess: onSuccess)
                 })
             })
         } else {
-            uploadImageToFirebaseStorage(data: data) { (photoUrl) in
-                self.sendDataToDatabase(photoUrl: photoUrl, ratio: ratio, caption: caption, onSuccess: onSuccess)
+            uploadImageToFirebaseStorage(data: data, title: title, description: description) { (photoUrl) in
+                self.sendDataToDatabase(photoUrl: photoUrl, ratio: ratio, title: title, description: description, onSuccess: onSuccess)
             }
         }
-    }
+    }*/
     
-    static func uploadVideoToFirebaseStorage(videoUrl: URL, onSuccess: @escaping (_ videoUrl: String) -> Void) {
+    static func uploadVideoToFirebaseStorage(videoUrl: URL?, title: String, ratio: CGFloat, description: String, onSuccess: @escaping (_ videoUrl: String) -> Void) {
         let videoIdString = NSUUID().uuidString
-        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child(videoIdString)
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedVideo").child(videoIdString)
+        let newPostId = Api.Post.REF_POSTS.childByAutoId().key
+        let newPostReference = Api.Post.REF_POSTS.child(newPostId!)
         
+        guard let currentUser = Api.User.CURRENT_USER else {
+            return
+        }
+         let currentUserId = currentUser.uid
         
-        storageRef.putFile(from: videoUrl, metadata: nil) { (_, error) in
+        let timestamp = Int(Date().timeIntervalSince1970)
+        
+        var dict = ["uid": currentUserId , "description": description, "title": title, "ratio": ratio, "timestamp": timestamp] as [String : Any]
+        if let videoUrl = videoUrl {
+            dict["videoUrl"] = videoUrl
+        }
+        storageRef.putFile(from: (videoUrl as? URL)!, metadata: nil) { (_, error) in
             if error != nil {
                 return
             }
@@ -40,11 +52,37 @@ class HelperService {
             })
             
         }
+        newPostReference.setValue(dict, withCompletionBlock: {
+            (error, ref) in
+            if error != nil {
+                return
+            }
+            
+            let myPostRef = Api.MyPosts.REF_MYPOSTS.child(currentUserId).child(newPostId!)
+            myPostRef.setValue(["timestamp": timestamp], withCompletionBlock: { (error, ref) in
+                if error != nil {
+                    return
+                }
+            })
+            onSuccess(videoIdString)
+        })
     }
     
-    static func uploadImageToFirebaseStorage(data: Data, onSuccess: @escaping (_ imageUrl: String) -> Void) {
+    static func uploadImageToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping (_ imageUrl: String) -> Void) {
+        
         let photoIdString = NSUUID().uuidString
-        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child(photoIdString)
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedImage").child(photoIdString)
+        let newPostId = Api.Post.REF_POSTS.childByAutoId().key
+        let newPostReference = Api.Post.REF_POSTS.child(newPostId!)
+        
+        guard let currentUser = Api.User.CURRENT_USER else {
+            return
+        }
+         let currentUserId = currentUser.uid
+        
+        let timestamp = Int(Date().timeIntervalSince1970)
+        
+        var dict = ["uid": currentUserId ,"title":title, "caption": description, "timestamp": timestamp] as [String : Any]
         storageRef.putData(data, metadata: nil) { (metadata, error) in
             if error != nil {
                 return
@@ -56,9 +94,22 @@ class HelperService {
                 
             })
         }
+        newPostReference.setValue(dict, withCompletionBlock: {
+            (error, ref) in
+            if error != nil {
+                return
+            }
+            let myPostRef = Api.MyPosts.REF_MYPOSTS.child(currentUserId).child(newPostId!)
+        myPostRef.setValue(["timestamp": timestamp], withCompletionBlock: { (error, ref) in
+            if error != nil {
+                return
+            }
+        })
+            onSuccess(photoIdString)
+    })
     }
     
-    static func sendDataToDatabase(photoUrl: String, videoUrl: String? = nil, ratio: CGFloat, caption: String, onSuccess: @escaping () -> Void) {
+    static func sendDataToDatabase(photoUrl: String, videoUrl: String? = nil, ratio: CGFloat, title: String, description: String, onSuccess: @escaping () -> Void) {
         let newPostId = Api.Post.REF_POSTS.childByAutoId().key
         let newPostReference = Api.Post.REF_POSTS.child(newPostId!)
         
@@ -69,7 +120,7 @@ class HelperService {
         let currentUserId = currentUser.uid
         let timestamp = Int(Date().timeIntervalSince1970)
         
-        var dict = ["uid": currentUserId ,"photoUrl": photoUrl, "caption": caption, "ratio": ratio, "timestamp": timestamp] as [String : Any]
+        var dict = ["uid": currentUserId ,"photoUrl": photoUrl, "title": title, "caption": description, "ratio": ratio, "timestamp": timestamp] as [String : Any]
         if let videoUrl = videoUrl {
             dict["videoUrl"] = videoUrl
         }

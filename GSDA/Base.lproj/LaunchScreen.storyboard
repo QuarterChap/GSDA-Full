@@ -27,20 +27,11 @@
                                     <constraint firstAttribute="height" constant="150" id="vzS-dE-HuU"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="40t-WI-T1c">
-                                <rect key="frame" x="162.5" y="433.5" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="DsL-zR-UP8"/>
-                                    <constraint firstAttribute="width" constant="50" id="rlG-yf-LPT"/>
-                                </constraints>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="h0m-M7-DbH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Fgj-jC-f9g"/>
-                            <constraint firstItem="40t-WI-T1c" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="S2S-Hd-lO8"/>
                             <constraint firstItem="h0m-M7-DbH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="w4n-rL-87c"/>
-                            <constraint firstItem="40t-WI-T1c" firstAttribute="top" secondItem="h0m-M7-DbH" secondAttribute="bottom" constant="25" id="yXy-SD-ctq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
