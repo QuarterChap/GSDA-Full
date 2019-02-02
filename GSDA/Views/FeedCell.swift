@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FeedCell: UITableViewCell {
     
@@ -43,9 +44,99 @@ class FeedCell: UITableViewCell {
         return label
     }()
     
-    func setupCell(with model: PhotoModel) {
+    var player: AVPlayer?
+    var playerLayer: AVPlayerLayer?
+    
+    var post: PhotoModel? {
+        didSet {
+            updateView()
+        }
+    }
+    
+//    var user: UserModel? {
+  //      didSet {
+   //         setupUserInfo()
+   //     }
+  //  }
+    
+    func updateView() {
+        descriptionLabel.text = post?.caption
+        titleLabel.text = post?.title
+        
+        if let ratio = post?.ratio {
+            //FOr this to work i need the top constraint of the photoview, then it calculates the right ratio - Langsem
+          //  heightConstraintPhoto.constant = UIScreen.main.bounds.width / ratio
+           // layoutIfNeeded()
+            
+        }
+        if let photoUrlString = post?.photoUrl {
+            let photoUrl = URL(string: photoUrlString)
+            //Set the image you want for the photocontainer box
+        }
+        if let videoUrlString = post?.videoUrl, let videoUrl = URL(string: videoUrlString) {
+            print("videoUrlString: \(videoUrlString)")
+            player = AVPlayer(url: videoUrl)
+            playerLayer = AVPlayerLayer(player: player)
+            playerLayer?.frame = photoImageView.frame
+            playerLayer?.frame.size.width = UIScreen.main.bounds.width
+            playerLayer?.frame.size.height = UIScreen.main.bounds.width / post!.ratio!
+            self.contentView.layer.addSublayer(playerLayer!)
+            player?.play()
+        }
+        
+        if let timestamp = post?.timestamp {
+            print(timestamp)
+            let timestampDate = Date(timeIntervalSince1970: Double(timestamp))
+            let now = Date()
+            let components = Set<Calendar.Component>([.second, .minute, .hour, .day, .weekOfMonth])
+            let diff = Calendar.current.dateComponents(components, from: timestampDate, to: now)
+            
+            var timeText = ""
+            if diff.second! <= 0 {
+                timeText = "Now"
+            }
+            if diff.second! > 0 && diff.minute! == 0 {
+                timeText = (diff.second == 1) ? "\(diff.second!) second ago" : "\(diff.second!) seconds ago"
+            }
+            if diff.minute! > 0 && diff.hour! == 0 {
+                timeText = (diff.minute == 1) ? "\(diff.minute!) minute ago" : "\(diff.minute!) minutes ago"
+            }
+            if diff.hour! > 0 && diff.day! == 0 {
+                timeText = (diff.hour == 1) ? "\(diff.hour!) hour ago" : "\(diff.hour!) hours ago"
+            }
+            if diff.day! > 0 && diff.weekOfMonth! == 0 {
+                timeText = (diff.day == 1) ? "\(diff.day!) day ago" : "\(diff.day!) days ago"
+            }
+            if diff.weekOfMonth! > 0 {
+                timeText = (diff.weekOfMonth == 1) ? "\(diff.weekOfMonth!) week ago" : "\(diff.weekOfMonth!) weeks ago"
+            }
+            
+           // GOnna use a timelabel? if yes then the code its there rdy only need to hook up the timelabel if no just remove the code above - Nick
+           // timeLabel.text = timeText
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(stopVideo), name: NSNotification.Name.init("stopVideo"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(playVideo), name: NSNotification.Name.init("playVideo"), object: nil)
+        
         
     }
+    
+    @objc func stopVideo() {
+        if player?.rate != 0 {
+            player?.pause()
+        }
+    }
+    
+    @objc func playVideo() {
+        if player?.rate == 0 {
+            player?.play()
+        }
+    }
+    
+    //Dunno if we need this, it will display the name of the person who made the post
+ //   func setupUserInfo() {
+   //     nameLabel.text = user?.username
+  //  }
     
     func setupSubViews() {
         selectionStyle = .none

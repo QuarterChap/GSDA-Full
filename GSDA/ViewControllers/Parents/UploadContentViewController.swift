@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import FirebaseDatabase
+import FirebaseStorage
 
 class UploadContentViewController: UIViewController {
     
@@ -106,7 +108,7 @@ class UploadContentViewController: UIViewController {
     @objc func doneButtonPressed() {
         //TODO: FOR NICK (Upload content)
         
-        if let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) {
+       if let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) {
           let ratio = uploadImage.size.width / uploadImage.size.height
             
             if selectedImageView == uploadImage {
@@ -128,23 +130,9 @@ class UploadContentViewController: UIViewController {
                     }
                 }
             }
-               /* HelperService.uploadDataToServer(data: imageData, videoUrl: videoUrl, ratio: ratio, title: titleTextField.text!, description: descriptionTextField.text!, onSuccess: {
-                    
-                    if selectedImageView = image {
-                        
-                        self.clean()
-                        self.present(PhotosViewController(), animated: true, completion: nil)
-                    }
-                   
-                })
+    }
+    }
 
-      } else {
-            //Show message to user that upload could not be made
-            
-       }*/
-        
-    }
-    }
     
     func clean() {
         self.titleTextField.text = ""
@@ -165,6 +153,7 @@ class UploadContentViewController: UIViewController {
     }
     
 }
+
 
 extension UploadContentViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -204,3 +193,4 @@ extension UploadContentViewController: UIImagePickerControllerDelegate, UINaviga
         return nil
     }
 }
+

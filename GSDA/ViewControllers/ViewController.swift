@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseFirestore
+import FirebaseAuth
 
 class ViewController: UIViewController {
     
@@ -189,10 +190,25 @@ class ViewController: UIViewController {
         setupMottoLabel()
         setupResetButton()
         setupImage()
+        
+        handleTextField()
+        
+        
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //User alrdy autheticated
+        if Api.User.CURRENT_USER != nil {
+                self.present(MainMenuViewController(), animated: true, completion: nil)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        
     }
     
     var inputsContainerViewHeightAnchor: NSLayoutConstraint?
@@ -247,53 +263,55 @@ class ViewController: UIViewController {
         
     }
     
+    //Activates the register/login button if all the fields are filled if not then its not active
+    func handleTextField() {
+        usernameTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        emailTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+    }
+    
+    //Function that activates or deactivate the login/register button :)
+    @objc func textFieldDidChange() {
+        guard let username = usernameTextField.text, !username.isEmpty, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+            
+            loginRegisterButton.setTitleColor(UIColor.lightGray, for: .normal)
+            loginRegisterButton.isEnabled = false
+            return
+        }
+        loginRegisterButton.setTitleColor(UIColor.green, for: .normal)
+        loginRegisterButton.isEnabled = true
+    
+    }
+    
     @objc func handleResetPassword() {
         self.present(ResetPasswordViewController(), animated: true) {}
     }
-    // this is my change
+
     @objc func handleLoginRegistration() {
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
-            // Login
-            // make the login process happen if it doesnt work send a notification to the user about why it didnt work i.e. username and password dont match ect.
             view.endEditing(true)
-            AuthService.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
-                self.navigationController?.pushViewController(MainMenuViewController(), animated: true)
-            }, onError: { error in
-                if self.emailTextField.text != "" && self.passwordTextField.text != "" {
-                    let alert = UIAlertController(title: "Incorrect Username or Password", message: "Try Again!", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                        switch action.style{
-                        case .default:
-                            print("default")
-                            
-                        case .cancel:
-                            print("cancel")
-                            
-                        case .destructive:
-                            print("destructive")
-                            
-                            
-                        }}))
-                    self.present(alert, animated: true, completion: nil)
-                }
-            })
+            // Login
+            ProgressHUD.show("Please wait", interaction: false)
+            AuthServ.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
+                ProgressHUD.showSuccess("Welcome")
+                 self.present(MainMenuViewController(), animated: true, completion: nil)
+            }) { (error) in
+                ProgressHUD.showError(error!)
+                print(error!)
+            }
         } else if loginRegisterSegmentedControl.selectedSegmentIndex == 1 {
+            view.endEditing(true)
+            ProgressHUD.show("Welcome", interaction: false)
+            AuthServ.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
+                ProgressHUD.showSuccess("Welcome")
+                self.present(MainMenuViewController(), animated: true, completion: nil)
+            }) { (error) in
+                ProgressHUD.showError(error!)
+                print(error!)
+            }
             
             if passwordTextField.text == retypePasswordTextField.text && passwordTextField.text!.count >= 6 {
                 // if the email is already connected to an account send a notification
-                
-                AuthServ.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
-                    
-                    self.signedIn = true
-                    UserDefaults.standard.set(true, forKey: "signedIn")
-                    UserDefaults.standard.synchronize()
-                    
-                    self.navigationController?.pushViewController(MainMenuViewController(), animated: true)
-                    
-                    
-                }) { (errorString) in
-                    print(errorString!)
-                }
             } else if passwordTextField.text != retypePasswordTextField.text {
                 // send a notification that they don't match
                 print("Passwords dont match!!!")

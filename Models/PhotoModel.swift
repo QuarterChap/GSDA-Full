@@ -18,12 +18,14 @@ class PhotoModel {
     var ratio: CGFloat?
     var videoUrl: String?
     var timestamp: Int?
+    var title: String?
 }
 
 extension PhotoModel {
     static func transformPostPhoto(dict: [String: Any], key: String) -> PhotoModel {
         let post = PhotoModel()
         post.id = key
+        post.title = dict["title"] as? String
         post.caption = dict["caption"] as? String
         post.photoUrl = dict["photoUrl"] as? String
         post.videoUrl = dict["videoUrl"] as? String

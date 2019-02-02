@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class MainMenuViewController: UIViewController {
     
@@ -500,4 +501,11 @@ class MainMenuViewController: UIViewController {
         present(photosVC, animated: true) {}
     }
     
+    //logout function needs a button to connect with
+ /*   do {
+        try Auth.auth()?.signOut()
+    } catch let logOutError {
+    }
+     self.present(ViewController(), animated: true, completion: nil)
+    */
 }

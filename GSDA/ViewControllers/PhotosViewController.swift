@@ -9,10 +9,13 @@
 import UIKit
 final class PhotosViewController: FeedViewController, FeedTableViewDelegate {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = "Pictures"
         tableViewDelegate = self
+        
     }
     
     func didTap(cell: FeedCell) {

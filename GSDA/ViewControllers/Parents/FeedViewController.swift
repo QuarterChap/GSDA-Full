@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class FeedViewController: UIViewController {
     
     var previousVC = UserDefaults.standard.string(forKey: "previousVC")
     var tableViewDelegate: FeedTableViewDelegate?
-    
- 
+    var posts = [PhotoModel]()
+    var users = [UserModel]()
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -85,6 +86,35 @@ class FeedViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .white
         setupView()
+        loadPosts()
+    }
+    
+    //Loading the posts
+    func loadPosts() {
+        Api.Feed.getRecentFeed(withId: Api.User.CURRENT_USER!.uid, start: posts.first?.timestamp, limit: 3  ) { (results) in
+            if results.count > 0 {
+                results.forEach({ (result) in
+                    self.posts.append(result.0)
+                    self.users.append(result.1)
+                })
+            }
+            self.feedTableView.reloadData()
+        }
+    }
+    
+    //DIsplay the new posts thats added
+    private func displayNewPosts(newPosts posts: [PhotoModel]) {
+        guard posts.count > 0 else {
+            return
+        }
+        var indexPaths:[IndexPath] = []
+        self.feedTableView.beginUpdates()
+        for post in 0...(posts.count - 1) {
+            let indexPath = IndexPath(row: post, section: 0)
+            indexPaths.append(indexPath)
+        }
+        self.feedTableView.insertRows(at: indexPaths, with: .none)
+        self.feedTableView.endUpdates()
     }
     
     func setupView() {
@@ -128,14 +158,27 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if posts.isEmpty {
+            return 0
+        }
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = FeedCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell()
         cell.setupSubViews()
+        if posts.isEmpty {
+            return UITableViewCell()
+        }
+        let post = posts[indexPath.row]
+        //ONly display user if we are going to show the user who made the post
+      //  let user = users[indexPath.row]
+        cell.post = post
+        //Only display if we are going to show the user who made the post
+      //  cell.user = user
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 400
@@ -146,7 +189,22 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
             tableViewDelegate?.didTap(cell: cell)
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name.init("stopVideo"), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name.init("playVideo"), object: nil)
+        
+    }
 }
+
+
+
+
 
 protocol FeedTableViewDelegate {
     
