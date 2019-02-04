@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		094592192208B66600744277 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094592182208B66600744277 /* PostModel.swift */; };
+		0945921C2208C1BB00744277 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0945921B2208C1BB00744277 /* UIImageExtension.swift */; };
 		097213692204F93300778B51 /* ScheduleViewCOntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097213682204F93300778B51 /* ScheduleViewCOntroller.swift */; };
 		0972136B2204F95F00778B51 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0972136A2204F95F00778B51 /* DayCell.swift */; };
 		0979E19921FB76EB002C421D /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19821FB76EB002C421D /* FeedCell.swift */; };
@@ -72,6 +74,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		094592182208B66600744277 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		0945921B2208C1BB00744277 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		097213682204F93300778B51 /* ScheduleViewCOntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewCOntroller.swift; sourceTree = "<group>"; };
 		0972136A2204F95F00778B51 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		0979E19821FB76EB002C421D /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
@@ -154,6 +158,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0945921A2208C1B000744277 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0945921B2208C1BB00744277 /* UIImageExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0979E19721FB76C3002C421D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +256,7 @@
 		94BE76A42138E3170086B560 /* GSDA */ = {
 			isa = PBXGroup;
 			children = (
+				0945921A2208C1B000744277 /* Utils */,
 				968FF1B321F24911004E5D33 /* Database */,
 				1E86005D216B0540000D4CD8 /* Services */,
 				0979E19721FB76C3002C421D /* Views */,
@@ -314,6 +327,7 @@
 			children = (
 				A574C81621E54E5300A6D493 /* PhotoModel.swift */,
 				968FF1B121F24516004E5D33 /* UserModel.swift */,
+				094592182208B66600744277 /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -483,6 +497,7 @@
 				A52967DC2203C05500F317AA /* PPLE19ViewController.swift in Sources */,
 				0979E19921FB76EB002C421D /* FeedCell.swift in Sources */,
 				A52967D32203C05500F317AA /* PPLE7ViewController.swift in Sources */,
+				0945921C2208C1BB00744277 /* UIImageExtension.swift in Sources */,
 				A52967D82203C05500F317AA /* PPLE4ViewController.swift in Sources */,
 				A566025D2203C635002C96DB /* AccountSettingsViewController.swift in Sources */,
 				A5349E3921C5C3F700393020 /* CurriculumViewController.swift in Sources */,
@@ -514,6 +529,7 @@
 				0972136B2204F95F00778B51 /* DayCell.swift in Sources */,
 				0979E19F21FB8FBD002C421D /* VideosViewController.swift in Sources */,
 				A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */,
+				094592192208B66600744277 /* PostModel.swift in Sources */,
 				A52967CB2203C05500F317AA /* PPLE10ViewController.swift in Sources */,
 				9676465421FBA2AE00F8F660 /* UploadContentViewController.swift in Sources */,
 				A52967C82203C05500F317AA /* PPLE3ViewController.swift in Sources */,

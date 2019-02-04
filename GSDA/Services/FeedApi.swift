@@ -9,21 +9,27 @@
 import Foundation
 import FirebaseDatabase
 class FeedApi {
-    var REF_FEED = Database.database().reference().child("feed")
+    var REF_POSTS = Database.database().reference().child("posts")
     
-    func observeFeed(withId id: String, completion: @escaping (PhotoModel) -> Void) {
-        REF_FEED.child(id).queryOrdered(byChild: "timestamp").observe(.childAdded, with: {
+    func observePosts(of type: String, completion: @escaping (PostModel) -> Void) {
+        REF_POSTS.child(type).queryOrdered(byChild: "timestamp").observe(.childAdded, with: {
             snapshot in
-            let key = snapshot.key
-            Api.Post.observePost(withId: key, completion: { (post) in
-                completion(post)
-            })
+            if let dict = snapshot.value as? [String: Any] {
+                let decoder = JSONDecoder()
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
+                    let model = try decoder.decode(PostModel.self, from: data)
+                    completion(model)
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
         })
     }
     
     func getRecentFeed(withId id: String, start timestamp: Int? = nil, limit: UInt, completionHandler: @escaping ([(PhotoModel, UserModel)]) -> Void) {
         
-        var feedQuery = REF_FEED.child(id).queryOrdered(byChild: "timestamp")
+        var feedQuery = REF_POSTS.child(id).queryOrdered(byChild: "timestamp")
         if let latestPostTimestamp = timestamp, latestPostTimestamp > 0 {
             feedQuery = feedQuery.queryStarting(atValue: latestPostTimestamp + 1, childKey: "timestamp").queryLimited(toLast: limit)
         } else {
@@ -61,7 +67,7 @@ class FeedApi {
     
     func getOldFeed(withId id: String, start timestamp: Int, limit: UInt, completionHandler: @escaping ([(PhotoModel, UserModel)]) -> Void) {
         
-        let feedOrderQuery = REF_FEED.child(id).queryOrdered(byChild: "timestamp")
+        let feedOrderQuery = REF_POSTS.child(id).queryOrdered(byChild: "timestamp")
         let feedLimitedQuery = feedOrderQuery.queryEnding(atValue: timestamp - 1, childKey: "timestamp").queryLimited(toLast: limit)
         
         feedLimitedQuery.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -93,7 +99,7 @@ class FeedApi {
     }
     
     func observeFeedRemoved(withId id: String, completion: @escaping (PhotoModel) -> Void) {
-        REF_FEED.child(id).observe(.childRemoved, with: {
+        REF_POSTS.child(id).observe(.childRemoved, with: {
             snapshot in
             let key = snapshot.key
             Api.Post.observePost(withId: key, completion: { (post) in

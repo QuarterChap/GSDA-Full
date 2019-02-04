@@ -10,19 +10,6 @@ import Foundation
 import FirebaseStorage
 import FirebaseDatabase
 class HelperService {
- /*   static func uploadDataToServer(data: Data, videoUrl: URL? = nil, ratio: CGFloat, title: String, description: String, onSuccess: @escaping () -> Void) {
-        if let videoUrl = videoUrl {
-            self.uploadVideoToFirebaseStorage(videoUrl: videoUrl, title: String, description: String, onSuccess: { (videoUrl) in
-                uploadImageToFirebaseStorage(data: data, title: title, onSuccess: { (thumbnailImageUrl) in
-                    sendDataToDatabase(photoUrl: thumbnailImageUrl, videoUrl: videoUrl, ratio: ratio, title: title, description: description, onSuccess: onSuccess)
-                })
-            })
-        } else {
-            uploadImageToFirebaseStorage(data: data, title: title, description: description) { (photoUrl) in
-                self.sendDataToDatabase(photoUrl: photoUrl, ratio: ratio, title: title, description: description, onSuccess: onSuccess)
-            }
-        }
-    }*/
     
     static func uploadVideoToFirebaseStorage(videoUrl: URL?, title: String, ratio: CGFloat, description: String, onSuccess: @escaping (_ videoUrl: String) -> Void) {
         let videoIdString = NSUUID().uuidString
@@ -33,7 +20,7 @@ class HelperService {
         guard let currentUser = Api.User.CURRENT_USER else {
             return
         }
-         let currentUserId = currentUser.uid
+        let currentUserId = currentUser.uid
         
         let timestamp = Int(Date().timeIntervalSince1970)
         
@@ -68,68 +55,45 @@ class HelperService {
         })
     }
     
-    static func uploadImageToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping (_ imageUrl: String) -> Void) {
-        
+    static func uploadImageToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping () -> ()) {
         let photoIdString = NSUUID().uuidString
         let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedImage").child(photoIdString)
-        let newPostId = Api.Post.REF_POSTS.childByAutoId().key
-        let newPostReference = Api.Post.REF_POSTS.child(newPostId!)
+//        guard let _ = Api.User.CURRENT_USER else {
+//            return
+//        }
         
-        guard let currentUser = Api.User.CURRENT_USER else {
-            return
-        }
-         let currentUserId = currentUser.uid
-        
-        let timestamp = Int(Date().timeIntervalSince1970)
-        
-        var dict = ["uid": currentUserId ,"title":title, "caption": description, "timestamp": timestamp] as [String : Any]
         storageRef.putData(data, metadata: nil) { (metadata, error) in
             if error != nil {
                 return
             }
             storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
                 if let photoUrl = url?.absoluteString {
-                    onSuccess(photoUrl)
+                    let data = ["title": title, "description": description, "photo_url": photoUrl, "timestamp": Int(Date().timeIntervalSince1970)] as [String: Any]
+                    sendDataToPosts(dict: data, onSuccess: {
+                        onSuccess()
+                    })
                 }
-                
             })
         }
-        newPostReference.setValue(dict, withCompletionBlock: {
-            (error, ref) in
-            if error != nil {
-                return
-            }
-            let myPostRef = Api.MyPosts.REF_MYPOSTS.child(currentUserId).child(newPostId!)
-        myPostRef.setValue(["timestamp": timestamp], withCompletionBlock: { (error, ref) in
-            if error != nil {
-                return
-            }
-        })
-            onSuccess(photoIdString)
-    })
     }
     
-    static func sendDataToDatabase(photoUrl: String, videoUrl: String? = nil, ratio: CGFloat, title: String, description: String, onSuccess: @escaping () -> Void) {
-        let newPostId = Api.Post.REF_POSTS.childByAutoId().key
-        let newPostReference = Api.Post.REF_POSTS.child(newPostId!)
-        
-        guard let currentUser = Api.User.CURRENT_USER else {
-            return
+    static func sendDataToPosts(dict: [String: Any], onSuccess: @escaping () -> Void) {
+        let uuid = UUID().uuidString
+        var newPostReference = Api.Post.REF_POSTS
+
+        var type = ""
+        if let _ = dict["video_url"] {
+            type = "videos"
+        } else if let _ = dict["photo_url"] {
+            type = "photos"
         }
-        
-        let currentUserId = currentUser.uid
-        let timestamp = Int(Date().timeIntervalSince1970)
-        
-        var dict = ["uid": currentUserId ,"photoUrl": photoUrl, "title": title, "caption": description, "ratio": ratio, "timestamp": timestamp] as [String : Any]
-        if let videoUrl = videoUrl {
-            dict["videoUrl"] = videoUrl
-        }
-        
+        newPostReference = newPostReference.child(type).child(uuid)
         newPostReference.setValue(dict, withCompletionBlock: {
-            (error, ref) in
-            if error != nil {
-                return
+            (error, _) in
+            if let error = error {
+                print(error.localizedDescription)
             }
+            onSuccess()
         })
     }
 }

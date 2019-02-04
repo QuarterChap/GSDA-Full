@@ -8,14 +8,18 @@
 
 import UIKit
 final class PhotosViewController: FeedViewController, FeedTableViewDelegate {
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = "Pictures"
         tableViewDelegate = self
-        
+    }
+    
+    override func loadPosts() {
+        Api.Feed.observePosts(of: "photos") { (post) in
+            self.posts.append(post)
+            self.feedTableView.reloadData()
+        }
     }
     
     func didTap(cell: FeedCell) {

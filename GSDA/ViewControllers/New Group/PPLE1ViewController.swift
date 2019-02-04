@@ -47,6 +47,8 @@ class PPLE1ViewController: UIViewController {
         return button
     }()
     
+    var urlList = ["urlsdjaidaw d", "dawdjwauidaw"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true

@@ -13,8 +13,10 @@ class FeedViewController: UIViewController {
     
     var previousVC = UserDefaults.standard.string(forKey: "previousVC")
     var tableViewDelegate: FeedTableViewDelegate?
-    var posts = [PhotoModel]()
-    var users = [UserModel]()
+    var posts = [PostModel]()
+    
+    var imageCache = [String: UIImage]()
+    var loadingImages = [String]()
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -45,8 +47,6 @@ class FeedViewController: UIViewController {
         return tableView
     }()
     
-    
-    
     lazy var uploadButton: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
@@ -63,8 +63,7 @@ class FeedViewController: UIViewController {
         
         return button
     }()
-    
-    
+    // Photo feed
     lazy var mainMenuButton: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
@@ -80,7 +79,6 @@ class FeedViewController: UIViewController {
         return button
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
@@ -90,17 +88,7 @@ class FeedViewController: UIViewController {
     }
     
     //Loading the posts
-    func loadPosts() {
-        Api.Feed.getRecentFeed(withId: Api.User.CURRENT_USER!.uid, start: posts.first?.timestamp, limit: 3  ) { (results) in
-            if results.count > 0 {
-                results.forEach({ (result) in
-                    self.posts.append(result.0)
-                    self.users.append(result.1)
-                })
-            }
-            self.feedTableView.reloadData()
-        }
-    }
+    func loadPosts() {}
     
     //DIsplay the new posts thats added
     private func displayNewPosts(newPosts posts: [PhotoModel]) {
@@ -131,7 +119,7 @@ class FeedViewController: UIViewController {
         feedTableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
         feedTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         feedTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        feedTableView.bottomAnchor.constraint(equalTo: mainMenuButton.topAnchor).isActive = true
+        feedTableView.bottomAnchor.constraint(equalTo: uploadButton.topAnchor, constant: -10).isActive = true
         
         
         uploadButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
@@ -150,8 +138,6 @@ class FeedViewController: UIViewController {
     }
     
     @objc func handleUpload() {
-        //call Present Upload ViewController delegate of some sort.
-        //Leave for Jaaster
         tableViewDelegate?.upload()
     }
 }
@@ -164,19 +150,40 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         return posts.count
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell()
-        cell.setupSubViews()
-        if posts.isEmpty {
-            return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FeedCell,
+            !posts.isEmpty else {
+                return UITableViewCell()
         }
+        cell.setupSubViews()
+        
         let post = posts[indexPath.row]
-        //ONly display user if we are going to show the user who made the post
-      //  let user = users[indexPath.row]
         cell.post = post
-        //Only display if we are going to show the user who made the post
-      //  cell.user = user
+        // Download images or videos
+        if let imageURLString = post.photo_url{
+            handleLoadingImage(for: imageURLString) { (image) in
+                cell.photoImageView.image = image
+            }
+        }
+        
         return cell
+    }
+    
+    func handleLoadingImage(for imageURL: String, completion: @escaping (UIImage)->()) {
+        if let loadedImage = imageCache[imageURL] {
+            completion(loadedImage)
+        } else {
+            loadingImages.append(imageURL)
+            UIImage.from(imageURL: imageURL) { [weak self] (image) in
+                self?.imageCache.updateValue(image, forKey: imageURL)
+                if let index = self?.loadingImages.lastIndex(of: imageURL) {
+                    self?.loadingImages.remove(at: index)
+                }
+                completion(image)
+            }
+        }
     }
     
     

@@ -108,36 +108,23 @@ class UploadContentViewController: UIViewController {
     @objc func doneButtonPressed() {
         //TODO: FOR NICK (Upload content)
         
-       if let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) {
-          let ratio = uploadImage.size.width / uploadImage.size.height
+        if let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) {
+            let ratio = uploadImage.size.width / uploadImage.size.height
             
             if selectedImageView == uploadImage {
                 HelperService.uploadVideoToFirebaseStorage(videoUrl: videoUrl!, title: titleTextField.text!, ratio: ratio, description: descriptionTextField.text!) { (error) in
-                    if error != nil {
+                    if !error.isEmpty {
                         print(error)
                     } else {
-                        self.clean()
-                        self.present(VideosViewController(), animated: true, completion: nil)
+                        self.dismiss(animated: true, completion: nil)
                     }
                 }
             } else {
-                HelperService.uploadImageToFirebaseStorage(data: imageData, title: titleTextField.text!, description: descriptionTextField.text!) { (error) in
-                    if error != nil {
-                        print(error)
-                    }else {
-                        self.clean()
-                        self.present(PhotosViewController(), animated: true, completion: nil)
-                    }
+                HelperService.uploadImageToFirebaseStorage(data: imageData, title: titleTextField.text!, description: descriptionTextField.text!) {
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
-    }
-    }
-
-    
-    func clean() {
-        self.titleTextField.text = ""
-        self.descriptionTextField.text = ""
-        self.selectedImageView.image = UIImage(named: "placeholder")
+        }
     }
     
     @objc func openGallery() {
