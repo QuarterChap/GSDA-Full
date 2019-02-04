@@ -121,7 +121,6 @@ class FeedViewController: UIViewController {
         feedTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         feedTableView.bottomAnchor.constraint(equalTo: uploadButton.topAnchor, constant: -10).isActive = true
         
-        
         uploadButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
         uploadButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
         uploadButton.bottomAnchor.constraint(equalTo: mainMenuButton.topAnchor, constant: -10).isActive = true
@@ -162,8 +161,12 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         let post = posts[indexPath.row]
         cell.post = post
         // Download images or videos
-        if let imageURLString = post.photo_url{
+        if let imageURLString = post.photo_url {
             handleLoadingImage(for: imageURLString) { (image) in
+                cell.photoImageView.image = image
+            }
+        } else if let videoThumbnailURLString = post.video_thumbnail_url {
+            handleLoadingImage(for: videoThumbnailURLString) { (image) in
                 cell.photoImageView.image = image
             }
         }

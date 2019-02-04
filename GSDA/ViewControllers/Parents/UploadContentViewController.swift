@@ -106,25 +106,16 @@ class UploadContentViewController: UIViewController {
     }
     
     @objc func doneButtonPressed() {
-        //TODO: FOR NICK (Upload content)
         
-        if let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) {
-            let ratio = uploadImage.size.width / uploadImage.size.height
-            
-            if selectedImageView == uploadImage {
-                HelperService.uploadVideoToFirebaseStorage(videoUrl: videoUrl!, title: titleTextField.text!, ratio: ratio, description: descriptionTextField.text!) { (error) in
-                    if !error.isEmpty {
-                        print(error)
-                    } else {
-                        self.dismiss(animated: true, completion: nil)
-                    }
+            if let videoURL = videoUrl, let thumbnailImage = selectedImageView.image {
+                HelperService.uploadVideoToFirebaseStorage(videoUrl: videoURL, thumbnail: thumbnailImage, title: titleTextField.text!, description: descriptionTextField.text!) {
+                    self.dismiss(animated: true, completion: nil)
                 }
-            } else {
+            } else if let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) {
                 HelperService.uploadImageToFirebaseStorage(data: imageData, title: titleTextField.text!, description: descriptionTextField.text!) {
                     self.dismiss(animated: true, completion: nil)
                 }
             }
-        }
     }
     
     @objc func openGallery() {
@@ -138,9 +129,7 @@ class UploadContentViewController: UIViewController {
         pickerController.mediaTypes = ["public.image", "public.movie"]
         present(pickerController, animated: true, completion: nil)
     }
-    
 }
-
 
 extension UploadContentViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

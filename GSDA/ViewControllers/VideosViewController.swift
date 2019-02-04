@@ -6,7 +6,6 @@
 //  Copyright © 2019 Cearley-Programs. All rights reserved.
 //
 
-
 import AVKit
 final class VideosViewController: FeedViewController, FeedTableViewDelegate {
     
@@ -14,6 +13,13 @@ final class VideosViewController: FeedViewController, FeedTableViewDelegate {
         super.viewDidLoad()
         titleLabel.text = "Videos"
         tableViewDelegate = self
+    }
+
+    override func loadPosts() {
+        Api.Feed.observePosts(of: "videos") { (post) in
+            self.posts.append(post)
+            self.feedTableView.reloadData()
+        }
     }
     
     func upload() {
@@ -23,11 +29,10 @@ final class VideosViewController: FeedViewController, FeedTableViewDelegate {
     func didTap(cell: FeedCell) {
         let videoViewController = AVPlayerViewController()
 
-        guard let videoURL = URL(string: "https://www.youtube.com/watch?v=0PnQTeNzrLI") else {
+        guard let videoURLString = cell.post?.video_url, let videoURL = URL(string: videoURLString) else {
             return
         }
         videoViewController.player = AVPlayer(url: videoURL)
         present(videoViewController, animated: true, completion: nil)
     }
-    
 }

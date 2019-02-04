@@ -14,4 +14,5 @@ struct PostModel: Codable {
     var timestamp: Int
     var photo_url: String?
     var video_url: String?
+    var video_thumbnail_url: String?
 }
