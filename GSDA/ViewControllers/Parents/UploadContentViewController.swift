@@ -67,6 +67,24 @@ class UploadContentViewController: UIViewController {
         return button
     }()
     
+    lazy var backButton: UIButton = {
+        let button = UIButton(type:  .system)
+        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        button.setTitle("Back", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
+        button.layer.zPosition = 1
+        return button
+    }()
+
+    @objc func backButtonPressed() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     //Variables
     var selectedImage: UIImage?
     var videoUrl: URL?
@@ -83,6 +101,7 @@ class UploadContentViewController: UIViewController {
         view.addSubview(selectedImageView)
         view.addSubview(descriptionTextField)
         view.addSubview(doneButton)
+        view.addSubview(backButton)
         
         titleTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
         titleTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
@@ -92,7 +111,7 @@ class UploadContentViewController: UIViewController {
         descriptionTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 15).isActive = true
         descriptionTextField.leadingAnchor.constraint(equalTo: titleTextField.leadingAnchor).isActive = true
         descriptionTextField.trailingAnchor.constraint(equalTo: titleTextField.trailingAnchor).isActive = true
-        descriptionTextField.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        descriptionTextField.heightAnchor.constraint(equalToConstant: 120).isActive = true
         
         selectedImageView.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 15).isActive = true
         selectedImageView.leadingAnchor.constraint(equalTo: descriptionTextField.leadingAnchor).isActive = true
@@ -101,8 +120,13 @@ class UploadContentViewController: UIViewController {
         
         doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
         doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
-        doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        doneButton.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: -20).isActive = true
         doneButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        backButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
     }
     
     @objc func doneButtonPressed() {

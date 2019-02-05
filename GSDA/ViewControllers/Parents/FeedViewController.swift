@@ -191,7 +191,19 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        
+        // Get Model
+        let index = indexPath.row
+        let model = posts[index]
+        let descriptionLength = model.description.count
+        // 60 char a line
+        let charsPerLine = 60
+        let lines = descriptionLength / charsPerLine
+        
+        return 400 + CGFloat(lines * 10)
+        
+        // Check Description length
+        // Change size depending on length
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

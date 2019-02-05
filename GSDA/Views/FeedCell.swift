@@ -37,9 +37,10 @@ class FeedCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor(r: 166, g: 210, b: 253)
         label.textColor = .white
+        label.textAlignment = .center
         label.isEditable = false
-        label.layer.cornerRadius = 20
         label.clipsToBounds = true
+        label.layer.cornerRadius = 15
         return label
     }()
     
@@ -89,8 +90,6 @@ class FeedCell: UITableViewCell {
         
         NotificationCenter.default.addObserver(self, selector: #selector(stopVideo), name: NSNotification.Name.init("stopVideo"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(playVideo), name: NSNotification.Name.init("playVideo"), object: nil)
-        
-        
     }
     
     @objc func stopVideo() {
@@ -125,7 +124,7 @@ class FeedCell: UITableViewCell {
         photoImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
         photoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding).isActive = true
         photoImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding).isActive = true
-        photoImageView.heightAnchor.constraint(equalToConstant: frame.width - padding * 2).isActive = true
+        photoImageView.heightAnchor.constraint(equalToConstant: frame.width - (padding * 2)).isActive = true
         
         descriptionLabel.topAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: 10).isActive = true
         descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding).isActive = true
