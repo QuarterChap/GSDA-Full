@@ -11,6 +11,11 @@ import AVFoundation
 import FirebaseDatabase
 import FirebaseStorage
 
+enum ContentType: String {
+    case video = "videos"
+    case photo = "photos"
+}
+
 class UploadContentViewController: UIViewController {
     
     lazy var selectedImageView: UIImageView = {
@@ -22,6 +27,7 @@ class UploadContentViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(openGallery))
         imageView.addGestureRecognizer(gesture)
         imageView.isUserInteractionEnabled = true
+        imageView.contentMode = .center
         return imageView
     }()
     
@@ -85,6 +91,8 @@ class UploadContentViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    var contentType: ContentType = .video
+    
     //Variables
     var selectedImage: UIImage?
     var videoUrl: URL?
@@ -127,19 +135,35 @@ class UploadContentViewController: UIViewController {
         backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
+        
+        selectedImageView.image = UIImage(named: contentType.rawValue)
     }
     
     @objc func doneButtonPressed() {
-        
-            if let videoURL = videoUrl, let thumbnailImage = selectedImageView.image {
-                HelperService.uploadVideoToFirebaseStorage(videoUrl: videoURL, thumbnail: thumbnailImage, title: titleTextField.text!, description: descriptionTextField.text!) {
-                    self.dismiss(animated: true, completion: nil)
-                }
-            } else if let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) {
-                HelperService.uploadImageToFirebaseStorage(data: imageData, title: titleTextField.text!, description: descriptionTextField.text!) {
-                    self.dismiss(animated: true, completion: nil)
-                }
-            }
+        if contentType == .video {
+            uploadVideo()
+        } else if contentType == .photo {
+            uploadImage()
+        }
+    }
+    
+    
+    func uploadVideo() {
+        guard let videoURL = videoUrl, let thumbnailImage = selectedImageView.image else {
+            return
+        }
+        HelperService.uploadVideoToFirebaseStorage(videoUrl: videoURL, thumbnail: thumbnailImage, title: titleTextField.text!, description: descriptionTextField.text!) {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func uploadImage() {
+        guard let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) else {
+            return
+        }
+        HelperService.uploadImageToFirebaseStorage(data: imageData, title: titleTextField.text!, description: descriptionTextField.text!) {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc func openGallery() {
@@ -149,8 +173,11 @@ class UploadContentViewController: UIViewController {
     func handleSelectPhoto() {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        
-        pickerController.mediaTypes = ["public.image", "public.movie"]
+        if contentType == .video {
+        pickerController.mediaTypes = ["public.movie"]
+        } else if contentType == .photo {
+            pickerController.mediaTypes = ["public.image"]
+        }
         present(pickerController, animated: true, completion: nil)
     }
 }

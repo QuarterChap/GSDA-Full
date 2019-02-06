@@ -23,6 +23,7 @@ final class VideosViewController: FeedViewController, FeedTableViewDelegate {
     }
     
     func upload() {
+        // vc.contentType is by default .video 
         present(UploadContentViewController(), animated: true, completion: nil)
     }
     
