@@ -481,7 +481,7 @@ class MainMenuViewController: UIViewController {
     }
     
     @objc func assignmentsAction() {
-        
+        self.present(AssignmentControllerViewController(), animated: true, completion: nil)
     }
     
     @objc func courseMaterialAction() {

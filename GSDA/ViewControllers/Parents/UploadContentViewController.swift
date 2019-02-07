@@ -14,6 +14,7 @@ import FirebaseStorage
 enum ContentType: String {
     case video = "videos"
     case photo = "photos"
+    case pdf = "pdf"
 }
 
 class UploadContentViewController: UIViewController {
@@ -96,6 +97,7 @@ class UploadContentViewController: UIViewController {
     //Variables
     var selectedImage: UIImage?
     var videoUrl: URL?
+    var pdfLink: Data?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,6 +146,8 @@ class UploadContentViewController: UIViewController {
             uploadVideo()
         } else if contentType == .photo {
             uploadImage()
+        } else if contentType == .pdf {
+            
         }
     }
     
@@ -157,11 +161,23 @@ class UploadContentViewController: UIViewController {
         }
     }
     
+    
+    
     func uploadImage() {
         guard let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) else {
             return
         }
         HelperService.uploadImageToFirebaseStorage(data: imageData, title: titleTextField.text!, description: descriptionTextField.text!) {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func uploadPdf() {
+        guard let uploadPdf = pdfLink  // needs a webview instead of image
+        else {
+            return
+        }
+        HelperService.uploadPdfToFirebase(pdf: pdfLink!, title: titleTextField.text!, description: descriptionTextField.text!) {
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -177,9 +193,16 @@ class UploadContentViewController: UIViewController {
         pickerController.mediaTypes = ["public.movie"]
         } else if contentType == .photo {
             pickerController.mediaTypes = ["public.image"]
+        } else if contentType == .pdf {
+            UIDocumentPickerViewController.self
         }
         present(pickerController, animated: true, completion: nil)
     }
+}
+
+extension UploadContentViewController:UIDocumentPickerDelegate {
+    
+    
 }
 
 extension UploadContentViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

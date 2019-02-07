@@ -19,6 +19,7 @@ class PhotoModel {
     var videoUrl: String?
     var timestamp: Int?
     var title: String?
+    var pdf: Data?
 }
 
 extension PhotoModel {
@@ -32,6 +33,7 @@ extension PhotoModel {
         post.uid = dict["uid"] as? String
         post.ratio = dict["ratio"] as? CGFloat
         post.timestamp = dict["timestamp"] as? Int
+        post.pdf = dict["pdf"] as? Data
       
         return post
     }

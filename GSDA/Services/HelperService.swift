@@ -11,13 +11,26 @@ import FirebaseStorage
 import FirebaseDatabase
 class HelperService {
     
+    static func uploadPdfToFirebase(pdf: Data, title: String, description: String, onSuccess: @escaping () -> ()) {
+        let uuid = NSUUID().uuidString
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedPdf").child(uuid)
+        
+        storageRef.downloadURL(completion: { (url, error) in
+            if let pdf = url?.absoluteString {
+                let data = ["title": title, "description": description, "pdf": pdf, "timestamp": Int(Date().timeIntervalSince1970)] as [String: Any]
+                sendDataToPosts(dict: data, onSuccess: {
+                    onSuccess()
+                })
+            }
+        })
+        
+    }
+    
     static func uploadVideoToFirebaseStorage(videoUrl: URL, thumbnail: UIImage, title: String, description: String,  onSuccess: @escaping () -> ()) {
         let uuid = NSUUID().uuidString
         let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedVideo").child(uuid)
         let thumbnailRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("thumbnails").child(uuid)
-//        guard let currentUser = Api.User.CURRENT_USER else {
-//            return
-//        }
+
         guard let thumbnailData = UIImageJPEGRepresentation(thumbnail, 0.1) else {
             return
         }
@@ -49,9 +62,6 @@ class HelperService {
     static func uploadImageToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping () -> ()) {
         let photoIdString = NSUUID().uuidString
         let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedImage").child(photoIdString)
-//        guard let _ = Api.User.CURRENT_USER else {
-//            return
-//        }
         
         storageRef.putData(data, metadata: nil) { (metadata, error) in
             if error != nil {
@@ -77,6 +87,8 @@ class HelperService {
             type = "videos"
         } else if let _ = dict["photo_url"] {
             type = "photos"
+        } else if let _ = dict["pdf"] {
+            type = "pdf"
         }
         newPostReference = newPostReference.child(type).child(uuid)
         newPostReference.setValue(dict, withCompletionBlock: {
