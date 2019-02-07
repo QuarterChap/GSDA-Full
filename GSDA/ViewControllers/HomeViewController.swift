@@ -515,7 +515,7 @@ class HomeViewController: UIViewController {
         previousVC = "HomeVC"
         UserDefaults.standard.set("HomeVC", forKey: "previousVC")
         UserDefaults.standard.synchronize()
-        self.present(ClassScheduleViewController(), animated: true) {}
+        self.present(ScheduleViewController(), animated: true) {}
     }
     
     @objc func handleMainMenu() {

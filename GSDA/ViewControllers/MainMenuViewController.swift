@@ -477,7 +477,7 @@ class MainMenuViewController: UIViewController {
     }
     
     @objc func scheduleAction() {
-        self.present(ClassScheduleViewController(), animated: true) {}
+        self.present(ScheduleViewController(), animated: true) {}
     }
     
     @objc func assignmentsAction() {

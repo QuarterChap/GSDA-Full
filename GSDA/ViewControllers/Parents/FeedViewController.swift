@@ -224,14 +224,9 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-
-
-
-
 protocol FeedTableViewDelegate {
     
     func upload()
     
     func didTap(cell: FeedCell)
 }
-

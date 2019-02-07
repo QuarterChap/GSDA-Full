@@ -31,6 +31,7 @@ final class ScheduleViewController: UIViewController {
         cView.calendarDelegate = self
         cView.calendarDataSource = self
         cView.scrollingMode = .stopAtEachCalendarFrame
+        
         return cView
     }()
     
@@ -41,8 +42,10 @@ final class ScheduleViewController: UIViewController {
         dayNames.forEach {
             let dayLabel = UILabel()
             dayLabel.text = $0
-            dayLabel.textColor = .black
-            dayLabel.backgroundColor = .blue
+            dayLabel.font = UIFont.boldSystemFont(ofSize: 15)
+            dayLabel.textColor = .white
+            dayLabel.backgroundColor = .customBlue
+            dayLabel.textAlignment = .center
             result.append(dayLabel)
         }
         return result
@@ -76,8 +79,22 @@ final class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         setupSubViews()
         view.backgroundColor = .white
+        navigationController?.setNavigationBarHidden(true, animated: false)
         updateCalenderLabel(date: Date())
     }
+    
+    // Fetch notes
+    // Every day has a list of notes
+    // click on day
+    // note list vc
+    // view note
+    
+    // create new note for specific day
+    
+    
+    
+    
+    
 }
 
 private extension ScheduleViewController {
@@ -147,6 +164,16 @@ extension ScheduleViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
             return
         }
         updateCalenderLabel(date: date)
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        guard let cell = cell as? DayCell else {
+            return
+        }
+      // Open note viewer
+        let vc = NoteListViewController()
+        vc.date = date
+        present(vc, animated: true, completion: nil)
     }
     
     func updateCalenderLabel(date: Date) {
