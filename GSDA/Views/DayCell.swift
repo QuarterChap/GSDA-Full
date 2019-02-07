@@ -14,6 +14,7 @@ class DayCell: JTAppleCell {
         let label = UILabel()
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
         return label
     }()
     
@@ -25,8 +26,7 @@ class DayCell: JTAppleCell {
         dateLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
+        layer.cornerRadius = frame.width/7
+        clipsToBounds = true
     }
-    
-    
 }
-

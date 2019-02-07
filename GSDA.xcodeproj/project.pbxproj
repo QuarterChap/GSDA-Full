@@ -14,6 +14,9 @@
 		0979E19921FB76EB002C421D /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19821FB76EB002C421D /* FeedCell.swift */; };
 		0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19B21FB8F00002C421D /* FeedViewController.swift */; };
 		0979E19F21FB8FBD002C421D /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19E21FB8FBD002C421D /* VideosViewController.swift */; };
+		09B85A9A220CB5230004D41A /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B85A99220CB5230004D41A /* NoteListViewController.swift */; };
+		09B85A9D220CBB8F0004D41A /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B85A9C220CBB8F0004D41A /* EditNoteViewController.swift */; };
+		09B85A9F220CBFD10004D41A /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B85A9E220CBFD10004D41A /* DateExt.swift */; };
 		948F3294C164BC332457C1F2 /* Pods_GSDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42ECD5614709DAB330D2E295 /* Pods_GSDA.framework */; };
 		94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE76A52138E3170086B560 /* AppDelegate.swift */; };
 		94BE76A82138E3170086B560 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE76A72138E3170086B560 /* ViewController.swift */; };
@@ -60,7 +63,6 @@
 		A52967DB2203C05500F317AA /* PPLE8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967C52203C05400F317AA /* PPLE8ViewController.swift */; };
 		A52967DC2203C05500F317AA /* PPLE19ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967C62203C05400F317AA /* PPLE19ViewController.swift */; };
 		A52967DD2203C05500F317AA /* PPLE12ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967C72203C05400F317AA /* PPLE12ViewController.swift */; };
-		A52CD82E21DE196F000C83B1 /* ClassScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52CD82D21DE196F000C83B1 /* ClassScheduleViewController.swift */; };
 		A5349E3321C20B8C00393020 /* ProgramInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349E3221C20B8C00393020 /* ProgramInfoViewController.swift */; };
 		A5349E3721C4047B00393020 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349E3621C4047B00393020 /* LocationsViewController.swift */; };
 		A5349E3921C5C3F700393020 /* CurriculumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349E3821C5C3F700393020 /* CurriculumViewController.swift */; };
@@ -81,6 +83,9 @@
 		0979E19821FB76EB002C421D /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		0979E19B21FB8F00002C421D /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0979E19E21FB8FBD002C421D /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
+		09B85A99220CB5230004D41A /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
+		09B85A9C220CBB8F0004D41A /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		09B85A9E220CBFD10004D41A /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		42ECD5614709DAB330D2E295 /* Pods_GSDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GSDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BE76A22138E3170086B560 /* GSDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BE76A52138E3170086B560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +136,6 @@
 		A52967C52203C05400F317AA /* PPLE8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE8ViewController.swift; sourceTree = "<group>"; };
 		A52967C62203C05400F317AA /* PPLE19ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE19ViewController.swift; sourceTree = "<group>"; };
 		A52967C72203C05400F317AA /* PPLE12ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE12ViewController.swift; sourceTree = "<group>"; };
-		A52CD82D21DE196F000C83B1 /* ClassScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassScheduleViewController.swift; sourceTree = "<group>"; };
 		A5349E3221C20B8C00393020 /* ProgramInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramInfoViewController.swift; sourceTree = "<group>"; };
 		A5349E3621C4047B00393020 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		A5349E3821C5C3F700393020 /* CurriculumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				0945921B2208C1BB00744277 /* UIImageExtension.swift */,
+				09B85A9E220CBFD10004D41A /* DateExt.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -182,6 +187,16 @@
 				9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */,
 			);
 			path = Parents;
+			sourceTree = "<group>";
+		};
+		09B85A9B220CBB7E0004D41A /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				09B85A9C220CBB8F0004D41A /* EditNoteViewController.swift */,
+				09B85A99220CB5230004D41A /* NoteListViewController.swift */,
+				097213682204F93300778B51 /* ScheduleViewCOntroller.swift */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 		0D66E46205F546CFF71F1E96 /* Pods */ = {
@@ -224,13 +239,12 @@
 				A57B548F21D0091C0037CC83 /* RoswellLocationViewController.swift */,
 				A57B549121D1994D0037CC83 /* KennesawLocationViewController.swift */,
 				A5CFF57021E7C0AD00E99338 /* WoodstockLocationViewController.swift */,
-				A52CD82D21DE196F000C83B1 /* ClassScheduleViewController.swift */,
 				A574C81A21E7B00400A6D493 /* PhotosViewController.swift */,
 				0979E19E21FB8FBD002C421D /* VideosViewController.swift */,
 				A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */,
 				A52967AD2203B95300F317AA /* CourseMaterialViewController.swift */,
 				A566025C2203C635002C96DB /* AccountSettingsViewController.swift */,
-				097213682204F93300778B51 /* ScheduleViewCOntroller.swift */,
+				09B85A9B220CBB7E0004D41A /* Schedule */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -495,6 +509,7 @@
 				A5349E3321C20B8C00393020 /* ProgramInfoViewController.swift in Sources */,
 				A52967D02203C05500F317AA /* PPLE9ViewController.swift in Sources */,
 				A52967DC2203C05500F317AA /* PPLE19ViewController.swift in Sources */,
+				09B85A9A220CB5230004D41A /* NoteListViewController.swift in Sources */,
 				0979E19921FB76EB002C421D /* FeedCell.swift in Sources */,
 				A52967D32203C05500F317AA /* PPLE7ViewController.swift in Sources */,
 				0945921C2208C1BB00744277 /* UIImageExtension.swift in Sources */,
@@ -512,13 +527,13 @@
 				A52967D72203C05500F317AA /* GSDACatalogViewController.swift in Sources */,
 				A52967CE2203C05500F317AA /* PPLE18ViewController.swift in Sources */,
 				A52967CD2203C05500F317AA /* PPLE16ViewController.swift in Sources */,
-				A52CD82E21DE196F000C83B1 /* ClassScheduleViewController.swift in Sources */,
 				A54EE97F216AEF5C009644CD /* MainMenuViewController.swift in Sources */,
 				A52967D62203C05500F317AA /* PPLE14ViewController.swift in Sources */,
 				969CB9D221FDEE7400428C16 /* AuthServ.swift in Sources */,
 				A52967DB2203C05500F317AA /* PPLE8ViewController.swift in Sources */,
 				964D623322039F2A00C2ED12 /* MyPostsApi.swift in Sources */,
 				A52967D92203C05500F317AA /* PPLE11ViewController.swift in Sources */,
+				09B85A9F220CBFD10004D41A /* DateExt.swift in Sources */,
 				A52967DD2203C05500F317AA /* PPLE12ViewController.swift in Sources */,
 				A52967CF2203C05500F317AA /* PPLE22ViewController.swift in Sources */,
 				A5349E3721C4047B00393020 /* LocationsViewController.swift in Sources */,
@@ -546,6 +561,7 @@
 				964D623522039F8C00C2ED12 /* FeedApi.swift in Sources */,
 				A52967D22203C05500F317AA /* PPLE2ViewController.swift in Sources */,
 				94C19D2E213B292F00350658 /* AuthService.swift in Sources */,
+				09B85A9D220CBB8F0004D41A /* EditNoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
