@@ -59,6 +59,11 @@ class HelperService {
         }
     }
     
+    static func uploadPdfToFirebase(pdfUrl: URL, title: String, onSuccess: @escaping () -> ()) {
+        let pdfPath = URL.self as? String
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("pdfFiles").child(pdfPath!)
+    }
+    
     static func uploadImageToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping () -> ()) {
         let photoIdString = NSUUID().uuidString
         let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedImage").child(photoIdString)
@@ -87,8 +92,8 @@ class HelperService {
             type = "videos"
         } else if let _ = dict["photo_url"] {
             type = "photos"
-        } else if let _ = dict["pdf"] {
-            type = "pdf"
+        } else if let _ = dict["pdfUrl"] {
+            type = "pdfUrl"
         }
         newPostReference = newPostReference.child(type).child(uuid)
         newPostReference.setValue(dict, withCompletionBlock: {

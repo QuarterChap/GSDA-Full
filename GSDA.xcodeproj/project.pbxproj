@@ -25,6 +25,7 @@
 		94BE76B32138E3180086B560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BE76B12138E3180086B560 /* LaunchScreen.storyboard */; };
 		94C19D2E213B292F00350658 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C19D2D213B292F00350658 /* AuthService.swift */; };
 		94C19D30213B2A9000350658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94C19D2F213B2A9000350658 /* GoogleService-Info.plist */; };
+		9632CCFF2210BE03008AA2FA /* PdfHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632CCFE2210BE03008AA2FA /* PdfHandler.swift */; };
 		964D623322039F2A00C2ED12 /* MyPostsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D623222039F2A00C2ED12 /* MyPostsApi.swift */; };
 		964D623522039F8C00C2ED12 /* FeedApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D623422039F8C00C2ED12 /* FeedApi.swift */; };
 		965961E6220B720000178B34 /* AssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965961E5220B720000178B34 /* AssignmentViewController.swift */; };
@@ -99,6 +100,7 @@
 		94BE76B42138E3180086B560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94C19D2D213B292F00350658 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		94C19D2F213B2A9000350658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9632CCFE2210BE03008AA2FA /* PdfHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfHandler.swift; sourceTree = "<group>"; };
 		964D623222039F2A00C2ED12 /* MyPostsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsApi.swift; sourceTree = "<group>"; };
 		964D623422039F8C00C2ED12 /* FeedApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedApi.swift; sourceTree = "<group>"; };
 		965961E5220B720000178B34 /* AssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentViewController.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				A574C81621E54E5300A6D493 /* PhotoModel.swift */,
 				968FF1B121F24516004E5D33 /* UserModel.swift */,
 				094592182208B66600744277 /* PostModel.swift */,
+				9632CCFE2210BE03008AA2FA /* PdfHandler.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				964D623322039F2A00C2ED12 /* MyPostsApi.swift in Sources */,
 				A52967D92203C05500F317AA /* PPLE11ViewController.swift in Sources */,
 				09B85A9F220CBFD10004D41A /* DateExt.swift in Sources */,
+				9632CCFF2210BE03008AA2FA /* PdfHandler.swift in Sources */,
 				A52967DD2203C05500F317AA /* PPLE12ViewController.swift in Sources */,
 				A52967CF2203C05500F317AA /* PPLE22ViewController.swift in Sources */,
 				A5349E3721C4047B00393020 /* LocationsViewController.swift in Sources */,

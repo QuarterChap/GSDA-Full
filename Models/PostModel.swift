@@ -15,5 +15,4 @@ struct PostModel: Codable {
     var photo_url: String?
     var video_url: String?
     var video_thumbnail_url: String?
-    var pdf: String?
 }

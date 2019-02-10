@@ -97,7 +97,7 @@ class UploadContentViewController: UIViewController {
     //Variables
     var selectedImage: UIImage?
     var videoUrl: URL?
-    var pdfLink: Data?
+    var pdfArray : Array<PdfHandler> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -172,15 +172,15 @@ class UploadContentViewController: UIViewController {
         }
     }
     
-    func uploadPdf() {
-        guard let uploadPdf = pdfLink  // needs a webview instead of image
+  /*  func uploadPdf() {
+        guard let uploadPdf =   // needs a webview instead of image
         else {
             return
         }
         HelperService.uploadPdfToFirebase(pdf: pdfLink!, title: titleTextField.text!, description: descriptionTextField.text!) {
             self.dismiss(animated: true, completion: nil)
         }
-    }
+    }*/
     
     @objc func openGallery() {
         handleSelectPhoto()
@@ -201,7 +201,19 @@ class UploadContentViewController: UIViewController {
 }
 
 extension UploadContentViewController:UIDocumentPickerDelegate {
-    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+        let docURL = url
+        
+        do {
+            let data = try Data(contentsOf: docURL)
+        } catch {
+            let docURLString = docURL.path
+            let pdfPath = docURL.lastPathComponent
+            
+            //Appends the pdf to an array to be used for upload have to get back to this to find a better solution
+            self.pdfArray.append(PdfHandler(pdfUrl: docURLString, pdftitle: pdfPath))
+        }
+    }
     
 }
 
