@@ -86,7 +86,13 @@ final class NoteListViewController: UIViewController {
         dateLabel.text = date.asString(style: DateFormatter.Style.medium)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchNotes()
+    }
+    
     func fetchNotes() {
+        notes.removeAll()
         // Fetch notes for day from firebase and set to var notes
         NoteAPI().fetchNotes(for: date) { [weak self] (note) in
             self?.notes.append(note)
@@ -143,5 +149,26 @@ extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
         vc.note = note.text
         vc.uid = UUID(uuidString: note.uid)
         present(vc, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+            
+            let note = notes.remove(at: indexPath.row)
+            tableView.reloadData()
+            guard let uid = UUID(uuidString: note.uid) else {
+                return
+            }
+            NoteAPI().deleteNote(with: date, with: uid) {
+                // Deleted
+                
+            }
+            
+        }
     }
 }

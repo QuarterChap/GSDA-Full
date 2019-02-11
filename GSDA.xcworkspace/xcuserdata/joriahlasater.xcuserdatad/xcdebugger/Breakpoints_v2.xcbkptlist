@@ -9,62 +9,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GSDA/ViewControllers/Schedule/ScheduleViewCOntroller.swift"
-            timestampString = "571539303.857262"
+            filePath = "GSDA/Services/NoteAPI.swift"
+            timestampString = "571610310.974587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "calendar(_:didSelectDate:cell:cellState:)"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "fetchNoteList(completion:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GSDA/ViewControllers/Schedule/NoteListViewController.swift"
-            timestampString = "571539303.857344"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "fetchNotes()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GSDA.NoteListViewController.fetchNotes() -&gt; ()"
-                  moduleName = "GSDA"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/joriahlasater/Documents/Clients/Julian%20Cearley/GSDA-Full/GSDA/ViewControllers/Schedule/NoteListViewController.swift"
-                  timestampString = "571538970.014184"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "29">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (GSDA.NoteModel) -&gt; () in GSDA.NoteListViewController.fetchNotes() -&gt; ()"
-                  moduleName = "GSDA"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/joriahlasater/Documents/Clients/Julian%20Cearley/GSDA-Full/GSDA/ViewControllers/Schedule/NoteListViewController.swift"
-                  timestampString = "571538970.0165631"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "59">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

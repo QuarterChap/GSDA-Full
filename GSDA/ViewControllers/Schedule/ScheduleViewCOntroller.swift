@@ -36,8 +36,8 @@ final class ScheduleViewController: UIViewController {
     }()
     
     let dayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-    let daysWithNotes = [Date]()
-    
+    var daysWithNotes = [Date]()
+
     var dayLabels: [UILabel] {
         var result: [UILabel] = []
         dayNames.forEach {
@@ -76,12 +76,17 @@ final class ScheduleViewController: UIViewController {
     }()
     
     let formatter = DateFormatter()
-    
+
     override func viewDidLoad() {
         setupSubViews()
         view.backgroundColor = .white
         navigationController?.setNavigationBarHidden(true, animated: false)
         updateCalenderLabel(date: Date())
+        fetchDaysWithNotes()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         fetchDaysWithNotes()
     }
 }
@@ -90,6 +95,16 @@ private extension ScheduleViewController {
  
     func fetchDaysWithNotes() {
         // Fetch from firebase and set to var daysWithNotes
+        daysWithNotes.removeAll()
+        NoteAPI().fetchNoteList { (timestamps) in
+            for timestamp in timestamps {
+                if let timeInterval = TimeInterval(timestamp) {
+                    let date = Date(timeIntervalSince1970: timeInterval)
+                    self.daysWithNotes.append(date)
+                    self.calenderView.reloadData()
+                }
+            }
+        }
     }
     
     @objc func handleMainMenu() {
@@ -136,6 +151,8 @@ extension ScheduleViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
             
             if daysWithNotes.contains(date) {
                 cell.dateLabel.backgroundColor = .customBlue
+            } else {
+                cell.dateLabel.backgroundColor = .clear
             }
             return cell
         }
