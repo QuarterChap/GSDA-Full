@@ -11,8 +11,10 @@ import UIKit
 final class EditNoteViewController: UIViewController {
     
     var note: String?
+    var date: Date!
+    var uid: UUID?
     
-    let textField: UITextView = {
+    let textView: UITextView = {
         let textField = UITextView()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = .gray
@@ -57,8 +59,15 @@ final class EditNoteViewController: UIViewController {
     }
     
     @objc func doneButtonPressed() {
-        dismiss(animated: true, completion: nil)
-        // Save data to Firebase
+        
+        // this line of code determins if it is a new note or is being edited
+        // Note UID = new note, old uid = edited note
+        let noteUID = uid ?? UUID()
+        
+        NoteAPI().update(uid: noteUID, note: textView.text, for: date) {
+            // Nothing unless we want to add some sort of animation for uploading
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     override func viewDidLoad() {
@@ -67,22 +76,22 @@ final class EditNoteViewController: UIViewController {
         setupSubViews()
         
         if let note = note {
-            textField.text = note
+            textView.text = note
         } else {
-            textField.text = "Leave note here..."
+            textView.text = "Leave note here..."
         }
     }
     
     func setupSubViews() {
-        view.addSubview(textField)
+        view.addSubview(textView)
         view.addSubview(doneButton)
         view.addSubview(backButton)
         
         let padding: CGFloat = 20
-        textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding).isActive = true
-        textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding).isActive = true
-        textField.heightAnchor.constraint(equalToConstant: view.frame.width - (padding*2)).isActive = true 
+        textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding).isActive = true
+        textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding).isActive = true
+        textView.heightAnchor.constraint(equalToConstant: view.frame.width - (padding*2)).isActive = true 
         
         doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
         doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true

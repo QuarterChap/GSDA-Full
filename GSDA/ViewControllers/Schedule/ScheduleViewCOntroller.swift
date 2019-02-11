@@ -36,6 +36,7 @@ final class ScheduleViewController: UIViewController {
     }()
     
     let dayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    let daysWithNotes = [Date]()
     
     var dayLabels: [UILabel] {
         var result: [UILabel] = []
@@ -81,23 +82,15 @@ final class ScheduleViewController: UIViewController {
         view.backgroundColor = .white
         navigationController?.setNavigationBarHidden(true, animated: false)
         updateCalenderLabel(date: Date())
+        fetchDaysWithNotes()
     }
-    
-    // Fetch notes
-    // Every day has a list of notes
-    // click on day
-    // note list vc
-    // view note
-    
-    // create new note for specific day
-    
-    
-    
-    
-    
 }
 
 private extension ScheduleViewController {
+ 
+    func fetchDaysWithNotes() {
+        // Fetch from firebase and set to var daysWithNotes
+    }
     
     @objc func handleMainMenu() {
         dismiss(animated: true, completion: nil)
@@ -140,9 +133,12 @@ extension ScheduleViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         if let cell = calenderView.dequeueReusableJTAppleCell(withReuseIdentifier: "cell", for: indexPath) as? DayCell {
             cell.setup()
             cell.dateLabel.text = cellState.text
+            
+            if daysWithNotes.contains(date) {
+                cell.dateLabel.backgroundColor = .customBlue
+            }
             return cell
         }
-        
         return JTAppleCell()
     }
     
@@ -170,6 +166,7 @@ extension ScheduleViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         guard let cell = cell as? DayCell else {
             return
         }
+        
       // Open note viewer
         let vc = NoteListViewController()
         vc.date = date

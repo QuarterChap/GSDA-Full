@@ -11,6 +11,8 @@
 		0945921C2208C1BB00744277 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0945921B2208C1BB00744277 /* UIImageExtension.swift */; };
 		097213692204F93300778B51 /* ScheduleViewCOntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097213682204F93300778B51 /* ScheduleViewCOntroller.swift */; };
 		0972136B2204F95F00778B51 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0972136A2204F95F00778B51 /* DayCell.swift */; };
+		09727BE52210F1580009E58E /* NoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09727BE42210F1580009E58E /* NoteAPI.swift */; };
+		09727BE72210F6650009E58E /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09727BE62210F6650009E58E /* NoteModel.swift */; };
 		0979E19921FB76EB002C421D /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19821FB76EB002C421D /* FeedCell.swift */; };
 		0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19B21FB8F00002C421D /* FeedViewController.swift */; };
 		0979E19F21FB8FBD002C421D /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0979E19E21FB8FBD002C421D /* VideosViewController.swift */; };
@@ -80,6 +82,8 @@
 		0945921B2208C1BB00744277 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		097213682204F93300778B51 /* ScheduleViewCOntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewCOntroller.swift; sourceTree = "<group>"; };
 		0972136A2204F95F00778B51 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		09727BE42210F1580009E58E /* NoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAPI.swift; sourceTree = "<group>"; };
+		09727BE62210F6650009E58E /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		0979E19821FB76EB002C421D /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		0979E19B21FB8F00002C421D /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0979E19E21FB8FBD002C421D /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				969CB9D121FDEE7400428C16 /* AuthServ.swift */,
 				964D623222039F2A00C2ED12 /* MyPostsApi.swift */,
 				964D623422039F8C00C2ED12 /* FeedApi.swift */,
+				09727BE42210F1580009E58E /* NoteAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				A574C81621E54E5300A6D493 /* PhotoModel.swift */,
 				968FF1B121F24516004E5D33 /* UserModel.swift */,
 				094592182208B66600744277 /* PostModel.swift */,
+				09727BE62210F6650009E58E /* NoteModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -511,8 +517,10 @@
 				A52967DC2203C05500F317AA /* PPLE19ViewController.swift in Sources */,
 				09B85A9A220CB5230004D41A /* NoteListViewController.swift in Sources */,
 				0979E19921FB76EB002C421D /* FeedCell.swift in Sources */,
+				09727BE72210F6650009E58E /* NoteModel.swift in Sources */,
 				A52967D32203C05500F317AA /* PPLE7ViewController.swift in Sources */,
 				0945921C2208C1BB00744277 /* UIImageExtension.swift in Sources */,
+				09727BE52210F1580009E58E /* NoteAPI.swift in Sources */,
 				A52967D82203C05500F317AA /* PPLE4ViewController.swift in Sources */,
 				A566025D2203C635002C96DB /* AccountSettingsViewController.swift in Sources */,
 				A5349E3921C5C3F700393020 /* CurriculumViewController.swift in Sources */,
