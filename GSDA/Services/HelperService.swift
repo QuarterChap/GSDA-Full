@@ -59,9 +59,20 @@ class HelperService {
         }
     }
     
-    static func uploadPdfToFirebase(pdfUrl: URL, title: String, onSuccess: @escaping () -> ()) {
+    static func uploadPdfToFirebase(pdfUrl: URL, title: String, description: String, onSuccess: @escaping () -> ()) {
         let pdfPath = URL.self as? String
-        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("pdfFiles").child(pdfPath!)
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("assignments").child("pdfFiles").child(pdfPath!)
+        
+        storageRef.putFile(from: pdfUrl, metadata: nil) { metadata, error in
+            guard let metadata = metadata else {
+                return
+            }
+            
+        let data = ["pdfUrl": pdfUrl, "title": title, "description": description] as [String : Any]
+        sendDataToPosts(dict: data) {
+            onSuccess()
+        }
+    }
     }
     
     static func uploadImageToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping () -> ()) {
