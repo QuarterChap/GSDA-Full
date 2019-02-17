@@ -11,20 +11,6 @@ import FirebaseStorage
 import FirebaseDatabase
 class HelperService {
     
-    static func uploadPdfToFirebase(pdf: Data, title: String, description: String, onSuccess: @escaping () -> ()) {
-        let uuid = NSUUID().uuidString
-        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedPdf").child(uuid)
-        
-        storageRef.downloadURL(completion: { (url, error) in
-            if let pdf = url?.absoluteString {
-                let data = ["title": title, "description": description, "pdf": pdf, "timestamp": Int(Date().timeIntervalSince1970)] as [String: Any]
-                sendDataToPosts(dict: data, onSuccess: {
-                    onSuccess()
-                })
-            }
-        })
-        
-    }
     
     static func uploadVideoToFirebaseStorage(videoUrl: URL, thumbnail: UIImage, title: String, description: String,  onSuccess: @escaping () -> ()) {
         let uuid = NSUUID().uuidString
@@ -60,18 +46,19 @@ class HelperService {
     }
     
     static func uploadPdfToFirebase(pdfUrl: URL, title: String, description: String, onSuccess: @escaping () -> ()) {
-        let pdfPath = URL.self as? String
-        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("assignments").child("pdfFiles").child(pdfPath!)
+        let pdfPath = NSUUID().uuidString
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("assignments").child("pdfFiles").child(pdfPath)
         
         storageRef.putFile(from: pdfUrl, metadata: nil) { metadata, error in
-            guard let metadata = metadata else {
+            guard metadata != nil else {
                 return
             }
-            
-        let data = ["pdfUrl": pdfUrl, "title": title, "description": description] as [String : Any]
-        sendDataToPosts(dict: data) {
-            onSuccess()
-        }
+            storageRef.downloadURL(completion: { (url, error) in
+                let data = ["pdfUrl": pdfUrl, "title": title, "description": description] as [String : Any]
+                sendDataToPosts(dict: data) {
+                    onSuccess()
+                }
+            })
     }
     }
     

@@ -19,7 +19,7 @@ class AssignmentControllerViewController: AssignmentViewController, AssignmentTa
     }
     
     func upload() {
-        present(UploadContentViewController(), animated: true, completion: nil)
+        present(UploadPdfViewController(), animated: true, completion: nil)
     }
     
     func didTap(cell: AssignmentCell) {

@@ -50,6 +50,8 @@ class AssignmentCell: UITableViewCell {
         }
     }
     
+    
+    
     func updateView() {
         descriptionLabel.text = post?.description
         titleLbl.text = post?.title
