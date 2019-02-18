@@ -27,7 +27,7 @@
 		94BE76B32138E3180086B560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BE76B12138E3180086B560 /* LaunchScreen.storyboard */; };
 		94C19D2E213B292F00350658 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C19D2D213B292F00350658 /* AuthService.swift */; };
 		94C19D30213B2A9000350658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94C19D2F213B2A9000350658 /* GoogleService-Info.plist */; };
-		961E4FA7221759A400210F62 /* UploadPdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E4FA6221759A400210F62 /* UploadPdfViewController.swift */; };
+		9632CCFF2210BE03008AA2FA /* PdfHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9632CCFE2210BE03008AA2FA /* PdfHandler.swift */; };
 		964D623322039F2A00C2ED12 /* MyPostsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D623222039F2A00C2ED12 /* MyPostsApi.swift */; };
 		964D623522039F8C00C2ED12 /* FeedApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D623422039F8C00C2ED12 /* FeedApi.swift */; };
 		965961E6220B720000178B34 /* AssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965961E5220B720000178B34 /* AssignmentViewController.swift */; };
@@ -41,11 +41,6 @@
 		9680F62A220CCA30005D2975 /* AssignmentControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9680F629220CCA30005D2975 /* AssignmentControllerViewController.swift */; };
 		968FF1B221F24516004E5D33 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FF1B121F24516004E5D33 /* UserModel.swift */; };
 		969CB9D221FDEE7400428C16 /* AuthServ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CB9D121FDEE7400428C16 /* AuthServ.swift */; };
-<<<<<<< HEAD
-=======
-		96A09B86221A072300F9D399 /* PdfModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A09B85221A072300F9D399 /* PdfModel.swift */; };
-		96A09B88221A07CC00F9D399 /* PdfApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A09B87221A07CC00F9D399 /* PdfApi.swift */; };
->>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
 		96C48D5F2205ABCD00A4E512 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C48D5C2205ABAB00A4E512 /* ProgressHUD.m */; };
 		96C48D602205ABCD00A4E512 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96C48D5D2205ABBB00A4E512 /* ProgressHUD.bundle */; };
 		A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */; };
@@ -109,7 +104,7 @@
 		94BE76B42138E3180086B560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94C19D2D213B292F00350658 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		94C19D2F213B2A9000350658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		961E4FA6221759A400210F62 /* UploadPdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPdfViewController.swift; sourceTree = "<group>"; };
+		9632CCFE2210BE03008AA2FA /* PdfHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfHandler.swift; sourceTree = "<group>"; };
 		964D623222039F2A00C2ED12 /* MyPostsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsApi.swift; sourceTree = "<group>"; };
 		964D623422039F8C00C2ED12 /* FeedApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedApi.swift; sourceTree = "<group>"; };
 		965961E5220B720000178B34 /* AssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentViewController.swift; sourceTree = "<group>"; };
@@ -123,11 +118,6 @@
 		9680F629220CCA30005D2975 /* AssignmentControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentControllerViewController.swift; sourceTree = "<group>"; };
 		968FF1B121F24516004E5D33 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		969CB9D121FDEE7400428C16 /* AuthServ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServ.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
-		96A09B85221A072300F9D399 /* PdfModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfModel.swift; sourceTree = "<group>"; };
-		96A09B87221A07CC00F9D399 /* PdfApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfApi.swift; sourceTree = "<group>"; };
->>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
 		96C48D5B2205AB8800A4E512 /* GSDA-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSDA-Bridging-Header.h"; sourceTree = "<group>"; };
 		96C48D5C2205ABAB00A4E512 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		96C48D5D2205ABBB00A4E512 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
@@ -244,10 +234,6 @@
 				964D623222039F2A00C2ED12 /* MyPostsApi.swift */,
 				964D623422039F8C00C2ED12 /* FeedApi.swift */,
 				09727BE42210F1580009E58E /* NoteAPI.swift */,
-<<<<<<< HEAD
-=======
-				96A09B87221A07CC00F9D399 /* PdfApi.swift */,
->>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -275,7 +261,6 @@
 				09B85A9B220CBB7E0004D41A /* Schedule */,
 				965961E5220B720000178B34 /* AssignmentViewController.swift */,
 				9680F629220CCA30005D2975 /* AssignmentControllerViewController.swift */,
-				961E4FA6221759A400210F62 /* UploadPdfViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -374,10 +359,7 @@
 				968FF1B121F24516004E5D33 /* UserModel.swift */,
 				094592182208B66600744277 /* PostModel.swift */,
 				09727BE62210F6650009E58E /* NoteModel.swift */,
-<<<<<<< HEAD
-=======
-				96A09B85221A072300F9D399 /* PdfModel.swift */,
->>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
+				9632CCFE2210BE03008AA2FA /* PdfHandler.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -561,10 +543,6 @@
 				A52967AE2203B95300F317AA /* CourseMaterialViewController.swift in Sources */,
 				967D81CB21FBAFC90007BA68 /* PostApi.swift in Sources */,
 				A52967C92203C05500F317AA /* PPLE15ViewController.swift in Sources */,
-<<<<<<< HEAD
-=======
-				96A09B86221A072300F9D399 /* PdfModel.swift in Sources */,
->>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
 				968FF1B221F24516004E5D33 /* UserModel.swift in Sources */,
 				097213692204F93300778B51 /* ScheduleViewCOntroller.swift in Sources */,
 				A57B549221D1994D0037CC83 /* KennesawLocationViewController.swift in Sources */,
@@ -579,6 +557,7 @@
 				964D623322039F2A00C2ED12 /* MyPostsApi.swift in Sources */,
 				A52967D92203C05500F317AA /* PPLE11ViewController.swift in Sources */,
 				09B85A9F220CBFD10004D41A /* DateExt.swift in Sources */,
+				9632CCFF2210BE03008AA2FA /* PdfHandler.swift in Sources */,
 				A52967DD2203C05500F317AA /* PPLE12ViewController.swift in Sources */,
 				A52967CF2203C05500F317AA /* PPLE22ViewController.swift in Sources */,
 				A5349E3721C4047B00393020 /* LocationsViewController.swift in Sources */,
@@ -598,15 +577,10 @@
 				A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */,
 				A5CFF57121E7C0AD00E99338 /* WoodstockLocationViewController.swift in Sources */,
 				96C48D5F2205ABCD00A4E512 /* ProgressHUD.m in Sources */,
-<<<<<<< HEAD
-=======
-				96A09B88221A07CC00F9D399 /* PdfApi.swift in Sources */,
->>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
 				A52967D52203C05500F317AA /* PPLE13ViewController.swift in Sources */,
 				967D81D121FBB1970007BA68 /* Config.swift in Sources */,
 				0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */,
 				A52967CC2203C05500F317AA /* PPLE5ViewController.swift in Sources */,
-				961E4FA7221759A400210F62 /* UploadPdfViewController.swift in Sources */,
 				A52967D12203C05500F317AA /* PPLE1ViewController.swift in Sources */,
 				964D623522039F8C00C2ED12 /* FeedApi.swift in Sources */,
 				A52967D22203C05500F317AA /* PPLE2ViewController.swift in Sources */,
@@ -750,11 +724,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 4BH5KRFJ6A;
-=======
-				DEVELOPMENT_TEAM = "";
->>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GSDA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -778,11 +748,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 4BH5KRFJ6A;
-=======
-				DEVELOPMENT_TEAM = "";
->>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GSDA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
