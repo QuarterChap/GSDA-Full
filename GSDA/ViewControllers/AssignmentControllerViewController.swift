@@ -12,6 +12,13 @@ class AssignmentControllerViewController: AssignmentViewController, AssignmentTa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
+=======
+        PdfApi.observePosts(of: "assignments"){ (post) in
+            self.posts.append(post)
+            self.feedTableView.reloadData()
+        }
+>>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
         titleLbl.text = "Pdf"
         tableViewDelegate = self
 
@@ -23,7 +30,18 @@ class AssignmentControllerViewController: AssignmentViewController, AssignmentTa
     }
     
     func didTap(cell: AssignmentCell) {
+<<<<<<< HEAD
         _ = UIWebView()
     }
+=======
+       let webview = UIWebView()
+        guard let pdfURLString = cell.post?.pdfUrl, let pdfUrl = URL(string: pdfURLString) else {
+            return
+    }
+        webview.loadRequest(pdfURLString)
+        present(webview, animated: true, completion: nil)
+
+}
+>>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
 
 }

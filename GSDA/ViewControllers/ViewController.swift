@@ -272,7 +272,11 @@ class ViewController: UIViewController {
     
     //Function that activates or deactivate the login/register button :)
     @objc func textFieldDidChange() {
+<<<<<<< HEAD
         guard let username = usernameTextField.text, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+=======
+        guard let username = usernameTextField.text, !username.isEmpty, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+>>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
             
             loginRegisterButton.setTitleColor(UIColor.lightGray, for: .normal)
             loginRegisterButton.isEnabled = false

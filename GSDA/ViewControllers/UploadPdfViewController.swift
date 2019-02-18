@@ -124,10 +124,13 @@ class UploadPdfViewController: UIViewController {
         }
     }
 
+<<<<<<< HEAD
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+=======
+>>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
     func setupSubViews() {
         view.addSubview(titleTextField)
         self.view.addSubview(pickBtn)
@@ -173,7 +176,14 @@ extension UploadPdfViewController: UIDocumentPickerDelegate {
             return
         }
         self.pdfUrl = selectedFileUrl
+<<<<<<< HEAD
         //dismiss(animated: true, completion: nil)
         
     }
+=======
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+>>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
 }
