@@ -1,35 +1,18 @@
 //
-//  UploadImageViewController.swift
+//  UploadPdfViewController.swift
 //  GSDA
 //
-//  Created by Work on 25/01/2019.
+//  Created by Work on 15/02/2019.
 //  Copyright © 2019 Cearley-Programs. All rights reserved.
 //
 
 import UIKit
-import AVFoundation
+import MobileCoreServices
 import FirebaseDatabase
 import FirebaseStorage
 
-enum ContentType: String {
-    case video = "videos"
-    case photo = "photos"
-}
-
-class UploadContentViewController: UIViewController {
+class UploadPdfViewController: UIViewController {
     
-    lazy var selectedImageView: UIImageView = {
-        let imageView = UIImageView(image: nil)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        imageView.layer.cornerRadius = 20
-        imageView.clipsToBounds = true
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(openGallery))
-        imageView.addGestureRecognizer(gesture)
-        imageView.isUserInteractionEnabled = true
-        imageView.contentMode = .center
-        return imageView
-    }()
     
     let titleTextField: UITextField = {
         let textField = UITextField()
@@ -86,30 +69,81 @@ class UploadContentViewController: UIViewController {
         button.layer.zPosition = 1
         return button
     }()
+    
+    lazy var pickBtn: UIButton = {
+        let pickBtn = UIButton()
+        pickBtn.translatesAutoresizingMaskIntoConstraints = false
+        pickBtn.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        pickBtn.layer.cornerRadius = 20
+        pickBtn.clipsToBounds = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(openDocPicker))
+        pickBtn.addGestureRecognizer(gesture)
+        pickBtn.isUserInteractionEnabled = true
+        pickBtn.contentMode = .center
+        return pickBtn
+    }()
+    
+    var pdfUrl: URL?
 
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupSubViews()
+        
+    }
+    
+    @objc func doneButtonPressed() {
+        uploadPdf()
+    }
+    
     @objc func backButtonPressed() {
         dismiss(animated: true, completion: nil)
     }
     
-    var contentType: ContentType = .video
-    
-    //Variables
-    var selectedImage: UIImage?
-    var videoUrl: URL?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
-        view.backgroundColor = .white
-        setupSubViews()
+    @objc func openDocPicker() {
+        handlePdf()
     }
     
+    func handlePdf() {
+     
+        let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePDF as String], in: .import)
+        documentPicker.delegate = self
+        documentPicker.allowsMultipleSelection = false
+        present(documentPicker, animated: true, completion: nil)
+    }
+    
+    func uploadPdf() {
+        guard let pdfUrl = pdfUrl else {
+            ProgressHUD.showError("Something went wrong")
+            return
+        }
+        
+        HelperService.uploadPdfToFirebase(pdfUrl: pdfUrl, title: titleTextField.text!, description: descriptionTextField.text!) {
+            ProgressHUD.showSuccess("Succesfully uploaded")
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+
+<<<<<<< HEAD
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+=======
+>>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
     func setupSubViews() {
         view.addSubview(titleTextField)
-        view.addSubview(selectedImageView)
+        self.view.addSubview(pickBtn)
         view.addSubview(descriptionTextField)
         view.addSubview(doneButton)
         view.addSubview(backButton)
+        
+        
+        pickBtn.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 15).isActive = true
+        pickBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        pickBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        pickBtn.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        
         
         titleTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
         titleTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
@@ -121,104 +155,35 @@ class UploadContentViewController: UIViewController {
         descriptionTextField.trailingAnchor.constraint(equalTo: titleTextField.trailingAnchor).isActive = true
         descriptionTextField.heightAnchor.constraint(equalToConstant: 120).isActive = true
         
-        selectedImageView.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 15).isActive = true
-        selectedImageView.leadingAnchor.constraint(equalTo: descriptionTextField.leadingAnchor).isActive = true
-        selectedImageView.trailingAnchor.constraint(equalTo: descriptionTextField.trailingAnchor).isActive = true
-        selectedImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         
         doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
         doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
         doneButton.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: -20).isActive = true
         doneButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
         backButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-        
-        selectedImageView.image = UIImage(named: contentType.rawValue)
+
     }
-    
-    @objc func doneButtonPressed() {
-        if contentType == .video {
-            uploadVideo()
-        } else if contentType == .photo {
-            uploadImage()
-        }
-    }
-    
-    
-    func uploadVideo() {
-        guard let videoURL = videoUrl, let thumbnailImage = selectedImageView.image else {
-            return
-        }
-        HelperService.uploadVideoToFirebaseStorage(videoUrl: videoURL, thumbnail: thumbnailImage, title: titleTextField.text!, description: descriptionTextField.text!) {
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    func uploadImage() {
-        guard let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) else {
-            return
-        }
-        HelperService.uploadImageToFirebaseStorage(data: imageData, title: titleTextField.text!, description: descriptionTextField.text!) {
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    
-    @objc func openGallery() {
-        handleSelectPhoto()
-    }
-    
-    func handleSelectPhoto() {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        if contentType == .video {
-        pickerController.mediaTypes = ["public.movie"]
-        } else if contentType == .photo {
-            pickerController.mediaTypes = ["public.image"]
-        }
-        present(pickerController, animated: true, completion: nil)
-    }
+
 }
 
-extension UploadContentViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print("did Finish Picking Media")
-        print(info)
+extension UploadPdfViewController: UIDocumentPickerDelegate {
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         
-        if let videoUrl = info["UIImagePickerControllerMediaURL"] as? URL {
-            // Selected Video
-            if let thumbnailImage = thumbnailImageForFileUrl(videoUrl) {
-                selectedImage = thumbnailImage
-                selectedImageView.image = thumbnailImage
-                self.videoUrl = videoUrl
-            }
-            dismiss(animated: true, completion: nil)
+        guard let selectedFileUrl = urls.first else {
+            return
         }
+        self.pdfUrl = selectedFileUrl
+<<<<<<< HEAD
+        //dismiss(animated: true, completion: nil)
         
-        if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage{
-            // Selected Image
-            selectedImage = image
-            selectedImageView.image = image
-            dismiss(animated: true, completion: nil)
-        }
+    }
+=======
+        dismiss(animated: true, completion: nil)
+        
     }
     
-    func thumbnailImageForFileUrl(_ fileUrl: URL) -> UIImage? {
-        let asset = AVAsset(url: fileUrl)
-        let imageGenerator = AVAssetImageGenerator(asset: asset)
-        imageGenerator.appliesPreferredTrackTransform = true
-        
-        do {
-            let thumbnailCGImage = try imageGenerator.copyCGImage(at: CMTimeMake(7, 1), actualTime: nil)
-            return UIImage(cgImage: thumbnailCGImage)
-        } catch let err {
-            print(err)
-        }
-        
-        return nil
-    }
+>>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
 }
-

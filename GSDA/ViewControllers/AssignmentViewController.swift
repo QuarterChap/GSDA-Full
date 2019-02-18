@@ -13,7 +13,11 @@ class AssignmentViewController: UIViewController {
     //The TableView
     var previousVC = UserDefaults.standard.string(forKey: "previousVC")
     var tableViewDelegate: AssignmentTableViewDelegate?
+<<<<<<< HEAD
     var posts = [PostModel]()
+=======
+    var posts = [PdfModel]()
+>>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
     
 
     lazy var titleLbl: UILabel = {

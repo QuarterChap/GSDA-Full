@@ -86,7 +86,11 @@ class MainMenuViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+<<<<<<< HEAD
+        button.addTarget(self, action: #selector(scheduleAction), for: .touchUpInside)
+=======
         button.addTarget(self, action: #selector(homeButtonAction), for: .touchUpInside)
+>>>>>>> 124deeae3f78f18719def25381cbdec3178941fd
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
         button.layer.zPosition = 1
