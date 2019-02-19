@@ -44,7 +44,7 @@ class AssignmentCell: UITableViewCell {
         return label
     }()
     
-    var post: PostModel? {
+    var post: PdfModel? {
         didSet {
             updateView()
         }

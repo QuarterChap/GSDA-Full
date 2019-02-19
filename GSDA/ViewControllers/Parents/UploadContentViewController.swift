@@ -14,7 +14,6 @@ import FirebaseStorage
 enum ContentType: String {
     case video = "videos"
     case photo = "photos"
-    case pdf = "pdf"
 }
 
 class UploadContentViewController: UIViewController {
@@ -97,8 +96,6 @@ class UploadContentViewController: UIViewController {
     //Variables
     var selectedImage: UIImage?
     var videoUrl: URL?
-    var pdfArray : Array<PdfHandler> = []
-    var pdfUrl: Data?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,8 +144,6 @@ class UploadContentViewController: UIViewController {
             uploadVideo()
         } else if contentType == .photo {
             uploadImage()
-        } else if contentType == .pdf {
-            uploadPdf()
         }
     }
     
@@ -185,16 +180,6 @@ class UploadContentViewController: UIViewController {
         }
     }
     
-  /*  func uploadPdf() {
-        guard let uploadPdf =   // needs a webview instead of image
-        else {
-            return
-        }
-        HelperService.uploadPdfToFirebase(pdf: pdfLink!, title: titleTextField.text!, description: descriptionTextField.text!) {
-            self.dismiss(animated: true, completion: nil)
-        }
-    }*/
-    
     @objc func openGallery() {
         handleSelectPhoto()
     }
@@ -206,32 +191,11 @@ class UploadContentViewController: UIViewController {
         pickerController.mediaTypes = ["public.movie"]
         } else if contentType == .photo {
             pickerController.mediaTypes = ["public.image"]
-        } else if contentType == .pdf {
-        //NO CLUE!
-            UIDocumentPickerViewController.self
         }
         present(pickerController, animated: true, completion: nil)
     }
 }
 
-extension UploadContentViewController:UIDocumentPickerDelegate {
-    
-    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
-        let docURL = url
-        
-        do {
-            let data = try Data(contentsOf: docURL)
-        } catch {
-            let docURLString = docURL.path
-            let pdfPath = docURL.lastPathComponent
-            
-            //Appends the pdf to an array to be used for upload have to get back to this to find a better solution
-            self.pdfUrl = pdfPath as? Data
-        }
-        dismiss(animated: true, completion: nil)
-    }
-    
-}
 
 extension UploadContentViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

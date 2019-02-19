@@ -13,7 +13,7 @@ class AssignmentViewController: UIViewController {
     //The TableView
     var previousVC = UserDefaults.standard.string(forKey: "previousVC")
     var tableViewDelegate: AssignmentTableViewDelegate?
-    var posts = [PostModel]()
+    var posts = [PdfModel]()
     
 
     lazy var titleLbl: UILabel = {
@@ -159,7 +159,7 @@ extension AssignmentViewController: UITableViewDataSource, UITableViewDelegate {
         // Get Model
         let index = indexPath.row
         let model = posts[index]
-        let descriptionLength = model.description.count
+        let descriptionLength = model.description!.count
         // 20 char a line
         let charsPerLine = 20
         let lines = descriptionLength / charsPerLine

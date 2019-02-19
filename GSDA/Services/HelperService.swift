@@ -11,20 +11,6 @@ import FirebaseStorage
 import FirebaseDatabase
 class HelperService {
     
-    static func uploadPdfToFirebase(pdf: Data, title: String, description: String, onSuccess: @escaping () -> ()) {
-        let uuid = NSUUID().uuidString
-        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedPdf").child(uuid)
-        
-        storageRef.downloadURL(completion: { (url, error) in
-            if let pdf = url?.absoluteString {
-                let data = ["title": title, "description": description, "pdf": pdf, "timestamp": Int(Date().timeIntervalSince1970)] as [String: Any]
-                sendDataToPosts(dict: data, onSuccess: {
-                    onSuccess()
-                })
-            }
-        })
-        
-    }
     
     static func uploadVideoToFirebaseStorage(videoUrl: URL, thumbnail: UIImage, title: String, description: String,  onSuccess: @escaping () -> ()) {
         let uuid = NSUUID().uuidString
@@ -60,8 +46,8 @@ class HelperService {
     }
     
     static func uploadPdfToFirebase(pdfUrl: URL, title: String, description: String, onSuccess: @escaping () -> ()) {
-        let pdfPath = URL.self as? String
-        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("assignments").child("pdfFiles").child(pdfPath!)
+        let uuid = NSUUID().uuidString
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("assignments").child("pdfFiles").child(uuid)
         
         storageRef.putFile(from: pdfUrl, metadata: nil) { metadata, error in
             guard let metadata = metadata else {
@@ -103,9 +89,7 @@ class HelperService {
             type = "videos"
         } else if let _ = dict["photo_url"] {
             type = "photos"
-        } else if let _ = dict["pdfUrl"] {
-            type = "pdfUrl"
-        }
+        } 
         newPostReference = newPostReference.child(type).child(uuid)
         newPostReference.setValue(dict, withCompletionBlock: {
             (error, _) in
