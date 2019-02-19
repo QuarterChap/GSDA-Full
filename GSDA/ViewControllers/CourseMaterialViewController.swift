@@ -9,7 +9,7 @@
 import UIKit
 
 class CourseMaterialViewController: UIViewController {
-
+    
     let scrollView: UIScrollView = {
         let sv = UIScrollView()
         
@@ -24,14 +24,14 @@ class CourseMaterialViewController: UIViewController {
         return sv
     }()
     
-    lazy var mainMenuButton: UIButton = {
+    lazy var backButton: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Main Menu", for: .normal)
+        button.setTitle("Back", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleMainMenu), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
         
@@ -414,7 +414,7 @@ class CourseMaterialViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
         navigationItem.title = "CourseMaterialViewController"
-       
+        
         scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 2.55)
         
         setupView()
@@ -423,15 +423,15 @@ class CourseMaterialViewController: UIViewController {
     
     func setupView() {
         self.view.addSubview(scrollView)
-        self.view.addSubview(mainMenuButton)
+        self.view.addSubview(backButton)
         
-        mainMenuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        mainMenuButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mainMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        mainMenuButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
+        backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
         
         scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: mainMenuButton.topAnchor, constant: 0).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: 0).isActive = true
         scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         scrollView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.925).isActive = true
     }
@@ -600,8 +600,8 @@ class CourseMaterialViewController: UIViewController {
         PPLE22Button.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.04)
     }
     
-    @objc func handleMainMenu() {
-        self.present(MainMenuViewController(), animated: true) {}
+    @objc func handleBack() {
+        self.dismiss(animated: true, completion: {})
     }
     
     @objc func handleGSDACatalog() {
@@ -687,9 +687,9 @@ class CourseMaterialViewController: UIViewController {
     @objc func handlePPLE20() {
         self.present(PPLE20ViewController(), animated: true) {}
     }
-
+    
     @objc func handlePPLE22() {
         self.present(PPLE22ViewController(), animated: true) {}
     }
-
+    
 }

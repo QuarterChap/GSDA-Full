@@ -19,7 +19,6 @@ class MainMenuViewController: UIViewController {
         ]
     
     var user: UserModel!
-    var previousVC = UserDefaults.standard.string(forKey: "previousVC")
     
     let scrollView: UIScrollView = {
         let sv = UIScrollView()
@@ -309,28 +308,24 @@ class MainMenuViewController: UIViewController {
         navigationItem.title = "MainMenuViewController"
         
         if view?.frame.width == 320 && view?.frame.height == 568 {
-            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 1075)
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 850)
             //5
         } else if view?.frame.width == 375 && view?.frame.height == 667 {
-            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 1225)
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 950)
             //normal 6,7,8
         } else if view?.frame.width == 414 && view?.frame.height ==  736 {
-            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 1325)
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 1050)
             //plus 6,7,8
         } else if view?.frame.width == 375 && view?.frame.height == 812 {
-            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 1400)
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 1100)
             //X and XS
         } else if view?.frame.width == 414 && view?.frame.height == 896 {
             // XR / XS Max
-            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 1500)
+            scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 1200)
         }
         
         setupView()
         setupScrollView()
-        
-        previousVC = ""
-        UserDefaults.standard.set("", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
         
         let data = UserDefaults.standard
         let username = data.string(forKey: "Username")
@@ -502,10 +497,10 @@ class MainMenuViewController: UIViewController {
     }
     
     //logout function needs a button to connect with
- /*   do {
-        try Auth.auth()?.signOut()
-    } catch let logOutError {
-    }
+    /*   do {
+     try Auth.auth()?.signOut()
+     } catch let logOutError {
+     }
      self.present(ViewController(), animated: true, completion: nil)
-    */
+     */
 }

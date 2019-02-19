@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class ResetPasswordViewController: UIViewController {
-
+    
     let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "GSDALogo")
@@ -170,7 +170,7 @@ class ResetPasswordViewController: UIViewController {
     }
     
     @objc func handleBack() {
-        self.present(ViewController(), animated: true) {}
+        self.dismiss(animated: true, completion: {})
     }
     
 }

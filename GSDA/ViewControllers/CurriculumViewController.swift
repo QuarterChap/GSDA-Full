@@ -10,8 +10,6 @@ import UIKit
 
 class CurriculumViewController: UIViewController {
     
-    var previousVC = UserDefaults.standard.string(forKey: "previousVC")
-
     let scrollView: UIScrollView = {
         let sv = UIScrollView()
         
@@ -26,14 +24,14 @@ class CurriculumViewController: UIViewController {
         return sv
     }()
     
-    lazy var mainMenuButton: UIButton = {
+    lazy var backButton: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Main Menu", for: .normal)
+        button.setTitle("Back", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleMainMenu), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
         
@@ -682,7 +680,7 @@ class CurriculumViewController: UIViewController {
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.layer.zPosition = 1
-    
+        
         return label
     }()
     
@@ -1005,7 +1003,7 @@ class CurriculumViewController: UIViewController {
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.layer.zPosition = 1
-       
+        
         return label
     }()
     
@@ -1175,7 +1173,7 @@ class CurriculumViewController: UIViewController {
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.layer.zPosition = 1
-
+        
         return label
     }()
     
@@ -1263,7 +1261,7 @@ class CurriculumViewController: UIViewController {
         
         return label
     }()
-
+    
     let label73: UILabel = {
         let label = UILabel()
         
@@ -1277,7 +1275,7 @@ class CurriculumViewController: UIViewController {
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.layer.zPosition = 1
-
+        
         return label
     }()
     
@@ -1737,7 +1735,7 @@ class CurriculumViewController: UIViewController {
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.layer.zPosition = 1
-    
+        
         return label
     }()
     
@@ -1843,7 +1841,7 @@ class CurriculumViewController: UIViewController {
         
         return label
     }()
-
+    
     let label107: UILabel = {
         let label = UILabel()
         
@@ -1860,7 +1858,7 @@ class CurriculumViewController: UIViewController {
         
         return label
     }()
-
+    
     let label108: UILabel = {
         let label = UILabel()
         
@@ -3500,7 +3498,7 @@ class CurriculumViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
         navigationItem.title = "CurriculumViewController"
-     
+        
         if view?.frame.width == 320 && view?.frame.height == 568 {
             scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 13000)
             //5
@@ -3526,15 +3524,15 @@ class CurriculumViewController: UIViewController {
     
     func setupView() {
         self.view.addSubview(scrollView)
-        self.view.addSubview(mainMenuButton)
+        self.view.addSubview(backButton)
         
-        mainMenuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        mainMenuButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mainMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        mainMenuButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
+        backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
         
         scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: mainMenuButton.topAnchor, constant: 0).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: 0).isActive = true
         scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         scrollView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.925).isActive = true
     }
@@ -3779,7 +3777,7 @@ class CurriculumViewController: UIViewController {
         label6.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.5).isActive = true
         label6.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.05).isActive = true
         label6.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label7.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label7.topAnchor.constraint(equalTo: label6.bottomAnchor, constant: 10).isActive = true
         label7.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
@@ -3905,7 +3903,7 @@ class CurriculumViewController: UIViewController {
         label27.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
         label27.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.25).isActive = true
         label27.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label199.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label199.topAnchor.constraint(equalTo: label27.bottomAnchor, constant: 15).isActive = true
         label199.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
@@ -3959,7 +3957,7 @@ class CurriculumViewController: UIViewController {
         label31.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.5).isActive = true
         label31.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.05).isActive = true
         label31.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label32.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label32.topAnchor.constraint(equalTo: label31.bottomAnchor, constant: 10).isActive = true
         label32.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
@@ -4127,7 +4125,7 @@ class CurriculumViewController: UIViewController {
         label59.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.2).isActive = true
         label59.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.05).isActive = true
         label59.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label60.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label60.topAnchor.constraint(equalTo: label59.bottomAnchor, constant: 10).isActive = true
         label60.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.4).isActive = true
@@ -4313,7 +4311,7 @@ class CurriculumViewController: UIViewController {
         label90.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.4).isActive = true
         label90.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.05).isActive = true
         label90.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label91.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label91.topAnchor.constraint(equalTo: label90.bottomAnchor, constant: 10).isActive = true
         label91.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.5).isActive = true
@@ -4361,7 +4359,7 @@ class CurriculumViewController: UIViewController {
         label98.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.95).isActive = true
         label98.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.1).isActive = true
         label98.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 16)
-     
+        
         label99.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label99.topAnchor.constraint(equalTo: label98.bottomAnchor, constant: 10).isActive = true
         label99.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.2).isActive = true
@@ -4379,7 +4377,7 @@ class CurriculumViewController: UIViewController {
         label101.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.5).isActive = true
         label101.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.05).isActive = true
         label101.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label102.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label102.topAnchor.constraint(equalTo: label101.bottomAnchor, constant: 10).isActive = true
         label102.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
@@ -4397,7 +4395,7 @@ class CurriculumViewController: UIViewController {
         label104.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.2).isActive = true
         label104.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.05).isActive = true
         label104.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label105.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label105.topAnchor.constraint(equalTo: label104.bottomAnchor, constant: 10).isActive = true
         label105.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.4).isActive = true
@@ -4433,7 +4431,7 @@ class CurriculumViewController: UIViewController {
         label110.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.2).isActive = true
         label110.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.05).isActive = true
         label110.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-    
+        
         label111.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label111.topAnchor.constraint(equalTo: label110.bottomAnchor, constant: 10).isActive = true
         label111.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.285).isActive = true
@@ -4463,7 +4461,7 @@ class CurriculumViewController: UIViewController {
         label115.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.2).isActive = true
         label115.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.05).isActive = true
         label115.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label116.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label116.topAnchor.constraint(equalTo: label115.bottomAnchor, constant: 10).isActive = true
         label116.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.32).isActive = true
@@ -4487,7 +4485,7 @@ class CurriculumViewController: UIViewController {
         label119.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
         label119.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.1).isActive = true
         label119.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 16)
-     
+        
         label120.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label120.topAnchor.constraint(equalTo: label119.bottomAnchor, constant: 10).isActive = true
         label120.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.2).isActive = true
@@ -4541,7 +4539,7 @@ class CurriculumViewController: UIViewController {
         label128.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
         label128.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.25).isActive = true
         label128.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label129.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label129.topAnchor.constraint(equalTo: label128.bottomAnchor, constant: 15).isActive = true
         label129.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.5).isActive = true
@@ -4601,7 +4599,7 @@ class CurriculumViewController: UIViewController {
         label138.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
         label138.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.35).isActive = true
         label138.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label139.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label139.topAnchor.constraint(equalTo: label138.bottomAnchor, constant: 15).isActive = true
         label139.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
@@ -4619,7 +4617,7 @@ class CurriculumViewController: UIViewController {
         label141.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.285).isActive = true
         label141.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.05).isActive = true
         label141.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label142.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label142.topAnchor.constraint(equalTo: label141.bottomAnchor, constant: 10).isActive = true
         label142.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.5).isActive = true
@@ -4643,7 +4641,7 @@ class CurriculumViewController: UIViewController {
         label145.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.2).isActive = true
         label145.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.05).isActive = true
         label145.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label146.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label146.topAnchor.constraint(equalTo: label145.bottomAnchor, constant: 10).isActive = true
         label146.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.285).isActive = true
@@ -4727,7 +4725,7 @@ class CurriculumViewController: UIViewController {
         label159.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
         label159.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.1).isActive = true
         label159.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 16)
-     
+        
         label160.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label160.topAnchor.constraint(equalTo: label159.bottomAnchor, constant: 10).isActive = true
         label160.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.2).isActive = true
@@ -4811,7 +4809,7 @@ class CurriculumViewController: UIViewController {
         label173.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
         label173.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.2).isActive = true
         label173.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label174.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label174.topAnchor.constraint(equalTo: label173.bottomAnchor, constant: 15).isActive = true
         label174.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.7).isActive = true
@@ -4877,7 +4875,7 @@ class CurriculumViewController: UIViewController {
         label184.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.55).isActive = true
         label184.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.1).isActive = true
         label184.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 16)
-
+        
         label185.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label185.topAnchor.constraint(equalTo: label184.bottomAnchor, constant: 10).isActive = true
         label185.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.2).isActive = true
@@ -4889,7 +4887,7 @@ class CurriculumViewController: UIViewController {
         label186.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.285).isActive = true
         label186.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.05).isActive = true
         label186.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label187.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label187.topAnchor.constraint(equalTo: label186.bottomAnchor, constant: 10).isActive = true
         label187.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.5).isActive = true
@@ -4925,7 +4923,7 @@ class CurriculumViewController: UIViewController {
         label192.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.285).isActive = true
         label192.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.05).isActive = true
         label192.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 20)
-     
+        
         label193.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label193.topAnchor.constraint(equalTo: label192.bottomAnchor, constant: 10).isActive = true
         label193.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.5).isActive = true
@@ -4970,11 +4968,8 @@ class CurriculumViewController: UIViewController {
     // 112
     // ends on label 113
     
-    @objc func handleMainMenu() {
-        previousVC = ""
-        UserDefaults.standard.set("", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
-        self.present(MainMenuViewController(), animated: true)
+    @objc func handleBack() {
+        self.dismiss(animated: true, completion: {})
     }
     
 }

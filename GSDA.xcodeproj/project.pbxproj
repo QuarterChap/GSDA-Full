@@ -24,7 +24,6 @@
 		74DA5951221C6A7600817365 /* AssignmentsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA5950221C6A7600817365 /* AssignmentsApi.swift */; };
 		948F3294C164BC332457C1F2 /* Pods_GSDA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42ECD5614709DAB330D2E295 /* Pods_GSDA.framework */; };
 		94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE76A52138E3170086B560 /* AppDelegate.swift */; };
-		94BE76A82138E3170086B560 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE76A72138E3170086B560 /* ViewController.swift */; };
 		94BE76AE2138E3170086B560 /* GSDA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94BE76AC2138E3170086B560 /* GSDA.xcdatamodeld */; };
 		94BE76B02138E3180086B560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94BE76AF2138E3180086B560 /* Assets.xcassets */; };
 		94BE76B32138E3180086B560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BE76B12138E3180086B560 /* LaunchScreen.storyboard */; };
@@ -45,10 +44,7 @@
 		969CB9D221FDEE7400428C16 /* AuthServ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CB9D121FDEE7400428C16 /* AuthServ.swift */; };
 		96C48D5F2205ABCD00A4E512 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C48D5C2205ABAB00A4E512 /* ProgressHUD.m */; };
 		96C48D602205ABCD00A4E512 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96C48D5D2205ABBB00A4E512 /* ProgressHUD.bundle */; };
-		A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */; };
-		A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A510012521BE922200DEECF8 /* HomeViewController.swift */; };
 		A52967AC2203B94500F317AA /* ExpandedDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */; };
-		A52967AE2203B95300F317AA /* CourseMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967AD2203B95300F317AA /* CourseMaterialViewController.swift */; };
 		A52967C82203C05500F317AA /* PPLE3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967B22203C05000F317AA /* PPLE3ViewController.swift */; };
 		A52967C92203C05500F317AA /* PPLE15ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967B32203C05000F317AA /* PPLE15ViewController.swift */; };
 		A52967CA2203C05500F317AA /* PPLE20ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967B42203C05000F317AA /* PPLE20ViewController.swift */; };
@@ -71,16 +67,20 @@
 		A52967DB2203C05500F317AA /* PPLE8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967C52203C05400F317AA /* PPLE8ViewController.swift */; };
 		A52967DC2203C05500F317AA /* PPLE19ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967C62203C05400F317AA /* PPLE19ViewController.swift */; };
 		A52967DD2203C05500F317AA /* PPLE12ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967C72203C05400F317AA /* PPLE12ViewController.swift */; };
-		A5349E3321C20B8C00393020 /* ProgramInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349E3221C20B8C00393020 /* ProgramInfoViewController.swift */; };
-		A5349E3721C4047B00393020 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349E3621C4047B00393020 /* LocationsViewController.swift */; };
-		A5349E3921C5C3F700393020 /* CurriculumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5349E3821C5C3F700393020 /* CurriculumViewController.swift */; };
-		A54EE97F216AEF5C009644CD /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54EE97E216AEF5C009644CD /* MainMenuViewController.swift */; };
-		A566025D2203C635002C96DB /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566025C2203C635002C96DB /* AccountSettingsViewController.swift */; };
 		A574C81721E54E5300A6D493 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A574C81621E54E5300A6D493 /* PhotoModel.swift */; };
 		A574C81B21E7B00400A6D493 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A574C81A21E7B00400A6D493 /* PhotosViewController.swift */; };
-		A57B549021D0091C0037CC83 /* RoswellLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B548F21D0091C0037CC83 /* RoswellLocationViewController.swift */; };
-		A57B549221D1994D0037CC83 /* KennesawLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B549121D1994D0037CC83 /* KennesawLocationViewController.swift */; };
-		A5CFF57121E7C0AD00E99338 /* WoodstockLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CFF57021E7C0AD00E99338 /* WoodstockLocationViewController.swift */; };
+		A5B3042F221C9E8E00A01024 /* ProgramInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30423221C9E8C00A01024 /* ProgramInfoViewController.swift */; };
+		A5B30430221C9E8E00A01024 /* RoswellLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30424221C9E8C00A01024 /* RoswellLocationViewController.swift */; };
+		A5B30431221C9E8E00A01024 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30425221C9E8C00A01024 /* HomeViewController.swift */; };
+		A5B30432221C9E8E00A01024 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30426221C9E8C00A01024 /* ViewController.swift */; };
+		A5B30433221C9E8E00A01024 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30427221C9E8D00A01024 /* LocationsViewController.swift */; };
+		A5B30434221C9E8E00A01024 /* CurriculumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30428221C9E8D00A01024 /* CurriculumViewController.swift */; };
+		A5B30435221C9E8E00A01024 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30429221C9E8D00A01024 /* AccountSettingsViewController.swift */; };
+		A5B30436221C9E8E00A01024 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3042A221C9E8D00A01024 /* MainMenuViewController.swift */; };
+		A5B30437221C9E8E00A01024 /* CourseMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3042B221C9E8D00A01024 /* CourseMaterialViewController.swift */; };
+		A5B30438221C9E8E00A01024 /* KennesawLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3042C221C9E8D00A01024 /* KennesawLocationViewController.swift */; };
+		A5B30439221C9E8E00A01024 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3042D221C9E8E00A01024 /* ResetPasswordViewController.swift */; };
+		A5B3043A221C9E8E00A01024 /* WoodstockLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3042E221C9E8E00A01024 /* WoodstockLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,7 +103,6 @@
 		74DA5950221C6A7600817365 /* AssignmentsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentsApi.swift; sourceTree = "<group>"; };
 		94BE76A22138E3170086B560 /* GSDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BE76A52138E3170086B560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94BE76A72138E3170086B560 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		94BE76AD2138E3170086B560 /* GSDA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GSDA.xcdatamodel; sourceTree = "<group>"; };
 		94BE76AF2138E3180086B560 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94BE76B22138E3180086B560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -127,10 +126,7 @@
 		96C48D5C2205ABAB00A4E512 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		96C48D5D2205ABBB00A4E512 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		96C48D5E2205ABCC00A4E512 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
-		A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		A510012521BE922200DEECF8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedDutyViewController.swift; sourceTree = "<group>"; };
-		A52967AD2203B95300F317AA /* CourseMaterialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseMaterialViewController.swift; sourceTree = "<group>"; };
 		A52967B22203C05000F317AA /* PPLE3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE3ViewController.swift; sourceTree = "<group>"; };
 		A52967B32203C05000F317AA /* PPLE15ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE15ViewController.swift; sourceTree = "<group>"; };
 		A52967B42203C05000F317AA /* PPLE20ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE20ViewController.swift; sourceTree = "<group>"; };
@@ -153,16 +149,20 @@
 		A52967C52203C05400F317AA /* PPLE8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE8ViewController.swift; sourceTree = "<group>"; };
 		A52967C62203C05400F317AA /* PPLE19ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE19ViewController.swift; sourceTree = "<group>"; };
 		A52967C72203C05400F317AA /* PPLE12ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE12ViewController.swift; sourceTree = "<group>"; };
-		A5349E3221C20B8C00393020 /* ProgramInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramInfoViewController.swift; sourceTree = "<group>"; };
-		A5349E3621C4047B00393020 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
-		A5349E3821C5C3F700393020 /* CurriculumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumViewController.swift; sourceTree = "<group>"; };
-		A54EE97E216AEF5C009644CD /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
-		A566025C2203C635002C96DB /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
 		A574C81621E54E5300A6D493 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		A574C81A21E7B00400A6D493 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
-		A57B548F21D0091C0037CC83 /* RoswellLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoswellLocationViewController.swift; sourceTree = "<group>"; };
-		A57B549121D1994D0037CC83 /* KennesawLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KennesawLocationViewController.swift; sourceTree = "<group>"; };
-		A5CFF57021E7C0AD00E99338 /* WoodstockLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WoodstockLocationViewController.swift; sourceTree = "<group>"; };
+		A5B30423221C9E8C00A01024 /* ProgramInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramInfoViewController.swift; sourceTree = "<group>"; };
+		A5B30424221C9E8C00A01024 /* RoswellLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoswellLocationViewController.swift; sourceTree = "<group>"; };
+		A5B30425221C9E8C00A01024 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A5B30426221C9E8C00A01024 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5B30427221C9E8D00A01024 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		A5B30428221C9E8D00A01024 /* CurriculumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculumViewController.swift; sourceTree = "<group>"; };
+		A5B30429221C9E8D00A01024 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
+		A5B3042A221C9E8D00A01024 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		A5B3042B221C9E8D00A01024 /* CourseMaterialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseMaterialViewController.swift; sourceTree = "<group>"; };
+		A5B3042C221C9E8D00A01024 /* KennesawLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KennesawLocationViewController.swift; sourceTree = "<group>"; };
+		A5B3042D221C9E8E00A01024 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		A5B3042E221C9E8E00A01024 /* WoodstockLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WoodstockLocationViewController.swift; sourceTree = "<group>"; };
 		BE7FFF6B313660638E5B462F /* Pods-GSDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GSDA/Pods-GSDA.release.xcconfig"; sourceTree = "<group>"; };
 		E5A9EF733DFDD56B3EF81357 /* Pods-GSDA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GSDA/Pods-GSDA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,8 +201,6 @@
 		0979E19A21FB8EEB002C421D /* Parents */ = {
 			isa = PBXGroup;
 			children = (
-				0979E19B21FB8F00002C421D /* FeedViewController.swift */,
-				9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */,
 			);
 			path = Parents;
 			sourceTree = "<group>";
@@ -249,21 +247,23 @@
 			children = (
 				A52967B12203C03B00F317AA /* Course Material VC's */,
 				0979E19A21FB8EEB002C421D /* Parents */,
-				94BE76A72138E3170086B560 /* ViewController.swift */,
-				A54EE97E216AEF5C009644CD /* MainMenuViewController.swift */,
-				A510012321BD8B8E00DEECF8 /* ResetPasswordViewController.swift */,
-				A510012521BE922200DEECF8 /* HomeViewController.swift */,
-				A5349E3221C20B8C00393020 /* ProgramInfoViewController.swift */,
-				A5349E3621C4047B00393020 /* LocationsViewController.swift */,
-				A5349E3821C5C3F700393020 /* CurriculumViewController.swift */,
-				A57B548F21D0091C0037CC83 /* RoswellLocationViewController.swift */,
-				A57B549121D1994D0037CC83 /* KennesawLocationViewController.swift */,
-				A5CFF57021E7C0AD00E99338 /* WoodstockLocationViewController.swift */,
+				0979E19B21FB8F00002C421D /* FeedViewController.swift */,
+				A5B30426221C9E8C00A01024 /* ViewController.swift */,
+				9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */,
+				A5B30429221C9E8D00A01024 /* AccountSettingsViewController.swift */,
+				A5B3042B221C9E8D00A01024 /* CourseMaterialViewController.swift */,
+				A5B30428221C9E8D00A01024 /* CurriculumViewController.swift */,
+				A5B30425221C9E8C00A01024 /* HomeViewController.swift */,
+				A5B3042C221C9E8D00A01024 /* KennesawLocationViewController.swift */,
+				A5B30427221C9E8D00A01024 /* LocationsViewController.swift */,
+				A5B3042A221C9E8D00A01024 /* MainMenuViewController.swift */,
+				A5B30423221C9E8C00A01024 /* ProgramInfoViewController.swift */,
+				A5B3042D221C9E8E00A01024 /* ResetPasswordViewController.swift */,
+				A5B30424221C9E8C00A01024 /* RoswellLocationViewController.swift */,
+				A5B3042E221C9E8E00A01024 /* WoodstockLocationViewController.swift */,
+				A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */,
 				A574C81A21E7B00400A6D493 /* PhotosViewController.swift */,
 				0979E19E21FB8FBD002C421D /* VideosViewController.swift */,
-				A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */,
-				A52967AD2203B95300F317AA /* CourseMaterialViewController.swift */,
-				A566025C2203C635002C96DB /* AccountSettingsViewController.swift */,
 				09B85A9B220CBB7E0004D41A /* Schedule */,
 				965961E5220B720000178B34 /* AssignmentViewController.swift */,
 				9680F629220CCA30005D2975 /* AssignmentControllerViewController.swift */,
@@ -535,39 +535,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57B549021D0091C0037CC83 /* RoswellLocationViewController.swift in Sources */,
 				A52967DA2203C05500F317AA /* PPLE17ViewController.swift in Sources */,
 				A574C81B21E7B00400A6D493 /* PhotosViewController.swift in Sources */,
 				9680F62A220CCA30005D2975 /* AssignmentControllerViewController.swift in Sources */,
-				94BE76A82138E3170086B560 /* ViewController.swift in Sources */,
 				967D81C921FBAF310007BA68 /* Api.swift in Sources */,
 				965961E6220B720000178B34 /* AssignmentViewController.swift in Sources */,
-				A5349E3321C20B8C00393020 /* ProgramInfoViewController.swift in Sources */,
 				A52967D02203C05500F317AA /* PPLE9ViewController.swift in Sources */,
 				A52967DC2203C05500F317AA /* PPLE19ViewController.swift in Sources */,
 				09B85A9A220CB5230004D41A /* NoteListViewController.swift in Sources */,
 				0979E19921FB76EB002C421D /* FeedCell.swift in Sources */,
+				A5B30434221C9E8E00A01024 /* CurriculumViewController.swift in Sources */,
 				09727BE72210F6650009E58E /* NoteModel.swift in Sources */,
 				A52967D32203C05500F317AA /* PPLE7ViewController.swift in Sources */,
 				0945921C2208C1BB00744277 /* UIImageExtension.swift in Sources */,
 				09727BE52210F1580009E58E /* NoteAPI.swift in Sources */,
 				A52967D82203C05500F317AA /* PPLE4ViewController.swift in Sources */,
-				A566025D2203C635002C96DB /* AccountSettingsViewController.swift in Sources */,
-				A5349E3921C5C3F700393020 /* CurriculumViewController.swift in Sources */,
 				A52967AC2203B94500F317AA /* ExpandedDutyViewController.swift in Sources */,
 				A574C81721E54E5300A6D493 /* PhotoModel.swift in Sources */,
-				A52967AE2203B95300F317AA /* CourseMaterialViewController.swift in Sources */,
 				967D81CB21FBAFC90007BA68 /* PostApi.swift in Sources */,
+				A5B30433221C9E8E00A01024 /* LocationsViewController.swift in Sources */,
+				A5B30439221C9E8E00A01024 /* ResetPasswordViewController.swift in Sources */,
 				74DA594C221C634100817365 /* PdfModel.swift in Sources */,
 				A52967C92203C05500F317AA /* PPLE15ViewController.swift in Sources */,
 				968FF1B221F24516004E5D33 /* UserModel.swift in Sources */,
 				097213692204F93300778B51 /* ScheduleViewCOntroller.swift in Sources */,
-				A57B549221D1994D0037CC83 /* KennesawLocationViewController.swift in Sources */,
 				A52967D72203C05500F317AA /* GSDACatalogViewController.swift in Sources */,
 				A52967CE2203C05500F317AA /* PPLE18ViewController.swift in Sources */,
 				74DA5951221C6A7600817365 /* AssignmentsApi.swift in Sources */,
 				A52967CD2203C05500F317AA /* PPLE16ViewController.swift in Sources */,
-				A54EE97F216AEF5C009644CD /* MainMenuViewController.swift in Sources */,
+				A5B30438221C9E8E00A01024 /* KennesawLocationViewController.swift in Sources */,
 				A52967D62203C05500F317AA /* PPLE14ViewController.swift in Sources */,
 				969CB9D221FDEE7400428C16 /* AuthServ.swift in Sources */,
 				A52967DB2203C05500F317AA /* PPLE8ViewController.swift in Sources */,
@@ -576,33 +572,37 @@
 				A52967D92203C05500F317AA /* PPLE11ViewController.swift in Sources */,
 				09B85A9F220CBFD10004D41A /* DateExt.swift in Sources */,
 				A52967DD2203C05500F317AA /* PPLE12ViewController.swift in Sources */,
+				A5B30430221C9E8E00A01024 /* RoswellLocationViewController.swift in Sources */,
 				A52967CF2203C05500F317AA /* PPLE22ViewController.swift in Sources */,
-				A5349E3721C4047B00393020 /* LocationsViewController.swift in Sources */,
+				A5B30431221C9E8E00A01024 /* HomeViewController.swift in Sources */,
 				A52967CA2203C05500F317AA /* PPLE20ViewController.swift in Sources */,
 				967D81CD21FBB0B50007BA68 /* UserApi.swift in Sources */,
 				A52967D42203C05500F317AA /* PPLE6ViewController.swift in Sources */,
+				A5B3042F221C9E8E00A01024 /* ProgramInfoViewController.swift in Sources */,
+				A5B30437221C9E8E00A01024 /* CourseMaterialViewController.swift in Sources */,
 				94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */,
 				0972136B2204F95F00778B51 /* DayCell.swift in Sources */,
 				0979E19F21FB8FBD002C421D /* VideosViewController.swift in Sources */,
-				A510012421BD8B8E00DEECF8 /* ResetPasswordViewController.swift in Sources */,
 				094592192208B66600744277 /* PostModel.swift in Sources */,
 				A52967CB2203C05500F317AA /* PPLE10ViewController.swift in Sources */,
 				9676465421FBA2AE00F8F660 /* UploadContentViewController.swift in Sources */,
 				A52967C82203C05500F317AA /* PPLE3ViewController.swift in Sources */,
 				967D81CF21FBB1600007BA68 /* HelperService.swift in Sources */,
 				74DA594E221C646800817365 /* PdfUploadViewController.swift in Sources */,
+				A5B30435221C9E8E00A01024 /* AccountSettingsViewController.swift in Sources */,
 				94BE76AE2138E3170086B560 /* GSDA.xcdatamodeld in Sources */,
-				A510012621BE922200DEECF8 /* HomeViewController.swift in Sources */,
-				A5CFF57121E7C0AD00E99338 /* WoodstockLocationViewController.swift in Sources */,
 				96C48D5F2205ABCD00A4E512 /* ProgressHUD.m in Sources */,
 				A52967D52203C05500F317AA /* PPLE13ViewController.swift in Sources */,
 				967D81D121FBB1970007BA68 /* Config.swift in Sources */,
 				0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */,
 				A52967CC2203C05500F317AA /* PPLE5ViewController.swift in Sources */,
 				A52967D12203C05500F317AA /* PPLE1ViewController.swift in Sources */,
+				A5B30432221C9E8E00A01024 /* ViewController.swift in Sources */,
 				964D623522039F8C00C2ED12 /* FeedApi.swift in Sources */,
+				A5B30436221C9E8E00A01024 /* MainMenuViewController.swift in Sources */,
 				A52967D22203C05500F317AA /* PPLE2ViewController.swift in Sources */,
 				94C19D2E213B292F00350658 /* AuthService.swift in Sources */,
+				A5B3043A221C9E8E00A01024 /* WoodstockLocationViewController.swift in Sources */,
 				09B85A9D220CBB8F0004D41A /* EditNoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

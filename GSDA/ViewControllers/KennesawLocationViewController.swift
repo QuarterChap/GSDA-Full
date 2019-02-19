@@ -23,8 +23,6 @@ class customPin2: NSObject, MKAnnotation {
 }
 
 class KennesawLocationViewController: UIViewController, MFMailComposeViewControllerDelegate {
-
-    var previousVC = UserDefaults.standard.string(forKey: "previousVC")
     
     let scrollView: UIScrollView = {
         let sv = UIScrollView()
@@ -38,20 +36,6 @@ class KennesawLocationViewController: UIViewController, MFMailComposeViewControl
         sv.layer.zPosition = 0
         
         return sv
-    }()
-    
-    lazy var mainMenuButton: UIButton = {
-        let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Main Menu", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleMainMenu), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        
-        return button
     }()
     
     lazy var backButton: UIButton = {
@@ -210,7 +194,7 @@ class KennesawLocationViewController: UIViewController, MFMailComposeViewControl
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
         navigationItem.title = "KennesawLocationViewController"
-
+        
         if view?.frame.width == 320 && view?.frame.height == 568 {
             scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 850)
             //5
@@ -234,21 +218,15 @@ class KennesawLocationViewController: UIViewController, MFMailComposeViewControl
     
     func setupView() {
         self.view.addSubview(scrollView)
-        self.view.addSubview(mainMenuButton)
         self.view.addSubview(backButton)
         
-        mainMenuButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        mainMenuButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mainMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-        mainMenuButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-        
-        backButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        backButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
         
         scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: mainMenuButton.topAnchor, constant: 0).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: 0).isActive = true
         scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         scrollView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.925).isActive = true
     }
@@ -318,13 +296,6 @@ class KennesawLocationViewController: UIViewController, MFMailComposeViewControl
         mapView.addAnnotation(pin)
     }
     
-    @objc func handleMainMenu() {
-        previousVC = ""
-        UserDefaults.standard.set("", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
-        self.present(MainMenuViewController(), animated: true)
-    }
-    
     func getVideo(videoCode: String ) {
         let url = URL(string: "https://www.youtube.com/embed/\(videoCode)")
         videoView.loadRequest(URLRequest(url: url!))
@@ -387,7 +358,7 @@ class KennesawLocationViewController: UIViewController, MFMailComposeViewControl
     }
     
     @objc func handleBack() {
-        self.present(LocationsViewController(), animated: true)
+        self.dismiss(animated: true, completion: {})
     }
-
+    
 }

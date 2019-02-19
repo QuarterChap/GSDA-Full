@@ -11,8 +11,6 @@ import AVFoundation
 import AVKit
 
 class HomeViewController: UIViewController {
-
-    var previousVC = UserDefaults.standard.string(forKey: "previousVC")
     
     let scrollView: UIScrollView = {
         let sv = UIScrollView()
@@ -29,7 +27,7 @@ class HomeViewController: UIViewController {
     }()
     
     let label1: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         
         label.text = "Learn To Be A Dental Assitant"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
@@ -198,8 +196,8 @@ class HomeViewController: UIViewController {
     }()
     
     let image1: UIImageView = {
-       let imageView = UIImageView()
-       
+        let imageView = UIImageView()
+        
         imageView.image = UIImage(named: "Img1")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -319,14 +317,14 @@ class HomeViewController: UIViewController {
         return label
     }()
     
-    lazy var mainMenuButton: UIButton = {
+    lazy var backButton: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Main Menu", for: .normal)
+        button.setTitle("Back", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleMainMenu), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
         
@@ -362,15 +360,15 @@ class HomeViewController: UIViewController {
     
     func setupView() {
         self.view.addSubview(scrollView)
-        self.view.addSubview(mainMenuButton)
+        self.view.addSubview(backButton)
         
-        mainMenuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        mainMenuButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mainMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        mainMenuButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
+        backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
         
         scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: mainMenuButton.topAnchor, constant: 0).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: 0).isActive = true
         scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         scrollView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.925).isActive = true
         
@@ -445,7 +443,7 @@ class HomeViewController: UIViewController {
         seeProgramInfoButton.topAnchor.constraint(equalTo: videoView.bottomAnchor, constant: 15).isActive = true
         seeProgramInfoButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.75).isActive = true
         seeProgramInfoButton.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.095).isActive
-         = true
+            = true
         
         label5.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         label5.topAnchor.constraint(equalTo: seeProgramInfoButton.bottomAnchor, constant: 25).isActive = true
@@ -498,37 +496,26 @@ class HomeViewController: UIViewController {
     
     
     @objc func handleProgramInfo() {
-        previousVC = "HomeVC"
-        UserDefaults.standard.set("HomeVC", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
         self.present(ProgramInfoViewController(), animated: true) {}
     }
     
     @objc func handleLocations() {
-        previousVC = "HomeVC"
-        UserDefaults.standard.set("HomeVC", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
         self.present(LocationsViewController(), animated: true) {}
     }
     
     @objc func handleClassSchedule() {
-        previousVC = "HomeVC"
-        UserDefaults.standard.set("HomeVC", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
         self.present(ScheduleViewController(), animated: true) {}
     }
     
-    @objc func handleMainMenu() {
-        previousVC = ""
-        UserDefaults.standard.set("", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
-        self.present(MainMenuViewController(), animated: true) {}
+    @objc func handleBack() {
+        self.dismiss(animated: true, completion: {})
     }
-
+    
     func getVideo(videoCode: String ) {
         let url = URL(string: "https://www.youtube.com/embed/\(videoCode)")
         videoView.loadRequest(URLRequest(url: url!))
     }
     
 }
+
 

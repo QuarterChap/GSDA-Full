@@ -9,20 +9,68 @@
 import UIKit
 
 class ExpandedDutyViewController: UIViewController {
-
-    let viewPDFButton1: UIButton = {
+    
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Expanded Duty"
+        label.textColor = UIColor.white
+        
+        return label
+    }()
+    
+    let ourApprovalLabel: UILabel = {
+        let label = UILabel()
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Our Approval"
+        label.backgroundColor = UIColor(r: 124, g: 128, b: 49)
+        label.textColor = UIColor.white
+        label.layer.cornerRadius = 5
+        label.layer.masksToBounds = true
+        label.layer.borderColor = UIColor.black.cgColor
+        label.layer.borderWidth = 1
+        
+        return label
+    }()
+    
+    let ourApprovalButton: UIButton = {
         let button = UIButton()
         
-        button.backgroundColor = UIColor(r: 124, g: 128, b: 49)
-        button.setTitle("View PDF", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.layer.cornerRadius = 5
-        button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(handleOurAppovalPDF), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
+        
+        return button
+    }()
+    
+    let affidavitFormLabel: UILabel = {
+        let label = UILabel()
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    let affidavitButton: UIButton = {
+        let button = UIButton()
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
+    let enrollLabel: UILabel = {
+        let label = UILabel()
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    let enrollButton: UIButton = {
+        let button = UIButton()
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
     }()
@@ -37,15 +85,13 @@ class ExpandedDutyViewController: UIViewController {
     }
     
     func setupView() {
+        view.addSubview(titleLabel)
         
-    }
-    
-    @objc func handleOurAppovalPDF() {
-        
-    }
-    
-    @objc func handleAffidvitFormPDF() {
-        
+        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height * 0.025).isActive = true
+        titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+        titleLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1).isActive = true
+        titleLabel.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.005)
     }
     
 }

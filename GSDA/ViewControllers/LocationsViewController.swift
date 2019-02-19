@@ -9,8 +9,6 @@
 import UIKit
 
 class LocationsViewController: UIViewController {
-
-    var previousVC = UserDefaults.standard.string(forKey: "previousVC")
     
     let label: UILabel = {
         let label = UILabel()
@@ -43,20 +41,6 @@ class LocationsViewController: UIViewController {
         sv.layer.zPosition = 0
         
         return sv
-    }()
-    
-    lazy var mainMenuButton: UIButton = {
-        let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Main Menu", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleMainMenu), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        
-        return button
     }()
     
     lazy var backButton: UIButton = {
@@ -274,31 +258,13 @@ class LocationsViewController: UIViewController {
     
     func setupView() {
         self.view.addSubview(scrollView)
-        self.view.addSubview(mainMenuButton)
+        self.view.addSubview(backButton)
         
-        if previousVC == "HomeVC" {
-            self.view.addSubview(backButton)
-            
-            mainMenuButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-            mainMenuButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-            mainMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-            mainMenuButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-            
-            backButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-            backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-            backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-            backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-        } else {
-            mainMenuButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-            mainMenuButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-            mainMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-            mainMenuButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-        }
         
-        scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: mainMenuButton.topAnchor, constant: 0).isActive = true
-        scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        scrollView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.925).isActive = true
+        backButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
         
     }
     
@@ -342,7 +308,7 @@ class LocationsViewController: UIViewController {
         self.scrollView.addSubview(kennesawView)
         self.kennesawView.addSubview(kennesawLbl)
         self.kennesawView.addSubview(kennesawButton)
-
+        
         kennesawImg.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.65).isActive = true
         kennesawImg.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.35).isActive = true
         kennesawImg.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
@@ -393,36 +359,20 @@ class LocationsViewController: UIViewController {
         
     }
     
-    @objc func handleMainMenu() {
-        previousVC = ""
-        UserDefaults.standard.set("", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
-        self.present(MainMenuViewController(), animated: true)
-    }
-    
     @objc func handleRoswell() {
-        previousVC = "LocationsVC"
-        UserDefaults.standard.set("LocationsVC", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
         self.present(RoswellLocationViewController(), animated: true)
     }
     
     @objc func handleKennesaw() {
-        previousVC = "LocationsVC"
-        UserDefaults.standard.set("LocationsVC", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
         self.present(KennesawLocationViewController(), animated: true)
     }
     
     @objc func handleWoodstock() {
-        previousVC = "LocationsVC"
-        UserDefaults.standard.set("LocationsVC", forKey: "previousVC")
-        UserDefaults.standard.synchronize()
         self.present(WoodstockLocationViewController(), animated: true)
     }
     
     @objc func handleBack() {
-        self.present(HomeViewController(), animated: true)
+        self.dismiss(animated: true, completion: {})
     }
-
+    
 }

@@ -10,17 +10,17 @@ import UIKit
 import Firebase
 
 class AccountSettingsViewController: UIViewController {
-
+    
     var signedIn = UserDefaults.standard.bool(forKey: "signedIn")
     
-    lazy var mainMenuButton: UIButton = {
+    lazy var backButton: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Main Menu", for: .normal)
+        button.setTitle("Back", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleMainMenu), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
         
@@ -75,14 +75,14 @@ class AccountSettingsViewController: UIViewController {
     }
     
     func setupView() {
-        self.view.addSubview(mainMenuButton)
+        self.view.addSubview(backButton)
         self.view.addSubview(titleLabel)
         self.view.addSubview(logoutButton)
         
-        mainMenuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        mainMenuButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mainMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        mainMenuButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
+        backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+        backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
         
         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
@@ -97,8 +97,8 @@ class AccountSettingsViewController: UIViewController {
         logoutButton.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.06)
     }
     
-    @objc func handleMainMenu() {
-        self.present(MainMenuViewController(), animated: true) {}
+    @objc func handleBack() {
+        self.dismiss(animated: true, completion: {})
     }
     
     @objc func logoutAction() {
@@ -109,6 +109,8 @@ class AccountSettingsViewController: UIViewController {
         try! Auth.auth().signOut()
         
         self.present(ViewController(), animated: true) {}
+        // maybe change this to dismiss all??
+        // test it later
     }
-
+    
 }

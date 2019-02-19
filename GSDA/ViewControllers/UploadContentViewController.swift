@@ -14,6 +14,7 @@ import FirebaseStorage
 enum ContentType: String {
     case video = "videos"
     case photo = "photos"
+    case pdf = "pdf"
 }
 
 class UploadContentViewController: UIViewController {
@@ -31,8 +32,9 @@ class UploadContentViewController: UIViewController {
         return imageView
     }()
     
-    let titleTextField: UITextField = {
+    lazy var titleTextField: UITextField = {
         let textField = UITextField()
+        
         textField.placeholder = "title here.."
         textField.backgroundColor = UIColor(r: 166, g: 210, b: 253)
         textField.textColor = .white
@@ -41,19 +43,26 @@ class UploadContentViewController: UIViewController {
         textField.textAlignment = .center
         textField.layer.cornerRadius = 10
         textField.clipsToBounds = true
+        textField.returnKeyType = .done
+        textField.delegate = self
+        
         return textField
     }()
     
-    let descriptionTextField: UITextView = {
-        let textField = UITextView()
+    lazy var descriptionTextField: UITextField = {
+        let textField = UITextField()
+        
         textField.textColor = .white
         textField.font = UIFont.boldSystemFont(ofSize: 16)
         textField.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        textField.text = "Description here.."
+        textField.placeholder  = "Description here.."
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textAlignment = .center
         textField.layer.cornerRadius = 15
         textField.clipsToBounds = true
+        textField.returnKeyType = .done
+        textField.delegate = self
+        
         return textField
     }()
     
@@ -86,7 +95,7 @@ class UploadContentViewController: UIViewController {
         button.layer.zPosition = 1
         return button
     }()
-
+    
     @objc func backButtonPressed() {
         dismiss(animated: true, completion: nil)
     }
@@ -96,6 +105,8 @@ class UploadContentViewController: UIViewController {
     //Variables
     var selectedImage: UIImage?
     var videoUrl: URL?
+    var pdfArray : Array<PdfHandler> = []
+    var pdfUrl: Data?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,6 +155,8 @@ class UploadContentViewController: UIViewController {
             uploadVideo()
         } else if contentType == .photo {
             uploadImage()
+        } else if contentType == .pdf {
+            uploadPdf()
         }
     }
     
@@ -180,6 +193,16 @@ class UploadContentViewController: UIViewController {
         }
     }
     
+    /*  func uploadPdf() {
+     guard let uploadPdf =   // needs a webview instead of image
+     else {
+     return
+     }
+     HelperService.uploadPdfToFirebase(pdf: pdfLink!, title: titleTextField.text!, description: descriptionTextField.text!) {
+     self.dismiss(animated: true, completion: nil)
+     }
+     }*/
+    
     @objc func openGallery() {
         handleSelectPhoto()
     }
@@ -188,14 +211,35 @@ class UploadContentViewController: UIViewController {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         if contentType == .video {
-        pickerController.mediaTypes = ["public.movie"]
+            pickerController.mediaTypes = ["public.movie"]
         } else if contentType == .photo {
             pickerController.mediaTypes = ["public.image"]
+        } else if contentType == .pdf {
+            //NO CLUE!
+            UIDocumentPickerViewController.self
         }
         present(pickerController, animated: true, completion: nil)
     }
 }
 
+extension UploadContentViewController:UIDocumentPickerDelegate {
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+        let docURL = url
+        
+        do {
+            let data = try Data(contentsOf: docURL)
+        } catch {
+            let docURLString = docURL.path
+            let pdfPath = docURL.lastPathComponent
+            
+            //Appends the pdf to an array to be used for upload have to get back to this to find a better solution
+            self.pdfUrl = pdfPath as? Data
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
 
 extension UploadContentViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -236,3 +280,9 @@ extension UploadContentViewController: UIImagePickerControllerDelegate, UINaviga
     }
 }
 
+extension UploadContentViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
