@@ -117,7 +117,7 @@ func setupSubViews() {
     selectedImageView.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 15).isActive = true
     selectedImageView.leadingAnchor.constraint(equalTo: descriptionTextField.leadingAnchor).isActive = true
     selectedImageView.trailingAnchor.constraint(equalTo: descriptionTextField.trailingAnchor).isActive = true
-    selectedImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+    selectedImageView.bottomAnchor.constraint(equalTo: doneButton.topAnchor, constant: -15).isActive = true
     
     doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
     doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true

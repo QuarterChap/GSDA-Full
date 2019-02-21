@@ -53,11 +53,14 @@ class HelperService {
             guard let metadata = metadata else {
                 return
             }
-            
-        let data = ["pdfUrl": pdfUrl, "title": title, "description": description] as [String : Any]
-        sendDataToPosts(dict: data) {
-            onSuccess()
-        }
+            storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
+                if let pdfFileUrl = url?.absoluteString {
+                    let data = ["pdf_url": pdfFileUrl, "title": title, "description": description, "timestamp": Int(Date().timeIntervalSince1970)] as [String : Any]
+                    sendDataToPosts(dict: data) {
+                        onSuccess()
+                    }
+                }
+            })
     }
     }
     
@@ -84,13 +87,15 @@ class HelperService {
         let uuid = UUID().uuidString
         var newPostReference = Api.Post.REF_POSTS
 
-        var type = ""
+        var type = "none"
         if let _ = dict["video_url"] {
             type = "videos"
         } else if let _ = dict["photo_url"] {
             type = "photos"
-        } 
-        newPostReference = newPostReference.child(type).child(uuid)
+        }  else if let _ = dict["pdf_url"] {
+            type = "pdfs"
+        }
+        newPostReference = newPostReference.child(type).child((Api.User.CURRENT_USER?.uid)!).child(uuid)
         newPostReference.setValue(dict, withCompletionBlock: {
             (error, _) in
             if let error = error {

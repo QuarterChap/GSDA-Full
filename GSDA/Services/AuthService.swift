@@ -94,6 +94,8 @@ class AuthService {
         
     }
     
+   
+    
     func logout() {
         if Auth.auth().currentUser != nil {
             let user = Auth.auth().currentUser?.email
