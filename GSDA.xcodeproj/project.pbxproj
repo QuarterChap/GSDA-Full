@@ -67,6 +67,7 @@
 		A52967DB2203C05500F317AA /* PPLE8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967C52203C05400F317AA /* PPLE8ViewController.swift */; };
 		A52967DC2203C05500F317AA /* PPLE19ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967C62203C05400F317AA /* PPLE19ViewController.swift */; };
 		A52967DD2203C05500F317AA /* PPLE12ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967C72203C05400F317AA /* PPLE12ViewController.swift */; };
+		A53DC869221CE2A50013E964 /* EnrollExpandedDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53DC868221CE2A50013E964 /* EnrollExpandedDuty.swift */; };
 		A574C81721E54E5300A6D493 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A574C81621E54E5300A6D493 /* PhotoModel.swift */; };
 		A574C81B21E7B00400A6D493 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A574C81A21E7B00400A6D493 /* PhotosViewController.swift */; };
 		A5B3042F221C9E8E00A01024 /* ProgramInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30423221C9E8C00A01024 /* ProgramInfoViewController.swift */; };
@@ -149,6 +150,7 @@
 		A52967C52203C05400F317AA /* PPLE8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE8ViewController.swift; sourceTree = "<group>"; };
 		A52967C62203C05400F317AA /* PPLE19ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE19ViewController.swift; sourceTree = "<group>"; };
 		A52967C72203C05400F317AA /* PPLE12ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE12ViewController.swift; sourceTree = "<group>"; };
+		A53DC868221CE2A50013E964 /* EnrollExpandedDuty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollExpandedDuty.swift; sourceTree = "<group>"; };
 		A574C81621E54E5300A6D493 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		A574C81A21E7B00400A6D493 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		A5B30423221C9E8C00A01024 /* ProgramInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramInfoViewController.swift; sourceTree = "<group>"; };
@@ -261,9 +263,10 @@
 				A5B3042D221C9E8E00A01024 /* ResetPasswordViewController.swift */,
 				A5B30424221C9E8C00A01024 /* RoswellLocationViewController.swift */,
 				A5B3042E221C9E8E00A01024 /* WoodstockLocationViewController.swift */,
-				A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */,
 				A574C81A21E7B00400A6D493 /* PhotosViewController.swift */,
 				0979E19E21FB8FBD002C421D /* VideosViewController.swift */,
+				A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */,
+				A53DC868221CE2A50013E964 /* EnrollExpandedDuty.swift */,
 				09B85A9B220CBB7E0004D41A /* Schedule */,
 				965961E5220B720000178B34 /* AssignmentViewController.swift */,
 				9680F629220CCA30005D2975 /* AssignmentControllerViewController.swift */,
@@ -597,6 +600,7 @@
 				0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */,
 				A52967CC2203C05500F317AA /* PPLE5ViewController.swift in Sources */,
 				A52967D12203C05500F317AA /* PPLE1ViewController.swift in Sources */,
+				A53DC869221CE2A50013E964 /* EnrollExpandedDuty.swift in Sources */,
 				A5B30432221C9E8E00A01024 /* ViewController.swift in Sources */,
 				964D623522039F8C00C2ED12 /* FeedApi.swift in Sources */,
 				A5B30436221C9E8E00A01024 /* MainMenuViewController.swift in Sources */,

@@ -105,7 +105,7 @@ class UploadContentViewController: UIViewController {
     //Variables
     var selectedImage: UIImage?
     var videoUrl: URL?
-    var pdfArray : Array<PdfHandler> = []
+    //var pdfArray : Array<PdfHandler> = []
     var pdfUrl: Data?
     
     override func viewDidLoad() {
@@ -176,10 +176,10 @@ class UploadContentViewController: UIViewController {
             return
         }
         
-        HelperService.uploadPdfToFirebase(pdf: pdfUrl, title: titleTextField.text!, description: descriptionTextField.text!) {
+        /*HelperService.uploadPdfToFirebase(pdf: pdfUrl, title: titleTextField.text!, description: descriptionTextField.text!) {
             ProgressHUD.showSuccess("succesfully uploaded")
             self.dismiss(animated: true, completion: nil)
-        }
+        }*/
     }
     
     
