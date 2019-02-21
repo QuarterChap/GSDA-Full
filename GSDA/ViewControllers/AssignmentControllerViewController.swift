@@ -21,9 +21,14 @@ class AssignmentControllerViewController: AssignmentViewController, AssignmentTa
     func upload() {
         present(PdfUploadViewController(), animated: true, completion: nil)
     }
+
     
     func didTap(cell: AssignmentCell) {
         _ = UIWebView()
+    }
+    
+    func fetchPostPdf() {
+      
     }
 
 }

@@ -14,8 +14,9 @@ class PdfModel {
     var description: String?
     var uid: String?
         var id: String?
-    var pdfUrl: String?
+    var pdf_url: String?
     var title: String?
+    var timestamp: String?
 }
 
 extension PdfModel {
@@ -24,8 +25,9 @@ extension PdfModel {
         push.id = key
         push.title = dict["title"] as? String
         push.description = dict["description"] as? String
-        push.pdfUrl = dict["pdfUrl"] as? String
+        push.pdf_url = dict["pdf_url"] as? String
         push.uid = dict["uid"] as? String
+        push.timestamp = dict["timestamp"] as? String
         
         return push
     }
