@@ -11,13 +11,19 @@ import MobileCoreServices
 
 class PdfUploadViewController: UIViewController {
 
-    lazy var pdfGallery: UIButton = {
-        let pdfGallery = UIButton()
+     lazy var selectedImageView: UIImageView = {
+    let imageView = UIImageView(image: nil)
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+    imageView.layer.cornerRadius = 20
+    imageView.clipsToBounds = true
     let gesture = UITapGestureRecognizer(target: self, action: #selector(openpdfPicker))
-    pdfGallery.addGestureRecognizer(gesture)
-    pdfGallery.isUserInteractionEnabled = true
-    return pdfGallery
+    imageView.addGestureRecognizer(gesture)
+    imageView.isUserInteractionEnabled = true
+    imageView.contentMode = .center
+    return imageView
 }()
+    
 
 let titleTextField: UITextField = {
     let textField = UITextField()
@@ -87,11 +93,12 @@ override func viewDidLoad() {
     navigationController?.isNavigationBarHidden = true
     view.backgroundColor = .white
     setupSubViews()
+    self.hideKeyboardWhenTappedAround()
 }
 
 func setupSubViews() {
     view.addSubview(titleTextField)
-    view.addSubview(pdfGallery)
+    view.addSubview(selectedImageView)
     view.addSubview(descriptionTextField)
     view.addSubview(doneButton)
     view.addSubview(backButton)
@@ -106,10 +113,11 @@ func setupSubViews() {
     descriptionTextField.trailingAnchor.constraint(equalTo: titleTextField.trailingAnchor).isActive = true
     descriptionTextField.heightAnchor.constraint(equalToConstant: 120).isActive = true
     
-    pdfGallery.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 15).isActive = true
-    pdfGallery.leadingAnchor.constraint(equalTo: descriptionTextField.leadingAnchor).isActive = true
-    pdfGallery.trailingAnchor.constraint(equalTo: descriptionTextField.trailingAnchor).isActive = true
-    pdfGallery.heightAnchor.constraint(equalToConstant: 120).isActive = true
+    
+    selectedImageView.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 15).isActive = true
+    selectedImageView.leadingAnchor.constraint(equalTo: descriptionTextField.leadingAnchor).isActive = true
+    selectedImageView.trailingAnchor.constraint(equalTo: descriptionTextField.trailingAnchor).isActive = true
+    selectedImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
     
     doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
     doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
