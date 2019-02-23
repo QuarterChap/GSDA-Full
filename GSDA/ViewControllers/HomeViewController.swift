@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
         
         label.text = "Learn To Be A Dental Assitant"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
         
         label.text = "Approved by the Georgia Board of Dentistry"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
@@ -68,7 +68,7 @@ class HomeViewController: UIViewController {
         
         label.text = "Just 12 weeks to a new career!"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
@@ -134,7 +134,7 @@ class HomeViewController: UIViewController {
         
         label.text = "We can train you in 12 weeks, with 78 hours of lecture and lab, plus a 50 hour internship with a practicing dentist. After you graduate you’ll have the skills to get a job immediately."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
@@ -214,7 +214,7 @@ class HomeViewController: UIViewController {
         
         label.text = "According to the Bureau for Labor Statistics, employment in this field is expected to grow much faster than the average for all occupations through 2024. Currently there are more openings available than there are Dental Assistants to go around! The demand is there–why not take advantage of this opportunity?"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
@@ -232,7 +232,7 @@ class HomeViewController: UIViewController {
         
         label.text = "✔︎ Your job as a Dental Assistant is recession-proof"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
@@ -250,7 +250,7 @@ class HomeViewController: UIViewController {
         
         label.text = "✔︎ You’ll work in a professional environment assisting with dental procedures, lab work and office duties."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
@@ -268,7 +268,7 @@ class HomeViewController: UIViewController {
         
         label.text = "✔︎ You can earn $12 to $20 per hour"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
@@ -286,7 +286,7 @@ class HomeViewController: UIViewController {
         
         label.text = "✔︎ Your job may come with benefits such as paid vacation, and sick leave, medical and hospitalization, reimbursement for continuing education course fees, pension plans (401k) and profit sharing or bonus plan."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
@@ -304,7 +304,7 @@ class HomeViewController: UIViewController {
         
         label.text = "✔︎ You can find employment anywhere in the United States"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)

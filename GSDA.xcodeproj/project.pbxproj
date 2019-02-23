@@ -82,6 +82,8 @@
 		A5B30438221C9E8E00A01024 /* KennesawLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3042C221C9E8D00A01024 /* KennesawLocationViewController.swift */; };
 		A5B30439221C9E8E00A01024 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3042D221C9E8E00A01024 /* ResetPasswordViewController.swift */; };
 		A5B3043A221C9E8E00A01024 /* WoodstockLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3042E221C9E8E00A01024 /* WoodstockLocationViewController.swift */; };
+		A5CB0A0722209296007D0393 /* EnrollExpandedDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB0A0622209296007D0393 /* EnrollExpandedDuty.swift */; };
+		A5CB0A092220B660007D0393 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB0A082220B660007D0393 /* Configurable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +167,8 @@
 		A5B3042C221C9E8D00A01024 /* KennesawLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KennesawLocationViewController.swift; sourceTree = "<group>"; };
 		A5B3042D221C9E8E00A01024 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		A5B3042E221C9E8E00A01024 /* WoodstockLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WoodstockLocationViewController.swift; sourceTree = "<group>"; };
+		A5CB0A0622209296007D0393 /* EnrollExpandedDuty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EnrollExpandedDuty.swift; path = "New Group/EnrollExpandedDuty.swift"; sourceTree = "<group>"; };
+		A5CB0A082220B660007D0393 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		BE7FFF6B313660638E5B462F /* Pods-GSDA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GSDA/Pods-GSDA.release.xcconfig"; sourceTree = "<group>"; };
 		E5A9EF733DFDD56B3EF81357 /* Pods-GSDA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GSDA/Pods-GSDA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,23 +205,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		0979E19A21FB8EEB002C421D /* Parents */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Parents;
-			sourceTree = "<group>";
-		};
-		09B85A9B220CBB7E0004D41A /* Schedule */ = {
-			isa = PBXGroup;
-			children = (
-				09B85A9C220CBB8F0004D41A /* EditNoteViewController.swift */,
-				09B85A99220CB5230004D41A /* NoteListViewController.swift */,
-				097213682204F93300778B51 /* ScheduleViewCOntroller.swift */,
-			);
-			path = Schedule;
-			sourceTree = "<group>";
-		};
 		0D66E46205F546CFF71F1E96 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				A52967B12203C03B00F317AA /* Course Material VC's */,
-				0979E19A21FB8EEB002C421D /* Parents */,
 				0979E19B21FB8F00002C421D /* FeedViewController.swift */,
 				A5B30426221C9E8C00A01024 /* ViewController.swift */,
 				9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */,
@@ -264,13 +250,17 @@
 				A5B3042D221C9E8E00A01024 /* ResetPasswordViewController.swift */,
 				A5B30424221C9E8C00A01024 /* RoswellLocationViewController.swift */,
 				A5B3042E221C9E8E00A01024 /* WoodstockLocationViewController.swift */,
-				A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */,
 				A574C81A21E7B00400A6D493 /* PhotosViewController.swift */,
 				0979E19E21FB8FBD002C421D /* VideosViewController.swift */,
-				09B85A9B220CBB7E0004D41A /* Schedule */,
+				09B85A9C220CBB8F0004D41A /* EditNoteViewController.swift */,
+				09B85A99220CB5230004D41A /* NoteListViewController.swift */,
+				097213682204F93300778B51 /* ScheduleViewCOntroller.swift */,
 				965961E5220B720000178B34 /* AssignmentViewController.swift */,
 				9680F629220CCA30005D2975 /* AssignmentControllerViewController.swift */,
 				74DA594D221C646800817365 /* PdfUploadViewController.swift */,
+				A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */,
+				A5CB0A0622209296007D0393 /* EnrollExpandedDuty.swift */,
+				A5CB0A082220B660007D0393 /* Configurable.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -538,11 +528,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5CB0A0722209296007D0393 /* EnrollExpandedDuty.swift in Sources */,
 				A52967DA2203C05500F317AA /* PPLE17ViewController.swift in Sources */,
 				A574C81B21E7B00400A6D493 /* PhotosViewController.swift in Sources */,
 				9680F62A220CCA30005D2975 /* AssignmentControllerViewController.swift in Sources */,
 				967D81C921FBAF310007BA68 /* Api.swift in Sources */,
 				965961E6220B720000178B34 /* AssignmentViewController.swift in Sources */,
+				A5CB0A092220B660007D0393 /* Configurable.swift in Sources */,
 				A52967D02203C05500F317AA /* PPLE9ViewController.swift in Sources */,
 				A52967DC2203C05500F317AA /* PPLE19ViewController.swift in Sources */,
 				09B85A9A220CB5230004D41A /* NoteListViewController.swift in Sources */,
@@ -747,7 +739,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GSDA/GSDA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4BH5KRFJ6A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GSDA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -772,7 +764,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GSDA/GSDA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4BH5KRFJ6A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GSDA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

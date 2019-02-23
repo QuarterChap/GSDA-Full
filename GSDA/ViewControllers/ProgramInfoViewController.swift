@@ -43,7 +43,7 @@ class ProgramInfoViewController: UIViewController {
         
         label.text = "Program Information"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -104,7 +104,7 @@ class ProgramInfoViewController: UIViewController {
         
         label.text = "YOU CAN BECOME A DENTAL ASSISTANT"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 158, g: 170, b: 50)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -123,7 +123,7 @@ class ProgramInfoViewController: UIViewController {
         
         label.text = "Georgia School of Dental Assisting is a one of a kind opportunity located in Roswell and Kennesaw GA. This unique program will give you the knowledge and skills making you immediately employable. Nowhere else in the area will you receive better hands-on training in a small classroom setting. Dental Assisting is a fun and rewarding career that you could be fully qualified for in three short months."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -142,7 +142,7 @@ class ProgramInfoViewController: UIViewController {
         
         label.text = "After some experience as a Dental Assistant, graduates become office managers, Dental Assistant instructors, dental product sales representatives, and even move on to dental hygiene, which is highly competitive. For many, this entry level position serves as a stepping stone to being highly skilled and to higher paying jobs. Only twelve students are accepted per class. Hurry and change your life now!"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -194,7 +194,7 @@ class ProgramInfoViewController: UIViewController {
         
         label.text = "LECTURE    Introduction to the Profession"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -213,7 +213,7 @@ class ProgramInfoViewController: UIViewController {
         
         label.text = "LECTURE    Ethical & Legal Issues in Dentistry"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -232,7 +232,7 @@ class ProgramInfoViewController: UIViewController {
         
         label.text = "LAB    Dental Chair & Infection Control (PPE)"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -251,7 +251,7 @@ class ProgramInfoViewController: UIViewController {
         
         label.text = "LAB    Inf. Cont. — Maintaining the Operating Field"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -270,7 +270,7 @@ class ProgramInfoViewController: UIViewController {
         
         label.text = "LAB    Inf. Cont. — Treatment Preparation & Clean-up"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white

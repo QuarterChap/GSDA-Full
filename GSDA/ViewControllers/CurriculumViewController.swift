@@ -43,7 +43,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Curriculum"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -60,7 +60,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lecture Series"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -94,7 +94,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 101"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -111,7 +111,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -128,7 +128,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -145,7 +145,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students are introduced to the profession of Dentistry and the responsibilities of the dental health team which includes the dentist, hygienist, the front office personnel and the back office personnel."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -179,7 +179,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 102"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -196,7 +196,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -213,7 +213,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -230,7 +230,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the ethics governing dentistry and the various governmental agencies entrusted with the regulation of the dental profession to ensure and protect the public from incompetent and unethical practices. Topics include licensure procedures and credentialing."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -264,7 +264,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 103"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -281,7 +281,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -298,7 +298,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -315,7 +315,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the basic principles of X-Ray.   The operating principle of the X-Ray Machine is also discussed. Topics also include types of film exposures and film processing errors."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -349,7 +349,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 104"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -366,7 +366,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -383,7 +383,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -400,7 +400,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the form and structures of the human natural teeth in the dental arch. Topics also include the method of identifying teeth by using the Universal Numbering System for permanent and primary teeth."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -434,7 +434,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 105"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -451,7 +451,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -468,7 +468,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -485,7 +485,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the different parts of the tooth. Topics include cervix, apex, dental pulp, tissues of the teeth such as enamel, dentin and cementum. Also includes discussion of anatomical landmarks of the tooth and dental terminology."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -519,7 +519,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 107"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -536,7 +536,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -553,7 +553,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -570,7 +570,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the basic anatomy and physiology of the human skull. Topics include the cranium and the bones of the face."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -604,7 +604,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 108"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -621,7 +621,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -638,7 +638,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -655,7 +655,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the muscles of the head and neck and the temporomandibular joint which connects the maxillary and mandibular jaws. Topic also includes paranasal sinuses which are the air cavities in the bones above and each side of the nasal cavities."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -689,7 +689,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 109"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -706,7 +706,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -723,7 +723,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -740,7 +740,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Student will learn the nature of diseases that affect oral structures and regions nearby. Topics include discussion on how to distinguish normal from abnormal conditions in the oral cavity."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -774,7 +774,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 110"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -791,7 +791,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -808,7 +808,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -825,7 +825,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will earn the cavity of the mouth and the salivary glands which are located outside the oral cavity. Topics include discussion of infectious diseases that can be transmitted from the patient in a dental environment."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -859,7 +859,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 111"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -876,7 +876,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -893,7 +893,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -910,7 +910,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn various materials used in dentistry. Topics include cavity varnishes and liners, dental cements, surgical cements/periodontal dressing, glass ionomer cements, composites, sealants and dental amalgams."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -944,7 +944,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 112"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -961,7 +961,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -978,7 +978,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -995,7 +995,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Specialty limited to the dental care of children. The students will learn the special requirements prior to treatment of children. Topics include informed consent from guardians, behavioral management of children during treatment and the common pediatric dental procedures."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1029,7 +1029,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 113"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1046,7 +1046,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1063,7 +1063,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1080,7 +1080,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Removable Prosthodontics (RPD) replaces missing teeth. The students will learn the component parts of both the partial and complete RPD’s and the various steps necessary to take during replacement appointment with patient."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1114,7 +1114,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 114"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1131,7 +1131,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1148,7 +1148,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1165,7 +1165,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Complete restoration, or the replacement, of one or more teeth in a dental arch. The students will learn the different types of fixed prosthodontics restorations."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1199,7 +1199,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 115"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1216,7 +1216,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1233,7 +1233,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1250,7 +1250,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "More commonly referred to as Root Canal Therapy. The students will learn the steps in a root canal procedure and the different instruments and materials required."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1284,7 +1284,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 116"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1301,7 +1301,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1318,7 +1318,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1335,7 +1335,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Application of anesthetics to oral tissues. The students will learn the properties of anesthesia and when and where they are used."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1369,7 +1369,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 117"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1386,7 +1386,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1403,7 +1403,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: DA 104"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1420,7 +1420,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prevention and correction of dental and oral deviations. The students will learn the various types and causes of malformations and malocclusions and how they are corrected."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1454,7 +1454,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 118"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1472,7 +1472,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1489,7 +1489,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1506,7 +1506,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Deals with the prevention and treatment of periodontal diseases which is the most common cause of tooth loss. The students will learn the causes of periodontal disease, symptoms, examination procedures and treatment."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1540,7 +1540,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 119"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1557,7 +1557,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1574,7 +1574,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1591,7 +1591,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Involves with removing of teeth, treating jaw fractures, bone and tissue grafts and removal of tumors and cysts and reconstruction of oral and dental deformities. The students will learn the various procedures and instruments use in oral surgery."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1625,7 +1625,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 120"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1642,7 +1642,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1659,7 +1659,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1676,7 +1676,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Risk associated with providing medical and dental care. The students will learn how to respond to medical emergencies."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1710,7 +1710,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 121"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1727,7 +1727,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "4 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1744,7 +1744,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: DA 103"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1761,7 +1761,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "The students will have an in depth review of subjects likely to be encountered on the state specific radiographic written examination. A good grasp of this subject will greatly enhance the student’s likelihood of passing the written examination."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1795,7 +1795,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 122"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1812,7 +1812,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "2 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1830,7 +1830,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1847,7 +1847,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Student learns front office duties, reception, record keeping, patient scheduling and general office management/maintenance. The students will also learn how to write effective resumes."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1864,7 +1864,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab Sessions"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1898,7 +1898,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 101"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1915,7 +1915,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1932,7 +1932,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1949,7 +1949,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the different components of the dental operatory and dental chair. They will be taught how to operate the dental chair and the various associated instruments. The goals of infection control are discussed together with Occupational Safety and Health Administration (OSHA) requirements and standards. Students are taught how to don the various Personal Protective Equipment (PPE) required in the dental clinic."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -1983,7 +1983,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 102"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2000,7 +2000,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1.5 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2017,7 +2017,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: Lab 101"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2034,7 +2034,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the techniques in maintaining the operating field clean, visible, accessible and comfortable for the patient. They will also learn the various dental instruments, how they are organized to the tasks they are to perform and separated onto trays. During this session, a clinical video of the set-up and breakdown of dental operatory will be shown."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2068,7 +2068,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 103"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2085,7 +2085,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1.5 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2102,7 +2102,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: Lab 101"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2119,7 +2119,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the procedures performed by the dental assistant prior to seating a patient in the operatory. Students are taught to follow the Centers for Disease Control (CDC) Guidelines in effective infection control. They will also learn the various procedures required to be accomplished following dental treatment."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2153,7 +2153,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 104"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2170,7 +2170,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "8 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2187,7 +2187,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: LAB101, DA 103, DA 104"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2204,7 +2204,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn basic x-ray techniques. They will also learn how to take full mouth series of x-rays. Students will be asked to take x-rays, developing and mounting radiographs."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2238,7 +2238,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 105"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2255,7 +2255,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "6 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2272,7 +2272,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: DA 104"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2289,7 +2289,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn how to document the present dental conditions of the patient and the dental services to be rendered. This serves as a legal record of the patient. The students are taught and asked to prepare a dental chart using appropriate symbols and abbreviations."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2323,7 +2323,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 106"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2340,7 +2340,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "2 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2357,7 +2357,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: DA 104"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2374,7 +2374,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn that Alginate Impressions are taken in order to capture an accurate three dimensional duplication of a patient’s teeth and/or surrounding tissues. Students are taught how to get alginate impressions. Students also learn to take impressions using silicon and gypsum."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2408,7 +2408,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 107"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2425,7 +2425,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "2 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2442,7 +2442,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2459,7 +2459,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the use of bonding agents to be used between the tooth structures and the restoration.They are taught to prepare bonding agents using various instruments. In addition to the actual demonstration, a clinical video of amalgam restoration and composite resin restoration is shown to the students during this session."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2493,7 +2493,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 108"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2510,7 +2510,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "2 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2527,7 +2527,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: DA 104, DA 111"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2544,7 +2544,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the procedure performed if the pulp of a primary or newly erupted permanent tooth has been exposed. Students are taught to setup trays for the pulpotomy and stainless crown placement procedure. Students are also taught how to mix Zinc Oxide Eugenol (ZOE) base and permanent cement. A clinical video of crown preparation is shown during this session."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2578,7 +2578,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 109"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2595,7 +2595,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "2 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2612,7 +2612,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: DA 113"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2629,7 +2629,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the steps involve in the fabrication and installation of complete (full) and partial dentures. Students are asked to practice putting tray set-ups together for each stage of removable and Prosthodontic fabrication and delivery."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2663,7 +2663,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 110"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2680,7 +2680,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "2 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2697,7 +2697,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: DA 114"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2714,7 +2714,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the proper technique for expelling impression materials. They are taught how to fabricate and adjust temporaries."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2748,7 +2748,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 111"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2765,7 +2765,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "2 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2782,7 +2782,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: DA 115"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2799,7 +2799,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn endodontics (root canal) procedures and the various materials and instruments use. Students are taught to place the rubber dam on the typodont."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2833,7 +2833,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 112"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2850,7 +2850,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "2 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2867,7 +2867,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: DA 116"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2884,7 +2884,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the proper use of anesthesia in the dental practice. Students are taught how to load syringes, proper passing techniques and safe recapping techniques."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2918,7 +2918,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 113"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2935,7 +2935,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "2 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2952,7 +2952,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -2969,7 +2969,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn that newly erupted and caries free teeth benefit from sealants. Students are taught how to apply sealants and bleaching techniques."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3003,7 +3003,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 114"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3020,7 +3020,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "2 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3037,7 +3037,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: DA 118"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3054,7 +3054,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the various steps and instruments used in sealing, prophylaxis and polishing. Students are taught the techniques in passing periodontal instruments. They are also taught how to assemble the ultrasonic scaler correctly."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3088,7 +3088,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 115"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3105,7 +3105,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "2 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3122,7 +3122,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: DA 119"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3139,7 +3139,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the instruments needed for routine surgical and dental extraction. Students are taught instrument passing in the correct order for a typical tooth extraction and how they are passed over a patient. To further enhance classroom demonstration, a clinical video of oral surgical procedure is shown to the students during this session."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3173,7 +3173,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Lab 116"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3190,7 +3190,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "2 Hour Lab"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3207,7 +3207,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: None"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3224,7 +3224,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students are taught how to administer Cardio Pulmonary Resuscitation. Training will be conducted by representatives of the local American Red Cross or Fire Department. Upon completion of this training students will be awarded Certificates of Completion."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3241,7 +3241,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Exams & Externship"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3275,7 +3275,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Exams"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3292,7 +3292,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "12 Hours"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3309,7 +3309,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: Dental Assisting Program"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3343,7 +3343,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "EXT 101"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3360,7 +3360,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "50 Hours"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3377,7 +3377,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: Dental Assisting Program"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3394,7 +3394,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will undergo fifty (50) hours of on the job training in the office of a practicing dentist to further enhance their hands on experience. This training could be conducted in the school premises or in the offices of other participating dentists."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3428,7 +3428,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "DA 106"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3445,7 +3445,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "1 Hour Lecture"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3462,7 +3462,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Prerequisite: DA104"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3479,7 +3479,7 @@ class CurriculumViewController: UIViewController {
         
         label.text = "Students will learn the tissues supporting the human teeth. Topics include the alveolar process, the periodontal ligament and the gingiva (gums) which are collectively known as the periodontium."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.backgroundColor = UIColor.white
@@ -3907,7 +3907,7 @@ class CurriculumViewController: UIViewController {
         label199.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
         label199.topAnchor.constraint(equalTo: label27.bottomAnchor, constant: 15).isActive = true
         label199.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
-        label199.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.07).isActive = true
+        label199.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.095).isActive = true
         label199.font = UIFont(name: "AmericanTypewriter", size: view.frame.width / 16)
         
         label200.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25).isActive = true
