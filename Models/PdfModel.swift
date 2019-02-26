@@ -13,7 +13,7 @@ class PdfModel {
     
     var description: String?
     var uid: String?
-        var id: String?
+    var id: String?
     var pdf_url: String?
     var title: String?
     var timestamp: String?

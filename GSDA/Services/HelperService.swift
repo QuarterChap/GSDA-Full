@@ -16,7 +16,7 @@ class HelperService {
         let uuid = NSUUID().uuidString
         let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedVideo").child(uuid)
         let thumbnailRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("thumbnails").child(uuid)
-
+        
         guard let thumbnailData = UIImageJPEGRepresentation(thumbnail, 0.1) else {
             return
         }
@@ -61,11 +61,12 @@ class HelperService {
                     }
                 }
             })
-    }
+        }
     }
     
     static func uploadImageToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping () -> ()) {
         let photoIdString = NSUUID().uuidString
+        
         let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedImage").child(photoIdString)
         
         storageRef.putData(data, metadata: nil) { (metadata, error) in
@@ -86,7 +87,7 @@ class HelperService {
     static func sendDataToPosts(dict: [String: Any], onSuccess: @escaping () -> Void) {
         let uuid = UUID().uuidString
         var newPostReference = Api.Post.REF_POSTS
-
+        
         var type = "none"
         if let _ = dict["video_url"] {
             type = "videos"

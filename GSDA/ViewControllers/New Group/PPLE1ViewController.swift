@@ -33,6 +33,8 @@ class PPLE1ViewController: UIViewController {
         return button
     }()
     
+    var url: String!
+    
     lazy var backButton: UIButton = {
         let button = UIButton(type:  .system)
         button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
@@ -47,7 +49,6 @@ class PPLE1ViewController: UIViewController {
         return button
     }()
     
-    var urlList = ["urlsdjaidaw d", "dawdjwauidaw"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +78,7 @@ class PPLE1ViewController: UIViewController {
         webView.bottomAnchor.constraint(equalTo: mainMenuButton.topAnchor, constant: 0).isActive = true
         webView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         webView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.925).isActive = true
-        let url = URL(string: "https://gadentalassisting.com/wp-content/uploads/2016/05/PP-LE1.pdf")
+        let url = URL(string: self.url)
         let urlRequest = URLRequest(url: url!)
         self.webView.loadRequest(urlRequest)
     }

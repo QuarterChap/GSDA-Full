@@ -12,7 +12,6 @@ import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     var window: UIWindow?
     var signedIn = UserDefaults.standard.bool(forKey: "signedIn")
     
@@ -22,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         if signedIn == true {
-            window?.rootViewController = UINavigationController(rootViewController: MainMenuViewController())
+            window?.rootViewController = UINavigationController(rootViewController: CourseMaterialViewController())
         } else {
-            window?.rootViewController = UINavigationController(rootViewController: ViewController())
+            window?.rootViewController = UINavigationController(rootViewController: CourseMaterialViewController())
         }
         
         FirebaseApp.configure()

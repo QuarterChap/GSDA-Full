@@ -215,7 +215,7 @@ private extension ScheduleViewController {
 extension ScheduleViewController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource {
     func handleCellTextColor(cell: DayCell?, cellState: CellState) {
         if cellState.dateBelongsTo != .thisMonth {
-            cell?.dateLabel.textColor = .lightGray
+            cell?.dateLabel.textColor = UIColor.lightGray.withAlphaComponent(0.5)
         } else {
             cell?.dateLabel.textColor = .black
         }
