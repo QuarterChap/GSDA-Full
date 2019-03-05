@@ -36,7 +36,7 @@ class AssignmentViewController: UIViewController {
     lazy var feedTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(FeedCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(AssignmentCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .white
@@ -159,12 +159,12 @@ extension AssignmentViewController: UITableViewDataSource, UITableViewDelegate {
         // Get Model
         let index = indexPath.row
         let model = posts[index]
-        let descriptionLength = model.description!.count
+        let descriptionLength = model.description.count
         // 20 char a line
         let charsPerLine = 20
         let lines = descriptionLength / charsPerLine
         
-        return 400 + CGFloat(lines * 10)
+        return 90 + CGFloat(lines * 10)
         
         // Check Description length
         // Change size depending on length

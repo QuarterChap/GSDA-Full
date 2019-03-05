@@ -45,24 +45,6 @@ class HelperService {
         }
     }
     
-    static func uploadPdfToFirebase(pdfUrl: URL, title: String, description: String, onSuccess: @escaping () -> ()) {
-        let uuid = NSUUID().uuidString
-        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("assignments").child("pdfFiles").child(uuid)
-        
-        storageRef.putFile(from: pdfUrl, metadata: nil) { metadata, error in
-            guard let metadata = metadata else {
-                return
-            }
-            storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
-                if let pdfFileUrl = url?.absoluteString {
-                    let data = ["pdf_url": pdfFileUrl, "title": title, "description": description, "timestamp": Int(Date().timeIntervalSince1970)] as [String : Any]
-                    sendDataToPosts(dict: data) {
-                        onSuccess()
-                    }
-                }
-            })
-        }
-    }
     
     static func uploadImageToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping () -> ()) {
         let photoIdString = NSUUID().uuidString
@@ -76,6 +58,27 @@ class HelperService {
             storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
                 if let photoUrl = url?.absoluteString {
                     let data = ["title": title, "description": description, "photo_url": photoUrl, "timestamp": Int(Date().timeIntervalSince1970)] as [String: Any]
+                    sendDataToPosts(dict: data, onSuccess: {
+                        onSuccess()
+                    })
+                }
+            })
+        }
+    }
+    
+    static func uploadPDFToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping ()->()) {
+        let pdfIdString = NSUUID().uuidString
+        
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("assignment").child("pdfFiles").child(pdfIdString)
+        
+        storageRef.putData(data, metadata: nil) { (metadata, error) in
+            if error != nil {
+                return
+            }
+            
+            storageRef.downloadURL(completion: { (url, error) in
+                if let pdfURL = url?.absoluteString {
+                    let data = ["title": title, "description": description, "pdf_url": pdfURL]
                     sendDataToPosts(dict: data, onSuccess: {
                         onSuccess()
                     })

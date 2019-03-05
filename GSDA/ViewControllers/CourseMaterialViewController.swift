@@ -131,7 +131,7 @@ class CourseMaterialViewController: UIViewController {
     }
     
     @objc func handlePPLE1() {
-        self.present(PPLE1ViewController(), animated: true) {}
+        self.present(GSDACatalogViewController(), animated: true) {}
     }
     
     var courseMaterialArray: [String] {
@@ -155,7 +155,7 @@ extension CourseMaterialViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         let courseMaterialURL = courseMaterialArray[row]
-        let vc = PPLE1ViewController()
+        let vc = GSDACatalogViewController()
         vc.url = courseMaterialURL
         present(vc, animated: true, completion: nil)
     }

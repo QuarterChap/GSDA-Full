@@ -46,7 +46,7 @@
 		96C48D5F2205ABCD00A4E512 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C48D5C2205ABAB00A4E512 /* ProgressHUD.m */; };
 		96C48D602205ABCD00A4E512 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96C48D5D2205ABBB00A4E512 /* ProgressHUD.bundle */; };
 		A52967AC2203B94500F317AA /* ExpandedDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */; };
-		A52967D12203C05500F317AA /* PPLE1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967BB2203C05200F317AA /* PPLE1ViewController.swift */; };
+		A52967D12203C05500F317AA /* GSDACatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967BB2203C05200F317AA /* GSDACatalogViewController.swift */; };
 		A574C81721E54E5300A6D493 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A574C81621E54E5300A6D493 /* PhotoModel.swift */; };
 		A574C81B21E7B00400A6D493 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A574C81A21E7B00400A6D493 /* PhotosViewController.swift */; };
 		A5B3042F221C9E8E00A01024 /* ProgramInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30423221C9E8C00A01024 /* ProgramInfoViewController.swift */; };
@@ -66,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		094508C9222F0FC900F8E7F0 /* GSDA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GSDA.entitlements; sourceTree = "<group>"; };
 		094592182208B66600744277 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		0945921B2208C1BB00744277 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		097213682204F93300778B51 /* ScheduleViewCOntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewCOntroller.swift; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		745224E4221F084C001AE73A /* KeyboardDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismiss.swift; sourceTree = "<group>"; };
 		74DA594B221C634000817365 /* PdfModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfModel.swift; sourceTree = "<group>"; };
 		74DA594D221C646800817365 /* PdfUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfUploadViewController.swift; sourceTree = "<group>"; };
-		74DA594F221C67A800817365 /* GSDA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GSDA.entitlements; sourceTree = "<group>"; };
 		74DA5950221C6A7600817365 /* AssignmentsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentsApi.swift; sourceTree = "<group>"; };
 		94BE76A22138E3170086B560 /* GSDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BE76A52138E3170086B560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		96C48D5D2205ABBB00A4E512 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		96C48D5E2205ABCC00A4E512 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedDutyViewController.swift; sourceTree = "<group>"; };
-		A52967BB2203C05200F317AA /* PPLE1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLE1ViewController.swift; sourceTree = "<group>"; };
+		A52967BB2203C05200F317AA /* GSDACatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSDACatalogViewController.swift; sourceTree = "<group>"; };
 		A574C81621E54E5300A6D493 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		A574C81A21E7B00400A6D493 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		A5B30423221C9E8C00A01024 /* ProgramInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramInfoViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +143,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		094508C8222EFF6B00F8E7F0 /* Assignments */ = {
+			isa = PBXGroup;
+			children = (
+				74DA594D221C646800817365 /* PdfUploadViewController.swift */,
+				965961E5220B720000178B34 /* AssignmentViewController.swift */,
+				9680F629220CCA30005D2975 /* AssignmentControllerViewController.swift */,
+			);
+			path = Assignments;
+			sourceTree = "<group>";
+		};
 		0945921A2208C1B000744277 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,9 +223,7 @@
 				09B85A9C220CBB8F0004D41A /* EditNoteViewController.swift */,
 				09B85A99220CB5230004D41A /* NoteListViewController.swift */,
 				097213682204F93300778B51 /* ScheduleViewCOntroller.swift */,
-				965961E5220B720000178B34 /* AssignmentViewController.swift */,
-				9680F629220CCA30005D2975 /* AssignmentControllerViewController.swift */,
-				74DA594D221C646800817365 /* PdfUploadViewController.swift */,
+				094508C8222EFF6B00F8E7F0 /* Assignments */,
 				A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */,
 				A5CB0A0622209296007D0393 /* EnrollExpandedDuty.swift */,
 				A5CB0A082220B660007D0393 /* Configurable.swift */,
@@ -244,7 +252,7 @@
 		94BE76A42138E3170086B560 /* GSDA */ = {
 			isa = PBXGroup;
 			children = (
-				74DA594F221C67A800817365 /* GSDA.entitlements */,
+				094508C9222F0FC900F8E7F0 /* GSDA.entitlements */,
 				0945921A2208C1B000744277 /* Utils */,
 				968FF1B321F24911004E5D33 /* Database */,
 				1E86005D216B0540000D4CD8 /* Services */,
@@ -284,7 +292,7 @@
 		A52967B12203C03B00F317AA /* Course Material VC's */ = {
 			isa = PBXGroup;
 			children = (
-				A52967BB2203C05200F317AA /* PPLE1ViewController.swift */,
+				A52967BB2203C05200F317AA /* GSDACatalogViewController.swift */,
 			);
 			name = "Course Material VC's";
 			path = "New Group";
@@ -339,6 +347,9 @@
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1010;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -509,7 +520,7 @@
 				96C48D5F2205ABCD00A4E512 /* ProgressHUD.m in Sources */,
 				967D81D121FBB1970007BA68 /* Config.swift in Sources */,
 				0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */,
-				A52967D12203C05500F317AA /* PPLE1ViewController.swift in Sources */,
+				A52967D12203C05500F317AA /* GSDACatalogViewController.swift in Sources */,
 				A5B30432221C9E8E00A01024 /* ViewController.swift in Sources */,
 				964D623522039F8C00C2ED12 /* FeedApi.swift in Sources */,
 				A5B30436221C9E8E00A01024 /* MainMenuViewController.swift in Sources */,
@@ -655,7 +666,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GSDA/GSDA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4BH5KRFJ6A;
+				DEVELOPMENT_TEAM = BMHTCPUWH7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GSDA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -680,7 +691,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GSDA/GSDA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4BH5KRFJ6A;
+				DEVELOPMENT_TEAM = BMHTCPUWH7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GSDA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

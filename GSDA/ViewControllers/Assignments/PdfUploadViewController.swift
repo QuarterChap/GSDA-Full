@@ -24,7 +24,6 @@ class PdfUploadViewController: UIViewController {
         return imageView
     }()
     
-    
     let titleTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "title here.."
@@ -135,15 +134,16 @@ class PdfUploadViewController: UIViewController {
         uploadPdf()
     }
     
-    
-    
     func uploadPdf() {
         guard let pdfUrl = pdfUrl else {
             ProgressHUD.showError("Something went wrong")
             return
         }
-        HelperService.uploadPdfToFirebase(pdfUrl: pdfUrl, title: titleTextField.text!, description: descriptionTextField.text!) {
-            self.dismiss(animated: true, completion: nil)
+        guard let data = try? Data.init(contentsOf: pdfUrl) else {
+            return
+        }
+            HelperService.uploadPDFToFirebaseStorage(data: data, title: titleTextField.text ?? "", description: descriptionTextField.text) {
+                
         }
     }
     
@@ -163,9 +163,8 @@ class PdfUploadViewController: UIViewController {
 extension PdfUploadViewController:UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate {
     
     public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
-        let myURL = url as URL
-        print("import result : \(myURL)")
-        self.pdfUrl = myURL
+        pdfUrl = url
+        print("import result : \(url)")
     }
     
     public func documentMenu(_ documentMenu:UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
