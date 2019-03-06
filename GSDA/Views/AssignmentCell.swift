@@ -28,6 +28,7 @@ class AssignmentCell: UITableViewCell {
         label.backgroundColor = UIColor(r: 166, g: 210, b: 253)
         label.textColor = .white
         label.textAlignment = .center
+        label.isUserInteractionEnabled = false 
         label.isEditable = false
         label.clipsToBounds = true
         label.layer.cornerRadius = 15
@@ -54,11 +55,11 @@ class AssignmentCell: UITableViewCell {
         titleLbl.topAnchor.constraint(equalTo: topAnchor).isActive = true
         titleLbl.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding).isActive = true
         titleLbl.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding).isActive = true
-        titleLbl.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        titleLbl.heightAnchor.constraint(equalToConstant: 25).isActive = true
 
-        descriptionLabel.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: 10).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: 5).isActive = true
         descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding).isActive = true
-        descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true
     }
 }

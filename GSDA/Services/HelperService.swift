@@ -99,7 +99,7 @@ class HelperService {
         }  else if let _ = dict["pdf_url"] {
             type = "pdfs"
         }
-        newPostReference = newPostReference.child(type).child((Api.User.CURRENT_USER?.uid)!).child(uuid)
+        newPostReference = newPostReference.child(type).child(uuid)
         newPostReference.setValue(dict, withCompletionBlock: {
             (error, _) in
             if let error = error {

@@ -127,7 +127,6 @@ class PdfUploadViewController: UIViewController {
         backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-        
     }
     
     @objc func doneButtonPressed() {
@@ -143,8 +142,10 @@ class PdfUploadViewController: UIViewController {
             return
         }
             HelperService.uploadPDFToFirebaseStorage(data: data, title: titleTextField.text ?? "", description: descriptionTextField.text) {
-                
+                // Do something maybe?
         }
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @objc func openpdfPicker() {
@@ -157,8 +158,6 @@ class PdfUploadViewController: UIViewController {
         importMenu.modalPresentationStyle = .formSheet
         self.present(importMenu, animated: true, completion: nil)
     }
-    
-    
 }
 extension PdfUploadViewController:UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate {
     
@@ -176,6 +175,4 @@ extension PdfUploadViewController:UIDocumentMenuDelegate,UIDocumentPickerDelegat
         print("view was cancelled")
         dismiss(animated: true, completion: nil)
     }
-    
-    
 }

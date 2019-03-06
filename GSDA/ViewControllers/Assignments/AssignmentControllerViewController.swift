@@ -14,6 +14,10 @@ class AssignmentControllerViewController: AssignmentViewController, AssignmentTa
         super.viewDidLoad()
         titleLbl.text = "Pdf"
         tableViewDelegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchPostPdf()
     }
     
@@ -29,8 +33,9 @@ class AssignmentControllerViewController: AssignmentViewController, AssignmentTa
     
     func fetchPostPdf() {
         // Do any additional setup after loading the view.
-        AssignmentsApi().observePdfPosts { (model) in
-            self.posts.append(model)
+        AssignmentsApi().observePdfPosts { (models) in
+            self.posts.removeAll()
+            self.posts = models
             self.feedTableView.reloadData()
         }
     }

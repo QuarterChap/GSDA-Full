@@ -14,7 +14,6 @@ class AssignmentViewController: UIViewController {
     var previousVC = UserDefaults.standard.string(forKey: "previousVC")
     var tableViewDelegate: AssignmentTableViewDelegate?
     var posts = [PdfModel]()
-    
 
     lazy var titleLbl: UILabel = {
         let label = UILabel()
@@ -40,8 +39,8 @@ class AssignmentViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .white
-        tableView.separatorStyle = .none
-        tableView.separatorColor = .clear
+        tableView.separatorStyle = .singleLine
+        tableView.separatorColor = UIColor.customBlue
         return tableView
     }()
     
@@ -83,7 +82,6 @@ class AssignmentViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .white
         setupView()
-        
     }
     
     func setupView() {
@@ -120,7 +118,6 @@ class AssignmentViewController: UIViewController {
     @objc func handleMainMenu() {
         dismiss(animated: true, completion: nil)
     }
-    
 }
 
 protocol AssignmentTableViewDelegate {
@@ -138,8 +135,6 @@ extension AssignmentViewController: UITableViewDataSource, UITableViewDelegate {
         return posts.count
     }
     
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? AssignmentCell,
             !posts.isEmpty else {
@@ -156,15 +151,13 @@ extension AssignmentViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        // Get Model
         let index = indexPath.row
         let model = posts[index]
         let descriptionLength = model.description.count
-        // 20 char a line
-        let charsPerLine = 20
+        let charsPerLine = 50
         let lines = descriptionLength / charsPerLine
         
-        return 90 + CGFloat(lines * 10)
+        return 65 + CGFloat(lines * 10)
         
         // Check Description length
         // Change size depending on length

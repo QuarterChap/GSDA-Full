@@ -353,6 +353,9 @@
 							com.apple.Keychain = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -666,7 +669,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GSDA/GSDA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BMHTCPUWH7;
+				DEVELOPMENT_TEAM = 4BH5KRFJ6A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GSDA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -691,7 +694,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GSDA/GSDA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BMHTCPUWH7;
+				DEVELOPMENT_TEAM = 4BH5KRFJ6A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GSDA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
