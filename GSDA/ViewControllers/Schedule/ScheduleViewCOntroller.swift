@@ -267,7 +267,7 @@ extension ScheduleViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
       // Open note viewer
         let vc = NoteListViewController()
         vc.date = date
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func updateCalenderLabel(date: Date) {

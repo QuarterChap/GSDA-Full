@@ -35,6 +35,7 @@ final class CustomTabBarController: UITabBarController {
         homeNavigationController.tabBarItem.title = "HOME"
         homeNavigationController.tabBarItem.image = UIImage(named: "home")
         
+        
         let schoolNavigationController = UINavigationController(rootViewController: schoolViewController)
         schoolNavigationController.tabBarItem.title = "SCHOOL"
         schoolNavigationController.tabBarItem.image = UIImage(named: "school")
@@ -49,6 +50,7 @@ final class CustomTabBarController: UITabBarController {
         VCs.forEach {
             $0.navigationBar.barTintColor = .myBlue
             $0.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+            $0.navigationBar.tintColor = .white
         }
         
         return VCs

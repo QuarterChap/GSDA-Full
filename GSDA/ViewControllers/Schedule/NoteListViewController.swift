@@ -23,6 +23,7 @@ final class NoteListViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = .myBlue 
         return label
     }()
     
@@ -51,31 +52,13 @@ final class NoteListViewController: UIViewController {
         return button
     }()
     
-    lazy var backButton: UIButton = {
-        let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Back", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
-        return button
-    }()
-    
     var notes = [NoteModel]()
-    
-    @objc func backButtonPressed() {
-        dismiss(animated: true, completion: nil)
-    }
     
     @objc func addButtonPressed() {
         // Create new note
         let vc = EditNoteViewController()
         vc.date = date
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidLoad() {
@@ -91,6 +74,11 @@ final class NoteListViewController: UIViewController {
         fetchNotes()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     func fetchNotes() {
         notes.removeAll()
         // Fetch notes for day from firebase and set to var notes
@@ -104,7 +92,6 @@ final class NoteListViewController: UIViewController {
         view.addSubview(dateLabel)
         view.addSubview(notesTableView)
         view.addSubview(addButton)
-        view.addSubview(backButton)
         
         dateLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -113,18 +100,13 @@ final class NoteListViewController: UIViewController {
         
         notesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         notesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        notesTableView.bottomAnchor.constraint(equalTo: backButton.topAnchor).isActive = true
+        notesTableView.bottomAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
         notesTableView.topAnchor.constraint(equalTo: dateLabel.bottomAnchor).isActive = true
         
         addButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
         addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
-        addButton.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: -20).isActive = true
+        addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         addButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        backButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
     }
 }
 
@@ -148,7 +130,7 @@ extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
         vc.date = date
         vc.note = note.text
         vc.uid = UUID(uuidString: note.uid)
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

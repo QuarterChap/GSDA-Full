@@ -10,17 +10,6 @@ import UIKit
 
 class ExpandedDutyViewController: UIViewController {
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Expanded Duty"
-        label.textColor = UIColor.black
-        label.textAlignment = .center
-        
-        return label
-    }()
-    
     let ourApprovalLabel: UILabel = {
         let label = UILabel()
         
@@ -124,7 +113,7 @@ class ExpandedDutyViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        navigationItem.title = "ExpandedDutyViewController"
+        navigationItem.title = "EXPANDED DUTY"
         
         setupView()
     }
@@ -132,7 +121,6 @@ class ExpandedDutyViewController: UIViewController {
     func setupView() {
         view.backgroundColor = UIColor.white
         
-        view.addSubview(titleLabel)
         view.addSubview(backButton)
         view.addSubview(ourApprovalLabel)
         view.addSubview(ourApprovalButton)
@@ -146,13 +134,7 @@ class ExpandedDutyViewController: UIViewController {
         backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
         
-        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height * 0.05).isActive = true
-        titleLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1).isActive = true
-        titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
-        titleLabel.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.075)
-        
-        ourApprovalLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: view.frame.height * 0.05).isActive = true
+        ourApprovalLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: view.frame.height * 0.05).isActive = true
         ourApprovalLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
         ourApprovalLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         ourApprovalLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1).isActive = true
