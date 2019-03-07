@@ -11,7 +11,7 @@ final class PhotosViewController: FeedViewController, FeedTableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = "Pictures"
+        title = "PHOTOS"
         tableViewDelegate = self
     }
     
@@ -20,6 +20,11 @@ final class PhotosViewController: FeedViewController, FeedTableViewDelegate {
             self.posts.append(post)
             self.feedTableView.reloadData()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func didTap(cell: FeedCell) {

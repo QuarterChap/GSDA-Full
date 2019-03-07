@@ -317,25 +317,10 @@ class HomeViewController: UIViewController {
         return label
     }()
     
-    lazy var backButton: UIButton = {
-        let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Back", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        
-        return button
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
         view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        navigationItem.title = "HomeViewController"
+        navigationItem.title = "HOME"
         
         if view?.frame.width == 320 && view?.frame.height == 568 {
             scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 2550)
@@ -357,18 +342,17 @@ class HomeViewController: UIViewController {
         setupView()
         setupScrollView()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     
     func setupView() {
         self.view.addSubview(scrollView)
-        self.view.addSubview(backButton)
-        
-        backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
         
         scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: 0).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         scrollView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.925).isActive = true
         
@@ -496,19 +480,15 @@ class HomeViewController: UIViewController {
     
     
     @objc func handleProgramInfo() {
-        self.present(ProgramInfoViewController(), animated: true) {}
+        navigationController?.pushViewController(ProgramInfoViewController(), animated: true)
     }
     
     @objc func handleLocations() {
-        self.present(LocationsViewController(), animated: true) {}
+        navigationController?.pushViewController(LocationsViewController(), animated: true)
     }
     
     @objc func handleClassSchedule() {
-        self.present(ScheduleViewController(), animated: true) {}
-    }
-    
-    @objc func handleBack() {
-        self.dismiss(animated: true, completion: {})
+        navigationController?.pushViewController(ScheduleViewController(), animated: true)
     }
     
     func getVideo(videoCode: String ) {

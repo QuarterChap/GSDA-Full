@@ -193,7 +193,7 @@ class WoodstockLocationViewController: UIViewController, MFMailComposeViewContro
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        navigationItem.title = "WoodstockLocationViewController"
+        navigationItem.title = "LOCATION"
         
         if view?.frame.width == 320 && view?.frame.height == 568 {
             scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 785)
@@ -215,6 +215,12 @@ class WoodstockLocationViewController: UIViewController, MFMailComposeViewContro
         setupView()
         setupScrollView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     
     func setupView() {
         self.view.addSubview(scrollView)

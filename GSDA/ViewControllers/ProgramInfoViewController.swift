@@ -31,7 +31,6 @@ class ProgramInfoViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
         
@@ -305,7 +304,7 @@ class ProgramInfoViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        navigationItem.title = "ProgramInfoViewController"
+        title = "PROGRAM INFO"
         
         if view?.frame.width == 320 && view?.frame.height == 568 {
             scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 2250)
@@ -328,6 +327,11 @@ class ProgramInfoViewController: UIViewController {
         setupScrollView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     func setupView() {
         
         self.view.addSubview(scrollView)
@@ -337,6 +341,7 @@ class ProgramInfoViewController: UIViewController {
         backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
         backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
+        backButton.isHidden = true
         
         scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: 00).isActive = true
@@ -450,12 +455,8 @@ class ProgramInfoViewController: UIViewController {
         
     }
     
-    @objc func handleBack() {
-        self.dismiss(animated: true, completion: {})
-    }
-    
     @objc func handleViewCurriculum() {
-        self.present(CurriculumViewController(), animated: true)
+        navigationController?.pushViewController(CurriculumViewController(), animated: true)
     }
     
 }

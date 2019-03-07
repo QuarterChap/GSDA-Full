@@ -19,6 +19,9 @@
 		09B85A9A220CB5230004D41A /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B85A99220CB5230004D41A /* NoteListViewController.swift */; };
 		09B85A9D220CBB8F0004D41A /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B85A9C220CBB8F0004D41A /* EditNoteViewController.swift */; };
 		09B85A9F220CBFD10004D41A /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B85A9E220CBFD10004D41A /* DateExt.swift */; };
+		09F36A342231B430006FAF80 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F36A332231B430006FAF80 /* TabbarViewController.swift */; };
+		09F36A362231B4E0006FAF80 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F36A352231B4E0006FAF80 /* UIColorExtension.swift */; };
+		09F36A382231BBDE006FAF80 /* SchoolMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F36A372231BBDE006FAF80 /* SchoolMaterialViewController.swift */; };
 		745224E5221F084C001AE73A /* KeyboardDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745224E4221F084C001AE73A /* KeyboardDismiss.swift */; };
 		74DA594C221C634100817365 /* PdfModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA594B221C634000817365 /* PdfModel.swift */; };
 		74DA594E221C646800817365 /* PdfUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA594D221C646800817365 /* PdfUploadViewController.swift */; };
@@ -79,6 +82,9 @@
 		09B85A99220CB5230004D41A /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
 		09B85A9C220CBB8F0004D41A /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
 		09B85A9E220CBFD10004D41A /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
+		09F36A332231B430006FAF80 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		09F36A352231B4E0006FAF80 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		09F36A372231BBDE006FAF80 /* SchoolMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMaterialViewController.swift; sourceTree = "<group>"; };
 		42ECD5614709DAB330D2E295 /* Pods_GSDA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GSDA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		745224E4221F084C001AE73A /* KeyboardDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismiss.swift; sourceTree = "<group>"; };
 		74DA594B221C634000817365 /* PdfModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfModel.swift; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 				0945921B2208C1BB00744277 /* UIImageExtension.swift */,
 				09B85A9E220CBFD10004D41A /* DateExt.swift */,
 				745224E4221F084C001AE73A /* KeyboardDismiss.swift */,
+				09F36A352231B4E0006FAF80 /* UIColorExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -227,6 +234,8 @@
 				A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */,
 				A5CB0A0622209296007D0393 /* EnrollExpandedDuty.swift */,
 				A5CB0A082220B660007D0393 /* Configurable.swift */,
+				09F36A332231B430006FAF80 /* TabbarViewController.swift */,
+				09F36A372231BBDE006FAF80 /* SchoolMaterialViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -480,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5CB0A0722209296007D0393 /* EnrollExpandedDuty.swift in Sources */,
+				09F36A362231B4E0006FAF80 /* UIColorExtension.swift in Sources */,
 				A574C81B21E7B00400A6D493 /* PhotosViewController.swift in Sources */,
 				9680F62A220CCA30005D2975 /* AssignmentControllerViewController.swift in Sources */,
 				967D81C921FBAF310007BA68 /* Api.swift in Sources */,
@@ -495,6 +505,7 @@
 				A574C81721E54E5300A6D493 /* PhotoModel.swift in Sources */,
 				967D81CB21FBAFC90007BA68 /* PostApi.swift in Sources */,
 				A5B30433221C9E8E00A01024 /* LocationsViewController.swift in Sources */,
+				09F36A342231B430006FAF80 /* TabbarViewController.swift in Sources */,
 				A5B30439221C9E8E00A01024 /* ResetPasswordViewController.swift in Sources */,
 				74DA594C221C634100817365 /* PdfModel.swift in Sources */,
 				968FF1B221F24516004E5D33 /* UserModel.swift in Sources */,
@@ -514,6 +525,7 @@
 				94BE76A62138E3170086B560 /* AppDelegate.swift in Sources */,
 				0972136B2204F95F00778B51 /* DayCell.swift in Sources */,
 				0979E19F21FB8FBD002C421D /* VideosViewController.swift in Sources */,
+				09F36A382231BBDE006FAF80 /* SchoolMaterialViewController.swift in Sources */,
 				094592192208B66600744277 /* PostModel.swift in Sources */,
 				9676465421FBA2AE00F8F660 /* UploadContentViewController.swift in Sources */,
 				967D81CF21FBB1600007BA68 /* HelperService.swift in Sources */,

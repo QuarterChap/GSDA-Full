@@ -10,25 +10,6 @@ import UIKit
 
 class LocationsViewController: UIViewController {
     
-    let label: UILabel = {
-        let label = UILabel()
-        
-        label.text = "Locations"
-        label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.backgroundColor = UIColor.white
-        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-        label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 0
-        label.layer.zPosition = 1
-        label.layer.cornerRadius = 15
-        label.layer.masksToBounds  = true
-        
-        return label
-    }()
-    
     let scrollView: UIScrollView = {
         let sv = UIScrollView()
         
@@ -50,10 +31,9 @@ class LocationsViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
-        
+        button.isHidden = true
         return button
     }()
     
@@ -233,7 +213,7 @@ class LocationsViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        navigationItem.title = "LocationsViewController"
+        navigationItem.title = "LOCATIONS"
         
         if view?.frame.width == 320 && view?.frame.height == 568 {
             scrollView.contentSize = CGSize(width: (view.frame.width * 0.95), height: 650)
@@ -256,6 +236,11 @@ class LocationsViewController: UIViewController {
         setupScrollView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     func setupView() {
         self.view.addSubview(scrollView)
         self.view.addSubview(backButton)
@@ -274,13 +259,6 @@ class LocationsViewController: UIViewController {
     
     func setupScrollView() {
         
-        self.scrollView.addSubview(label)
-        
-        label.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        label.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 15).isActive = true
-        label.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.6).isActive = true
-        label.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.075).isActive = true
-        label.font = UIFont(name: "AmericanTypewriter-Bold", size: view.frame.width / 10)
         
         self.scrollView.addSubview(roswellImg)
         self.scrollView.addSubview(roswellView)
@@ -290,7 +268,7 @@ class LocationsViewController: UIViewController {
         roswellImg.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.65).isActive = true
         roswellImg.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.35).isActive = true
         roswellImg.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        roswellImg.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 50).isActive = true
+        roswellImg.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 50).isActive = true
         
         roswellView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.65).isActive = true
         roswellView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25).isActive = true
@@ -343,7 +321,7 @@ class LocationsViewController: UIViewController {
         woodstockView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25).isActive = true
         woodstockView.topAnchor.constraint(equalTo: kennesawView.bottomAnchor, constant: 25).isActive = true
         woodstockView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        
+         
         woodstockLbl1.centerXAnchor.constraint(equalTo: woodstockView.centerXAnchor).isActive = true
         woodstockLbl1.topAnchor.constraint(equalTo: woodstockView.topAnchor, constant: 0).isActive = true
         woodstockLbl1.widthAnchor.constraint(equalTo: woodstockView.widthAnchor, multiplier: 0.95).isActive = true
@@ -364,19 +342,14 @@ class LocationsViewController: UIViewController {
     }
     
     @objc func handleRoswell() {
-        self.present(RoswellLocationViewController(), animated: true)
+        navigationController?.pushViewController(RoswellLocationViewController(), animated: true)
     }
     
     @objc func handleKennesaw() {
-        self.present(KennesawLocationViewController(), animated: true)
+        navigationController?.pushViewController(KennesawLocationViewController(), animated: true)
     }
     
     @objc func handleWoodstock() {
-        self.present(WoodstockLocationViewController(), animated: true)
+        navigationController?.pushViewController(WoodstockLocationViewController(), animated: true)
     }
-    
-    @objc func handleBack() {
-        self.dismiss(animated: true, completion: {})
-    }
-    
 }

@@ -27,8 +27,6 @@ class AccountSettingsViewController: UIViewController {
         return button
     }()
     
-    //
-    
     let titleLabel: UILabel = {
         let label = UILabel()
         
@@ -69,9 +67,8 @@ class AccountSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
         view.backgroundColor = UIColor.white
-        navigationItem.title = "AccountSettingsViewController"
+        navigationItem.title = "SETTINGS"
         
         setupView()
     }

@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         if signedIn == true {
-            window?.rootViewController = UINavigationController(rootViewController: MainMenuViewController())
+            window?.rootViewController = CustomTabBarController()
         } else {
-            window?.rootViewController = UINavigationController(rootViewController: MainMenuViewController())
+            window?.rootViewController = CustomTabBarController()
         }
         
         FirebaseApp.configure()

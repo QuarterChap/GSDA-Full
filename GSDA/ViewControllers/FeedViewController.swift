@@ -18,23 +18,6 @@ class FeedViewController: UIViewController {
     var imageCache = [String: UIImage]()
     var loadingImages = [String]()
     
-    lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "TITLE"
-        label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.backgroundColor = UIColor.white
-        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-        label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 0
-        label.layer.zPosition = 1
-        label.layer.cornerRadius = 15
-        label.layer.masksToBounds  = true
-        return label
-    }()
-    
     lazy var feedTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -87,6 +70,8 @@ class FeedViewController: UIViewController {
         loadPosts()
     }
     
+    
+    
     //Loading the posts
     func loadPosts() {}
     
@@ -107,16 +92,10 @@ class FeedViewController: UIViewController {
     
     func setupView() {
         view.addSubview(mainMenuButton)
-        view.addSubview(titleLabel)
         view.addSubview(feedTableView)
         view.addSubview(uploadButton)
-        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
-        titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
-        titleLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-        titleLabel.font = UIFont(name: "AmericanTypewriter-Bold", size: view.frame.width / 10)
         
-        feedTableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
+        feedTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         feedTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         feedTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         feedTableView.bottomAnchor.constraint(equalTo: uploadButton.topAnchor, constant: -10).isActive = true

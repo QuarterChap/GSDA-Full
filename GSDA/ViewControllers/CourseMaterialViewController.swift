@@ -10,20 +10,6 @@ import UIKit
 
 class CourseMaterialViewController: UIViewController {
     
-    lazy var backButton: UIButton = {
-        let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Back", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        
-        return button
-    }()
-    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .white
@@ -31,25 +17,6 @@ class CourseMaterialViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
-    }()
-    
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        
-        label.text = "Course Material"
-        label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.backgroundColor = UIColor.white
-        label.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-        label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 0
-        label.layer.zPosition = 1
-        label.layer.cornerRadius = 15
-        label.layer.masksToBounds  = true
-        
-        return label
     }()
     
     lazy var gsdaCatalogButton: UIButton = {
@@ -88,38 +55,24 @@ class CourseMaterialViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        navigationItem.title = "CourseMaterialViewController"
+        navigationItem.title = "COURSE MATERIAL"
         
-        
-        setupView()
         setupScrollView()
     }
     
-    func setupView() {
-        self.view.addSubview(backButton)
-        
-        backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func setupScrollView() {
-        view.addSubview(titleLabel)
         view.addSubview(tableView)
         
-        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
-        titleLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
         
-        titleLabel.font = UIFont(name: "AmericanTypewriter-Bold", size: view.frame.width / 10)
-        
-        
-        tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: -10).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
     }
     
     @objc func handleBack() {

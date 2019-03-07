@@ -79,9 +79,14 @@ class AssignmentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .white
         setupView()
+        title = "ASSIGNMENTS"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func setupView() {

@@ -11,16 +11,23 @@ final class VideosViewController: FeedViewController, FeedTableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = "Videos"
+        title = "VIDEOS"
         tableViewDelegate = self
     }
-
+    
     override func loadPosts() {
         Api.Feed.observePosts(of: "videos") { (post) in
             self.posts.append(post)
             self.feedTableView.reloadData()
         }
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     
     func upload() {
         // vc.contentType is by default .video 
