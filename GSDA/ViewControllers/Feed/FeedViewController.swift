@@ -152,7 +152,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         let model = posts[index]
         let descriptionLength = model.description.count
         // 60 char a line
-        let charsPerLine = 60
+        let charsPerLine = 50
         let lines = descriptionLength / charsPerLine
         
         return 400 + CGFloat(lines * 10)

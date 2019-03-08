@@ -39,8 +39,6 @@ class FeedCell: UITableViewCell {
         label.textColor = .white
         label.textAlignment = .center
         label.isEditable = false
-        label.clipsToBounds = true
-        label.layer.cornerRadius = 15
         return label
     }()
     
@@ -72,11 +70,6 @@ class FeedCell: UITableViewCell {
         }
     }
     
-    //Dunno if we need this, it will display the name of the person who made the post
- //   func setupUserInfo() {
-   //     nameLabel.text = user?.username
-  //  }
-    
     func setupSubViews() {
         selectionStyle = .none
         addSubview(titleLabel)
@@ -95,8 +88,8 @@ class FeedCell: UITableViewCell {
         photoImageView.heightAnchor.constraint(equalToConstant: frame.width - (padding * 2)).isActive = true
         
         descriptionLabel.topAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: 10).isActive = true
-        descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding).isActive = true
-        descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding).isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
     }
