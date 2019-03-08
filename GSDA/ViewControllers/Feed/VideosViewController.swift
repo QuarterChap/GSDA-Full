@@ -31,7 +31,7 @@ final class VideosViewController: FeedViewController, FeedTableViewDelegate {
     
     func upload() {
         // vc.contentType is by default .video 
-        present(UploadContentViewController(), animated: true, completion: nil)
+        navigationController?.pushViewController(UploadContentViewController(), animated: true)
     }
     
     func didTap(cell: FeedCell) {

@@ -15,15 +15,25 @@ final class EditNoteViewController: UIViewController {
     var uid: UUID?
     
     let textView: UITextView = {
-        let textField = UITextView()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = UIColor.lightGray
-        textField.textColor = .white 
-        textField.layer.cornerRadius = 20
-        textField.clipsToBounds = true
-        textField.font = UIFont.systemFont(ofSize: 16)
-        return textField
+        let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = UIColor.lightGray
+        textView.textColor = .white 
+        textView.layer.cornerRadius = 20
+        textView.clipsToBounds = true
+        textView.font = UIFont.systemFont(ofSize: 16)
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTypingButtonPressed))
+        let spacing = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([spacing, doneButton, spacing], animated: false)
+        textView.inputAccessoryView = toolbar
+        return textView
     }()
+    
+    @objc func doneTypingButtonPressed() {
+        textView.resignFirstResponder()
+    }
     
     lazy var doneButton: UIButton = {
         let button = UIButton(type:  .system)
@@ -46,7 +56,7 @@ final class EditNoteViewController: UIViewController {
         
         NoteAPI().update(uid: noteUID, note: textView.text, for: date) {
             // Nothing unless we want to add some sort of animation for uploading
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -60,6 +70,7 @@ final class EditNoteViewController: UIViewController {
         } else {
             textView.text = "Leave note here..."
         }
+        textView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,4 +95,13 @@ final class EditNoteViewController: UIViewController {
         doneButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
+}
+
+extension EditNoteViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if note == nil {
+            textView.text = ""
+        }
+    }
 }

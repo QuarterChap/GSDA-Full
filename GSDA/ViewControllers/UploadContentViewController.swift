@@ -21,7 +21,7 @@ class UploadContentViewController: UIViewController {
     lazy var selectedImageView: UIImageView = {
         let imageView = UIImageView(image: nil)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        imageView.backgroundColor = .myBlue
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
         let gesture = UITapGestureRecognizer(target: self, action: #selector(openGallery))
@@ -35,7 +35,7 @@ class UploadContentViewController: UIViewController {
         let textField = UITextField()
         
         textField.placeholder = "title here.."
-        textField.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        textField.backgroundColor = .myBlue
         textField.textColor = .white
         textField.font = UIFont.boldSystemFont(ofSize: 20)
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +53,7 @@ class UploadContentViewController: UIViewController {
         
         textField.textColor = .white
         textField.font = UIFont.boldSystemFont(ofSize: 16)
-        textField.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        textField.backgroundColor = .myBlue
         textField.placeholder  = "Description here.."
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textAlignment = .center
@@ -67,31 +67,14 @@ class UploadContentViewController: UIViewController {
     
     lazy var doneButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Done", for: .normal)
+        button.backgroundColor = .myBlue
+        button.setTitle("DONE", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         button.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
         button.layer.cornerRadius = 20
         button.clipsToBounds = true
-        return button
-    }()
-    
-    lazy var backButton: UIButton = {
-        let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Back", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
         return button
     }()
     
@@ -112,12 +95,16 @@ class UploadContentViewController: UIViewController {
         setupSubViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     func setupSubViews() {
         view.addSubview(titleTextField)
         view.addSubview(selectedImageView)
         view.addSubview(descriptionTextField)
         view.addSubview(doneButton)
-        view.addSubview(backButton)
         
         titleTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
         titleTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
@@ -132,18 +119,13 @@ class UploadContentViewController: UIViewController {
         selectedImageView.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 15).isActive = true
         selectedImageView.leadingAnchor.constraint(equalTo: descriptionTextField.leadingAnchor).isActive = true
         selectedImageView.trailingAnchor.constraint(equalTo: descriptionTextField.trailingAnchor).isActive = true
-        selectedImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        selectedImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
         doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
         doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
-        doneButton.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: -20).isActive = true
+        doneButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         doneButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        backButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-        
+
         selectedImageView.image = UIImage(named: contentType.rawValue)
     }
     
@@ -161,7 +143,7 @@ class UploadContentViewController: UIViewController {
             return
         }
         HelperService.uploadVideoToFirebaseStorage(videoUrl: videoURL, thumbnail: thumbnailImage, title: titleTextField.text!, description: descriptionTextField.text!) {
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -173,7 +155,7 @@ class UploadContentViewController: UIViewController {
             return
         }
         HelperService.uploadImageToFirebaseStorage(data: imageData, title: titleTextField.text!, description: descriptionTextField.text!) {
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     

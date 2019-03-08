@@ -89,7 +89,16 @@ extension CourseMaterialViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
         let cell = UITableViewCell()
-        cell.textLabel?.text = "\(row + 1)"
+        if row == 0 {
+            cell.textLabel?.text = "CATALOG"
+        } else {
+            if row == 21 {
+                cell.textLabel?.text = "PPLE \(row + 1)"
+            } else {
+                cell.textLabel?.text = "PPLE \(row)"
+            }
+        }
+        
         return cell
     }
 }

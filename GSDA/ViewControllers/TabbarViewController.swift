@@ -37,7 +37,7 @@ final class CustomTabBarController: UITabBarController {
         
         
         let schoolNavigationController = UINavigationController(rootViewController: schoolViewController)
-        schoolNavigationController.tabBarItem.title = "SCHOOL"
+        schoolNavigationController.tabBarItem.title = "SCHOOL MATERIAL"
         schoolNavigationController.tabBarItem.image = UIImage(named: "school")
         
         let settingNavigationController = UINavigationController(rootViewController: settingsViewController)
