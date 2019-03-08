@@ -43,7 +43,6 @@
 		967D81CF21FBB1600007BA68 /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81CE21FBB1600007BA68 /* HelperService.swift */; };
 		967D81D121FBB1970007BA68 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D81D021FBB1970007BA68 /* Config.swift */; };
 		9680F628220CC488005D2975 /* AssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9680F627220CC488005D2975 /* AssignmentCell.swift */; };
-		9680F62A220CCA30005D2975 /* AssignmentControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9680F629220CCA30005D2975 /* AssignmentControllerViewController.swift */; };
 		968FF1B221F24516004E5D33 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968FF1B121F24516004E5D33 /* UserModel.swift */; };
 		969CB9D221FDEE7400428C16 /* AuthServ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969CB9D121FDEE7400428C16 /* AuthServ.swift */; };
 		96C48D5F2205ABCD00A4E512 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C48D5C2205ABAB00A4E512 /* ProgressHUD.m */; };
@@ -108,7 +107,6 @@
 		967D81CE21FBB1600007BA68 /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
 		967D81D021FBB1970007BA68 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		9680F627220CC488005D2975 /* AssignmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentCell.swift; sourceTree = "<group>"; };
-		9680F629220CCA30005D2975 /* AssignmentControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentControllerViewController.swift; sourceTree = "<group>"; };
 		968FF1B121F24516004E5D33 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		969CB9D121FDEE7400428C16 /* AuthServ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServ.swift; sourceTree = "<group>"; };
 		96C48D5B2205AB8800A4E512 /* GSDA-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GSDA-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 			children = (
 				74DA594D221C646800817365 /* PdfUploadViewController.swift */,
 				965961E5220B720000178B34 /* AssignmentViewController.swift */,
-				9680F629220CCA30005D2975 /* AssignmentControllerViewController.swift */,
 			);
 			path = Assignments;
 			sourceTree = "<group>";
@@ -515,7 +512,6 @@
 				A5CB0A0722209296007D0393 /* EnrollExpandedDuty.swift in Sources */,
 				09F36A362231B4E0006FAF80 /* UIColorExtension.swift in Sources */,
 				A574C81B21E7B00400A6D493 /* PhotosViewController.swift in Sources */,
-				9680F62A220CCA30005D2975 /* AssignmentControllerViewController.swift in Sources */,
 				967D81C921FBAF310007BA68 /* Api.swift in Sources */,
 				965961E6220B720000178B34 /* AssignmentViewController.swift in Sources */,
 				A5CB0A092220B660007D0393 /* Configurable.swift in Sources */,

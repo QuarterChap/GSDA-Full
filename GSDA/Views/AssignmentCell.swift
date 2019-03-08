@@ -12,9 +12,9 @@ class AssignmentCell: UITableViewCell {
     
     let titleLbl: UILabel = {
         let label = UILabel()
-        label.text = "Assignments"
-        label.font = UIFont(name: "AmericanTypewriter", size: 22)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.text = "Assignment"
+        label.font = UIFont.systemFont(ofSize: 22)
+        label.textColor = .myBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = .clear
@@ -25,7 +25,7 @@ class AssignmentCell: UITableViewCell {
         let label = UITextView()
         label.text = "Placeholder"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        label.backgroundColor = .myBlue
         label.textColor = .white
         label.textAlignment = .center
         label.isUserInteractionEnabled = false 

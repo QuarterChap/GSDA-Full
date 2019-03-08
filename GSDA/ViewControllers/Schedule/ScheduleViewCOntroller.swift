@@ -18,6 +18,7 @@ final class ScheduleViewController: UIViewController {
         label.text = "January"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
+        label.textColor = .myBlue
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
@@ -46,7 +47,7 @@ final class ScheduleViewController: UIViewController {
             dayLabel.text = $0
             dayLabel.font = UIFont.boldSystemFont(ofSize: 15)
             dayLabel.textColor = .white
-            dayLabel.backgroundColor = .customBlue
+            dayLabel.backgroundColor = .myBlue
             dayLabel.textAlignment = .center
             result.append(dayLabel)
         }
@@ -61,23 +62,10 @@ final class ScheduleViewController: UIViewController {
         return stackView
     }()
     
-    lazy var mainMenuButton: UIButton = {
-        let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Main Menu", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleMainMenu), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
-        return button
-    }()
-    
     let yearLabel: UILabel = {
         let label = UILabel()
         label.text = "2019"
+        label.textColor = .myBlue
         label.textAlignment = .center
         return label
     }()
@@ -85,7 +73,10 @@ final class ScheduleViewController: UIViewController {
     lazy var leftButton: UIButton = {
         let button = UIButton()
         button.setTitle("<---", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .myBlue
+        button.layer.cornerRadius = 20
+        button.clipsToBounds = true
+        button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(leftButtonPressed), for: .touchUpInside)
         return button
     }()
@@ -93,8 +84,11 @@ final class ScheduleViewController: UIViewController {
     lazy var rightButton: UIButton = {
         let button = UIButton()
         button.setTitle("--->", for: .normal)
+        button.backgroundColor = .myBlue
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 20
+        button.clipsToBounds = true
         button.addTarget(self, action: #selector(rightButtonPressed), for: .touchUpInside)
-        button.setTitleColor(.black, for: .normal)
         return button
     }()
     
@@ -125,7 +119,7 @@ final class ScheduleViewController: UIViewController {
     }
     
     lazy var yearStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [leftButton, yearLabel, rightButton])
+        let stackView = UIStackView(arrangedSubviews: [UIView(), leftButton, yearLabel, rightButton, UIView()])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -184,7 +178,6 @@ private extension ScheduleViewController {
     
     func setupSubViews() {
         view.addSubview(calenderView)
-        view.addSubview(mainMenuButton)
         view.addSubview(monthLabel)
         view.addSubview(daysStackView)
         view.addSubview(yearStackView)
@@ -207,13 +200,8 @@ private extension ScheduleViewController {
         //Setup year
         yearStackView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         yearStackView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        yearStackView.topAnchor.constraint(equalTo: calenderView.bottomAnchor, constant: 20).isActive = true
-        yearStackView.bottomAnchor.constraint(equalTo: mainMenuButton.bottomAnchor, constant: -50).isActive = true
-        
-        mainMenuButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        mainMenuButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mainMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        mainMenuButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
+        yearStackView.topAnchor.constraint(equalTo: calenderView.bottomAnchor, constant: 50).isActive = true
+        yearStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true
     }
 }
 
@@ -260,7 +248,7 @@ extension ScheduleViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        guard let cell = cell as? DayCell else {
+        guard let _ = cell as? DayCell else {
             return
         }
         

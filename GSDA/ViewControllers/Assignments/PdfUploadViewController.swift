@@ -12,9 +12,9 @@ import MobileCoreServices
 class PdfUploadViewController: UIViewController {
     
     lazy var selectedImageView: UIImageView = {
-        let imageView = UIImageView(image: nil)
+        let imageView = UIImageView(image: UIImage(named: "pdf"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        imageView.backgroundColor = .myBlue
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
         let gesture = UITapGestureRecognizer(target: self, action: #selector(openpdfPicker))
@@ -27,7 +27,7 @@ class PdfUploadViewController: UIViewController {
     let titleTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "title here.."
-        textField.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        textField.backgroundColor = .myBlue
         textField.textColor = .white
         textField.font = UIFont.boldSystemFont(ofSize: 20)
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +41,7 @@ class PdfUploadViewController: UIViewController {
         let textField = UITextView()
         textField.textColor = .white
         textField.font = UIFont.boldSystemFont(ofSize: 16)
-        textField.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        textField.backgroundColor = .myBlue
         textField.text = "Description here.."
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textAlignment = .center
@@ -52,31 +52,15 @@ class PdfUploadViewController: UIViewController {
     
     lazy var doneButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        button.backgroundColor = .myBlue
         button.setTitle("Done", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         button.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
         button.layer.cornerRadius = 20
         button.clipsToBounds = true
-        return button
-    }()
-    
-    lazy var backButton: UIButton = {
-        let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Back", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
         return button
     }()
     
@@ -95,13 +79,17 @@ class PdfUploadViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     func setupSubViews() {
         view.addSubview(titleTextField)
         view.addSubview(selectedImageView)
         view.addSubview(descriptionTextField)
         view.addSubview(doneButton)
-        view.addSubview(backButton)
-        
+
         titleTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
         titleTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         titleTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
@@ -120,13 +108,9 @@ class PdfUploadViewController: UIViewController {
         
         doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
         doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
-        doneButton.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: -20).isActive = true
+        doneButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         doneButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        backButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
     }
     
     @objc func doneButtonPressed() {

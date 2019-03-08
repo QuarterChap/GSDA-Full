@@ -32,32 +32,14 @@ class FeedViewController: UIViewController {
     
     lazy var uploadButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Upload", for: .normal)
+        button.backgroundColor = .myBlue
+        button.setTitle("UPLOAD", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         button.addTarget(self, action: #selector(handleUpload), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
         button.layer.cornerRadius = 20
         button.clipsToBounds = true
-        
-        return button
-    }()
-    // Photo feed
-    lazy var mainMenuButton: UIButton = {
-        let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Main Menu", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleMainMenu), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
         
         return button
     }()
@@ -69,8 +51,6 @@ class FeedViewController: UIViewController {
         setupView()
         loadPosts()
     }
-    
-    
     
     //Loading the posts
     func loadPosts() {}
@@ -91,7 +71,6 @@ class FeedViewController: UIViewController {
     }
     
     func setupView() {
-        view.addSubview(mainMenuButton)
         view.addSubview(feedTableView)
         view.addSubview(uploadButton)
         
@@ -102,13 +81,8 @@ class FeedViewController: UIViewController {
         
         uploadButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
         uploadButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
-        uploadButton.bottomAnchor.constraint(equalTo: mainMenuButton.topAnchor, constant: -10).isActive = true
+        uploadButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         uploadButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        mainMenuButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        mainMenuButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mainMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
-        mainMenuButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
     }
     
     @objc func handleMainMenu() {
@@ -128,8 +102,6 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         return posts.count
     }
     
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FeedCell,
             !posts.isEmpty else {
@@ -143,10 +115,12 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         if let imageURLString = post.photo_url {
             handleLoadingImage(for: imageURLString) { (image) in
                 cell.photoImageView.image = image
+                cell.photoImageView.contentMode = .scaleToFill
             }
         } else if let videoThumbnailURLString = post.video_thumbnail_url {
             handleLoadingImage(for: videoThumbnailURLString) { (image) in
                 cell.photoImageView.image = image
+                cell.photoImageView.contentMode = .scaleToFill
             }
         }
         
@@ -167,7 +141,6 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         

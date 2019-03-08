@@ -17,7 +17,8 @@ final class EditNoteViewController: UIViewController {
     let textView: UITextView = {
         let textField = UITextView()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .gray
+        textField.backgroundColor = UIColor.lightGray
+        textField.textColor = .white 
         textField.layer.cornerRadius = 20
         textField.clipsToBounds = true
         textField.font = UIFont.systemFont(ofSize: 16)
@@ -26,15 +27,12 @@ final class EditNoteViewController: UIViewController {
     
     lazy var doneButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Done", for: .normal)
+        button.backgroundColor = .myBlue
+        button.setTitle("DONE", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         button.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
         button.layer.cornerRadius = 20
         button.clipsToBounds = true
         return button

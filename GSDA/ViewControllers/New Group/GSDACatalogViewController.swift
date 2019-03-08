@@ -21,47 +21,28 @@ class GSDACatalogViewController: UIViewController {
     
     var url: String!
     
-    lazy var backButton: UIButton = {
-        let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("Back", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(handleBack), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        
-        return button
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        navigationItem.title = "GSDACatalogViewController"
-        
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func setupView() {
         self.view.addSubview(webView)
-        self.view.addSubview(backButton)
-        
-        backButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backButton.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        backButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-        
-        webView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        webView.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: 0).isActive = true
+        webView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         webView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        webView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.925).isActive = true
+        webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         let url = URL(string: self.url)
         let urlRequest = URLRequest(url: url!)
         self.webView.loadRequest(urlRequest)
     }
-    
     
     @objc func handleBack() {
         dismiss(animated: true, completion: nil)

@@ -19,42 +19,10 @@ class CourseMaterialViewController: UIViewController {
         return tableView
     }()
     
-    lazy var gsdaCatalogButton: UIButton = {
-        let button = UIButton(type:  .system)
-        
-        button.setTitle("GSDA Catalog", for: UIControlState.normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.darkGray, for: .normal)
-        button.addTarget(self, action: #selector(handleGSDACatalog), for: .touchUpInside)
-        button.layer.cornerRadius = 10
-        button.layer.zPosition = 2
-        button.layer.borderColor = UIColor.darkGray.cgColor
-        button.layer.borderWidth = 1
-        button.backgroundColor = UIColor.clear
-        
-        return button
-    }()
-    
-    lazy var PPLE1Button: UIButton = {
-        let button = UIButton(type:  .system)
-        
-        button.setTitle("PP LE1", for: UIControlState.normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.darkGray, for: .normal)
-        button.addTarget(self, action: #selector(handlePPLE1), for: .touchUpInside)
-        button.layer.cornerRadius = 10
-        button.layer.zPosition = 2
-        button.layer.borderColor = UIColor.darkGray.cgColor
-        button.layer.borderWidth = 1
-        button.backgroundColor = UIColor.clear
-        
-        return button
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-        view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        view.backgroundColor = .white
         navigationItem.title = "COURSE MATERIAL"
         
         setupScrollView()
@@ -67,7 +35,6 @@ class CourseMaterialViewController: UIViewController {
     
     func setupScrollView() {
         view.addSubview(tableView)
-        
         
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
@@ -110,7 +77,7 @@ extension CourseMaterialViewController: UITableViewDelegate {
         let courseMaterialURL = courseMaterialArray[row]
         let vc = GSDACatalogViewController()
         vc.url = courseMaterialURL
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -123,18 +90,6 @@ extension CourseMaterialViewController: UITableViewDataSource {
         let row = indexPath.row
         let cell = UITableViewCell()
         cell.textLabel?.text = "\(row + 1)"
-        // gsdaCatalogButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        //        gsdaCatalogButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: view.frame.height * 0.075).isActive = true
-        //        gsdaCatalogButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
-        //        gsdaCatalogButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-        //        gsdaCatalogButton.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.04)
-        //
-        //        PPLE1Button.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        //        PPLE1Button.topAnchor.constraint(equalTo: gsdaCatalogButton.bottomAnchor, constant: view.frame.height * 0.025).isActive = true
-        //        PPLE1Button.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
-        //        PPLE1Button.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
-        //        PPLE1Button.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: view.frame.width * 0.04)
-        
         return cell
     }
 }

@@ -17,16 +17,6 @@ final class NoteListViewController: UIViewController {
         }
     }
     
-    let dateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "January"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = .myBlue 
-        return label
-    }()
-    
     lazy var notesTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
@@ -38,15 +28,12 @@ final class NoteListViewController: UIViewController {
     
     lazy var addButton: UIButton = {
         let button = UIButton(type:  .system)
-        button.backgroundColor = UIColor(r: 166, g: 210, b: 253)
-        button.setTitle("New", for: .normal)
+        button.backgroundColor = .myBlue
+        button.setTitle("NEW", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         button.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
-        button.layer.borderColor = UIColor.lightGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.zPosition = 1
         button.layer.cornerRadius = 20
         button.clipsToBounds = true
         return button
@@ -66,7 +53,7 @@ final class NoteListViewController: UIViewController {
         setupSubViews()
         view.backgroundColor = .white
         navigationController?.setNavigationBarHidden(true, animated: false)
-        dateLabel.text = date.asString(style: DateFormatter.Style.medium)
+        title = date.asString(style: DateFormatter.Style.medium)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -89,19 +76,13 @@ final class NoteListViewController: UIViewController {
     }
     
     func setupSubViews() {
-        view.addSubview(dateLabel)
         view.addSubview(notesTableView)
         view.addSubview(addButton)
         
-        dateLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        dateLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
+        notesTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         notesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         notesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         notesTableView.bottomAnchor.constraint(equalTo: addButton.topAnchor).isActive = true
-        notesTableView.topAnchor.constraint(equalTo: dateLabel.bottomAnchor).isActive = true
         
         addButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
         addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
