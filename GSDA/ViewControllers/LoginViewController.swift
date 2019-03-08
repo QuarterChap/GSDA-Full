@@ -12,7 +12,7 @@ import FirebaseDatabase
 import FirebaseFirestore
 import FirebaseAuth
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     var signedIn = UserDefaults.standard.bool(forKey: "signedIn")
     
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         button.backgroundColor = UIColor.white
         button.setTitle("Login", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
+        button.setTitleColor(.myBlue, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         button.backgroundColor = UIColor.white
         button.setTitle("Reset Password", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor(r: 166, g: 210, b: 253), for: .normal)
+        button.setTitleColor(.myBlue, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.layer.cornerRadius = 5
         button.layer.masksToBounds = true
@@ -167,7 +167,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-        view.backgroundColor = UIColor(r: 166, g: 210, b: 253)
+        view.backgroundColor = .myBlue
         // UIColor(r: 24, g: 108, b: 179)
         
         view.addSubview(inputsContainerView)
@@ -264,9 +264,9 @@ class ViewController: UIViewController {
     
     //Activates the register/login button if all the fields are filled if not then its not active
     func handleTextField() {
-        usernameTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-        emailTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-        passwordTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        usernameTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        emailTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(LoginViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
     }
     
     //Function that activates or deactivate the login/register button :)
@@ -489,7 +489,7 @@ extension UIColor {
     
 }
 
-extension ViewController: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

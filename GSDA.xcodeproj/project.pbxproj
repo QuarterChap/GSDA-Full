@@ -54,7 +54,7 @@
 		A5B3042F221C9E8E00A01024 /* ProgramInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30423221C9E8C00A01024 /* ProgramInfoViewController.swift */; };
 		A5B30430221C9E8E00A01024 /* RoswellLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30424221C9E8C00A01024 /* RoswellLocationViewController.swift */; };
 		A5B30431221C9E8E00A01024 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30425221C9E8C00A01024 /* HomeViewController.swift */; };
-		A5B30432221C9E8E00A01024 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30426221C9E8C00A01024 /* ViewController.swift */; };
+		A5B30432221C9E8E00A01024 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30426221C9E8C00A01024 /* LoginViewController.swift */; };
 		A5B30433221C9E8E00A01024 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30427221C9E8D00A01024 /* LocationsViewController.swift */; };
 		A5B30434221C9E8E00A01024 /* CurriculumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30428221C9E8D00A01024 /* CurriculumViewController.swift */; };
 		A5B30435221C9E8E00A01024 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30429221C9E8D00A01024 /* AccountSettingsViewController.swift */; };
@@ -120,7 +120,7 @@
 		A5B30423221C9E8C00A01024 /* ProgramInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramInfoViewController.swift; sourceTree = "<group>"; };
 		A5B30424221C9E8C00A01024 /* RoswellLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoswellLocationViewController.swift; sourceTree = "<group>"; };
 		A5B30425221C9E8C00A01024 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		A5B30426221C9E8C00A01024 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5B30426221C9E8C00A01024 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5B30427221C9E8D00A01024 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		A5B30428221C9E8D00A01024 /* CurriculumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculumViewController.swift; sourceTree = "<group>"; };
 		A5B30429221C9E8D00A01024 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
@@ -240,9 +240,7 @@
 			children = (
 				A52967B12203C03B00F317AA /* Course Material VC's */,
 				09F36A3B2231DC13006FAF80 /* Feed */,
-				A5B30426221C9E8C00A01024 /* ViewController.swift */,
 				9676465321FBA2AE00F8F660 /* UploadContentViewController.swift */,
-				A5B30429221C9E8D00A01024 /* AccountSettingsViewController.swift */,
 				A5B3042B221C9E8D00A01024 /* CourseMaterialViewController.swift */,
 				A5B30428221C9E8D00A01024 /* CurriculumViewController.swift */,
 				A5B30425221C9E8C00A01024 /* HomeViewController.swift */,
@@ -256,6 +254,8 @@
 				A5CB0A0622209296007D0393 /* EnrollExpandedDuty.swift */,
 				A5CB0A082220B660007D0393 /* Configurable.swift */,
 				09F36A332231B430006FAF80 /* TabbarViewController.swift */,
+				A5B30426221C9E8C00A01024 /* LoginViewController.swift */,
+				A5B30429221C9E8D00A01024 /* AccountSettingsViewController.swift */,
 				09F36A372231BBDE006FAF80 /* SchoolMaterialViewController.swift */,
 			);
 			path = ViewControllers;
@@ -556,7 +556,7 @@
 				967D81D121FBB1970007BA68 /* Config.swift in Sources */,
 				0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */,
 				A52967D12203C05500F317AA /* GSDACatalogViewController.swift in Sources */,
-				A5B30432221C9E8E00A01024 /* ViewController.swift in Sources */,
+				A5B30432221C9E8E00A01024 /* LoginViewController.swift in Sources */,
 				964D623522039F8C00C2ED12 /* FeedApi.swift in Sources */,
 				A5B30436221C9E8E00A01024 /* MainMenuViewController.swift in Sources */,
 				94C19D2E213B292F00350658 /* AuthService.swift in Sources */,

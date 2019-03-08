@@ -200,8 +200,8 @@ private extension ScheduleViewController {
         //Setup year
         yearStackView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         yearStackView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        yearStackView.topAnchor.constraint(equalTo: calenderView.bottomAnchor, constant: 50).isActive = true
-        yearStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true
+        yearStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40).isActive = true
+        yearStackView.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
 }
 

@@ -112,6 +112,8 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         let post = posts[indexPath.row]
         cell.post = post
         // Download images or videos
+        cell.photoImageView.image = UIImage(named: "photos")
+        cell.photoImageView.contentMode = .center 
         if let imageURLString = post.photo_url {
             handleLoadingImage(for: imageURLString) { (image) in
                 cell.photoImageView.image = image
