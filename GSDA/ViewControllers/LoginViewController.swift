@@ -202,7 +202,7 @@ class LoginViewController: UIViewController {
         
         //User alrdy autheticated
         if Api.User.CURRENT_USER != nil {
-            self.present(MainMenuViewController(), animated: true, completion: nil)
+            dismiss(animated: true, completion: nil)
         }
     }
     
@@ -293,7 +293,7 @@ class LoginViewController: UIViewController {
             ProgressHUD.show("Please wait", interaction: false)
             AuthServ.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
                 ProgressHUD.showSuccess("Welcome")
-                self.present(MainMenuViewController(), animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }) { (error) in
                 ProgressHUD.showError(error!)
                 print(error!)
@@ -303,7 +303,7 @@ class LoginViewController: UIViewController {
             ProgressHUD.show("Welcome", interaction: false)
             AuthServ.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
                 ProgressHUD.showSuccess("Welcome")
-                self.present(MainMenuViewController(), animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }) { (error) in
                 ProgressHUD.showError(error!)
                 print(error!)
@@ -468,7 +468,7 @@ class LoginViewController: UIViewController {
         UIApplication.shared.statusBarStyle = .lightContent
         
         if Api.User.CURRENT_USER != nil {
-            self.navigationController?.pushViewController(MainMenuViewController(), animated: true)
+            dismiss(animated: true, completion: nil)
         } else {
             //show message to login or register maybe?
         }

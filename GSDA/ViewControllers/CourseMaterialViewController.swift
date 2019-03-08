@@ -77,6 +77,8 @@ extension CourseMaterialViewController: UITableViewDelegate {
         let courseMaterialURL = courseMaterialArray[row]
         let vc = GSDACatalogViewController()
         vc.url = courseMaterialURL
+        let cell = tableView.cellForRow(at: indexPath)
+        vc.title = cell?.textLabel?.text
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -104,4 +104,8 @@ extension EditNoteViewController: UITextViewDelegate {
             textView.text = ""
         }
     }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        note = textView.text
+    }
 }
