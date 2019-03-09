@@ -11,6 +11,5 @@ import Foundation
 struct Api {
     static var Post = PostApi()
      static var User = UserApi()
-     static var MyPosts = MyPostsApi()
      static var Feed = FeedApi()
 }

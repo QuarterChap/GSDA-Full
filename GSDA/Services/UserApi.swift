@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class UserApi {
     var REF_USERS = Database.database().reference().child("users")
+    var REF_ADMINS = Database.database().reference().child("admins")
     
     func observeUserByUsername(username: String, completion: @escaping (UserModel) -> Void) {
         REF_USERS.queryOrdered(byChild: "username_lowercase").queryEqual(toValue: username).observeSingleEvent(of: .childAdded, with: {
@@ -67,6 +68,24 @@ class UserApi {
                 }
             })
         })
+    }
+    
+    
+    func isUserAdmin(completion: @escaping (Bool) -> ()) {
+        guard let uid = CURRENT_USER?.uid else {
+            return
+        }
+        REF_ADMINS.child(uid).observe(.value) { (snapshot) in
+            if snapshot.value == nil {
+                completion(false)
+            } else {
+                if let isAdmin = snapshot.value as? Bool {
+                    completion(isAdmin)
+                } else {
+                    completion(false)
+                }
+            }
+        }
     }
     
     var CURRENT_USER: User? {

@@ -45,12 +45,22 @@ class AssignmentViewController: UIViewController {
         view.backgroundColor = .white
         setupView()
         title = "ASSIGNMENTS"
+        reloadView()
+    }
+    
+    var isAdmin = false
+    func reloadView() {
+        uploadButton.isHidden = !isAdmin
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         fetchPostPdf()
+        UserApi().isUserAdmin { (isAdmin) in
+            self.isAdmin = isAdmin
+            self.reloadView()
+        }
     }
     
     func setupView() {

@@ -60,6 +60,8 @@ final class EditNoteViewController: UIViewController {
         }
     }
     
+    var isAdmin = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -71,11 +73,22 @@ final class EditNoteViewController: UIViewController {
             textView.text = "Leave note here..."
         }
         textView.delegate = self
+        updateView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        UserApi().isUserAdmin { (isAdmin) in
+            self.isAdmin = isAdmin
+            self.updateView()
+        }
+    }
+    
+    func updateView() {
+        doneButton.isHidden = !isAdmin
+        textView.isUserInteractionEnabled = isAdmin
     }
     
     

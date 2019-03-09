@@ -40,7 +40,7 @@ final class NoteListViewController: UIViewController {
     }()
     
     var notes = [NoteModel]()
-    
+    var isAdmin = false
     @objc func addButtonPressed() {
         // Create new note
         let vc = EditNoteViewController()
@@ -54,6 +54,11 @@ final class NoteListViewController: UIViewController {
         view.backgroundColor = .white
         navigationController?.setNavigationBarHidden(true, animated: false)
         title = date.asString(style: DateFormatter.Style.medium)
+        updateView()
+    }
+    
+    func updateView() {
+        addButton.isHidden = !isAdmin
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,6 +69,11 @@ final class NoteListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        UserApi().isUserAdmin { (isAdmin) in
+            self.isAdmin = isAdmin
+            self.updateView()
+        }
     }
     
     func fetchNotes() {
@@ -119,6 +129,10 @@ extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if !isAdmin {
+            return
+        }
+        
         if (editingStyle == .delete) {
             // handle delete (by removing the data from your array and updating the tableview)
             
@@ -129,9 +143,7 @@ extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
             }
             NoteAPI().deleteNote(with: date, with: uid) {
                 // Deleted
-                
             }
-            
         }
     }
 }

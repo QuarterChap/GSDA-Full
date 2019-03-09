@@ -44,12 +44,27 @@ class FeedViewController: UIViewController {
         return button
     }()
     
+    var isAdmin = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .white
         setupView()
         loadPosts()
+        updateView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UserApi().isUserAdmin { (isAdmin) in
+            self.isAdmin = isAdmin
+            self.updateView()
+        }
+    }
+    
+    func updateView() {
+        uploadButton.isHidden = !isAdmin
     }
     
     //Loading the posts

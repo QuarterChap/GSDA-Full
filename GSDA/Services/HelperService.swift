@@ -9,7 +9,28 @@
 import Foundation
 import FirebaseStorage
 import FirebaseDatabase
+import FirebaseAuth
 class HelperService {
+    
+    static func addAdmin(with email: String) {
+        // Get uid of email
+        Database.database().reference().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observe(.value) { (snapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                if let uid = dict.keys.first {
+Database.database().reference().child("admins").child(uid).setValue(true, withCompletionBlock: { (error, ref) in
+                        if let error = error {
+                            ProgressHUD.showError("\(error.localizedDescription)")
+                            return
+                        }
+        
+                        ProgressHUD.showSuccess("ADDED ADMIN")
+                    })
+                }
+            } else {
+                 ProgressHUD.showError("THE EMAIL NEEDS TO BE REGISTERED BEFORE ADDING ADMIN PERMS")
+            }
+        }
+    }
     
     
     static func uploadVideoToFirebaseStorage(videoUrl: URL, thumbnail: UIImage, title: String, description: String,  onSuccess: @escaping () -> ()) {
