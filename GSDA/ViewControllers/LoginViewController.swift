@@ -197,12 +197,14 @@ class LoginViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
         
-        //User alrdy autheticated
         if Api.User.CURRENT_USER != nil {
             dismiss(animated: true, completion: nil)
+        } else {
+            //show message to login or register maybe?
         }
     }
     
@@ -291,7 +293,7 @@ class LoginViewController: UIViewController {
             view.endEditing(true)
             // Login
             ProgressHUD.show("Please wait", interaction: false)
-            AuthServ.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
+            AuthService.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
                 ProgressHUD.showSuccess("Welcome")
                 self.dismiss(animated: true, completion: nil)
             }) { (error) in
@@ -301,7 +303,7 @@ class LoginViewController: UIViewController {
         } else if loginRegisterSegmentedControl.selectedSegmentIndex == 1 {
             view.endEditing(true)
             ProgressHUD.show("Welcome", interaction: false)
-            AuthServ.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
+            AuthService.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
                 ProgressHUD.showSuccess("Welcome")
                 self.dismiss(animated: true, completion: nil)
             }) { (error) in
@@ -462,17 +464,6 @@ class LoginViewController: UIViewController {
         resetPasswordButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.065).isActive = true
     }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UIApplication.shared.statusBarStyle = .lightContent
-        
-        if Api.User.CURRENT_USER != nil {
-            dismiss(animated: true, completion: nil)
-        } else {
-            //show message to login or register maybe?
-        }
-    }
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }

@@ -21,6 +21,14 @@ final class CustomTabBarController: UITabBarController {
         viewControllers = tabbars
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if Api.User.CURRENT_USER == nil {
+            present(LoginViewController(), animated: true, completion: nil)
+        }
+    }
+    
     let homeViewController = HomeViewController()
     let schoolViewController = SchoolMaterialViewController()
     let settingsViewController = AccountSettingsViewController()

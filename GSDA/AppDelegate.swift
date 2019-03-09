@@ -13,25 +13,16 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var signedIn = UserDefaults.standard.bool(forKey: "signedIn")
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        
-        if signedIn == true {
-            window?.rootViewController = CustomTabBarController()
-        } else {
-            window?.rootViewController = CustomTabBarController()
-        }
-        
         FirebaseApp.configure()
-        
+        window?.rootViewController = CustomTabBarController()
         let defaults = UserDefaults.standard
         let defaultValue = ["username":"admin"]
         defaults.register(defaults: defaultValue)
-        
         return true
     }
     
