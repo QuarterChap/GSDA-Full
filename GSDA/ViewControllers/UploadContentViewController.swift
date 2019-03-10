@@ -147,9 +147,6 @@ class UploadContentViewController: UIViewController {
         }
     }
     
-    
-    
-    
     func uploadImage() {
         guard let uploadImage = self.selectedImage, let imageData = UIImageJPEGRepresentation(uploadImage, 0.1) else {
             return

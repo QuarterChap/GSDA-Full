@@ -57,7 +57,6 @@ final class HomeViewController: UIViewController {
         
         classSchedule.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: padding).isActive = true
         classSchedule.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: padding).isActive = true
-        
     }
 }
 

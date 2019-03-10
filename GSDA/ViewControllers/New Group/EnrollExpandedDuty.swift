@@ -87,8 +87,6 @@ class EnrollExpandedDuty: UIViewController {
             }
         }
         
-        
-        
         func calculateInfoLabelHeight(for text: String, with fontHeight: Int) -> CGFloat {
             // check screen width for this
             // if 5s else if 6 else if 6plus

@@ -147,15 +147,20 @@ class ExpandedDutyViewController: UIViewController {
     }
     
     @objc func handleViewPDF() {
-        
+        navigationController?.pushViewController(WKWebViewController().configured {
+            $0.url = "https://gadentalassisting.com/expanded-duty/register/"
+        }, animated: true)
     }
     
     @objc func handleAffidavitForm() {
-        
+        navigationController?.pushViewController(WKWebViewController().configured {
+            $0.url = "https://gadentalassisting.com/wp-content/uploads/2017/05/Expanded-Duties.pdf"
+        }, animated: true)
     }
     
     @objc func handleEnrollNow() {
-        navigationController?.pushViewController(ExpandedDutyViewController(), animated: true)
+        navigationController?.pushViewController(WKWebViewController().configured {
+            $0.url = "https://gadentalassisting.com/expanded-duty/register/"
+        }, animated: true)
     }
-    
 }

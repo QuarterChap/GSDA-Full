@@ -46,7 +46,7 @@
 		96C48D5F2205ABCD00A4E512 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C48D5C2205ABAB00A4E512 /* ProgressHUD.m */; };
 		96C48D602205ABCD00A4E512 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96C48D5D2205ABBB00A4E512 /* ProgressHUD.bundle */; };
 		A52967AC2203B94500F317AA /* ExpandedDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */; };
-		A52967D12203C05500F317AA /* GSDACatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967BB2203C05200F317AA /* GSDACatalogViewController.swift */; };
+		A52967D12203C05500F317AA /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52967BB2203C05200F317AA /* WKWebViewController.swift */; };
 		A574C81721E54E5300A6D493 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A574C81621E54E5300A6D493 /* PhotoModel.swift */; };
 		A574C81B21E7B00400A6D493 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A574C81A21E7B00400A6D493 /* PhotosViewController.swift */; };
 		A5B3042F221C9E8E00A01024 /* ProgramInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B30423221C9E8C00A01024 /* ProgramInfoViewController.swift */; };
@@ -109,7 +109,7 @@
 		96C48D5D2205ABBB00A4E512 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		96C48D5E2205ABCC00A4E512 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		A52967AB2203B94500F317AA /* ExpandedDutyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedDutyViewController.swift; sourceTree = "<group>"; };
-		A52967BB2203C05200F317AA /* GSDACatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSDACatalogViewController.swift; sourceTree = "<group>"; };
+		A52967BB2203C05200F317AA /* WKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
 		A574C81621E54E5300A6D493 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		A574C81A21E7B00400A6D493 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		A5B30423221C9E8C00A01024 /* ProgramInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramInfoViewController.swift; sourceTree = "<group>"; };
@@ -313,7 +313,7 @@
 		A52967B12203C03B00F317AA /* Course Material VC's */ = {
 			isa = PBXGroup;
 			children = (
-				A52967BB2203C05200F317AA /* GSDACatalogViewController.swift */,
+				A52967BB2203C05200F317AA /* WKWebViewController.swift */,
 			);
 			name = "Course Material VC's";
 			path = "New Group";
@@ -545,7 +545,7 @@
 				96C48D5F2205ABCD00A4E512 /* ProgressHUD.m in Sources */,
 				967D81D121FBB1970007BA68 /* Config.swift in Sources */,
 				0979E19C21FB8F00002C421D /* FeedViewController.swift in Sources */,
-				A52967D12203C05500F317AA /* GSDACatalogViewController.swift in Sources */,
+				A52967D12203C05500F317AA /* WKWebViewController.swift in Sources */,
 				A5B30432221C9E8E00A01024 /* LoginViewController.swift in Sources */,
 				964D623522039F8C00C2ED12 /* FeedApi.swift in Sources */,
 				A5B3043A221C9E8E00A01024 /* WoodstockLocationViewController.swift in Sources */,

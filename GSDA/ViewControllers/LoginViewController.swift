@@ -190,11 +190,7 @@ class LoginViewController: UIViewController {
         setupMottoLabel()
         setupResetButton()
         setupImage()
-        
         handleTextField()
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -261,7 +257,6 @@ class LoginViewController: UIViewController {
             inputsContainerViewHeightAnchor = inputsContainerView.heightAnchor.constraint(equalToConstant: 200)
             inputsContainerViewHeightAnchor?.isActive  = true
         }
-        
     }
     
     //Activates the register/login button if all the fields are filled if not then its not active

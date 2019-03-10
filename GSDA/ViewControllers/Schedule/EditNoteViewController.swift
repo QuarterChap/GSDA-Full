@@ -107,7 +107,6 @@ final class EditNoteViewController: UIViewController {
         doneButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         doneButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
-    
 }
 
 extension EditNoteViewController: UITextViewDelegate {

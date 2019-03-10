@@ -83,7 +83,7 @@ class AssignmentViewController: UIViewController {
     }
     
     func didTap(cell: AssignmentCell) {
-        navigationController?.pushViewController(GSDACatalogViewController().configured {
+        navigationController?.pushViewController(WKWebViewController().configured {
             $0.title = cell.post?.title
             $0.url = cell.post?.pdf_url
         }, animated: true)

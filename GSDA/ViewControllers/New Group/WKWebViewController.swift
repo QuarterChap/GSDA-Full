@@ -7,15 +7,14 @@
 //
 
 import UIKit
+import WebKit
 
-class GSDACatalogViewController: UIViewController {
+class WKWebViewController: UIViewController {
 
-    let webView: UIWebView = {
-        let webView = UIWebView()
-        
+    let webView: WKWebView = {
+        let webView = WKWebView()
         webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.scalesPageToFit = true
-        
+//        webView.scalesPageToFit = true
         return webView
     }()
     
@@ -34,14 +33,14 @@ class GSDACatalogViewController: UIViewController {
     }
     
     func setupView() {
-        self.view.addSubview(webView)
+        view.addSubview(webView)
         webView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         webView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         let url = URL(string: self.url)
         let urlRequest = URLRequest(url: url!)
-        self.webView.loadRequest(urlRequest)
+        webView.load(urlRequest)
     }
     
     @objc func handleBack() {

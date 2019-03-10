@@ -47,11 +47,11 @@ class CourseMaterialViewController: UIViewController {
     }
     
     @objc func handleGSDACatalog() {
-        self.present(GSDACatalogViewController(), animated: true) {}
+        self.present(WKWebViewController(), animated: true) {}
     }
     
     @objc func handlePPLE1() {
-        self.present(GSDACatalogViewController(), animated: true) {}
+        self.present(WKWebViewController(), animated: true) {}
     }
     
     var courseMaterialArray: [String] {
@@ -70,12 +70,11 @@ class CourseMaterialViewController: UIViewController {
     }
 }
 
-
 extension CourseMaterialViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         let courseMaterialURL = courseMaterialArray[row]
-        let vc = GSDACatalogViewController()
+        let vc = WKWebViewController()
         vc.url = courseMaterialURL
         let cell = tableView.cellForRow(at: indexPath)
         vc.title = cell?.textLabel?.text
