@@ -169,7 +169,7 @@ class UploadContentViewController: UIViewController {
         } else if contentType == .photo {
             pickerController.mediaTypes = ["public.image"]
         }
-        present(pickerController, animated: true, completion: nil)
+        navigationController?.pushViewController(pickerController, animated: true)
     }
 }
 
@@ -186,14 +186,14 @@ extension UploadContentViewController: UIImagePickerControllerDelegate, UINaviga
                 selectedImageView.image = thumbnailImage
                 self.videoUrl = videoUrl
             }
-            dismiss(animated: true, completion: nil)
+            navigationController?.popViewController(animated: true)
         }
         
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage{
             // Selected Image
             selectedImage = image
             selectedImageView.image = image
-            dismiss(animated: true, completion: nil)
+            navigationController?.popViewController(animated: true)
         }
     }
     

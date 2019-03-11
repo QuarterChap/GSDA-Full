@@ -111,7 +111,6 @@ class ExpandedDutyViewController: UIViewController {
         view.addSubview(enrollLabel)
         view.addSubview(enrollButton)
         
-        
         ourApprovalLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: view.frame.height * 0.05).isActive = true
         ourApprovalLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
         ourApprovalLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
