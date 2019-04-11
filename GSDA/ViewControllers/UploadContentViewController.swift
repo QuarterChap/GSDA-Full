@@ -78,6 +78,8 @@ class UploadContentViewController: UIViewController {
         return button
     }()
     
+    let pickerController = UIImagePickerController()
+    
     @objc func backButtonPressed() {
         dismiss(animated: true, completion: nil)
     }
@@ -162,14 +164,13 @@ class UploadContentViewController: UIViewController {
     }
     
     func handleSelectPhoto() {
-        let pickerController = UIImagePickerController()
         pickerController.delegate = self
         if contentType == .video {
             pickerController.mediaTypes = ["public.movie"]
         } else if contentType == .photo {
             pickerController.mediaTypes = ["public.image"]
         }
-        navigationController?.pushViewController(pickerController, animated: true)
+        present(pickerController, animated: true)
     }
 }
 
@@ -186,15 +187,14 @@ extension UploadContentViewController: UIImagePickerControllerDelegate, UINaviga
                 selectedImageView.image = thumbnailImage
                 self.videoUrl = videoUrl
             }
-            navigationController?.popViewController(animated: true)
         }
         
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage{
             // Selected Image
             selectedImage = image
             selectedImageView.image = image
-            navigationController?.popViewController(animated: true)
         }
+        pickerController.dismiss(animated: true)
     }
     
     func thumbnailImageForFileUrl(_ fileUrl: URL) -> UIImage? {
