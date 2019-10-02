@@ -56,7 +56,7 @@ class WoodstockLocationViewController: UIViewController, MFMailComposeViewContro
         
         label.text = "Woodstock"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -75,7 +75,7 @@ class WoodstockLocationViewController: UIViewController, MFMailComposeViewContro
         
         label.text = "☈ Take a virtual tour"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -94,7 +94,7 @@ class WoodstockLocationViewController: UIViewController, MFMailComposeViewContro
         
         label.text = "The Woodstock location shares a space with 1st choice dental."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white

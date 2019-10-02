@@ -29,7 +29,7 @@ class RoswellLocationViewController: UIViewController, MFMailComposeViewControll
         
         label.text = "Roswell"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -76,7 +76,7 @@ class RoswellLocationViewController: UIViewController, MFMailComposeViewControll
         
         label.text = "☈ Take a virtual tour"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
@@ -95,7 +95,7 @@ class RoswellLocationViewController: UIViewController, MFMailComposeViewControll
         
         label.text = "The Georgia School of Dental Assisting shares a space in the office of Dr. Igor Reizenson and Dr. Alla Alpert at iSmile Dental Group. There are eight dental treatment rooms equipped with dental chairs, units, and x-ray machines. There is a darkroom with an automated film processor. There is a sterilization room, a reception room, a break room, and a small dental laboratory. The facility has approximately 600 square feet available for student discussions. The school will occupy the total 2000 square foot of space."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white

@@ -24,7 +24,7 @@ class ResetPasswordViewController: UIViewController {
         
         label.text = "Enter your email, tap reset then check email for reset link."
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor.white
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.clear

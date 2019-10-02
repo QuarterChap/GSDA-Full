@@ -43,6 +43,21 @@ class EnrollExpandedDuty: UIViewController {
         $0.font = UIFont.boldSystemFont(ofSize: 25)
     }
     
+    let warningLabel = UILabel().configured() {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.text = "⚠️ Complete your enrollment by filling out the form below. The enrollment agreement is mandatory to secure a space in the program."
+        $0.textColor = UIColor.lightGray
+        $0.backgroundColor = UIColor(r: 247, g: 247, b: 215)
+        $0.layer.borderColor = UIColor.lightGray.cgColor
+        $0.layer.borderWidth = 1
+        $0.lineBreakMode = .byWordWrapping
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+        
+    }
+    
+    var labelsArray = [UILabel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,8 +66,28 @@ class EnrollExpandedDuty: UIViewController {
     }
     
     func setupView() {
-        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height *
-            3)
+    
+        if view?.frame.width == 320 && view?.frame.height == 568 {
+            scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height *
+                6.25)
+            //5
+        } else if view?.frame.width == 375 && view?.frame.height == 667 {
+            scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height *
+                6.25)
+            //normal 6,7,8
+        } else if view?.frame.width == 414 && view?.frame.height ==  736 {
+            scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height *
+                6.25)
+            //plus 6,7,8
+        } else if view?.frame.width == 375 && view?.frame.height == 812 {
+            scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height *
+                5.6)
+            //X and XS
+        } else if view?.frame.width == 414 && view?.frame.height == 896 {
+            // XR / XS Max
+            scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height *
+                5.6)
+        }
         
         self.view.addSubview(scrollView)
         self.view.addSubview(backButton)
@@ -69,51 +104,93 @@ class EnrollExpandedDuty: UIViewController {
     }
     
     func createLabels(with dict: [String: LabelType]) {
-        var labels = [UILabel]()
+        var label: UILabel!
         
         for (text, type) in dict {
             switch (type) {
             case .info:
-                let label = InfoLabel()
+                label = InfoLabel()
                 label.text = text
-                labels.append(label)
+                scrollView.addSubview(label)
             case .subject:
-                let label = SubjectLabel()
+                label = SubjectLabel()
                 label.text = text
-                labels.append(label)
+                scrollView.addSubview(label)
             case .header:
-                let label = HeaderLabel()
+                label = HeaderLabel()
                 label.text = text
-                labels.append(label)
+                scrollView.addSubview(label)
             }
+            labelsArray.append(label)
         }
+    }
+    
+    func setupConstraints() {
+        var previousLabel: UILabel?
         
-        
-        
-        func calculateInfoLabelHeight(for text: String, with fontHeight: Int) -> CGFloat {
-            // check screen width for this
-            // if 5s else if 6 else if 6plus
+        for label in labelsArray {
             
-            return CGFloat(text.count/1000 * 40)
-        }
-        
-        func setConstraints() {
-            for label in labels {
-                if let infoLabel = label as? InfoLabel {
-                    //set constraints for info label
-                    let calculatedHeight = calculateInfoLabelHeight(for: infoLabel.text!, with: 0)
-                    infoLabel.heightAnchor.constraint(equalToConstant: calculatedHeight).isActive = true
+            if let infoLabel = label as? InfoLabel {
+                //set constraints for info label
+                if let previousLabel = previousLabel {
+                    infoLabel.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.035)
+                    let maxLabelSize = CGSize(width: (view.frame.width * 0.95), height: CGFloat.greatestFiniteMagnitude)
+                    let actualLabelSize = infoLabel.text!.boundingRect(with: maxLabelSize, options: [.usesLineFragmentOrigin], attributes: [.font: infoLabel.font], context: nil)
+                    infoLabel.heightAnchor.constraint(equalToConstant: actualLabelSize.height).isActive = true
+                    
                     infoLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
                     infoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-                    // top anchor to the bottom of the previous anchor with a mulitplier distance between each one
-                    
-                } else if let subjectLabel = label as? SubjectLabel {
-                    
-                } else if let headerLabel = label as? HeaderLabel {
+                    infoLabel.topAnchor.constraint(equalTo: previousLabel.bottomAnchor, constant: view.frame.height * 0.025).isActive = true
+                } else {
                     
                 }
+                previousLabel = label
+            } else if let subjectLabel = label as? SubjectLabel {
+                if let previousLabel = previousLabel {
+                    subjectLabel.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.07)
+                    let maxLabelSize = CGSize(width: (view.frame.width * 0.95), height: CGFloat.greatestFiniteMagnitude)
+                    let actualLabelSize = subjectLabel.text!.boundingRect(with: maxLabelSize, options: [.usesLineFragmentOrigin], attributes: [.font: subjectLabel.font], context: nil)
+                    subjectLabel.heightAnchor.constraint(equalToConstant: actualLabelSize.height).isActive = true
+                    
+                    subjectLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+                    subjectLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+                    subjectLabel.topAnchor.constraint(equalTo: (previousLabel.bottomAnchor), constant: view.frame.height * 0.05).isActive = true
+                } else {
+                    
+                }
+                previousLabel = label
+            } else if let headerLabel = label as? HeaderLabel {
+                if let previousLabel = previousLabel {
+                    headerLabel.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.075)
+                    let maxLabelSize = CGSize(width: (view.frame.width * 0.95), height: CGFloat.greatestFiniteMagnitude)
+                    let actualLabelSize = headerLabel.text!.boundingRect(with: maxLabelSize, options: [.usesLineFragmentOrigin], attributes: [.font: headerLabel.font], context: nil)
+                    headerLabel.heightAnchor.constraint(equalToConstant: actualLabelSize.height).isActive = true
+                    
+                    headerLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+                    headerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+                    headerLabel.topAnchor.constraint(equalTo: (previousLabel.bottomAnchor), constant: view.frame.height * 0.075).isActive = true
+                } else {
+                    headerLabel.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.075)
+                    let maxLabelSize = CGSize(width: (view.frame.width * 0.95), height: CGFloat.greatestFiniteMagnitude)
+                    let actualLabelSize = headerLabel.text!.boundingRect(with: maxLabelSize, options: [.usesLineFragmentOrigin], attributes: [.font: headerLabel.font], context: nil)
+                    headerLabel.heightAnchor.constraint(equalToConstant: actualLabelSize.height).isActive = true
+                    
+                    headerLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+                    headerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+                    headerLabel.topAnchor.constraint(equalTo: (titleLabel.bottomAnchor), constant: view.frame.height * 0.075).isActive = true
+                }
+                previousLabel = label
             }
         }
+        scrollView.addSubview(warningLabel)
+        
+        warningLabel.font = UIFont.boldSystemFont(ofSize: view.frame.width * 0.045)
+        let maxLabelSize = CGSize(width: (view.frame.width * 0.75), height: CGFloat.greatestFiniteMagnitude)
+        let actualLabelSize = warningLabel.text!.boundingRect(with: maxLabelSize, options: [.usesLineFragmentOrigin], attributes: [.font: warningLabel.font], context: nil)
+        warningLabel.heightAnchor.constraint(equalToConstant: (actualLabelSize.height) * 1.25).isActive = true
+        warningLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        warningLabel.topAnchor.constraint(equalTo: previousLabel!.bottomAnchor, constant: view.frame.height * 0.05).isActive = true
+        warningLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75).isActive = true
     }
     
     func setupScrollView() {
@@ -123,6 +200,8 @@ class EnrollExpandedDuty: UIViewController {
         titleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: view.frame.height * 0.05).isActive = true
         titleLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1).isActive = true
         titleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95).isActive = true
+        
+        //createLabels(with: ["Text2": .header, "Late Payments": .subject])
         
         createLabels(with: ["Terms & Conditions" : .header])
         createLabels(with: ["Late Payments" : .subject])
@@ -171,7 +250,7 @@ class EnrollExpandedDuty: UIViewController {
         createLabels(with: ["Contract Acceptance" : .subject])
         createLabels(with: ["I, the undersigned, have read and understand this agreement and acknowledge receipt of a copy. It is further understood and agreed that this agreement supersedes all prior or contemporaneous verbal or written agreements and may not be modified without the written agreement of the student and the School Official. I also understand that if I default upon this agreement I will be responsible for payment of any collection fees or attorney fees incurred by Georgia School of Dental Assisting, LLC." : .info])
         createLabels(with: ["My signature below signifies that I have read and understand all aspects of this agreement and do recognize my legal responsibilities in regard to this contract." : .info])
-        //setConstraints()
+        setupConstraints()
         
     }
     
@@ -181,7 +260,6 @@ class EnrollExpandedDuty: UIViewController {
     
 } // End of main class
 
-
 class InfoLabel: UILabel {
     init(){
         super.init(frame: .zero)
@@ -189,8 +267,8 @@ class InfoLabel: UILabel {
         translatesAutoresizingMaskIntoConstraints = false
         textAlignment = .center
         textColor = UIColor.black
-        font = UIFont.systemFont(ofSize: 12)
-        
+        lineBreakMode = .byWordWrapping
+        numberOfLines = 0
         
     }
     
@@ -207,7 +285,8 @@ class SubjectLabel: UILabel {
         translatesAutoresizingMaskIntoConstraints = false
         textAlignment = .center
         textColor = UIColor.black
-        font = UIFont.boldSystemFont(ofSize: 20)
+        lineBreakMode = .byWordWrapping
+        numberOfLines = 0
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -223,7 +302,8 @@ class HeaderLabel: UILabel {
         translatesAutoresizingMaskIntoConstraints = false
         textAlignment = .center
         textColor = UIColor(r: 124, g: 128, b: 49)
-        font = UIFont.boldSystemFont(ofSize: 20)
+        lineBreakMode = .byWordWrapping
+        numberOfLines = 0
         
     }
     

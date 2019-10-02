@@ -34,7 +34,7 @@ class AccountSettingsViewController: UIViewController {
         
         label.text = "⚙️ Account Settings"
         label.font = UIFont(name: "AmericanTypewriter", size: 28)
-        label.textColor = UIColor(r: 166, g: 210, b: 253)
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.backgroundColor = UIColor.white
