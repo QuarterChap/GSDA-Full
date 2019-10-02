@@ -9,14 +9,35 @@
 import Foundation
 import FirebaseStorage
 import FirebaseDatabase
+import FirebaseAuth
 class HelperService {
+    
+    static func addAdmin(with email: String) {
+        // Get uid of email
+        Database.database().reference().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observe(.value) { (snapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                if let uid = dict.keys.first {
+Database.database().reference().child("admins").child(uid).setValue(true, withCompletionBlock: { (error, ref) in
+                        if let error = error {
+                            ProgressHUD.showError("\(error.localizedDescription)")
+                            return
+                        }
+        
+                        ProgressHUD.showSuccess("ADDED ADMIN")
+                    })
+                }
+            } else {
+                 ProgressHUD.showError("THE EMAIL NEEDS TO BE REGISTERED BEFORE ADDING ADMIN PERMS")
+            }
+        }
+    }
     
     
     static func uploadVideoToFirebaseStorage(videoUrl: URL, thumbnail: UIImage, title: String, description: String,  onSuccess: @escaping () -> ()) {
         let uuid = NSUUID().uuidString
         let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedVideo").child(uuid)
         let thumbnailRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("thumbnails").child(uuid)
-
+        
         guard let thumbnailData = UIImageJPEGRepresentation(thumbnail, 0.1) else {
             return
         }
@@ -45,27 +66,10 @@ class HelperService {
         }
     }
     
-    static func uploadPdfToFirebase(pdfUrl: URL, title: String, description: String, onSuccess: @escaping () -> ()) {
-        let uuid = NSUUID().uuidString
-        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("assignments").child("pdfFiles").child(uuid)
-        
-        storageRef.putFile(from: pdfUrl, metadata: nil) { metadata, error in
-            guard let metadata = metadata else {
-                return
-            }
-            storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
-                if let pdfFileUrl = url?.absoluteString {
-                    let data = ["pdf_url": pdfFileUrl, "title": title, "description": description, "timestamp": Int(Date().timeIntervalSince1970)] as [String : Any]
-                    sendDataToPosts(dict: data) {
-                        onSuccess()
-                    }
-                }
-            })
-    }
-    }
     
     static func uploadImageToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping () -> ()) {
         let photoIdString = NSUUID().uuidString
+        
         let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child("postedImage").child(photoIdString)
         
         storageRef.putData(data, metadata: nil) { (metadata, error) in
@@ -83,10 +87,31 @@ class HelperService {
         }
     }
     
+    static func uploadPDFToFirebaseStorage(data: Data, title: String, description: String, onSuccess: @escaping ()->()) {
+        let pdfIdString = NSUUID().uuidString
+        
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("assignment").child("pdfFiles").child(pdfIdString)
+        
+        storageRef.putData(data, metadata: nil) { (metadata, error) in
+            if error != nil {
+                return
+            }
+            
+            storageRef.downloadURL(completion: { (url, error) in
+                if let pdfURL = url?.absoluteString {
+                    let data = ["title": title, "description": description, "pdf_url": pdfURL]
+                    sendDataToPosts(dict: data, onSuccess: {
+                        onSuccess()
+                    })
+                }
+            })
+        }
+    }
+    
     static func sendDataToPosts(dict: [String: Any], onSuccess: @escaping () -> Void) {
         let uuid = UUID().uuidString
         var newPostReference = Api.Post.REF_POSTS
-
+        
         var type = "none"
         if let _ = dict["video_url"] {
             type = "videos"
@@ -95,7 +120,7 @@ class HelperService {
         }  else if let _ = dict["pdf_url"] {
             type = "pdfs"
         }
-        newPostReference = newPostReference.child(type).child((Api.User.CURRENT_USER?.uid)!).child(uuid)
+        newPostReference = newPostReference.child(type).child(uuid)
         newPostReference.setValue(dict, withCompletionBlock: {
             (error, _) in
             if let error = error {

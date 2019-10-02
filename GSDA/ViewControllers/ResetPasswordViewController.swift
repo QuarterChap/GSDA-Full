@@ -162,7 +162,7 @@ class ResetPasswordViewController: UIViewController {
                 let alert = UIAlertController(title: "Check Email For Reset Verification", message: error as? String, preferredStyle: .alert)
                 //alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (nil) in
-                    self.present(ViewController(), animated: true) {}
+                    self.present(LoginViewController(), animated: true) {}
                 }))
                 self.present(alert, animated: true, completion: nil)
             }

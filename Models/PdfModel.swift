@@ -9,26 +9,21 @@
 import Foundation
 import FirebaseAuth
 
-class PdfModel {
-    
-    var description: String?
-    var uid: String?
-        var id: String?
-    var pdf_url: String?
-    var title: String?
-    var timestamp: String?
+struct PdfModel {
+    var description: String
+    var uid: String
+    var pdf_url: String
+    var title: String
 }
 
 extension PdfModel {
-    static func transformPdf(dict: [String: Any], key: String) -> PdfModel {
-        let push = PdfModel()
-        push.id = key
-        push.title = dict["title"] as? String
-        push.description = dict["description"] as? String
-        push.pdf_url = dict["pdf_url"] as? String
-        push.uid = dict["uid"] as? String
-        push.timestamp = dict["timestamp"] as? String
+    static func transformPdf(dict: [String: Any], uid: String) -> PdfModel {
         
-        return push
+        guard let title = dict["title"] as? String,
+        let description = dict["description"] as? String,
+        let pdf_url = dict["pdf_url"] as? String else {
+            return PdfModel(description: "", uid: "", pdf_url: "", title: "")
+        }
+        return PdfModel(description: description, uid: uid, pdf_url: pdf_url, title: title)
     }
 }

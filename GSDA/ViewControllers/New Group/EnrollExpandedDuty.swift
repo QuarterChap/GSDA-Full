@@ -60,7 +60,6 @@ class EnrollExpandedDuty: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
         setupScrollView()
     }
@@ -128,7 +127,13 @@ class EnrollExpandedDuty: UIViewController {
     func setupConstraints() {
         var previousLabel: UILabel?
         
+<<<<<<< HEAD
         for label in labelsArray {
+=======
+        func calculateInfoLabelHeight(for text: String, with fontHeight: Int) -> CGFloat {
+            // check screen width for this
+            // if 5s else if 6 else if 6plus
+>>>>>>> 63f06595bef31882618ae952c2062f74f08723bd
             
             if let infoLabel = label as? InfoLabel {
                 //set constraints for info label
@@ -310,5 +315,4 @@ class HeaderLabel: UILabel {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

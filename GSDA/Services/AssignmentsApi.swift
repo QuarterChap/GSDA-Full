@@ -11,32 +11,20 @@ import FirebaseDatabase
 
 class AssignmentsApi {
     var REF_PDF_POSTS = Database.database().reference().child("posts").child("pdfs")
-    func observePosts(completion: @escaping (PdfModel) -> Void) {
-        REF_PDF_POSTS.observe(.childAdded) { (snapshot: DataSnapshot) in
-            if let dict = snapshot.value as? [String: Any] {
-                let newPost = PdfModel.transformPdf(dict: dict, key: snapshot.key)
-                completion(newPost)
-            }
-        }
-    }
     
-    func observePost(withId id: String, completion: @escaping (PdfModel) -> Void) {
-        REF_PDF_POSTS.child(id).observeSingleEvent(of: DataEventType.value, with: {
-            snapshot in
-            if let dict = snapshot.value as? [String: Any] {
-                let post = PdfModel.transformPdf(dict: dict, key: snapshot.key)
-                completion(post)
-            }
-        })
-    }
-    
-    func observePdfPosts(of type: String, completion: @escaping (PdfModel) -> Void) {
-        REF_PDF_POSTS.child(type).child((Api.User.CURRENT_USER?.uid)!).queryOrdered(byChild: "timestamp").observe(.childAdded, with: {
+    func observePdfPosts(completion: @escaping ([PdfModel]) -> Void) {
+        REF_PDF_POSTS.observe(.value, with: {
             snapshot in
             if let dict = snapshot.value as? [String: Any] {
                 //todo handle on completion
-                let post = PdfModel.transformPdf(dict: dict, key: snapshot.key)
-                completion(post)
+                var posts = [PdfModel]()
+                for key in dict.keys {
+                    if let dict = dict[key] as? [String: Any] {
+                        let post = PdfModel.transformPdf(dict: dict, uid: key)
+                        posts.append(post)
+                    }
+                }
+                completion(posts)
             }
         })
     }
